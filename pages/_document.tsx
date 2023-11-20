@@ -5,6 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+            <title>Images</title>
           <link rel="icon" href="FinderIcon.png" />
         </Head>
         <body className="bg-black antialiased">
