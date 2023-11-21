@@ -5,8 +5,13 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+            <link
+                rel="apple-touch-icon"
+                sizes="180x180"
+                href="apple-touch-icon.png"
+            />
             <title>Images</title>
-          <link rel="icon" href="FinderIcon.png" />
+            <link rel="icon" href="FinderIcon.png" />
         </Head>
         <body className="bg-black antialiased">
           <Main />

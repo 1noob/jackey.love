@@ -18,7 +18,7 @@ const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
     <>
       <Head>
         <title>Images</title>
-        <link rel="icon" href="FinderIcon.png" />
+        <link rel="icon" href="FinderIcon.png"/>
       </Head>
       <main className="mx-auto max-w-[1960px] p-4">
         <Carousel currentPhoto={currentPhoto} index={index} />
