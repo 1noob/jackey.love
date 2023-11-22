@@ -48,13 +48,12 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
               >
                   <Image
                       alt="Next.js Conf photo"
-                      className="brightness-100 mb-0 will-change-auto group-hover:brightness-120"
-                      style={{ transform: 'translate3d(0, 0, 0)' }}
+                      className="brightness-100 mb-0 group-hover:brightness-120"
                       placeholder="blur"
                       blurDataURL={blurDataUrl}
                       src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
-                      width={700}
-                      height={700}
+                      width={7000}
+                      height={7000}
                       sizes="50vw, 25vw, 25vw, 16.6vw, 16.6vw, 11.1vw">
                   </Image>
               </Link>
