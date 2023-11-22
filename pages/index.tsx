@@ -36,7 +36,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
             }}
           />
         )}
-        <div className="columns-2 gap-0 sm:columns-4 md:columns-5 lg:columns-6 xl:columns-6 2xl:columns-9">
+        <div className="columns-2 gap-0 sm:columns-4 md:columns-4 lg:columns-6 xl:columns-6 2xl:columns-9">
           { images.map(({ id, public_id, format, blurDataUrl }) => (
               <Link
                   key={id}
@@ -48,14 +48,14 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
               >
                   <Image
                       alt="Next.js Conf photo"
-                      className="brightness-90 mb-0 will-change-auto group-hover:brightness-110"
+                      className="brightness-100 mb-0 will-change-auto group-hover:brightness-120"
                       style={{ transform: 'translate3d(0, 0, 0)' }}
                       placeholder="blur"
                       blurDataURL={blurDataUrl}
                       src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
                       width={700}
                       height={700}
-                      sizes="">
+                      sizes="50vw, 25vw, 25vw, 16.6vw, 16.6vw, 11.1vw">
                   </Image>
               </Link>
           ))}
