@@ -36,7 +36,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
             }}
           />
         )}
-        <div className="columns-2 gap-0 sm:columns-4 md:columns-4 lg:columns-6 xl:columns-6 2xl:columns-9">
+        <div className="columns-2 gap-0 sm:columns-4 md:columns-4 lg:columns-6 xl:columns-6">
           { images.map(({ id, public_id, format, blurDataUrl }) => (
               <Link
                   key={id}
@@ -54,7 +54,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                       src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
                       width={7000}
                       height={7000}
-                      sizes="50vw, 25vw, 25vw, 16.6vw, 16.6vw, 11.1vw">
+                      sizes="50vw, 25vw, 25vw, 16.6vw, 16.6vw">
                   </Image>
               </Link>
           ))}
