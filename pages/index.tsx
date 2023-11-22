@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect, useRef } from 'react'
+import {useEffect, useRef, useState} from 'react'
 import Modal from '../components/Modal'
 import cloudinary from '../utils/cloudinary'
 import getBase64ImageUrl from '../utils/generateBlurPlaceholder'
@@ -24,6 +24,22 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
     }
   }, [photoId, lastViewedPhoto, setLastViewedPhoto])
 
+  const [Seconds, setSeconds] = useState(0);
+
+  const max_num = images.length;
+
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSeconds(new Date().getSeconds() % max_num);
+    }, 5000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+
   return (
     <>
       <main className="mx-auto">
@@ -35,8 +51,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             }}
           />
         )}
-        <div className="columns-1 gap-px sm:columns-2 xl:columns-3 2xl:columns-4">
-          {images.map(({ id, public_id, format, blurDataUrl }) => (
+        <div className="columns-2 gap-0 sm:columns-4 md:columns-5 lg:columns-6 xl:columns-6 2xl:columns-9">
+          { images.map(({ id, public_id, format, blurDataUrl }) => (
             <Link
               key={id}
               href={`/?photoId=${id}`}
@@ -45,20 +61,19 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               shallow
               className="after:content group relative block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
             >
-              <Image
-                alt="Next.js Conf photo"
-                className="transform brightness-90 mb-px transition will-change-auto group-hover:brightness-110"
-                style={{ transform: 'translate3d(0, 0, 0)' }}
-                placeholder="blur"
-                blurDataURL={blurDataUrl}
-                src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
-                width={720}
-                height={480}
-                sizes="(max-width: 640px) 100vw,
-                  (max-width: 1280px) 50vw,
-                  (max-width: 1536px) 33vw,
-                  25vw"
-              />
+              <div className={ id === Seconds ? "rotate-y-180": ""}>
+                <Image
+                    alt="Next.js Conf photo"
+                    className="transform brightness-90 mb-0 transition will-change-auto"
+                    style={{ transform: 'translate3d(0, 0, 0)' }}
+                    placeholder="blur"
+                    blurDataURL={blurDataUrl}
+                    src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
+                    width={700}
+                    height={700}
+                    sizes="">
+                </Image>
+              </div>
             </Link>
           ))}
         </div>

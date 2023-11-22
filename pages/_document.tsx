@@ -10,7 +10,6 @@ class MyDocument extends Document {
                 sizes="180x180"
                 href="apple-touch-icon.png"
             />
-            <title>Images</title>
             <link rel="icon" href="FinderIcon.png" />
         </Head>
         <body className="bg-black antialiased">
