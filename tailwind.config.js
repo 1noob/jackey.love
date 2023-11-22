@@ -43,7 +43,7 @@ module.exports = {
           perspective: '1000px'
         }
       }
-      addUtilities(newUtilities, ['group-hover'])
+      addUtilities(newUtilities)
     })
   ],
 }
