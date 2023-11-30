@@ -11,6 +11,7 @@ class MyDocument extends Document {
                 href="/apple-touch-icon.png"
             />
             <link rel="icon" href="/FinderIcon.png" />
+            <meta name="apple-mobile-web-app-capable" content="yes" />
             <title>Images</title>
         </Head>
         <body className="bg-black antialiased">
