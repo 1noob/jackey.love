@@ -8,9 +8,10 @@ class MyDocument extends Document {
             <link
                 rel="apple-touch-icon"
                 sizes="180x180"
-                href="apple-touch-icon.png"
+                href="/apple-touch-icon.png"
             />
-            <link rel="icon" href="FinderIcon.png" />
+            <link rel="icon" href="/FinderIcon.png" />
+            <title>Images</title>
         </Head>
         <body className="bg-black antialiased">
           <Main />
