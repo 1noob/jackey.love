@@ -8,7 +8,7 @@ class MyDocument extends Document {
             <link
                 rel="apple-touch-icon"
                 sizes="180x180"
-                href="/apple-touch-icon.png"
+                href="/apple-touch-icon.jpeg"
             />
             <link rel="icon" href="/FinderIcon.png" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
