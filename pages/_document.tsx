@@ -9,7 +9,7 @@ class MyDocument extends Document {
             <link rel="icon" href="/FinderIcon.png" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-            <title>Image</title>
+            <title>image - JackeyLove</title>
         </Head>
         <body className="bg-black antialiased">
           <Main />
