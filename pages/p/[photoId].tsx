@@ -17,7 +17,7 @@ const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
   return (
     <>
       <Head>
-        <title>Images</title>
+        <title>Image</title>
         <link rel="icon" href="/FinderIcon.png"/>
       </Head>
       <main className="mx-auto max-w-[1960px] p-4">
