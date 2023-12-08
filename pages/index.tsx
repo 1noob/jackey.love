@@ -17,35 +17,34 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                         2xl:animate-[sc_60s_linear_infinite]"
         >
           <div className="columns-2 gap-0 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 2xl:columns-8">
-            { images.map(({ public_id, format, blurDataUrl }) => (
+            { images.map(({ id, public_id, format, blurDataUrl }) => (
                 <Image
                     alt="Next.js Photo"
-                    className="brightness-100 mb-0"
+                    className={'m-0'}
                     placeholder="blur"
                     blurDataURL={blurDataUrl}
                     src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
                     width={500}
                     height={500}
-                    sizes="50vw, 33.3vw, 25vw, 20vw, 16.6vw">
+                >
                 </Image>
             ))}
           </div>
           <div className="columns-2 gap-0 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 2xl:columns-8">
-          { images.map(({ public_id, format, blurDataUrl }) => (
+          { images.map(({ id, public_id, format, blurDataUrl }) => (
               <Image
                   alt="Next.js Photo"
-                  className="brightness-100 mb-0"
+                  className={'m-0'}
                   placeholder="blur"
                   blurDataURL={blurDataUrl}
                   src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
                   width={500}
                   height={500}
-                  sizes="50vw, 33.3vw, 25vw, 20vw, 16.6vw">
+              >
               </Image>
           ))}
         </div>
         </div>
-
       </main>
     </>
   )
@@ -57,20 +56,19 @@ export async function getStaticProps() {
   const results = await cloudinary.v2.search
     .expression(`folder:${process.env.CLOUDINARY_FOLDER}/*`)
     .sort_by('public_id', 'desc')
-    .max_results(400)
+    .max_results(480)
     .execute()
   let reducedResults: ImageProps[] = []
 
-  let i = 0
+  let cnt = 0;
   for (let result of results.resources) {
     reducedResults.push({
-      id: i,
+      id: cnt++,
       height: result.height,
       width: result.width,
       public_id: result.public_id,
       format: result.format,
     })
-    i++
   }
 
 
@@ -83,10 +81,10 @@ export async function getStaticProps() {
     reducedResults[i].blurDataUrl = imagesWithBlurDataUrls[i]
   }
 
-  let len = reducedResults.length
-  while (len<120){
-    reducedResults.push(reducedResults.at(Math.random()*1118%len))
-    len++
+  for (let i = reducedResults.length; i < 120; i++) {
+    let tmp = reducedResults.at(Math.random()*1118%i)
+    tmp.id = cnt++;
+    reducedResults.push(tmp)
   }
 
   return {
