@@ -19,7 +19,41 @@ module.exports = {
         wide: { raw: '(min-aspect-ratio: 3 / 2)' },
         'taller-than-854': { raw: '(min-height: 854px)' },
       },
+      keyframes: {
+        sc: {
+          '0%': { transform: 'translate(0px, 0%)' },
+          '100%': { transform: 'translate(0px, -50%)' },
+        }
+      },
+      animation: {
+        sc_30: 'sc 30s linear infinite',
+        sc_60: 'sc 60s linear infinite',
+        sc_90: 'sc 90s linear infinite',
+        sc_120: 'sc 120s linear infinite',
+        sc_150: 'sc 150s linear infinite',
+        sc_180: 'sc 180s linear infinite',
+        sc_210: 'sc 210s linear infinite',
+      }
     },
+  },
+  screens: {
+    // iPhoneX: 375
+    'sm': {'min': '400px'},
+    // => @media (min-width: 640px and max-width: 767px) { ... }
+
+    'md': {'min': '768px'},
+    // => @media (min-width: 768px and max-width: 1023px) { ... }
+
+    // iPadAir: 768
+    'lg': {'min': '768px'},
+    // => @media (min-width: 1024px and max-width: 1279px) { ... }
+
+    // iPadPro
+    'xl': {'min': '1024px'},
+    // => @media (min-width: 1280px and max-width: 1535px) { ... }
+
+    '2xl': {'min': '1536px'},
+    // => @media (min-width: 1536px) { ... }
   },
   plugins: [
     plugin(function({ addUtilities }) {

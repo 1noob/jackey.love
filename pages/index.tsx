@@ -1,64 +1,51 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import {useEffect, useRef, useState} from 'react'
-import Modal from '../components/Modal'
 import cloudinary from '../utils/cloudinary'
 import getBase64ImageUrl from '../utils/generateBlurPlaceholder'
 import type { ImageProps } from '../utils/types'
-import { useLastViewedPhoto } from '../utils/useLastViewedPhoto'
 
 const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
 
-  const router = useRouter()
-  const { photoId } = router.query
-  const [lastViewedPhoto, setLastViewedPhoto] = useLastViewedPhoto()
-
-  const lastViewedPhotoRef = useRef<HTMLAnchorElement>(null)
-
-  useEffect(() => {
-    // This effect keeps track of the last viewed photo in the modal to keep the index page in sync when the user navigates back
-    if (lastViewedPhoto && !photoId) {
-      lastViewedPhotoRef.current.scrollIntoView({ block: 'center' })
-      setLastViewedPhoto(null)
-    }
-  }, [photoId, lastViewedPhoto, setLastViewedPhoto])
-
   return (
     <>
-      <main className="mx-auto">
-        {photoId && (
-          <Modal
-            images={images}
-            onClose={() => {
-              setLastViewedPhoto(photoId)
-            }}
-          />
-        )}
-        <div className="columns-2 gap-0 sm:columns-3 md:columns-4 lg:columns-4 xl:columns-6">
-          { images.map(({ id, public_id, format, blurDataUrl }) => (
-              <Link
-                  key={id}
-                  href={`/?photoId=${id}`}
-                  as={`/p/${id}`}
-                  ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
-                  shallow
-                  className="after:content relative group block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
-              >
-                  <Image
-                      alt="Next.js Conf photo"
-                      className="brightness-100 mb-0 group-hover:brightness-120"
-                      placeholder="blur"
-                      blurDataURL={blurDataUrl}
-                      src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
-                      width={7000}
-                      height={7000}
-                      sizes="50vw, 33.3vw, 25vw, 20vw, 16.6vw">
-                  </Image>
-              </Link>
+      <main className="my-auto overflow-hidden max-h-screen">
+        <div className="animate-[sc_210s_linear_infinite]
+                        sm:animate-[sc_180s_linear_infinite]
+                        md:animate-[sc_150s_linear_infinite]
+                        lg:animate-[sc_120s_linear_infinite]
+                        xl:animate-[sc_90s_linear_infinite]
+                        2xl:animate-[sc_60s_linear_infinite]"
+        >
+          <div className="columns-2 gap-0 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 2xl:columns-8">
+            { images.map(({ public_id, format, blurDataUrl }) => (
+                <Image
+                    alt="Next.js Photo"
+                    className="brightness-100 mb-0"
+                    placeholder="blur"
+                    blurDataURL={blurDataUrl}
+                    src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
+                    width={500}
+                    height={500}
+                    sizes="50vw, 33.3vw, 25vw, 20vw, 16.6vw">
+                </Image>
+            ))}
+          </div>
+          <div className="columns-2 gap-0 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 2xl:columns-8">
+          { images.map(({ public_id, format, blurDataUrl }) => (
+              <Image
+                  alt="Next.js Photo"
+                  className="brightness-100 mb-0"
+                  placeholder="blur"
+                  blurDataURL={blurDataUrl}
+                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
+                  width={500}
+                  height={500}
+                  sizes="50vw, 33.3vw, 25vw, 20vw, 16.6vw">
+              </Image>
           ))}
         </div>
+        </div>
+
       </main>
     </>
   )
@@ -86,6 +73,7 @@ export async function getStaticProps() {
     i++
   }
 
+
   const blurImagePromises = results.resources.map((image: ImageProps) => {
     return getBase64ImageUrl(image)
   })
@@ -93,6 +81,12 @@ export async function getStaticProps() {
 
   for (let i = 0; i < reducedResults.length; i++) {
     reducedResults[i].blurDataUrl = imagesWithBlurDataUrls[i]
+  }
+
+  let len = reducedResults.length
+  while (len<120){
+    reducedResults.push(reducedResults.at(Math.random()*1118%len))
+    len++
   }
 
   return {
