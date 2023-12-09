@@ -9,16 +9,17 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
   return (
     <>
       <main className="my-auto overflow-hidden max-h-screen">
-        <div className="animate-[sc_210s_linear_infinite]
-                        sm:animate-[sc_180s_linear_infinite]
-                        md:animate-[sc_150s_linear_infinite]
-                        lg:animate-[sc_120s_linear_infinite]
-                        xl:animate-[sc_90s_linear_infinite]
-                        2xl:animate-[sc_60s_linear_infinite]"
+        <div className="animate-[sc_270s_linear_infinite]
+                        sm:animate-[sc_240s_linear_infinite]
+                        md:animate-[sc_210s_linear_infinite]
+                        lg:animate-[sc_180s_linear_infinite]
+                        xl:animate-[sc_150s_linear_infinite]
+                        2xl:animate-[sc_120s_linear_infinite]"
         >
           <div className="columns-2 gap-0 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 2xl:columns-8">
             { images.map(({ id, public_id, format, blurDataUrl }) => (
                 <Image
+                    key={id}
                     alt="Next.js Photo"
                     className={'m-0'}
                     placeholder="blur"
@@ -33,6 +34,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
           <div className="columns-2 gap-0 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 2xl:columns-8">
           { images.map(({ id, public_id, format, blurDataUrl }) => (
               <Image
+                  key={id}
                   alt="Next.js Photo"
                   className={'m-0'}
                   placeholder="blur"

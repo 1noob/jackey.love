@@ -33,6 +33,8 @@ module.exports = {
         sc_150: 'sc 150s linear infinite',
         sc_180: 'sc 180s linear infinite',
         sc_210: 'sc 210s linear infinite',
+        sc_240: 'sc 240s linear infinite',
+        sc_270: 'sc 270s linear infinite',
       }
     },
   },
