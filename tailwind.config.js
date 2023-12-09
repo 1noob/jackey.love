@@ -25,17 +25,6 @@ module.exports = {
           '100%': { transform: 'translate(0px, -50%)' },
         }
       },
-      animation: {
-        sc_30: 'sc 30s linear infinite',
-        sc_60: 'sc 60s linear infinite',
-        sc_90: 'sc 90s linear infinite',
-        sc_120: 'sc 120s linear infinite',
-        sc_150: 'sc 150s linear infinite',
-        sc_180: 'sc 180s linear infinite',
-        sc_210: 'sc 210s linear infinite',
-        sc_240: 'sc 240s linear infinite',
-        sc_270: 'sc 270s linear infinite',
-      }
     },
   },
   screens: {
@@ -74,6 +63,12 @@ module.exports = {
         },
         '.backface-hidden': {
           backfaceVisibility: 'hidden'
+        },
+        '.flip-3d':{
+          transform: 'rotateY(180deg)',
+          transformStyle: 'preserve-3d',
+          transitionDuration: '1000ms',
+          backfaceVisibility: false
         },
         '.perspective': {
           perspective: '1000px'
