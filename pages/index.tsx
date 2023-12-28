@@ -16,9 +16,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                         2xl:animate-[sc_210s_linear_infinite]"
         >
           <div className="columns-2 gap-0 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 2xl:columns-8">
-            { images.map(({ id, public_id, format }) => (
+            { images.map(({ public_id, format }) => (
                 <Image
-                    key={id}
                     src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
                     width={500}
                 >
@@ -26,9 +25,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
             ))}
           </div>
           <div className="columns-2 gap-0 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 2xl:columns-8">
-            { images.map(({ id, public_id, format }) => (
+            { images.map(({ public_id, format }) => (
                 <Image
-                    key={id}
                     src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
                     width={500}
                 >
@@ -51,10 +49,8 @@ export async function getStaticProps() {
     .execute()
   let reducedResults: ImageProps[] = []
 
-  let cnt = 0;
   for (let result of results.resources) {
     reducedResults.push({
-      id: cnt++,
       height: result.height,
       width: result.width,
       public_id: result.public_id,
@@ -64,7 +60,6 @@ export async function getStaticProps() {
 
   for (let i = reducedResults.length; i < 120; i++) {
     let tmp = reducedResults.at(Math.random()*1118%i)
-    tmp.id = cnt++;
     reducedResults.push(tmp)
   }
 
