@@ -20,7 +20,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
                   <title>JackeyLove</title>
               </Head>
-              <NextThemesProvider attribute="class" defaultTheme="dark">
+              <NextThemesProvider attribute="class" defaultTheme="system">
                   <Component {...pageProps}/>
               </NextThemesProvider>
           </NextUIProvider>
