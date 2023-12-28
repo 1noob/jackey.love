@@ -76,8 +76,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                               <div
                                   className={clsx(
                                       'mt-4',
-                                      'text-gray-600',
-                                      'dark:text-gray-300',
                                   )}
                               >
                                 &mdash; {item.name}, {item.title}, {item.company}
