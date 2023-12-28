@@ -20,8 +20,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                 <Image
                     src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
                     width={500}
-                >
-                </Image>
+                />
             ))}
           </div>
           <div className="columns-2 gap-0 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 2xl:columns-8">
@@ -29,8 +28,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                 <Image
                     src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
                     width={500}
-                >
-                </Image>
+                />
             ))}
           </div>
         </div>
