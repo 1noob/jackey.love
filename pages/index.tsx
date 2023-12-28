@@ -49,7 +49,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
             <section className="flex flex-col gap-y-8">
               <AnimatePresence initial={false}>
                 {pageData.recommendations
-                    .slice(0, viewAllRecs ? pageData.recommendations.length : 2)
+                    .slice(0, viewAllRecs ? pageData.recommendations.length : 1)
                     .map((item, index) => {
                       return (
                           <motion.div
