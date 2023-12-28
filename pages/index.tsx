@@ -1,14 +1,13 @@
 import type { NextPage } from 'next'
-import Image from 'next/image'
 import cloudinary from '../utils/cloudinary'
-import getBase64ImageUrl from '../utils/generateBlurPlaceholder'
 import type { ImageProps } from '../utils/types'
+import {Image} from "@nextui-org/react";
 
 const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
 
   return (
     <>
-      <main className="my-auto overflow-hidden max-h-screen">
+      <main className="my-auto overflow-hidden scroll-smooth max-h-screen">
         <div className="animate-[sc_360s_linear_infinite]
                         sm:animate-[sc_330s_linear_infinite]
                         md:animate-[sc_300s_linear_infinite]
@@ -17,35 +16,25 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                         2xl:animate-[sc_210s_linear_infinite]"
         >
           <div className="columns-2 gap-0 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 2xl:columns-8">
-            { images.map(({ id, public_id, format, blurDataUrl }) => (
+            { images.map(({ id, public_id, format }) => (
                 <Image
                     key={id}
-                    alt="Next.js Photo"
-                    className={''}
-                    placeholder="blur"
-                    blurDataURL={blurDataUrl}
                     src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
                     width={500}
-                    height={500}
                 >
                 </Image>
             ))}
           </div>
           <div className="columns-2 gap-0 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 2xl:columns-8">
-          { images.map(({ id, public_id, format, blurDataUrl }) => (
-              <Image
-                  key={id}
-                  alt="Next.js Photo"
-                  className={''}
-                  placeholder="blur"
-                  blurDataURL={blurDataUrl}
-                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
-                  width={500}
-                  height={500}
-              >
-              </Image>
-          ))}
-        </div>
+            { images.map(({ id, public_id, format }) => (
+                <Image
+                    key={id}
+                    src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
+                    width={500}
+                >
+                </Image>
+            ))}
+          </div>
         </div>
       </main>
     </>
@@ -71,16 +60,6 @@ export async function getStaticProps() {
       public_id: result.public_id,
       format: result.format,
     })
-  }
-
-
-  const blurImagePromises = results.resources.map((image: ImageProps) => {
-    return getBase64ImageUrl(image)
-  })
-  const imagesWithBlurDataUrls = await Promise.all(blurImagePromises)
-
-  for (let i = 0; i < reducedResults.length; i++) {
-    reducedResults[i].blurDataUrl = imagesWithBlurDataUrls[i]
   }
 
   for (let i = reducedResults.length; i < 120; i++) {

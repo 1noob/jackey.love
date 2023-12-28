@@ -1,4 +1,5 @@
 const plugin = require('tailwindcss/plugin')
+const {nextui} = require("@nextui-org/react");
 
 module.exports = {
   future: {
@@ -8,6 +9,7 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -47,6 +49,7 @@ module.exports = {
     // => @media (min-width: 1536px) { ... }
   },
   plugins: [
+    nextui(),
     plugin(function({ addUtilities }) {
       const newUtilities = {
         '.rotate-y-0': {
