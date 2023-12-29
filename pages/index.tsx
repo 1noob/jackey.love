@@ -26,27 +26,25 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
       <main className={`justify-center ${jetbrainsMono.variable} font-mono`}>
         <div className="absolute w-full z-10 h-dvh place-content-center grid">
           <div className={'backdrop-blur-2xl rounded-none lg:rounded-lg content'}>
-            <ScrollShadow hideScrollBar size={0} className="w-full grid gap-12 scroll-smooth md:max-h-[928px] mobile:h-dvh">
+            <ScrollShadow hideScrollBar size={0} className="grid gap-8 scroll-smooth md:max-h-[52rem] mobile:h-dvh">
               <section>
-                <div className="relative float-right w-full md:w-3/5 mb-8 inline-flex rounded-lg overflow-hidden">
+                <div className="relative float-right w-full md:w-3/5 mb-8 rounded-lg overflow-hidden">
                   <Image
                       radius={"none"}
                       src="/img/handwrite.jpeg"
-                      width={2080}
-                      height={2880}
                   />
                 </div>
-                <div className="lg:tracking-widest">
-                  <div> JackeyLove - 喻文波 </div><br/>
-                  <div> 2000/11/18，ADC，TES</div><br/>
+                <div className="lg:tracking-widest flex flex-col mobile:w-full gap-y-[1.5rem]">
+                  <div> JackeyLove - 喻文波 </div>
+                  <div> 2000/11/18，ADC，TES</div>
                   <div>
-                    <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-0 gap-y-2 md:gap-y-4">
+                    <div className="grid grid-cols-2 md:grid-cols-1 gap-x-0 gap-y-2 md:gap-y-4">
                       {pageData.awards.map((item, index) => (
                           <li key={index}>
-                            &bull;{" "}{item}
+                            {item}
                           </li>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -109,26 +107,26 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
             </ScrollShadow>
           </div>
         </div>
-        <div className="mobile:hidden my-auto overflow-hidden max-w-full z-0 h-dvh grid place-content-center">
+        <div className="mobile:hidden my-auto overflow-hidden w-full h-dvh z-0 grid content-center">
           <div className="animate-[scy_120s_linear_infinite] w-max grayscale-[33%]">
-            <div className="float-left grid grid-rows-8 grid-flow-col">
-              { images.map(({ public_id, format }) => (
-                  <Image
-                      radius="none"
-                      src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_50/${public_id}.${format}`}
-                      width={200}
-                  />
-              ))}
-            </div>
-            <div className="grid grid-rows-8 grid-flow-col">
-              { images.map(({ public_id, format }) => (
-                  <Image
-                      radius="none"
-                      src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_50/${public_id}.${format}`}
-                      width={200}
-                  />
-              ))}
-            </div>
+              <div className="float-left grid grid-rows-8 grid-flow-col">
+                { images.map(({ public_id, format }) => (
+                    <Image
+                        radius="none"
+                        src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_50/${public_id}.${format}`}
+                        width={200}
+                    />
+                ))}
+              </div>
+              <div className="grid grid-rows-8 grid-flow-col">
+                { images.map(({ public_id, format }) => (
+                    <Image
+                        radius="none"
+                        src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_50/${public_id}.${format}`}
+                        width={200}
+                    />
+                ))}
+              </div>
           </div>
         </div>
       </main>

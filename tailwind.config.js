@@ -27,7 +27,7 @@ module.exports = {
         'taller-than-854': { raw: '(min-height: 854px)' },
 
         // mobile
-        'mobile':{'max': '768px'},
+        'mobile':{'max': '767px'},
 
         // iPhoneX: 375x812
         'sm': {'min': '376px'},
