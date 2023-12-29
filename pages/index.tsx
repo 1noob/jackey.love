@@ -23,79 +23,79 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
     <>
       <main className={`justify-center ${jetbrainsMono.variable} font-mono`}>
         <div className="absolute w-full z-10">
-          <ScrollShadow hideScrollBar size={0} className={'scroll-smooth w-full backdrop-blur-2xl rounded-none lg:rounded-lg content grid gap-12'}>
-            <section>
-              <div className="relative float-right w-full md:w-3/5 mb-8 inline-flex rounded-md overflow-hidden">
-                <Image
-                    src="/img/handwrite.jpeg"
-                    width={2080}
-                    height={2880}
-                />
-              </div>
-              <div className="lg:tracking-widest">
-                <div> JackeyLove - 喻文波 </div><br/>
-                <div> 2000/11/18，ADC，TES</div><br/>
-                <div>
-                  <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-0 gap-y-2 md:gap-y-4">
-                    {pageData.awards.map((item, index) => (
-                        <li key={index}>
-                          &bull;{" "}{item}
-                        </li>
-                    ))}
-                  </ul>
+          <div className={'backdrop-blur-2xl rounded-none lg:rounded-lg content grid gap-12'}>
+            <ScrollShadow hideScrollBar size={0} className="w-full grid gap-12 scroll-smooth">
+              <section>
+                <div className="relative float-right w-full md:w-3/5 mb-8 inline-flex rounded-md overflow-hidden">
+                  <Image
+                      src="/img/handwrite.jpeg"
+                      width={2080}
+                      height={2880}
+                  />
                 </div>
-              </div>
-            </section>
-            <section className="flex flex-col gap-y-8">
-              <AnimatePresence initial={false}>
-                {pageData.recommendations
-                    .slice(0, viewAllRecs ? pageData.recommendations.length : 1)
-                    .map((item, index) => {
-                      return (
-                          <motion.div
-                              key={index}
-                              className="flex flex-col md:flex-row"
-                              initial={{ opacity: 0, y: 100, scale: 0.9 }}
-                              animate={{ opacity: 1, y: 0, scale: 1 }}
-                              transition={{
-                                duration: shouldReduceMotion ? 0 : 0.2,
-                              }}
-                          >
-                            <div className="w-28 flex-shrink-0">
-                              <div className="mb-4">
-                                <Image
-                                    src={item.thumbnail}
-                                    width={48}
-                                    height={48}
-                                    className="rounded-md w-full block"
-                                />
-                              </div>
-                            </div>
-                            <div className="flex-1">
-                              <div style={{ textIndent: '-.65rem' }}>“{item.text}”</div>
-                              <div
-                                  className={clsx(
-                                      'mt-4',
-                                  )}
-                              >
-                                &mdash; {item.name}, {item.title}, {item.company}
-                              </div>
-                            </div>
-                          </motion.div>
-                      );
-                    })}
-              </AnimatePresence>
-              {!viewAllRecs && (
-                  <div className="mx-auto text-center">
-                    <Button radius="full"
-                            className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"
-                            onClick={() => setViewAllRecs(true)} size="sm">
-                            More
-                    </Button>
+                <div className="lg:tracking-widest">
+                  <div> JackeyLove - 喻文波 </div><br/>
+                  <div> 2000/11/18，ADC，TES</div><br/>
+                  <div>
+                    <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-0 gap-y-2 md:gap-y-4">
+                      {pageData.awards.map((item, index) => (
+                          <li key={index}>
+                            &bull;{" "}{item}
+                          </li>
+                      ))}
+                    </ul>
                   </div>
-              )}
-            </section>
-          </ScrollShadow>
+                </div>
+              </section>
+              <section className="flex flex-col gap-y-8">
+                <AnimatePresence initial={false}>
+                  {pageData.recommendations
+                      .slice(0, viewAllRecs ? pageData.recommendations.length : 1)
+                      .map((item, index) => {
+                        return (
+                            <motion.div
+                                key={index}
+                                className="flex flex-col md:flex-row"
+                                initial={{ opacity: 0, y: 100, scale: 0.9 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                transition={{
+                                  duration: shouldReduceMotion ? 0 : 0.2,
+                                }}
+                            >
+                              <div className="w-28 flex-shrink-0">
+                                <div className="mb-4">
+                                  <Image
+                                      src={item.thumbnail}
+                                      width={48}
+                                      height={48}
+                                      className="rounded-md w-full block"
+                                  />
+                                </div>
+                              </div>
+                              <div className="flex-1">
+                                <div style={{ textIndent: '-.65rem' }}>“{item.text}”</div>
+                                <div
+                                    className={clsx(
+                                        'mt-4',
+                                    )}
+                                >
+                                  &mdash; {item.name}, {item.title}, {item.company}
+                                </div>
+                              </div>
+                            </motion.div>
+                        );
+                      })}
+                </AnimatePresence>
+                {!viewAllRecs && (
+                    <Button radius="full"
+                      className="mx-auto bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"
+                      onClick={() => setViewAllRecs(true)} size="sm">
+                      More
+                    </Button>
+                )}
+              </section>
+            </ScrollShadow>
+          </div>
         </div>
         <div className="mobile:hidden my-auto overflow-hidden max-w-full z-0 h-dvh">
           <div className="animate-[scy_120s_linear_infinite] w-max grayscale-[33%]">
