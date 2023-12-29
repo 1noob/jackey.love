@@ -23,9 +23,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
     <>
       <main className={`justify-center ${jetbrainsMono.variable} font-mono`}>
         <div className="absolute w-full z-10">
-          <ScrollShadow hideScrollBar size={0} className={'scroll-smooth w-full backdrop-blur-2xl lg:rounded-lg content grid gap-12'}>
+          <ScrollShadow hideScrollBar size={0} className={'scroll-smooth w-full backdrop-blur-2xl rounded-none lg:rounded-lg content grid gap-12'}>
             <section>
-              <div className="relative float-right w-full lg:w-3/5  mb-4 md:mb-8 inline-flex rounded-md overflow-hidden">
+              <div className="relative float-right w-full md:w-3/5 mb-8 inline-flex rounded-md overflow-hidden">
                 <Image
                     src="/img/handwrite.jpeg"
                     width={2080}
@@ -36,7 +36,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                 <div> JackeyLove - 喻文波 </div><br/>
                 <div> 2000/11/18，ADC，TES</div><br/>
                 <div>
-                  <ul className="grid grid-cols-2 lg:grid-cols-1 gap-x-0 gap-y-2 lg:gap-y-4">
+                  <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-0 gap-y-2 md:gap-y-4">
                     {pageData.awards.map((item, index) => (
                         <li key={index}>
                           &bull;{" "}{item}
@@ -86,7 +86,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                     })}
               </AnimatePresence>
               {!viewAllRecs && (
-                  <div className="mt-8 mx-auto text-center">
+                  <div className="mx-auto text-center">
                     <Button radius="full"
                             className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"
                             onClick={() => setViewAllRecs(true)} size="sm">
@@ -97,7 +97,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
             </section>
           </ScrollShadow>
         </div>
-        <div className="my-auto overflow-hidden max-w-full z-0 h-dvh">
+        <div className="mobile:hidden my-auto overflow-hidden max-w-full z-0 h-dvh">
           <div className="animate-[scy_120s_linear_infinite] w-max">
             <div className="float-left grid grid-rows-8 grid-flow-col">
               { images.map(({ public_id, format }) => (

@@ -9,5 +9,5 @@
 }
 
 .content{
-  @apply h-dvh mx-auto max-w-[800px] w-full px-4 py-8 md:p-8 lg:p-16 flex flex-col text-xs md:text-base font-black tracking-wider;
+  @apply h-dvh mx-auto max-w-[768px] w-full p-4 pb-8 md:p-12 flex flex-col text-xs sm:text-sm md:text-base font-black tracking-wider;
 }

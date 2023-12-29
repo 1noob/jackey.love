@@ -25,23 +25,22 @@ module.exports = {
         narrow: { raw: '(max-aspect-ratio: 3 / 2)' },
         wide: { raw: '(min-aspect-ratio: 3 / 2)' },
         'taller-than-854': { raw: '(min-height: 854px)' },
+
+        // mobile
+        'mobile':{'max': '767px'},
+
         // iPhoneX: 375
-        'sm': {'min': '400px'},
-        // => @media (min-width: 640px and max-width: 767px) { ... }
+        'sm': {'min': '376px'},
 
-        'md': {'min': '550px'},
-        // => @media (min-width: 768px and max-width: 1023px) { ... }
+        // iPad Mini: 768
+        'md': {'min': '768px'},
 
-        // iPadAir: 768
-        'lg': {'min': '768px'},
-        // => @media (min-width: 1024px and max-width: 1279px) { ... }
+        // iPad Pro: 1024
+        'lg': {'min': '1024px'},
 
-        // iPadPro
-        'xl': {'min': '1024px'},
-        // => @media (min-width: 1280px and max-width: 1535px) { ... }
+        'xl': {'min': '1280px'},
 
         '2xl': {'min': '1536px'},
-        // => @media (min-width: 1536px) { ... }
       },
       keyframes: {
         scx: {
@@ -58,25 +57,6 @@ module.exports = {
         }
       },
     },
-  },
-  screens: {
-    // iPhoneX: 375
-    'sm': {'min': '400px'},
-    // => @media (min-width: 640px and max-width: 767px) { ... }
-
-    'md': {'min': '768px'},
-    // => @media (min-width: 768px and max-width: 1023px) { ... }
-
-    // iPadAir: 768
-    'lg': {'min': '768px'},
-    // => @media (min-width: 1024px and max-width: 1279px) { ... }
-
-    // iPadPro
-    'xl': {'min': '1024px'},
-    // => @media (min-width: 1280px and max-width: 1535px) { ... }
-
-    '2xl': {'min': '1536px'},
-    // => @media (min-width: 1536px) { ... }
   },
   plugins: [
     nextui(),
