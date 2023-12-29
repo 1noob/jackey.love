@@ -98,7 +98,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
           </ScrollShadow>
         </div>
         <div className="mobile:hidden my-auto overflow-hidden max-w-full z-0 h-dvh">
-          <div className="animate-[scy_120s_linear_infinite] w-max">
+          <div className="animate-[scy_120s_linear_infinite] w-max grayscale-[33%]">
             <div className="float-left grid grid-rows-8 grid-flow-col">
               { images.map(({ public_id, format }) => (
                   <Image
