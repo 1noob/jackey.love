@@ -23,7 +23,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
     <>
       <main className={`justify-center ${jetbrainsMono.variable} font-mono`}>
         <div className="absolute w-full z-10">
-          <div className={'backdrop-blur-2xl rounded-none lg:rounded-lg content grid gap-12'}>
+          <div className={'backdrop-blur-2xl rounded-none lg:rounded-lg content'}>
             <ScrollShadow hideScrollBar size={0} className="w-full grid gap-12 scroll-smooth">
               <section>
                 <div className="relative float-right w-full md:w-3/5 mb-8 inline-flex rounded-md overflow-hidden">
