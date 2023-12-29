@@ -27,9 +27,9 @@ module.exports = {
         'taller-than-854': { raw: '(min-height: 854px)' },
 
         // mobile
-        'mobile':{'max': '767px'},
+        'mobile':{'max': '768px'},
 
-        // iPhoneX: 375
+        // iPhoneX: 375x812
         'sm': {'min': '376px'},
 
         // iPad Mini: 768
@@ -59,6 +59,25 @@ module.exports = {
     },
   },
   plugins: [
-    nextui(),
+    nextui({
+      addCommonColors: true,
+      themes: {
+        light: {
+          colors: {
+            danger:{
+              DEFAULT:"#eb1b2e"
+            }
+            // ... rest of the colors
+          },
+        },
+        dark: {
+          colors: {
+            danger:{
+              DEFAULT:"#eb1b2e"
+            }
+          },
+          // ... rest of the colors
+        },
+    }}),
   ],
 }

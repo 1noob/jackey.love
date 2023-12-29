@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import cloudinary from '../utils/cloudinary'
 import type { ImageProps } from '../utils/types'
-import {Image} from "@nextui-org/react";
+import {Badge, Image} from "@nextui-org/react";
 import {AnimatePresence, motion, useReducedMotion} from 'framer-motion';
 import {Button} from "@nextui-org/react";
 import React from "react";
@@ -19,15 +19,18 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
   const [viewAllRecs, setViewAllRecs] = React.useState(false);
   const shouldReduceMotion = useReducedMotion();
 
+  const slice_len = 1;
+
   return (
     <>
       <main className={`justify-center ${jetbrainsMono.variable} font-mono`}>
-        <div className="absolute w-full z-10">
+        <div className="absolute w-full z-10 h-dvh place-content-center grid">
           <div className={'backdrop-blur-2xl rounded-none lg:rounded-lg content'}>
-            <ScrollShadow hideScrollBar size={0} className="w-full grid gap-12 scroll-smooth">
+            <ScrollShadow hideScrollBar size={0} className="w-full grid gap-12 scroll-smooth md:max-h-[928px] mobile:h-dvh">
               <section>
-                <div className="relative float-right w-full md:w-3/5 mb-8 inline-flex rounded-md overflow-hidden">
+                <div className="relative float-right w-full md:w-3/5 mb-8 inline-flex rounded-lg overflow-hidden">
                   <Image
+                      radius={"none"}
                       src="/img/handwrite.jpeg"
                       width={2080}
                       height={2880}
@@ -47,10 +50,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                   </div>
                 </div>
               </section>
-              <section className="flex flex-col gap-y-8">
+              <section className="flex flex-col gap-y-9">
                 <AnimatePresence initial={false}>
                   {pageData.recommendations
-                      .slice(0, viewAllRecs ? pageData.recommendations.length : 1)
+                      .slice(0, viewAllRecs ? pageData.recommendations.length : slice_len)
                       .map((item, index) => {
                         return (
                             <motion.div
@@ -87,11 +90,17 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                       })}
                 </AnimatePresence>
                 {!viewAllRecs && (
-                    <Button radius="full"
-                      className="mx-auto bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"
-                      onClick={() => setViewAllRecs(true)} size="sm">
-                      More
-                    </Button>
+                    <div className={"mx-auto text-white"}>
+                      <Badge
+                          content={pageData.recommendations.length-slice_len} color="danger" variant="solid" showOutline={false}
+                      >
+                        <Button radius="full"
+                                className="bg-black/20 shadow-lg"
+                                onClick={() => setViewAllRecs(true)} size="sm">
+                          More
+                        </Button>
+                      </Badge>
+                    </div>
                 )}
               </section>
             </ScrollShadow>
