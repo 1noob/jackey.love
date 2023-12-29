@@ -92,10 +92,13 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                 {!viewAllRecs && (
                     <div className={"mx-auto text-white"}>
                       <Badge
-                          content={pageData.recommendations.length-slice_len} color="danger" variant="solid" showOutline={false}
+                          content={pageData.recommendations.length-slice_len}
+                          color="danger"
+                          variant="solid"
+                          showOutline={false}
                       >
                         <Button radius="full"
-                                className="bg-black/20 shadow-lg"
+                                className="bg-black/20 dark:bg-white/20 shadow-lg"
                                 onClick={() => setViewAllRecs(true)} size="sm">
                           More
                         </Button>
