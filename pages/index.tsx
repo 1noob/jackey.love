@@ -32,7 +32,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                     height={2880}
                 />
               </div>
-              <div className="font-black lg:tracking-widest">
+              <div className="lg:tracking-widest">
                 <div> JackeyLove - 喻文波 </div><br/>
                 <div> 2000/11/18，ADC，TES</div><br/>
                 <div>
@@ -103,7 +103,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
               { images.map(({ public_id, format }) => (
                   <Image
                       radius="none"
-                      src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
+                      src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_50/${public_id}.${format}`}
                       width={200}
                   />
               ))}
@@ -112,7 +112,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
               { images.map(({ public_id, format }) => (
                   <Image
                       radius="none"
-                      src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto/${public_id}.${format}`}
+                      src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_50/${public_id}.${format}`}
                       width={200}
                   />
               ))}
