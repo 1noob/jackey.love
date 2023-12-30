@@ -34,7 +34,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                       src="/img/handwrite.jpeg"
                   />
                 </div>
-                <div className="lg:tracking-widest flex flex-col mobile:w-full gap-y-[1.5rem]">
+                <div className="md:tracking-widest flex flex-col mobile:w-full gap-y-6">
                   <div> JackeyLove - 喻文波 </div>
                   <div> 2000/11/18，ADC，TES</div>
                   <div>
