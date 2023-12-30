@@ -89,12 +89,11 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                           content={pageData.recommendations.length-slice_len}
                           color="danger"
                           variant="solid"
-                          showOutline={false}
-                      >
+                          showOutline={false}>
                         <Button radius="full"
                                 className="bg-black/20 dark:bg-white/20 shadow-lg"
                                 onClick={() => setViewAllRecs(true)} size="sm">
-                          More
+                                &bull;&bull;&bull;
                         </Button>
                       </Badge>
                     </div>
