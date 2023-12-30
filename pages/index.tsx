@@ -19,7 +19,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
   const shouldReduceMotion = useReducedMotion();
 
   const slice_len = 1;
-  const image_len = 120;
+  const image_len = 240;
 
   for (let i = images.length; i < image_len; i++) {
     let rand_id = Math.floor(Math.random()*i);
@@ -109,7 +109,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
           </div>
         </div>
         <div className="mobile:hidden my-auto overflow-hidden w-full h-dvh z-0 grid content-center">
-          <div className="animate-[scy_120s_linear_infinite] w-max grayscale-[33%]">
+          <div className="animate-[scy_180s_linear_infinite] w-max grayscale-[33%]">
               <div className="float-left grid grid-rows-8 grid-flow-col">
                 { images.map(({public_id, format }) => (
                     <Image
