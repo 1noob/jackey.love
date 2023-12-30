@@ -5,7 +5,6 @@ import {Badge, Image} from "@nextui-org/react";
 import {AnimatePresence, motion, useReducedMotion} from 'framer-motion';
 import {Button} from "@nextui-org/react";
 import React from "react";
-import clsx from 'clsx';
 import {JetBrains_Mono} from "next/font/google";
 import {ScrollShadow} from "@nextui-org/react";
 
@@ -20,6 +19,12 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
   const shouldReduceMotion = useReducedMotion();
 
   const slice_len = 1;
+  const image_len = 120;
+
+  for (let i = images.length; i < image_len; i++) {
+    let rand_id = Math.floor(Math.random()*i);
+    images.push(images.at(rand_id));
+  }
 
   return (
     <>
@@ -106,8 +111,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
         <div className="mobile:hidden my-auto overflow-hidden w-full h-dvh z-0 grid content-center">
           <div className="animate-[scy_120s_linear_infinite] w-max grayscale-[33%]">
               <div className="float-left grid grid-rows-8 grid-flow-col">
-                { images.map(({ public_id, format }) => (
+                { images.map(({public_id, format }) => (
                     <Image
+                        key={crypto.randomUUID()}
                         radius="none"
                         src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_50/${public_id}.${format}`}
                         width={200}
@@ -115,8 +121,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                 ))}
               </div>
               <div className="grid grid-rows-8 grid-flow-col">
-                { images.map(({ public_id, format }) => (
+                { images.map(({public_id, format }) => (
                     <Image
+                        key={crypto.randomUUID()}
                         radius="none"
                         src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_50/${public_id}.${format}`}
                         width={200}
@@ -147,11 +154,6 @@ export async function getStaticProps() {
       public_id: result.public_id,
       format: result.format,
     })
-  }
-
-  for (let i = reducedResults.length; i < 120; i++) {
-    let tmp = reducedResults.at(Math.random()*1118%i)
-    reducedResults.push(tmp)
   }
 
   return {
