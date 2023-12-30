@@ -74,12 +74,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                                 </div>
                               </div>
                               <div className="flex-1">
-                                <div style={{ textIndent: '-.65rem' }}>“{item.text}”</div>
-                                <div
-                                    className={clsx(
-                                        'mt-4',
-                                    )}
-                                >
+                                <div className={"md:indent-[-0.65rem]"}>“{item.text}”</div>
+                                <div className={"mt-4"}>
                                   &mdash; {item.name}, {item.title}, {item.company}
                                 </div>
                               </div>
