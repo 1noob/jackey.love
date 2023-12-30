@@ -13,18 +13,13 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const slice_len = 1;
+const image_len = 240;
+
 const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
 
   const [viewAllRecs, setViewAllRecs] = React.useState(false);
   const shouldReduceMotion = useReducedMotion();
-
-  const slice_len = 1;
-  const image_len = 240;
-
-  for (let i = images.length; i < image_len; i++) {
-    let rand_id = Math.floor(Math.random()*i);
-    images.push(images.at(rand_id));
-  }
 
   return (
     <>
@@ -113,7 +108,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
               <div className="float-left grid grid-rows-8 grid-flow-col">
                 { images.map(({public_id, format }) => (
                     <Image
-                        key={crypto.randomUUID()}
                         radius="none"
                         src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_50/${public_id}.${format}`}
                         width={200}
@@ -123,7 +117,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
               <div className="grid grid-rows-8 grid-flow-col">
                 { images.map(({public_id, format }) => (
                     <Image
-                        key={crypto.randomUUID()}
                         radius="none"
                         src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_50/${public_id}.${format}`}
                         width={200}
@@ -143,7 +136,7 @@ export async function getStaticProps() {
   const results = await cloudinary.v2.search
     .expression(`folder:${process.env.CLOUDINARY_FOLDER}/*`)
     .sort_by('public_id', 'desc')
-    .max_results(480)
+    .max_results(image_len)
     .execute()
   let reducedResults: ImageProps[] = []
 
@@ -154,6 +147,11 @@ export async function getStaticProps() {
       public_id: result.public_id,
       format: result.format,
     })
+  }
+
+  for (let i = reducedResults.length; i < image_len; i++) {
+    let rand_id = Math.floor(Math.random()*i);
+    reducedResults.push(reducedResults.at(rand_id));
   }
 
   return {
