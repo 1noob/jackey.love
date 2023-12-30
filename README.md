@@ -1,1 +1,8 @@
-www.jackey.love
+# JackeyLove
+
+```
+pnpm i
+
+pnpm run dev
+```
+

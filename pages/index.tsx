@@ -84,7 +84,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                       })}
                 </AnimatePresence>
                 {!viewAllRecs && (
-                    <div className={"my-5 mx-auto text-white"}>
+                    <div className={"my-[1.15rem] mx-auto text-white"}>
                       <Badge
                           content={pageData.recommendations.length-slice_len}
                           color="danger"
