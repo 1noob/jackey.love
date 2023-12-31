@@ -35,7 +35,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                       src="/img/handwrite.jpeg"
                   />
                 </div>
-                <div className="grid w-[40%] mobile:w-full gap-y-7 mobile:pt-7">
+                <div className="grid w-[50%] mobile:w-full gap-y-7 mobile:pt-7">
                   <div className={"grid gap-y-2"}>
                     <h1> JackeyLove (喻文波)</h1>
                     <Table hideHeader removeWrapper>
@@ -81,38 +81,24 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                     </Table>
                   </div>
                   <Divider className="my-4 md:hidden" />
-                  <div className={"grid gap-y-2"}>
+                  <div className={"grid gap-y-4"}>
                     <h1> Team History </h1>
-                    <Table hideHeader removeWrapper>
-                      <TableHeader>
-                        <TableColumn>1</TableColumn>
-                        <TableColumn>2</TableColumn>
-                      </TableHeader>
-                      <TableBody>
-                        <TableRow key="1">
-                          <TableCell>Jun,2016 - Apr,2017</TableCell>
-                          <TableCell>IG</TableCell>
-                        </TableRow>
-                        <TableRow key="2">
-                          <TableCell>Apr,2017 - May,2017</TableCell>
-                          <TableCell>YG</TableCell>
-                        </TableRow>
-                        <TableRow key="3">
-                          <TableCell>May,2017 - Nov,2019</TableCell>
-                          <TableCell>IG</TableCell>
-                        </TableRow>
-                        <TableRow key="4">
-                          <TableCell>Apr,2020 - Present</TableCell>
-                          <TableCell>TES</TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
+                    {
+                      pageData.career.map((item, index)=>{
+                        return(
+                            <div className={"grid grid-cols-2 text-sm align-middle px-3 gap-x-4 tracking-tighter"}>
+                              <div >{item.time}</div>
+                              <div >{item.team}</div>
+                            </div>
+                        );
+                      })
+                    }
                   </div>
                 </div>
               </section>
               <Divider className="my-4" />
               <section>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-0 gap-y-2">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-0 gap-y-4">
                   {pageData.awards.map((item, index) => (
                       <li key={index}>
                         {item}
@@ -234,6 +220,24 @@ export async function getStaticProps() {
 }
 
 const pageData = {
+  "career":[
+    {
+      "time": "Jun,2016 - Apr,2017",
+      "team": "Invictus Gaming",
+    },
+    {
+      "time": "Apr,2017 - May,2017",
+      "team": "Young Glory",
+    },
+    {
+      "time": "May,2017 - Nov,2019",
+      "team": "Invictus Gaming",
+    },
+    {
+      "time": "Apr,2020 - Present",
+      "team": "Top E-Sport",
+    },
+  ],
   "awards": [
     "2016NEST全国冠军",
     "2017NEST全国冠军",
