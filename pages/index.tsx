@@ -14,7 +14,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const slice_len = 1;
-const image_len = 240;
+const image_len = 160;
 
 const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
 
