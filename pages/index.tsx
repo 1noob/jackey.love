@@ -87,8 +87,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                       pageData.career.map((item, index)=>{
                         return(
                             <div className={"grid grid-cols-2 text-sm align-middle px-3 gap-x-4 tracking-tighter"}>
-                              <div >{item.time}</div>
                               <div >{item.team}</div>
+                              <div >{item.time}</div>
                             </div>
                         );
                       })
