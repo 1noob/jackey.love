@@ -91,7 +91,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                           variant="solid"
                           showOutline={false}>
                         <Button radius="full"
-                                className="bg-black/20 dark:bg-white/20 shadow-lg"
+                                className="bg-black/20 dark:bg-white/10 shadow-lg"
                                 onClick={() => setViewAllRecs(true)} size="sm">
                                 &bull;&bull;&bull;
                         </Button>
