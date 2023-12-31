@@ -1,12 +1,13 @@
 import type { NextPage } from 'next'
 import cloudinary from '../utils/cloudinary'
 import type { ImageProps } from '../utils/types'
-import {Badge, Image} from "@nextui-org/react";
+import {Badge, Divider, Image, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow} from "@nextui-org/react";
 import {AnimatePresence, motion, useReducedMotion} from 'framer-motion';
 import {Button} from "@nextui-org/react";
 import React from "react";
 import {JetBrains_Mono} from "next/font/google";
 import {ScrollShadow} from "@nextui-org/react";
+import {Chip} from "@nextui-org/chip";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -28,26 +29,98 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
           <div className={'backdrop-blur-2xl rounded-none lg:rounded-lg content'}>
             <ScrollShadow hideScrollBar size={0} className="grid gap-7 scroll-smooth md:max-h-[52rem] mobile:h-dvh">
               <section>
-                <div className="relative float-right w-full md:w-3/5 mb-8 rounded-lg overflow-hidden">
+                <div className="relative float-right w-[50%] mobile:w-full rounded-lg overflow-hidden">
                   <Image
                       radius={"none"}
                       src="/img/handwrite.jpeg"
                   />
                 </div>
-                <div className="md:tracking-widest flex flex-col mobile:w-full gap-y-6">
-                  <div> JackeyLove - 喻文波 </div>
-                  <div> 2000/11/18，ADC，TES</div>
-                  <div>
-                    <div className="grid grid-cols-2 md:grid-cols-1 gap-x-0 gap-y-2 md:gap-y-4">
-                      {pageData.awards.map((item, index) => (
-                          <li key={index}>
-                            {item}
-                          </li>
-                      ))}
-                    </div>
+                <div className="grid w-[40%] mobile:w-full gap-y-7 mobile:pt-7">
+                  <div className={"grid gap-y-2"}>
+                    <h1> JackeyLove (喻文波)</h1>
+                    <Table hideHeader removeWrapper>
+                      <TableHeader>
+                        <TableColumn>1</TableColumn>
+                        <TableColumn>2</TableColumn>
+                      </TableHeader>
+                      <TableBody>
+                        <TableRow key="1">
+                          <TableCell>Team</TableCell>
+                          <TableCell>
+                              <div className={"region-icon text-danger"}>TES</div>
+                              {' '}TES
+                          </TableCell>
+                        </TableRow>
+                        <TableRow key="2">
+                          <TableCell>Nationality</TableCell>
+                          <TableCell>
+                              <div className={"region-icon text-danger"}>CN</div>
+                              {' '}CHINA
+                          </TableCell>
+                        </TableRow>
+                        <TableRow key="3">
+                          <TableCell>Role</TableCell>
+                          <TableCell>
+                              <div className={"region-icon text-blue-700"}>BOT</div>
+                              {' '}ADC
+                          </TableCell>
+                        </TableRow>
+                        <TableRow key="4">
+                          <TableCell>Birthday</TableCell>
+                          <TableCell>Nov,18,2000</TableCell>
+                        </TableRow>
+                        <TableRow key="5">
+                          <TableCell>Status</TableCell>
+                          <TableCell><Chip color="success" variant="shadow">Active</Chip></TableCell>
+                        </TableRow>
+                        <TableRow key="6">
+                          <TableCell>Total Winnings</TableCell>
+                          <TableCell>$768,479</TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                  </div>
+                  <Divider className="my-4 md:hidden" />
+                  <div className={"grid gap-y-2"}>
+                    <h1> Team History </h1>
+                    <Table hideHeader removeWrapper>
+                      <TableHeader>
+                        <TableColumn>1</TableColumn>
+                        <TableColumn>2</TableColumn>
+                      </TableHeader>
+                      <TableBody>
+                        <TableRow key="1">
+                          <TableCell>Jun,2016 - Apr,2017</TableCell>
+                          <TableCell>IG</TableCell>
+                        </TableRow>
+                        <TableRow key="2">
+                          <TableCell>Apr,2017 - May,2017</TableCell>
+                          <TableCell>YG</TableCell>
+                        </TableRow>
+                        <TableRow key="3">
+                          <TableCell>May,2017 - Nov,2019</TableCell>
+                          <TableCell>IG</TableCell>
+                        </TableRow>
+                        <TableRow key="4">
+                          <TableCell>Apr,2020 - Present</TableCell>
+                          <TableCell>TES</TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
                   </div>
                 </div>
               </section>
+              <Divider className="my-4" />
+              <section>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-0 gap-y-2">
+                  {pageData.awards.map((item, index) => (
+                      <li key={index}>
+                        {item}
+                      </li>
+                  ))}
+                </div>
+              </section>
+              <Divider className="my-4" />
               <section className="flex flex-col gap-y-9">
                 <AnimatePresence initial={false}>
                   {pageData.recommendations
@@ -74,7 +147,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                                 </div>
                               </div>
                               <div className="flex-1">
-                                <div className={"md:indent-[-0.65rem]"}>“{item.text}”</div>
+                                <h1 className={"md:indent-[-0.65rem]"}>“{item.text}”</h1>
                                 <div className={"mt-4"}>
                                   &mdash; {item.name}, {item.title}, {item.company}
                                 </div>
@@ -103,7 +176,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
           </div>
         </div>
         <div className="mobile:hidden my-auto overflow-hidden w-full h-dvh z-0 grid content-center">
-          <div className="animate-[scy_120s_linear_infinite] w-max grayscale-[50%]">
+          <div className="animate-[scy_60s_linear_infinite] w-max grayscale-[50%]">
               <div className="float-left grid grid-rows-8 grid-flow-col">
                 { images.map(({public_id, format }) => (
                     <Image
@@ -164,6 +237,8 @@ const pageData = {
   "awards": [
     "2016NEST全国冠军",
     "2017NEST全国冠军",
+    "2018LPL春季赛二阵",
+    "2018LPL夏季赛三阵",
     "2018亚洲对抗赛冠军",
     "2018全球总决赛冠军",
     "2018德玛西亚杯冠军",
@@ -171,9 +246,13 @@ const pageData = {
     "2019LPL春季赛冠军",
     "2020MSC季中杯冠军",
     "2020LPL夏季赛冠军",
+    "2020LPL夏季赛一阵",
     "2020LPL年度最佳ADC",
     "2020德玛西亚杯冠军",
-    "2021德玛西亚杯冠军"
+    "2021德玛西亚杯冠军",
+    "2022LPL夏季赛一阵",
+    "LPL10周年十大选手",
+    "2023LPL夏季赛三阵",
   ],
   "recommendations": [
     {

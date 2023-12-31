@@ -9,5 +9,14 @@
 }
 
 .content{
-  @apply bg-white/20 dark:bg-black/10 subpixel-antialiased mx-auto max-w-3xl min-h-fit p-4 pb-8 md:p-12 flex flex-col text-xs sm:text-sm md:text-base font-black tracking-wider;
+  @apply bg-white/20 dark:bg-black/10 subpixel-antialiased mx-auto max-w-3xl min-h-fit p-4 pb-8 md:p-12 flex flex-col text-xs sm:text-sm md:text-base;
+}
+
+.region-icon {
+  @apply inline-block text-center rotate-180 align-middle leading-3 font-black;
+  writing-mode: vertical-rl;
+}
+
+h1 {
+  @apply font-black
 }
