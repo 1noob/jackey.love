@@ -48,7 +48,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                           <TableCell>Team</TableCell>
                           <TableCell>
                               <div className={"region-icon text-danger"}>TES</div>
-                              {' '}TES
+                              {' '}Top E-Sport
                           </TableCell>
                         </TableRow>
                         <TableRow key="2">
@@ -61,8 +61,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[]}) => {
                         <TableRow key="3">
                           <TableCell>Role</TableCell>
                           <TableCell>
-                              <div className={"region-icon text-blue-700"}>BOT</div>
-                              {' '}ADC
+                              <div className={"region-icon text-blue-700"}>ADC</div>
+                              {' '}Bot Laner
                           </TableCell>
                         </TableRow>
                         <TableRow key="4">
