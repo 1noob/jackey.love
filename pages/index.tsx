@@ -52,7 +52,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     <h1> JackeyLove </h1>
                     <div
                         className={
-                          "grid align-middle px-5 gap-y-4 tracking-tighter"
+                          "grid align-middle px-4 gap-y-4 tracking-tighter"
                         }
                     >
                       <div className={"grid grid-cols-2"}>
@@ -99,7 +99,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     <h1> Team History </h1>
                     <div
                         className={
-                          "grid gap-y-4 px-5 align-middle tracking-tighter"
+                          "grid gap-y-4 px-4 align-middle tracking-tighter"
                         }
                     >
                       {pageData.career.map((item, index) => {
@@ -117,7 +117,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <Divider className="my-4" />
               <section>
                 <h1 className={"md:hidden"}>Awards</h1>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-0 gap-y-4 mobile:text-xs">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-4 mobile:text-xs">
                   {pageData.awards.map((item, index) => (
                     <li key={index}>{item}</li>
                   ))}
