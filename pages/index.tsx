@@ -116,7 +116,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               </section>
               <Divider className="my-4" />
               <section>
-                <h1 className={"md:hidden"}>Awards</h1>
+                <h1>Awards</h1>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 md:gap-x-16 px-3">
                   {pageData.awards.map((item, index) => (
                     <li key={index}>{item}</li>
@@ -125,8 +125,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               </section>
               <Divider className="my-4" />
               <section>
-                <h1 className={"md:hidden"}>Recommendations</h1>
-                <div className="flex flex-col gap-y-8">
+                <h1>Recommendations</h1>
+                <div className="flex flex-col gap-y-8 px-3">
                   <AnimatePresence initial={false}>
                     {pageData.recommendations
                         .slice(
@@ -155,7 +155,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                                   </div>
                                 </div>
                                 <div className="flex-1">
-                                  <div className={"md:indent-[-0.65rem]"}>
+                                  <div className={"indent-[-0.65rem]"}>
                                     “{item.text}”
                                   </div>
                                   <div className={"mt-4"}>
