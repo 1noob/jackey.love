@@ -9,7 +9,7 @@
 }
 
 .content{
-  @apply bg-white/20 dark:bg-black/10 subpixel-antialiased mx-auto max-w-3xl min-h-fit p-4 pb-8 md:p-12 flex flex-col text-xs sm:text-sm md:text-base;
+  @apply bg-white/20 dark:bg-black/10 subpixel-antialiased mx-auto max-w-3xl min-h-fit p-4 pb-8 md:p-12 flex flex-col text-xs sm:text-sm font-bold;
 }
 
 .region-icon {
@@ -18,5 +18,5 @@
 }
 
 h1 {
-  @apply font-black
+  @apply font-black mb-6 text-base;
 }
