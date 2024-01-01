@@ -117,7 +117,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <Divider className="my-4" />
               <section>
                 <h1 className={"md:hidden"}>Awards</h1>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-4 mobile:text-xs">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 md:gap-x-16">
                   {pageData.awards.map((item, index) => (
                     <li key={index}>{item}</li>
                   ))}
