@@ -52,7 +52,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     <h1> JackeyLove </h1>
                     <div
                         className={
-                          "grid align-middle md:px-3 gap-y-4 tracking-tighter"
+                          "grid align-middle px-5 gap-y-4 tracking-tighter"
                         }
                     >
                       <div className={"grid grid-cols-2"}>
@@ -99,7 +99,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     <h1> Team History </h1>
                     <div
                         className={
-                          "grid gap-y-4 md:px-3 align-middle tracking-tighter"
+                          "grid gap-y-4 px-5 align-middle tracking-tighter"
                         }
                     >
                       {pageData.career.map((item, index) => {
