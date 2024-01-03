@@ -42,7 +42,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               className="grid gap-7 scroll-smooth md:max-h-[52rem] mobile:h-dvh"
             >
               <section>
-                <div className="relative float-right w-[50%] mobile:w-full mobile:mb-12 overflow-hidden drop-shadow-md">
+                <div className="relative float-right w-[50%] mobile:w-full mobile:mb-12 overflow-hidden shadow-md">
                   <Image
                       radius={"sm"} src="/img/handwrite.jpeg"
                   />
