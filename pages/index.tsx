@@ -34,18 +34,18 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   return (
     <>
       <main className={`justify-center ${jetbrainsMono.variable} font-mono`}>
-        <div className="absolute w-full z-10 h-dvh place-content-center grid">
-          <div
-            className={"backdrop-blur-2xl rounded-none lg:rounded-lg content"}
-          >
+        <div className="page">
+          <div className={"content"}>
             <ScrollShadow
               hideScrollBar
               size={0}
               className="grid gap-7 scroll-smooth md:max-h-[52rem] mobile:h-dvh"
             >
               <section>
-                <div className="relative float-right w-[50%] mobile:w-full mobile:mb-12 rounded-lg overflow-hidden">
-                  <Image radius={"none"} src="/img/handwrite.jpeg" />
+                <div className="relative float-right w-[50%] mobile:w-full mobile:mb-12 overflow-hidden drop-shadow-md">
+                  <Image
+                      radius={"sm"} src="/img/handwrite.jpeg"
+                  />
                 </div>
                 <div className="grid w-[50%] mobile:w-full gap-y-8">
                   <div>
@@ -167,7 +167,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                         })}
                   </AnimatePresence>
                   {!viewAllRecs && (
-                      <div className={"my-[1.15rem] mx-auto text-white"}>
+                      <div className={"mx-auto text-white"}>
                         <Badge
                             content={pageData.recommendations.length - slice_len}
                             color="danger"
@@ -190,7 +190,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             </ScrollShadow>
           </div>
         </div>
-        <div className="mobile:hidden my-auto overflow-hidden w-full h-dvh z-0 grid content-center">
+        <div className="gallery">
           <div className="animate-[scy_60s_linear_infinite] w-max grayscale-[50%]">
             <div className="float-left grid grid-rows-8 grid-flow-col">
               {images.map(({ public_id, format }) => (

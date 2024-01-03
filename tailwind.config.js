@@ -18,6 +18,10 @@ module.exports = {
       mono: ["JetBrains Mono Web", ...defaultTheme.fontFamily.mono],
     },
     extend: {
+      backgroundColor: {
+        page: "rgba(var(--page))",
+        content: "rgba(var(--content))",
+      },
       boxShadow: {
         highlight: "inset 0 0 0 1px rgba(255, 255, 255, 0.05)",
       },
@@ -40,7 +44,7 @@ module.exports = {
 
         xl: { min: "1280px" },
 
-        "2xl": { min: "1536px" },
+        xxl: { min: "1536px" },
       },
       keyframes: {
         scx: {

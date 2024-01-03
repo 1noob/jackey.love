@@ -9,7 +9,15 @@
 }
 
 .content{
-  @apply bg-white/20 dark:bg-black/10 subpixel-antialiased mx-auto max-w-3xl min-h-fit p-4 pb-8 md:p-12 flex flex-col text-xs sm:text-sm font-bold;
+  @apply bg-content subpixel-antialiased mx-auto max-w-3xl min-h-fit p-4 pb-8 md:p-12 flex flex-col text-xs sm:text-sm font-bold md:backdrop-blur-2xl rounded-lg ;
+}
+
+.page{
+  @apply mobile:bg-page absolute w-full z-10 h-dvh place-content-center grid;
+}
+
+.gallery{
+  @apply mobile:hidden my-auto overflow-hidden w-full h-dvh z-0 grid content-center;
 }
 
 .region-icon {
@@ -19,4 +27,14 @@
 
 h1 {
   @apply font-black mb-6 text-base;
+}
+
+.dark {
+  --page: 23 23 23 / 1;
+  --content: 0 0 0 / 0.1;
+}
+
+.light {
+  --page: 255 255 255 / 1;
+  --content: 255 255 255 / 0.2;
 }
