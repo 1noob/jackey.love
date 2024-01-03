@@ -1,17 +1,7 @@
 import type { NextPage } from "next";
 import cloudinary from "../utils/cloudinary";
 import type { ImageProps } from "../utils/types";
-import {
-  Badge,
-  Divider,
-  Image,
-  Table,
-  TableBody,
-  TableCell,
-  TableColumn,
-  TableHeader,
-  TableRow,
-} from "@nextui-org/react";
+import { Badge, Divider, Image } from "@nextui-org/react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Button } from "@nextui-org/react";
 import React from "react";
@@ -43,23 +33,21 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             >
               <section>
                 <div className="relative float-right w-[50%] mobile:w-full mobile:mb-12 overflow-hidden shadow-md">
-                  <Image
-                      radius={"sm"} src="/img/handwrite.jpeg"
-                  />
+                  <Image radius={"sm"} src="/img/handwrite.jpeg" />
                 </div>
                 <div className="grid w-[50%] mobile:w-full gap-y-8">
                   <div>
                     <h1> JackeyLove </h1>
                     <div
-                        className={
-                          "grid align-middle px-3 gap-y-4 tracking-tighter"
-                        }
+                      className={
+                        "grid align-middle px-3 gap-y-4 tracking-tighter"
+                      }
                     >
                       <div className={"grid grid-cols-2"}>
                         <div>Team</div>
                         <div>
-                          <div className={"region-icon text-danger"}>TES</div> Top
-                          E-Sport
+                          <div className={"region-icon text-danger"}>TES</div>{" "}
+                          Top E-Sport
                         </div>
                       </div>
                       <div className={"grid grid-cols-2"}>
@@ -98,16 +86,16 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <div>
                     <h1> Team History </h1>
                     <div
-                        className={
-                          "grid gap-y-4 px-3 align-middle tracking-tighter"
-                        }
+                      className={
+                        "grid gap-y-4 px-3 align-middle tracking-tighter"
+                      }
                     >
                       {pageData.career.map((item, index) => {
                         return (
-                            <div className={"grid grid-cols-2"}>
-                              <div>{item.team}</div>
-                              <div>{item.time}</div>
-                            </div>
+                          <div className={"grid grid-cols-2"}>
+                            <div>{item.team}</div>
+                            <div>{item.time}</div>
+                          </div>
                         );
                       })}
                     </div>
@@ -129,61 +117,64 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 <div className="flex flex-col gap-y-8 px-3">
                   <AnimatePresence initial={false}>
                     {pageData.recommendations
-                        .slice(
-                            0,
-                            viewAllRecs ? pageData.recommendations.length : slice_len
-                        )
-                        .map((item, index) => {
-                          return (
-                              <motion.div
-                                  key={index}
-                                  className="flex flex-col md:flex-row"
-                                  initial={{ opacity: 0, y: 100, scale: 0.9 }}
-                                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                                  transition={{
-                                    duration: shouldReduceMotion ? 0 : 0.2,
-                                  }}
-                              >
-                                <div className="w-28 flex-shrink-0">
-                                  <div className="mb-4">
-                                    <Image
-                                        src={item.thumbnail}
-                                        width={48}
-                                        height={48}
-                                        className="rounded-md w-full block"
-                                    />
-                                  </div>
-                                </div>
-                                <div className="flex-1">
-                                  <div className={"indent-[-0.65rem]"}>
-                                    “{item.text}”
-                                  </div>
-                                  <div className={"mt-4"}>
-                                    &mdash; {item.name}, {item.title}, {item.company}
-                                  </div>
-                                </div>
-                              </motion.div>
-                          );
-                        })}
+                      .slice(
+                        0,
+                        viewAllRecs
+                          ? pageData.recommendations.length
+                          : slice_len
+                      )
+                      .map((item, index) => {
+                        return (
+                          <motion.div
+                            key={index}
+                            className="flex flex-col md:flex-row"
+                            initial={{ opacity: 0, y: 100, scale: 0.9 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            transition={{
+                              duration: shouldReduceMotion ? 0 : 0.2,
+                            }}
+                          >
+                            <div className="w-28 flex-shrink-0">
+                              <div className="mb-4">
+                                <Image
+                                  src={item.thumbnail}
+                                  width={48}
+                                  height={48}
+                                  className="rounded-md w-full block"
+                                />
+                              </div>
+                            </div>
+                            <div className="flex-1">
+                              <div className={"indent-[-0.65rem]"}>
+                                “{item.text}”
+                              </div>
+                              <div className={"mt-4"}>
+                                &mdash; {item.name}, {item.title},{" "}
+                                {item.company}
+                              </div>
+                            </div>
+                          </motion.div>
+                        );
+                      })}
                   </AnimatePresence>
                   {!viewAllRecs && (
-                      <div className={"mx-auto text-white"}>
-                        <Badge
-                            content={pageData.recommendations.length - slice_len}
-                            color="danger"
-                            variant="solid"
-                            showOutline={false}
+                    <div className={"mx-auto text-white"}>
+                      <Badge
+                        content={pageData.recommendations.length - slice_len}
+                        color="danger"
+                        variant="solid"
+                        showOutline={false}
+                      >
+                        <Button
+                          radius="full"
+                          className="bg-black/20 dark:bg-white/10 shadow-lg"
+                          onClick={() => setViewAllRecs(true)}
+                          size="sm"
                         >
-                          <Button
-                              radius="full"
-                              className="bg-black/20 dark:bg-white/10 shadow-lg"
-                              onClick={() => setViewAllRecs(true)}
-                              size="sm"
-                          >
-                            &bull;&bull;&bull;
-                          </Button>
-                        </Badge>
-                      </div>
+                          &bull;&bull;&bull;
+                        </Button>
+                      </Badge>
+                    </div>
                   )}
                 </div>
               </section>
