@@ -8,9 +8,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <NextUIProvider>
-        <Head>
-          <title>JackeyLove</title>
-        </Head>
         <NextThemesProvider attribute="class" defaultTheme="system">
           <Component {...pageProps} />
         </NextThemesProvider>
