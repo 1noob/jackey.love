@@ -9,7 +9,7 @@
 }
 
 .content{
-  @apply bg-content subpixel-antialiased mx-auto max-w-3xl min-h-fit p-4 pb-8 md:p-12 flex flex-col text-xs sm:text-sm font-bold md:backdrop-blur-2xl rounded-lg ;
+  @apply md:bg-content subpixel-antialiased mx-auto max-w-3xl min-h-fit p-4 pb-8 md:p-12 flex flex-col text-xs sm:text-sm font-bold md:backdrop-blur-2xl rounded-lg ;
 }
 
 .page{

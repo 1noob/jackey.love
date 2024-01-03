@@ -54,7 +54,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                         <div>Nationality</div>
                         <div>
                           <div className={"region-icon text-danger"}>CN</div>{" "}
-                          CHINA
+                          China
                         </div>
                       </div>
                       <div className={"grid grid-cols-2"}>

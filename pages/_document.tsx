@@ -9,7 +9,7 @@ class MyDocument extends Document {
           <meta name="description" content="League of Legends esports player" />
 
           <meta property="og:url" content="https://www.jackey.love" />
-          <meta property="og:type" content="webpage" />
+          <meta property="og:type" content="website" />
           <meta property="og:title" content="JackeyLove" />
           <meta
             property="og:description"
@@ -29,10 +29,6 @@ class MyDocument extends Document {
           />
           <meta
             name="twitter:image"
-            content="https://jackey.love/opengraph-image.png"
-          />
-          <meta
-            property="weibo:image:full_image"
             content="https://jackey.love/opengraph-image.png"
           />
 
