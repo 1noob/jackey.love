@@ -44,32 +44,32 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       }
                     >
                       <div className={"grid grid-cols-2"}>
-                        <div>Team</div>
+                        <p>Team</p>
                         <div>
                           <div className={"region-icon text-danger"}>TES</div>{" "}
                           Top E-Sport
                         </div>
                       </div>
                       <div className={"grid grid-cols-2"}>
-                        <div>Nationality</div>
+                        <p>Nationality</p>
                         <div>
                           <div className={"region-icon text-danger"}>CN</div>{" "}
                           China
                         </div>
                       </div>
                       <div className={"grid grid-cols-2"}>
-                        <div>Role</div>
+                        <p>Role</p>
                         <div>
                           <div className={"region-icon text-blue-600"}>ADC</div>{" "}
                           Bot Laner
                         </div>
                       </div>
                       <div className={"grid grid-cols-2"}>
-                        <div>Birthday</div>
-                        <div>Nov,18,2000</div>
+                        <p>Birthday</p>
+                        <p>Nov,18,2000</p>
                       </div>
                       <div className={"grid grid-cols-2"}>
-                        <div>Status</div>
+                        <p>Status</p>
                         <div>
                           <Chip color="success" variant="shadow" size="sm">
                             Active
@@ -77,8 +77,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                         </div>
                       </div>
                       <div className={"grid grid-cols-2"}>
-                        <div>Total Winnings</div>
-                        <div>$768,479</div>
+                        <p>Total Winnings</p>
+                        <p>$768,479</p>
                       </div>
                     </div>
                   </div>
@@ -93,8 +93,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       {pageData.career.map((item, index) => {
                         return (
                           <div className={"grid grid-cols-2"}>
-                            <div>{item.team}</div>
-                            <div>{item.time}</div>
+                            <p>{item.team}</p>
+                            <p>{item.time}</p>
                           </div>
                         );
                       })}
@@ -158,7 +158,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       })}
                   </AnimatePresence>
                   {!viewAllRecs && (
-                    <div className={"mx-auto text-white"}>
+                    <div className={"my-2 mx-auto text-white"}>
                       <Badge
                         content={pageData.recommendations.length - slice_len}
                         color="danger"
@@ -167,7 +167,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       >
                         <Button
                           radius="full"
-                          className="bg-black/20 dark:bg-white/10 shadow-lg"
+                          className="bg-black/20 dark:bg-white/10 shadow-md"
                           onClick={() => setViewAllRecs(true)}
                           size="sm"
                         >

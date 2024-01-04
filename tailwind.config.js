@@ -42,9 +42,9 @@ module.exports = {
         // iPad Pro: 1024
         lg: { min: "1024px" },
 
-        xl: { min: "1280px" },
+        xl: { min: "1440x" },
 
-        xxl: { min: "1536px" },
+        "2xl": { min: "2160px" },
       },
       keyframes: {
         scx: {
