@@ -23,24 +23,24 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
 
   return (
     <>
-      <main className={`justify-center ${jetbrainsMono.variable} font-mono`}>
+      <main className={`${jetbrainsMono.variable}`}>
         <div className="page">
           <div className={"content"}>
             <ScrollShadow
               hideScrollBar
               size={0}
-              className="grid gap-7 scroll-smooth md:max-h-[52rem] mobile:h-dvh"
+              className="grid gap-8 scroll-smooth md:max-h-[52rem] mobile:h-dvh"
             >
               <section>
-                <div className="relative float-right w-[50%] mobile:w-full mobile:mb-12 overflow-hidden shadow-md">
-                  <Image radius={"sm"} src="/img/handwrite.jpeg" />
+                <div className="relative float-right w-[44.4%] mobile:w-full mobile:mb-12 overflow-hidden shadow-md">
+                  <Image radius={"sm"} shadow={"none"} src="/img/handwrite.jpeg" />
                 </div>
-                <div className="grid w-[50%] mobile:w-full gap-y-8">
+                <div className="grid w-[55%] mobile:w-full gap-y-8">
                   <div>
                     <h1> JackeyLove </h1>
                     <div
                       className={
-                        "grid align-middle px-3 gap-y-4 tracking-tighter"
+                        "grid align-middle px-3 gap-y-3 tracking-tighter"
                       }
                     >
                       <div className={"grid grid-cols-2"}>
@@ -82,12 +82,12 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       </div>
                     </div>
                   </div>
-                  <Divider className="my-4 md:hidden" />
+                  <Divider className="my-2 md:hidden" />
                   <div>
                     <h1> Team History </h1>
                     <div
                       className={
-                        "grid gap-y-4 px-3 align-middle tracking-tighter"
+                        "grid gap-y-3 px-3 align-middle tracking-tighter"
                       }
                     >
                       {pageData.career.map((item, index) => {
@@ -102,16 +102,16 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   </div>
                 </div>
               </section>
-              <Divider className="my-4" />
+              <Divider className="my-2" />
               <section>
                 <h1>Awards</h1>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 md:gap-x-16 px-3">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 md:gap-x-12 px-3">
                   {pageData.awards.map((item, index) => (
                     <li key={index}>{item}</li>
                   ))}
                 </div>
               </section>
-              <Divider className="my-4" />
+              <Divider className="my-2" />
               <section>
                 <h1>Recommendations</h1>
                 <div className="flex flex-col gap-y-8 px-3">
