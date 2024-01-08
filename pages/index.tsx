@@ -60,7 +60,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       <div className={"grid grid-cols-2"}>
                         <p>Role</p>
                         <div>
-                          <div className={"region-icon text-blue-600"}>ADC</div>{" "}
                           Bot Laner
                         </div>
                       </div>
