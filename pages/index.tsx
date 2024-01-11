@@ -33,7 +33,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               className="grid gap-y-4 md:gap-y-8 scroll-smooth h-dvh md:max-h-[52rem]"
             >
               <section>
-                <div className="relative float-right w-full md:w-[49%] mobile:mb-12 overflow-hidden shadow-md">
+                <div className="relative float-right w-full md:w-[49%] mobile:mb-4 overflow-hidden shadow-md">
                   <Image radius="sm" shadow="none" src="/img/handwrite.jpeg" />
                 </div>
                 <div className={"flex grid gap-y-4 w-full md:w-[49%]"}>
