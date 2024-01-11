@@ -13,7 +13,7 @@ main{
 }
 
 .content{
-  @apply md:bg-content mx-auto max-w-3xl min-h-fit px-4 py-8 md:px-6 flex flex-col
+  @apply md:bg-content mx-auto max-w-3xl min-h-fit px-4 pb-8 md:px-6 flex flex-col
   md:backdrop-blur-2xl rounded-lg;
 }
 
