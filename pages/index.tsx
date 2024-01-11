@@ -144,7 +144,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                               </div>
                             </div>
                             <div className="flex-1">
-                              <div className={"indent-[-0.65rem]"}>
+                              <div className={"indent-[-0.6rem]"}>
                                 “{item.text}”
                               </div>
                               <div className={"mt-4"}>
