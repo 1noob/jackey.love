@@ -7,6 +7,13 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head>
+        <title>JackeyLove</title>
+          <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"
+          />
+      </Head>
       <NextUIProvider>
         <NextThemesProvider attribute="class" defaultTheme="system">
           <Component {...pageProps} />

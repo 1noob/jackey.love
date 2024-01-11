@@ -8,6 +8,7 @@ import React from "react";
 import { JetBrains_Mono } from "next/font/google";
 import { ScrollShadow } from "@nextui-org/react";
 import { Chip } from "@nextui-org/chip";
+import {Card, CardBody} from "@nextui-org/card";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -29,153 +30,166 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             <ScrollShadow
               hideScrollBar
               size={0}
-              className="grid gap-8 scroll-smooth md:max-h-[52rem] mobile:h-dvh"
+              className="grid gap-y-4 md:gap-y-8 scroll-smooth h-dvh md:max-h-[52rem]"
             >
               <section>
-                <div className="relative float-right w-[44.4%] mobile:w-full mobile:mb-12 overflow-hidden shadow-md">
-                  <Image radius={"sm"} shadow={"none"} src="/img/handwrite.jpeg" />
+                <div className="relative float-right w-full md:w-[49%] mobile:mb-12 overflow-hidden shadow-md">
+                  <Image radius="sm" shadow="none" src="/img/handwrite.jpeg" />
                 </div>
-                <div className="grid w-[55%] mobile:w-full gap-y-8">
-                  <div>
-                    <h1> JackeyLove </h1>
-                    <div
-                      className={
-                        "grid align-middle px-3 gap-y-3 tracking-tighter"
-                      }
-                    >
-                      <div className={"grid grid-cols-2"}>
-                        <p>Team</p>
-                        <div>
-                          <div className={"region-icon text-danger"}>TES</div>{" "}
-                          Top E-Sport
-                        </div>
-                      </div>
-                      <div className={"grid grid-cols-2"}>
-                        <p>Nationality</p>
-                        <div>
-                          <div className={"region-icon text-danger"}>CN</div>{" "}
-                          China
-                        </div>
-                      </div>
-                      <div className={"grid grid-cols-2"}>
-                        <p>Role</p>
-                        <div>
-                          Bot Laner
-                        </div>
-                      </div>
-                      <div className={"grid grid-cols-2"}>
-                        <p>Birthday</p>
-                        <p>Nov,18,2000</p>
-                      </div>
-                      <div className={"grid grid-cols-2"}>
-                        <p>Status</p>
-                        <div>
-                          <Chip color="success" variant="shadow" size="sm">
-                            Active
-                          </Chip>
-                        </div>
-                      </div>
-                      <div className={"grid grid-cols-2"}>
-                        <p>Total Winnings</p>
-                        <p>$768,479</p>
-                      </div>
-                    </div>
-                  </div>
-                  <Divider className="my-2 md:hidden" />
-                  <div>
-                    <h1> Team History </h1>
-                    <div
-                      className={
-                        "grid gap-y-3 px-3 align-middle tracking-tighter"
-                      }
-                    >
-                      {pageData.career.map((item, index) => {
-                        return (
-                          <div className={"grid grid-cols-2"}>
-                            <p>{item.team}</p>
-                            <p>{item.time}</p>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <Divider className="my-2" />
-              <section>
-                <h1>Awards</h1>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 md:gap-x-12 px-3">
-                  {pageData.awards.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </div>
-              </section>
-              <Divider className="my-2" />
-              <section>
-                <h1>Recommendations</h1>
-                <div className="flex flex-col gap-y-8 px-3">
-                  <AnimatePresence initial={false}>
-                    {pageData.recommendations
-                      .slice(
-                        0,
-                        viewAllRecs
-                          ? pageData.recommendations.length
-                          : slice_len
-                      )
-                      .map((item, index) => {
-                        return (
-                          <motion.div
-                            key={index}
-                            className="flex flex-col md:flex-row"
-                            initial={{ opacity: 0, y: 100, scale: 0.9 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            transition={{
-                              duration: shouldReduceMotion ? 0 : 0.2,
-                            }}
-                          >
-                            <div className="w-28 flex-shrink-0">
-                              <div className="mb-4">
-                                <Image
-                                  src={item.thumbnail}
-                                  width={48}
-                                  height={48}
-                                  className="rounded-md w-full block"
-                                />
-                              </div>
-                            </div>
-                            <div className="flex-1">
-                              <div className={"indent-[-0.6rem]"}>
-                                “{item.text}”
-                              </div>
-                              <div className={"mt-4"}>
-                                &mdash; {item.name}, {item.title},{" "}
-                                {item.company}
-                              </div>
-                            </div>
-                          </motion.div>
-                        );
-                      })}
-                  </AnimatePresence>
-                  {!viewAllRecs && (
-                    <div className={"my-2 mx-auto text-white"}>
-                      <Badge
-                        content={pageData.recommendations.length - slice_len}
-                        color="danger"
-                        variant="solid"
-                        showOutline={false}
+                <div className={"flex grid gap-y-4 w-full md:w-[49%]"}>
+                  <Card isBlurred shadow="none" radius="sm">
+                    <CardBody>
+                      <h1> JackeyLove </h1>
+                      <Divider className={"my-4"}/>
+                      <div
+                          className={
+                            "grid align-middle px-3 gap-y-3 tracking-tighter"
+                          }
                       >
-                        <Button
-                          radius="full"
-                          className="bg-black/20 dark:bg-white/10 shadow-md"
-                          onClick={() => setViewAllRecs(true)}
-                          size="sm"
-                        >
-                          &bull;&bull;&bull;
-                        </Button>
-                      </Badge>
-                    </div>
-                  )}
+                        <div className={"grid grid-cols-2"}>
+                          <p>Team</p>
+                          <div>
+                            <div className={"region-icon text-danger"}>TES</div>{" "}
+                            Top E-Sport
+                          </div>
+                        </div>
+                        <div className={"grid grid-cols-2"}>
+                          <p>Nationality</p>
+                          <div>
+                            <div className={"region-icon text-danger"}>CN</div>{" "}
+                            China
+                          </div>
+                        </div>
+                        <div className={"grid grid-cols-2"}>
+                          <p>Role</p>
+                          <div>
+                            Bot Laner
+                          </div>
+                        </div>
+                        <div className={"grid grid-cols-2"}>
+                          <p>Birthday</p>
+                          <p>Nov,18,2000</p>
+                        </div>
+                        <div className={"grid grid-cols-2"}>
+                          <p>Status</p>
+                          <div>
+                            <Chip color="success" variant="shadow" size="sm">
+                              Active
+                            </Chip>
+                          </div>
+                        </div>
+                        <div className={"grid grid-cols-2"}>
+                          <p>Total Winnings</p>
+                          <p>$768,479</p>
+                        </div>
+                      </div>
+                    </CardBody>
+                  </Card>
+                  <Card isBlurred shadow="none" radius="sm">
+                    <CardBody>
+                      <h1> Team History </h1>
+                      <Divider className={"my-4"}/>
+                      <div
+                          className={
+                            "grid gap-y-3 px-3 align-middle tracking-tighter"
+                          }
+                      >
+                        {pageData.career.map((item, index) => {
+                          return (
+                              <div className={"grid grid-cols-2"}>
+                                <p>{item.team}</p>
+                                <p>{item.time}</p>
+                              </div>
+                          );
+                        })}
+                      </div>
+                    </CardBody>
+                  </Card>
                 </div>
+              </section>
+              <section>
+                <Card isBlurred shadow="none" radius="sm">
+                  <CardBody>
+                    <h1>Awards</h1>
+                    <Divider className={"my-4"}/>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 md:gap-x-12 px-3">
+                      {pageData.awards.map((item, index) => (
+                          <li key={index}>{item}</li>
+                      ))}
+                    </div>
+                  </CardBody>
+                </Card>
+              </section>
+              <section>
+                <Card isBlurred shadow="none" radius="sm">
+                  <CardBody>
+                    <h1>Recommendations</h1>
+                    <Divider className={"my-4"}/>
+                    <div className="flex flex-col gap-y-8 px-3">
+                      <AnimatePresence initial={false}>
+                        {pageData.recommendations
+                            .slice(
+                                0,
+                                viewAllRecs
+                                    ? pageData.recommendations.length
+                                    : slice_len
+                            )
+                            .map((item, index) => {
+                              return (
+                                  <motion.div
+                                      key={index}
+                                      className="flex flex-col md:flex-row"
+                                      initial={{ opacity: 0, y: 100, scale: 0.9 }}
+                                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                                      transition={{
+                                        duration: shouldReduceMotion ? 0 : 0.2,
+                                      }}
+                                  >
+                                    <div className="w-28 flex-shrink-0">
+                                      <div className="mb-4">
+                                        <Image
+                                            src={item.thumbnail}
+                                            width={48}
+                                            height={48}
+                                            className="rounded-md w-full block"
+                                        />
+                                      </div>
+                                    </div>
+                                    <div className="flex-1">
+                                      <div className={"indent-[-0.5rem]"}>
+                                        “{item.text}”
+                                      </div>
+                                      <div className={"mt-4"}>
+                                        &mdash; {item.name}, {item.title},{" "}
+                                        {item.company}
+                                      </div>
+                                    </div>
+                                  </motion.div>
+                              );
+                            })}
+                      </AnimatePresence>
+                      {!viewAllRecs && (
+                          <div className={"my-2 mx-auto text-white"}>
+                            <Badge
+                                content={pageData.recommendations.length - slice_len}
+                                color="danger"
+                                variant="solid"
+                                showOutline={false}
+                            >
+                              <Button
+                                  radius="full"
+                                  className="bg-black/20 dark:bg-white/10 shadow-md"
+                                  onClick={() => setViewAllRecs(true)}
+                                  size="sm"
+                              >
+                                &bull;&bull;&bull;
+                              </Button>
+                            </Badge>
+                          </div>
+                      )}
+                    </div>
+                  </CardBody>
+                </Card>
               </section>
             </ScrollShadow>
           </div>

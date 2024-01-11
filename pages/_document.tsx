@@ -5,7 +5,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>JackeyLove</title>
           <meta name="description" content="League of Legends esports player" />
 
           <meta property="og:url" content="https://www.jackey.love" />
@@ -42,10 +41,6 @@ class MyDocument extends Document {
           <meta
             name="apple-mobile-web-app-status-bar-style"
             content="black-translucent"
-          />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"
           />
         </Head>
         <body className="bg-page">

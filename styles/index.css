@@ -13,7 +13,7 @@ main{
 }
 
 .content{
-  @apply md:bg-content mx-auto max-w-3xl min-h-fit p-4 pb-8 md:p-8 flex flex-col
+  @apply md:bg-content mx-auto max-w-3xl min-h-fit px-4 py-8 md:px-6 flex flex-col
   md:backdrop-blur-2xl rounded-lg;
 }
 
@@ -31,7 +31,7 @@ main{
 }
 
 h1 {
-  @apply font-black mb-5 text-base md:text-lg;
+  @apply font-black text-base md:text-lg;
 }
 
 .dark {
