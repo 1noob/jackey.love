@@ -30,7 +30,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             <ScrollShadow
               hideScrollBar
               size={0}
-              className="grid gap-y-4 md:gap-y-8 scroll-smooth h-dvh md:max-h-[52rem]"
+              className="grid gap-y-4 md:gap-y-6 scroll-smooth h-dvh md:max-h-[50rem]"
             >
               <section>
                 <div className="relative float-right w-full md:w-[49%] mobile:mb-4 overflow-hidden shadow-md">
@@ -169,7 +169,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                             })}
                       </AnimatePresence>
                       {!viewAllRecs && (
-                          <div className={"my-2 mx-auto text-white"}>
+                          <div className={"mx-auto text-white"}>
                             <Badge
                                 content={pageData.recommendations.length - slice_len}
                                 color="danger"
