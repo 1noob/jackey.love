@@ -8,7 +8,7 @@ interface BoxProps {
 
 const Box: React.FC<BoxProps> = ({ children, className }) => {
   return (
-    <Card isBlurred shadow="none" radius="sm" className={"bg-card"}
+    <Card isBlurred shadow="sm" radius="sm" className={"bg-card"}
         classNames={{
             body: "overflow-hidden"
         }}
