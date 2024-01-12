@@ -29,7 +29,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               hideScrollBar
               visibility="bottom"
               size={30}
-              offset={30}
               className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[55.5rem]"
             >
               <section>
