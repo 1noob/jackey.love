@@ -21,6 +21,7 @@ module.exports = {
       backgroundColor: {
         page: "rgba(var(--page))",
         content: "rgba(var(--content))",
+        card: "rgba(var(--card))",
       },
       boxShadow: {
         highlight: "inset 0 0 0 1px rgba(255, 255, 255, 0.05)",

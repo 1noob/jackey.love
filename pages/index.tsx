@@ -8,20 +8,18 @@ import React from "react";
 import { JetBrains_Mono } from "next/font/google";
 import { ScrollShadow } from "@nextui-org/react";
 import { Chip } from "@nextui-org/chip";
-import {Card, CardBody} from "@nextui-org/card";
+import Box from "@/components/Box";
+import List from "@/components/List";
+import Recommendation from "@/components/Recommendation";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
 
-const slice_len = 1;
 const image_len = 160;
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
-  const [viewAllRecs, setViewAllRecs] = React.useState(false);
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <>
       <main className={`${jetbrainsMono.variable}`}>
@@ -30,166 +28,88 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             <ScrollShadow
               hideScrollBar
               size={0}
-              className="grid gap-y-4 md:gap-y-6 scroll-smooth h-dvh md:max-h-[50rem]"
+              className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[52rem]"
             >
               <section>
-                <div className="relative float-right w-full md:w-[49%] mobile:mb-4 overflow-hidden shadow-md">
+                <div className="relative float-right w-full md:w-[48%] mobile:mb-4 overflow-hidden shadow-md">
                   <Image radius="sm" shadow="none" src="/img/handwrite.jpeg" />
                 </div>
-                <div className={"flex grid gap-y-4 w-full md:w-[49%]"}>
-                  <Card isBlurred shadow="none" radius="sm">
-                    <CardBody>
-                      <h1> JackeyLove </h1>
-                      <Divider className={"my-4"}/>
-                      <div
-                          className={
-                            "grid align-middle px-3 gap-y-3 tracking-tighter"
-                          }
-                      >
-                        <div className={"grid grid-cols-2"}>
-                          <p>Team</p>
-                          <div>
-                            <div className={"region-icon text-danger"}>TES</div>{" "}
-                            Top E-Sport
-                          </div>
+                <div className={"flex grid gap-y-4 w-full md:w-[50%]"}>
+                  <Box>
+                    <h1> JackeyLove </h1>
+                    <Divider className={"my-4"} />
+                    <div
+                      className={
+                        "grid align-middle px-3 gap-y-2 tracking-tighter"
+                      }
+                    >
+                      <List>
+                        <p>Team</p>
+                        <p>Top E-Sport</p>
+                      </List>
+                      <List>
+                        <p>Nationality</p>
+                        <p>CHINA</p>
+                      </List>
+                      <List>
+                        <p>Role</p>
+                        <p>Bot Laner</p>
+                      </List>
+                      <List>
+                        <p>Birthday</p>
+                        <p>Nov,18,2000</p>
+                      </List>
+                      <List>
+                        <p>Status</p>
+                        <div>
+                          <Chip color="success" variant="shadow" size="sm">
+                            Active
+                          </Chip>
                         </div>
-                        <div className={"grid grid-cols-2"}>
-                          <p>Nationality</p>
-                          <div>
-                            <div className={"region-icon text-danger"}>CN</div>{" "}
-                            China
-                          </div>
-                        </div>
-                        <div className={"grid grid-cols-2"}>
-                          <p>Role</p>
-                          <div>
-                            Bot Laner
-                          </div>
-                        </div>
-                        <div className={"grid grid-cols-2"}>
-                          <p>Birthday</p>
-                          <p>Nov,18,2000</p>
-                        </div>
-                        <div className={"grid grid-cols-2"}>
-                          <p>Status</p>
-                          <div>
-                            <Chip color="success" variant="shadow" size="sm">
-                              Active
-                            </Chip>
-                          </div>
-                        </div>
-                        <div className={"grid grid-cols-2"}>
-                          <p>Total Winnings</p>
-                          <p>$768,479</p>
-                        </div>
-                      </div>
-                    </CardBody>
-                  </Card>
-                  <Card isBlurred shadow="none" radius="sm">
-                    <CardBody>
-                      <h1> Team History </h1>
-                      <Divider className={"my-4"}/>
-                      <div
-                          className={
-                            "grid gap-y-3 px-3 align-middle tracking-tighter"
-                          }
-                      >
-                        {pageData.career.map((item, index) => {
-                          return (
-                              <div className={"grid grid-cols-2"}>
-                                <p>{item.team}</p>
-                                <p>{item.time}</p>
-                              </div>
-                          );
-                        })}
-                      </div>
-                    </CardBody>
-                  </Card>
+                      </List>
+                      <List>
+                        <p>Total Winnings</p>
+                        <p>$768,479</p>
+                      </List>
+                    </div>
+                  </Box>
+                  <Box>
+                    <h1> Team History </h1>
+                    <Divider className={"my-4"} />
+                    <div
+                      className={
+                        "grid gap-y-[0.97rem] px-3 align-middle tracking-tighter"
+                      }
+                    >
+                      {pageData.career.map((item, index) => {
+                        return (
+                          <List>
+                            <p>{item.team}</p>
+                            <p>{item.time}</p>
+                          </List>
+                        );
+                      })}
+                    </div>
+                  </Box>
                 </div>
               </section>
               <section>
-                <Card isBlurred shadow="none" radius="sm">
-                  <CardBody>
-                    <h1>Awards</h1>
-                    <Divider className={"my-4"}/>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 md:gap-x-12 px-3">
-                      {pageData.awards.map((item, index) => (
-                          <li key={index}>{item}</li>
-                      ))}
-                    </div>
-                  </CardBody>
-                </Card>
+                <Box>
+                  <h1>Awards</h1>
+                  <Divider className={"my-4"} />
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 md:gap-x-12 px-3">
+                    {pageData.awards.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </div>
+                </Box>
               </section>
               <section>
-                <Card isBlurred shadow="none" radius="sm">
-                  <CardBody>
-                    <h1>Recommendations</h1>
-                    <Divider className={"my-4"}/>
-                    <div className="flex flex-col gap-y-8 px-3">
-                      <AnimatePresence initial={false}>
-                        {pageData.recommendations
-                            .slice(
-                                0,
-                                viewAllRecs
-                                    ? pageData.recommendations.length
-                                    : slice_len
-                            )
-                            .map((item, index) => {
-                              return (
-                                  <motion.div
-                                      key={index}
-                                      className="flex flex-col md:flex-row"
-                                      initial={{ opacity: 0, y: 100, scale: 0.9 }}
-                                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                                      transition={{
-                                        duration: shouldReduceMotion ? 0 : 0.2,
-                                      }}
-                                  >
-                                    <div className="w-28 flex-shrink-0">
-                                      <div className="mb-4">
-                                        <Image
-                                            src={item.thumbnail}
-                                            width={48}
-                                            height={48}
-                                            className="rounded-md w-full block"
-                                        />
-                                      </div>
-                                    </div>
-                                    <div className="flex-1">
-                                      <div className={"indent-[-0.5rem]"}>
-                                        “{item.text}”
-                                      </div>
-                                      <div className={"mt-4"}>
-                                        &mdash; {item.name}, {item.title},{" "}
-                                        {item.company}
-                                      </div>
-                                    </div>
-                                  </motion.div>
-                              );
-                            })}
-                      </AnimatePresence>
-                      {!viewAllRecs && (
-                          <div className={"mx-auto text-white"}>
-                            <Badge
-                                content={pageData.recommendations.length - slice_len}
-                                color="danger"
-                                variant="solid"
-                                showOutline={false}
-                            >
-                              <Button
-                                  radius="full"
-                                  className="bg-black/20 dark:bg-white/10 shadow-md"
-                                  onClick={() => setViewAllRecs(true)}
-                                  size="sm"
-                              >
-                                &bull;&bull;&bull;
-                              </Button>
-                            </Badge>
-                          </div>
-                      )}
-                    </div>
-                  </CardBody>
-                </Card>
+                <Box>
+                  <h1>Recommendations</h1>
+                  <Divider className={"my-4"} />
+                  <Recommendation />
+                </Box>
               </section>
             </ScrollShadow>
           </div>
@@ -290,35 +210,5 @@ const pageData = {
     "2022LPL夏季赛一阵",
     "LPL10周年十大选手",
     "2023LPL夏季赛三阵",
-  ],
-  recommendations: [
-    {
-      text: "我总是告诉我们的队员，我们的队伍有 JackeyLove 是件好事，因为他有很棒的性格和天赋，他是一个非常成熟的人，总是乐于接受反馈。JackeyLove 是一名令我有很高期待的选手。",
-      name: "Kim",
-      title: "Coach",
-      company: "IG",
-      thumbnail: "/img/kim.jpeg",
-    },
-    {
-      text: "Nobody wants to be flashing forward to make the mistake in the Game five, but Jackey says I will flashing forward. I will be the hero.",
-      name: "CaptainFlowers",
-      title: "Comment",
-      company: "LEC",
-      thumbnail: "/img/captainflowers.jpeg",
-    },
-    {
-      text: "我对他最突出的印象是冷静，而且判断也颇为准确。尽管有些时候他会有些奇怪的被击杀，但是他的操作和对线都很棒。另外就是他本身似乎眉宇之间透着一股和年龄不符的英气，身高不算高的他却给人一种器宇轩昂的感觉，我觉得他是一名很有魅力的选手。据我暗中观察，他在选手中似乎也挺有威望哟。",
-      name: "MintyBlue藏马",
-      title: "Ceo",
-      company: "IG",
-      thumbnail: "/img/mintyblue.jpeg",
-    },
-    {
-      text: "我个人觉得我自己的风格这个赛季会变得很多，因为我们来了个新选手 JackeyLove。他是一个打法很凶的 ADC，我就没必要一直在对线的情况下打出优势了，我也可以慢慢发育，我也觉得自己的打团能力也不是很差的，所以打到后期也有 JackeyLove，就觉得线上不要很急，就慢慢打。",
-      name: "Rookie",
-      title: "Mid",
-      company: "IG",
-      thumbnail: "/img/rookie.jpeg",
-    },
   ],
 };
