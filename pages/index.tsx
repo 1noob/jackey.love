@@ -28,11 +28,11 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             <ScrollShadow
               hideScrollBar
               size={0}
-              className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[52rem]"
+              className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[55.5rem]"
             >
               <section>
-                <div className="relative float-right w-full md:w-[48%] mobile:mb-4 overflow-hidden shadow-md">
-                  <Image radius="sm" shadow="none" src="/img/handwrite.jpeg" />
+                <div className="relative float-right w-full md:w-[48%] mobile:mb-4 light:shadow-md dark:invert-[.9]">
+                  <Image radius="sm" shadow="none" src="/img/handwrite.jpeg"/>
                 </div>
                 <div className={"flex grid gap-y-4 w-full md:w-[50%]"}>
                   <Box>
