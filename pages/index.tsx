@@ -45,15 +45,15 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     >
                       <List>
                         <p>Team</p>
-                        <p>Top E-Sport</p>
+                        <p>TOP E-SPORT</p>
                       </List>
                       <List>
-                        <p>Nationality</p>
+                        <p>Country</p>
                         <p>CHINA</p>
                       </List>
                       <List>
                         <p>Role</p>
-                        <p>Bot Laner</p>
+                        <p>AD Carry</p>
                       </List>
                       <List>
                         <p>Birthday</p>
@@ -68,7 +68,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                         </div>
                       </List>
                       <List>
-                        <p>Total Winnings</p>
+                        <p>Winnings</p>
                         <p>$768,479</p>
                       </List>
                     </div>
@@ -188,7 +188,7 @@ const pageData = {
     },
     {
       time: "Apr,2020 - Present",
-      team: "Top E-Sport",
+      team: "TOP E-SPORT",
     },
   ],
   awards: [
