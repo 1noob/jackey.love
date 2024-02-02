@@ -1,9 +1,7 @@
 import type { NextPage } from "next";
 import cloudinary from "../utils/cloudinary";
-import type { ImageProps } from "../utils/types";
-import { Badge, Divider, Image } from "@nextui-org/react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Button } from "@nextui-org/react";
+import type { ImageProps } from "@/utils/types";
+import { Divider, Image } from "@nextui-org/react";
 import React from "react";
 import { JetBrains_Mono } from "next/font/google";
 import { ScrollShadow } from "@nextui-org/react";
@@ -11,6 +9,8 @@ import { Chip } from "@nextui-org/chip";
 import Box from "@/components/Box";
 import List from "@/components/List";
 import Recommendation from "@/components/Recommendation";
+import Script from "next/script";
+import TypedBios from "@/components/typed-bios";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -22,6 +22,7 @@ const image_len = 160;
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   return (
     <>
+      <Script async src="https://us.umami.is/script.js" data-website-id="61824479-8621-45cf-981c-867d2ac2066d"/>
       <main className={`${jetbrainsMono.variable}`}>
         <div className="page">
           <div className={"content"}>
@@ -36,6 +37,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <Image radius="sm" shadow="none" src="/img/handwrite.jpeg"/>
                 </div>
                 <div className={"flex grid gap-y-4 w-full md:w-[50%]"}>
+                  <Box>
+                    <TypedBios/>
+                  </Box>
                   <Box>
                     <h1> JackeyLove </h1>
                     <Divider className={"my-4"} />
@@ -59,18 +63,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       <List>
                         <p>Birthday</p>
                         <p>Nov,18,2000</p>
-                      </List>
-                      <List>
-                        <p>Status</p>
-                        <div>
-                          <Chip color="success" variant="shadow" size="sm">
-                            Active
-                          </Chip>
-                        </div>
-                      </List>
-                      <List>
-                        <p>Winnings</p>
-                        <p>$768,479</p>
                       </List>
                     </div>
                   </Box>

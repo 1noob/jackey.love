@@ -13,7 +13,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               name="viewport"
               content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"
           />
-          <script async src="https://us.umami.is/script.js" data-website-id="61824479-8621-45cf-981c-867d2ac2066d"/>
       </Head>
       <NextUIProvider>
         <NextThemesProvider attribute="class" defaultTheme="system">
