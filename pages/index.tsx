@@ -5,7 +5,6 @@ import { Divider, Image } from "@nextui-org/react";
 import React from "react";
 import { JetBrains_Mono } from "next/font/google";
 import { ScrollShadow } from "@nextui-org/react";
-import { Chip } from "@nextui-org/chip";
 import Box from "@/components/Box";
 import List from "@/components/List";
 import Recommendation from "@/components/Recommendation";
