@@ -107,7 +107,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           </div>
         </div>
         <div className="gallery">
-          <div className="animate-[scy_60s_linear_infinite] w-max grayscale-[50%]">
+          <div className="animate-[scy_60s_linear_infinite] transform-gpu w-max grayscale-[50%]">
             <div className="float-left grid grid-rows-8 grid-flow-col">
               {images.map(({ public_id, format }) => (
                 <Image
