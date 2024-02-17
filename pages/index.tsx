@@ -34,12 +34,12 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <section>
                 <Image
                     classNames={{
-                      wrapper: "relative float-right w-full md:w-[39%] md:h-full mobile:mb-4 dark:invert-[.9] content-center"
+                      wrapper: "relative float-right w-full md:w-[40%] md:h-full mobile:mb-4 dark:invert-[.9] content-center"
                     }}
                     className={"md:h-full md:hover:scale-[1.5] origin-top-right transform-gpu"}
                     radius="sm" shadow="none" src="/img/handwrite.jpeg"
                 />
-                <div className={"flex grid gap-y-4 w-full md:w-[59%]"}>
+                <div className={"flex grid gap-y-4 w-full md:w-[58%]"}>
                   <Box>
                     <h1>
                       JackeyLove
@@ -103,6 +103,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 </Box>
               </section>
             </ScrollShadow>
+            <TypedBios/>
           </div>
         </div>
         <div className="gallery">

@@ -25,8 +25,8 @@ const TypedBios = () => {
         <li>再给我一次机会，我还是会E上去。</li>
         <li>感觉我还有救。</li>
       </ul>
-      <p>
-        JackeyLove: "
+      <p className={"w-full text-center mt-2"}>
+        "
         <span
           ref={el}
           className="text-neutral-900 dark:text-neutral-200 text-xs lg:text-sm"
