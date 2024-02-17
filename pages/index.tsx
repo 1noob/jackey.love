@@ -36,13 +36,13 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     classNames={{
                       wrapper: "relative float-right w-full md:w-[39%] md:h-full mobile:mb-4 dark:invert-[.9] content-center"
                     }}
-                    className={"h-full md:hover:scale-[1.5] origin-top-right"}
+                    className={"h-full md:hover:scale-[1.5] origin-top-right transform-gpu"}
                     radius="sm" shadow="none" src="/img/handwrite.jpeg"
                 />
                 <div className={"flex grid gap-y-4 w-full md:w-[59%]"}>
                   <Box>
                     <h1>
-                      <TypedBios/>
+                      JackeyLove
                     </h1>
                     <Divider className={"my-4"} />
                     <div
