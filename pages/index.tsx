@@ -32,15 +32,18 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[55.5rem]"
             >
               <section>
-                <div className="relative float-right w-full md:w-[48%] mobile:mb-4 dark:invert-[.9]">
-                  <Image radius="sm" shadow="none" src="/img/handwrite.jpeg"/>
-                </div>
-                <div className={"flex grid gap-y-4 w-full md:w-[50%]"}>
+                <Image
+                    classNames={{
+                      wrapper: "relative float-right w-full md:w-[39%] md:h-full mobile:mb-4 dark:invert-[.9] content-center"
+                    }}
+                    className={"h-full md:hover:scale-[1.5] origin-top-right transform-gpu"}
+                    radius="sm" shadow="none" src="/img/handwrite.jpeg"
+                />
+                <div className={"flex grid gap-y-4 w-full md:w-[59%]"}>
                   <Box>
-                    <TypedBios/>
-                  </Box>
-                  <Box>
-                    <h1> JackeyLove </h1>
+                    <h1>
+                      <TypedBios/>
+                    </h1>
                     <Divider className={"my-4"} />
                     <div
                       className={
@@ -50,10 +53,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       <List>
                         <p>Team</p>
                         <p>TOP E-SPORT</p>
-                      </List>
-                      <List>
-                        <p>Country</p>
-                        <p>CHINA</p>
                       </List>
                       <List>
                         <p>Role</p>

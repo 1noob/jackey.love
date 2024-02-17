@@ -21,12 +21,12 @@ const TypedBios = () => {
   return (
     <div>
       <ul id="bios" className="hidden">
+        <li>今夜，我是天选，也是唯一。</li>
         <li>再给我一次机会，我还是会E上去。</li>
-        <li>味大，无需多盐。</li>
         <li>感觉我还有救。</li>
       </ul>
-      <p className={"text-center"}>
-        "
+      <p>
+        JackeyLove: "
         <span
           ref={el}
           className="text-neutral-900 dark:text-neutral-200 text-xs lg:text-sm"
