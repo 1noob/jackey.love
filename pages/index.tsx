@@ -34,7 +34,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <section>
                 <Image
                     classNames={{
-                      wrapper: "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.9]"
+                      wrapper: "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.9] z-[99]"
                     }}
                     className={"md:min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu"}
                     radius="sm" shadow="none" src="/img/handwrite.jpeg"
