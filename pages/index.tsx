@@ -39,7 +39,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     className={"md:min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu"}
                     radius="sm" shadow="none" src="/img/handwrite.jpeg"
                 />
-                <div className={"flex grid gap-y-4 w-full md:w-[58%]"}>
+                <div className={"grid gap-y-4 w-full md:w-[58%]"}>
                   <Box>
                     <h1>
                       JackeyLove
