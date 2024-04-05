@@ -164,6 +164,29 @@ const SinaIcon: React.FC<IconSvgProps> = ({
     );
 };
 
+const UmamiIcon: React.FC<IconSvgProps> = ({
+      size = 24,
+      width,
+      height,
+      ...props
+    }) => {
+    return (
+        <svg
+            height={size || height}
+            viewBox="0 0 428 389.11"
+            width={size || width}
+            {...props}
+        >
+            <circle cx="214.15" cy="171" r="171" stroke="currentColor" fill="none" strokeMiterlimit="10" strokeWidth="20"
+                    transform="matrix(1, 0, 0, 1, 1.4210854715202004e-14, 0)"/>
+            <path
+                d="M 413 124.11 L 15.29 124.11 C 7.005 124.11 0.29 130.826 0.29 139.11 L 0.29 154.41 C 0.12 158 0 161.52 0 165.11 C 0 283.3 95.81 379.11 214 379.11 C 330.4 379.11 425.1 286.17 427.93 170.44 C 427.93 170 428 169.56 428 169.11 L 428 139.11 C 428 130.826 421.284 124.11 413 124.11 Z"
+                transform="matrix(1, 0, 0, 1, 1.4210854715202004e-14, 0)" fill="currentColor"/>
+        </svg>
+    );
+};
+
+
 export {
     XIcon,
     TwitterIcon,
@@ -171,4 +194,5 @@ export {
     TiktokIcon,
     TiktokDarkIcon,
     SinaIcon,
+    UmamiIcon,
 };

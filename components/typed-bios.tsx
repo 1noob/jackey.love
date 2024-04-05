@@ -2,7 +2,7 @@
 
 import React from "react";
 import Typed from "typed.js";
-import {GithubIcon, TiktokDarkIcon, TiktokIcon, SinaIcon, XIcon} from "@/components/icon";
+import {TiktokDarkIcon, TiktokIcon, SinaIcon, XIcon, UmamiIcon} from "@/components/icon";
 import Link from "next/link";
 
 const TypedBios = () => {
@@ -49,6 +49,9 @@ const TypedBios = () => {
         </Link>
         <Link href={"https://v.douyin.com/iYdXGgMa/"} aria-label="Tiktok" className="dark:hidden">
           <TiktokDarkIcon size={17}/>
+        </Link>
+        <Link href={"https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"} aria-label="Umami" className={"hidden md:flex"}>
+          <UmamiIcon size={18}/>
         </Link>
       </div>
     </div>
