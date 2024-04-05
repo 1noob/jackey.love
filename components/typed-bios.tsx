@@ -38,19 +38,19 @@ const TypedBios = () => {
         "
       </p>
       <div className={"flex justify-end content-center gap-2"}>
-        <Link href={"https://m.weibo.cn/u/5966770936"} aria-label="Weibo" className={"hidden md:flex"}>
+        <Link href={"https://m.weibo.cn/u/5966770936"} target="_blank" aria-label="Weibo" className={"hidden md:flex"}>
           <SinaIcon size={19}/>
         </Link>
-        <Link href={"https://twitter.com/TESJKL1118"} aria-label="Twitter">
+        <Link href={"https://twitter.com/TESJKL1118"} target="_blank" aria-label="Twitter">
           <XIcon size={18}/>
         </Link>
-        <Link href={"https://v.douyin.com/iYdXGgMa/"} aria-label="Tiktok" className="hidden dark:flex">
+        <Link href={"https://v.douyin.com/iYdXGgMa/"} target="_blank" aria-label="Tiktok" className="hidden dark:flex">
           <TiktokIcon size={17}/>
         </Link>
-        <Link href={"https://v.douyin.com/iYdXGgMa/"} aria-label="Tiktok" className="dark:hidden">
+        <Link href={"https://v.douyin.com/iYdXGgMa/"} target="_blank" aria-label="Tiktok" className="dark:hidden">
           <TiktokDarkIcon size={17}/>
         </Link>
-        <Link href={"https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"} aria-label="Umami" className={"hidden md:flex"}>
+        <Link href={"https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"} target="_blank" aria-label="Umami" className={"hidden md:flex"}>
           <UmamiIcon size={18}/>
         </Link>
       </div>
