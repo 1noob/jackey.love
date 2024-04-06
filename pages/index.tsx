@@ -112,7 +112,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               {images.map(({ public_id, format }) => (
                 <Image
                   radius="none"
-                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,f_auto,q_auto/${public_id}.${format}`}
+                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,f_auto,q_30/${public_id}.${format}`}
                   width={200}
                 />
               ))}
@@ -121,7 +121,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               {images.map(({ public_id, format }) => (
                 <Image
                   radius="none"
-                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,f_auto,q_auto/${public_id}.${format}`}
+                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,f_auto,q_30/${public_id}.${format}`}
                   width={200}
                 />
               ))}
