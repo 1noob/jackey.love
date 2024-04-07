@@ -23,10 +23,12 @@ const TypedBios = () => {
   return (
     <div className={"grid grid-flow-col px-3 mt-2"}>
       <ul id="bios" className="hidden">
-        <li>今夜，我是天选，也是唯一。</li>
+        <li>我是天选，也是唯一。</li>
         <li>伟大，无需多言。</li>
         <li>好好调整，哥几个等你回来。</li>
+        <li>本台记者喻文波为您报道。</li>
         <li>再给我一次机会，我还是会E上去。</li>
+        <li>伊泽瑞尔的精髓就是要E!</li>
         <li>感觉我还有救。</li>
       </ul>
       <p className={"w-full min-h-full"}>
