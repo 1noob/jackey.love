@@ -2,7 +2,7 @@
 
 import React from "react";
 import Typed from "typed.js";
-import {TiktokDarkIcon, TiktokIcon, SinaIcon, XIcon, UmamiIcon} from "@/components/icon";
+import {TiktokDarkIcon, TiktokIcon, SinaIcon, XIcon, UmamiIcon, CloudinaryIcon} from "@/components/icon";
 import Link from "next/link";
 
 const TypedBios = () => {
@@ -54,6 +54,9 @@ const TypedBios = () => {
         </Link>
         <Link href={"https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"} target="_blank" aria-label="Umami" className={"hidden md:flex"}>
           <UmamiIcon size={18}/>
+        </Link>
+        <Link href={"https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d"} target="_blank" aria-label="Umami" className={"hidden md:flex"}>
+          <CloudinaryIcon size={19}/>
         </Link>
       </div>
     </div>
