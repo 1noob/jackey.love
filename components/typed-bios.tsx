@@ -39,9 +39,9 @@ const TypedBios = () => {
         />
         "
       </p>
-      <div className={"flex justify-end content-center gap-2"}>
+      <div className={"flex justify-end content-center gap-2 md:gap-2.5"}>
         <Link href={"https://m.weibo.cn/u/5966770936"} target="_blank" aria-label="Weibo" className={"hidden md:flex"}>
-          <SinaIcon size={19}/>
+          <SinaIcon size={18}/>
         </Link>
         <Link href={"https://twitter.com/TESJKL1118"} target="_blank" aria-label="Twitter">
           <XIcon size={18}/>
