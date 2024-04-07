@@ -23,7 +23,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
     <>
       <Script async src="https://us.umami.is/script.js" data-website-id="61824479-8621-45cf-981c-867d2ac2066d"/>
       <main className={`${jetbrainsMono.variable}`}>
-        <div className="page">
+        <div className="page md:shadow-[inset_0_0_70px_30px_rgba(0,0,0,0.6)]">
           <div className={"content"}>
             <ScrollShadow
               hideScrollBar
