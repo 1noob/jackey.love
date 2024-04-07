@@ -55,7 +55,7 @@ const TypedBios = () => {
         <Link href={"https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"} target="_blank" aria-label="Umami" className={"hidden md:flex"}>
           <UmamiIcon size={18}/>
         </Link>
-        <Link href={"https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d"} target="_blank" aria-label="Umami" className={"hidden md:flex"}>
+        <Link href={"https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d"} target="_blank" aria-label="Cloudinary" className={"hidden md:flex"}>
           <CloudinaryIcon size={19}/>
         </Link>
       </div>
