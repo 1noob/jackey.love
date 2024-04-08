@@ -29,6 +29,7 @@ const TypedBios = () => {
         <li>本台记者喻文波为您报道。</li>
         <li>再给我一次机会，我还是会E上去。</li>
         <li>伊泽瑞尔的精髓就是要E!</li>
+        <li>哥们的韦鲁斯还需要练吗?</li>
         <li>感觉我还有救。</li>
       </ul>
       <p className={"w-full min-h-full"}>
