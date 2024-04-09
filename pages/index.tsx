@@ -26,10 +26,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         <div className="page md:shadow-[inset_0_0_70px_30px_rgba(0,0,0,0.6)]">
           <div className={"content"}>
             <ScrollShadow
-              hideScrollBar
-              visibility="bottom"
-              size={30}
-              className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[55.5rem]"
+                hideScrollBar
+                visibility="bottom"
+                size={30}
+                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[55.5rem]"
             >
               <section>
                 <Image
@@ -44,11 +44,11 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     <h1>
                       JackeyLove
                     </h1>
-                    <Divider className={"my-4"} />
+                    <Divider className={"my-4"}/>
                     <div
-                      className={
-                        "grid align-middle px-3 gap-y-2 tracking-tighter"
-                      }
+                        className={
+                          "grid align-middle px-3 gap-y-2 tracking-tighter"
+                        }
                     >
                       <List>
                         <p>Team</p>
@@ -66,18 +66,18 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   </Box>
                   <Box>
                     <h1> Team History </h1>
-                    <Divider className={"my-4"} />
+                    <Divider className={"my-4"}/>
                     <div
-                      className={
-                        "grid gap-y-[0.97rem] px-3 align-middle tracking-tighter"
-                      }
+                        className={
+                          "grid gap-y-[0.97rem] px-3 align-middle tracking-tighter"
+                        }
                     >
                       {pageData.career.map((item, index) => {
                         return (
-                          <List>
-                            <p>{item.team}</p>
-                            <p>{item.time}</p>
-                          </List>
+                            <List>
+                              <p>{item.team}</p>
+                              <p>{item.time}</p>
+                            </List>
                         );
                       })}
                     </div>
@@ -87,19 +87,27 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <section>
                 <Box>
                   <h1>Awards</h1>
-                  <Divider className={"my-4"} />
+                  <Divider className={"my-4"}/>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 md:gap-x-12 px-3">
                     {pageData.awards.map((item, index) => (
-                      <li key={index}>{item}</li>
+                        <li key={index}>{item}</li>
                     ))}
                   </div>
                 </Box>
               </section>
               <section>
+                <iframe
+                    className={"w-full rounded-lg h-[450px] shadow-sm"}
+                    allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                    src="https://embed.music.apple.com/cn/playlist/jackeylove%E7%9B%B4%E6%92%AD%E6%AD%8C%E5%8D%95/pl.u-GgA55mBHZeazjWB"
+                />
+              </section>
+              <section>
                 <Box>
                   <h1>Recommendations</h1>
-                  <Divider className={"my-4"} />
-                  <Recommendation />
+                  <Divider className={"my-4"}/>
+                  <Recommendation/>
                 </Box>
               </section>
             </ScrollShadow>
@@ -109,10 +117,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         <div className="gallery">
           <div className="animate-[scy_60s_linear_infinite] transform-gpu w-max grayscale-[50%]">
             <div className="float-left grid grid-rows-8 grid-flow-col">
-              {images.map(({ public_id, format }) => (
-                <Image
-                  radius="none"
-                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30/${public_id}.${format}`}
+              {images.map(({public_id, format}) => (
+                  <Image
+                      radius="none"
+                      src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30/${public_id}.${format}`}
                   width={200}
                 />
               ))}
