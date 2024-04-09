@@ -32,7 +32,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <section>
                 <Image
                     classNames={{
-                      wrapper: "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.9] z-[99]"
+                      wrapper: "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.9] z-[99] shadow-md"
                     }}
                     className={"md:min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu"}
                     radius="sm" shadow="none" src="/img/handwrite.jpeg"
@@ -102,7 +102,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               </section>
               <section>
                 <iframe
-                    className={"w-full rounded-lg h-[450px] shadow-sm"}
+                    className={"w-full rounded-lg h-[450px] shadow-md"}
                     allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
                     sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
                     src="https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj"
