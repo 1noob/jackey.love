@@ -100,7 +100,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     className={"w-full rounded-lg h-[450px] shadow-sm"}
                     allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
                     sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-                    src="https://embed.music.apple.com/cn/playlist/jackeylove%E7%9B%B4%E6%92%AD%E6%AD%8C%E5%8D%95/pl.u-GgA55mBHZeazjWB"
+                    src="https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj"
                 />
               </section>
               <section>
