@@ -28,7 +28,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             <ScrollShadow
                 hideScrollBar
                 visibility="bottom"
-                size={30}
+                size={10}
                 className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[55.5rem]"
             >
               <section>
@@ -96,19 +96,19 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 </Box>
               </section>
               <section>
-                <iframe
-                    className={"w-full rounded-lg h-[450px] shadow-sm"}
-                    allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-                    src="https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj"
-                />
-              </section>
-              <section>
                 <Box>
                   <h1>Recommendations</h1>
                   <Divider className={"my-4"}/>
                   <Recommendation/>
                 </Box>
+              </section>
+              <section>
+                <iframe
+                    className={"w-full rounded-lg h-[450px] shadow-sm mb-5"}
+                    allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                    src="https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj"
+                />
               </section>
             </ScrollShadow>
             <TypedBios/>
