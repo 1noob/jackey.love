@@ -26,8 +26,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         <div className="page md:shadow-[inset_0_0_70px_30px_rgba(0,0,0,0.6)]">
           <div className={"content"}>
             <ScrollShadow
-                hideScrollBar offset={-8} size={8}
-                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] py-2"
+                hideScrollBar offset={-8} size={6}
+                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] py-2 rounded-lg"
             >
               <section>
                 <Image
