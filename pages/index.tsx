@@ -119,7 +119,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <Image
                       radius="none"
                       src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30/${public_id}.${format}`}
-                  width={200}
+                  width={180}
                 />
               ))}
             </div>
@@ -128,7 +128,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 <Image
                   radius="none"
                   src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30/${public_id}.${format}`}
-                  width={200}
+                  width={180}
                 />
               ))}
             </div>
