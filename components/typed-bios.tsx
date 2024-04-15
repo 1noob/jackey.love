@@ -21,7 +21,7 @@ const TypedBios = () => {
   }, []);
 
   return (
-    <div className={"grid grid-flow-col px-3 mt-2"}>
+    <div className={"grid grid-flow-col mt-2"}>
         <ul id="bios" className="hidden">
             <li>感觉我还有得救。</li>
             <li>我是天选，也是唯一。</li>
@@ -41,7 +41,7 @@ const TypedBios = () => {
         />
         "
       </p>
-      <div className={"flex justify-end content-center gap-2 md:gap-2.5"}>
+      <div className={"flex justify-end content-center gap-2"}>
         <Link href={"https://m.weibo.cn/u/5966770936"} target="_blank" aria-label="Weibo" className={"hidden md:flex"}>
           <SinaIcon size={18}/>
         </Link>
