@@ -10,6 +10,7 @@ import List from "@/components/List";
 import Recommendation from "@/components/Recommendation";
 import Script from "next/script";
 import TypedBios from "@/components/typed-bios";
+import {useTheme} from "next-themes";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -19,6 +20,8 @@ const jetbrainsMono = JetBrains_Mono({
 const image_len = 160;
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
+  const { systemTheme } = useTheme();
+
   return (
     <>
       <Script async src="https://us.umami.is/script.js" data-website-id="61824479-8621-45cf-981c-867d2ac2066d"/>
@@ -102,10 +105,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               </section>
               <section>
                 <iframe
-                    className={"w-full rounded-lg h-[450px] shadow-sm"}
+                    className={"w-full rounded-xl h-[450px] shadow-sm light:hidden"}
                     allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
                     sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-                    src="https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj"
+                    src={`https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj?theme=`+systemTheme}
                 />
               </section>
             </ScrollShadow>
@@ -116,9 +119,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           <div className="animate-[scy_60s_linear_infinite] transform-gpu w-max grayscale-[50%]">
             <div className="float-left grid grid-rows-8 grid-flow-col">
               {images.map(({public_id, format}) => (
-                <Image
-                  radius="none"
-                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30/${public_id}.${format}`}
+                  <Image
+                      radius="none"
+                      src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30/${public_id}.${format}`}
                   width={180}
                 />
               ))}
