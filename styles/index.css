@@ -9,7 +9,7 @@
 }
 
 main{
-  @apply subpixel-antialiased text-xs md:text-sm font-bold justify-center font-mono;
+  @apply subpixel-antialiased text-xs md:text-sm font-bold justify-center font-mono select-none;
 }
 
 .content{
