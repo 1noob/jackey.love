@@ -30,15 +30,15 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           <div className={"content"}>
             <ScrollShadow
                 hideScrollBar offset={-8} size={6}
-                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] py-2 rounded-lg"
+                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] py-2 rounded-xl"
             >
               <section>
                 <Image
                     classNames={{
-                      wrapper: "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.9] z-[99] shadow-sm"
+                      wrapper: "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.88] invert-[.02] z-[99] shadow-md rounded-xl"
                     }}
                     className={"md:min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu"}
-                    radius="sm" shadow="none" src="/img/handwrite.jpeg"
+                    radius="lg" shadow="none" src="/img/handwrite.jpeg"
                 />
                 <div className={"grid gap-y-4 w-full md:w-[58%]"}>
                   <Box>
@@ -105,7 +105,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               </section>
               <section>
                 <iframe
-                    className={"w-full rounded-xl h-[450px] shadow-md light:hidden"}
+                    className={"w-full rounded-2xl h-[450px] shadow-md"}
                     allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
                     sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
                     src={`https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj?theme=`+systemTheme}
