@@ -105,7 +105,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               </section>
               <section>
                 <iframe
-                    className={"w-full rounded-xl h-[450px] shadow-sm light:hidden"}
+                    className={"w-full rounded-xl h-[450px] shadow-md light:hidden"}
                     allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
                     sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
                     src={`https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj?theme=`+systemTheme}
