@@ -35,8 +35,11 @@ module.exports = {
         // mobile
         mobile: { max: "767px" },
 
-        // iPhoneX: 375x812
-        sm: { min: "376px" },
+        // mobile-s
+        xs: { min: "320px" },
+
+        // mobile-m (iPhoneX)
+        sm: { min: "375px" },
 
         // iPad Mini: 768
         md: { min: "768px" },
@@ -46,7 +49,7 @@ module.exports = {
 
         xl: { min: "1440x" },
 
-        "2xl": { min: "2160px" },
+        xxl: { min: "2160px" },
       },
       keyframes: {
         scx: {

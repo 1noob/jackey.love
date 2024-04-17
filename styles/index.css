@@ -9,11 +9,11 @@
 }
 
 main{
-  @apply subpixel-antialiased text-xs md:text-sm font-bold justify-center font-mono select-none;
+  @apply subpixel-antialiased text-[10px] sm:text-xs md:text-sm font-bold justify-center font-mono select-none;
 }
 
 .content{
-  @apply md:bg-content mx-auto max-w-2xl min-h-fit p-4 md:pb-2 flex flex-col
+  @apply md:bg-content mx-auto max-w-2xl min-h-fit p-2 sm:p-4 md:pb-2 flex flex-col
   md:backdrop-blur-2xl rounded-xl;
 }
 
@@ -31,7 +31,7 @@ main{
 }
 
 h1 {
-  @apply font-black text-base md:text-lg;
+  @apply font-black text-sm sm:text-base md:text-lg;
 }
 
 .dark {
