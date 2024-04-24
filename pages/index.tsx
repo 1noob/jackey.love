@@ -26,7 +26,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const [ isLoading, setIsLoading ] = useState(true);
 
   useEffect(() => {
-    fetch('https://jackey.love')
+    fetch('https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d?')
         .then(() => {
           setIsLoading(false);
         });
@@ -35,9 +35,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   return (
       <>
         <Script async src="https://us.umami.is/script.js" data-website-id="61824479-8621-45cf-981c-867d2ac2066d"/>
-        <div className={isLoading ? "hidden md:loading" : "hidden"}>
-          <JackeyLoveIcon size={300} className="w-full"/>
-        </div>
         <main className={`${jetbrainsMono.variable}`}>
           <div className="page md:shadow-[inset_0_0_70px_30px_rgba(0,0,0,0.6)]">
             <div className={"content"}>
@@ -129,6 +126,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             </div>
           </div>
           <div className="gallery">
+            <div className={isLoading ? "loading" : "hidden"}>
+              <JackeyLoveIcon size={300} className="w-full"/>
+            </div>
             <div className="animate-[scy_60s_linear_infinite] transform-gpu w-max grayscale-[50%]">
               <div className="float-left grid grid-rows-8 grid-flow-col">
                 {images.map(({public_id, format}) => (
