@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import cloudinary from "../utils/cloudinary";
 import type { ImageProps } from "@/utils/types";
 import { Divider, Image } from "@nextui-org/react";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { JetBrains_Mono } from "next/font/google";
 import { ScrollShadow } from "@nextui-org/react";
 import Box from "@/components/Box";
@@ -11,6 +11,7 @@ import Recommendation from "@/components/Recommendation";
 import Script from "next/script";
 import TypedBios from "@/components/typed-bios";
 import {useTheme} from "next-themes";
+import {JackeyLoveIcon} from "@/components/icon";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -22,123 +23,135 @@ const image_len = 160;
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const { systemTheme } = useTheme();
 
+  const [ isLoading, setIsLoading ] = useState(true);
+
+  useEffect(() => {
+    fetch('https://jackey.love')
+        .then(() => {
+          setIsLoading(false);
+        });
+  }, []);
+
   return (
-    <>
-      <Script async src="https://us.umami.is/script.js" data-website-id="61824479-8621-45cf-981c-867d2ac2066d"/>
-      <main className={`${jetbrainsMono.variable}`}>
-        <div className="page md:shadow-[inset_0_0_70px_30px_rgba(0,0,0,0.6)]">
-          <div className={"content"}>
-            <ScrollShadow
-                hideScrollBar offset={-8} size={6}
-                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] py-2 rounded-xl"
-            >
-              <section>
-                <Image
-                    classNames={{
-                      wrapper: "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.88] invert-[.02] z-[99] shadow-md rounded-xl"
-                    }}
-                    className={"md:min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu"}
-                    radius="lg" shadow="none" src="/img/handwrite.jpeg"
-                />
-                <div className={"grid gap-y-4 w-full md:w-[58%]"}>
-                  <Box>
-                    <h1>
-                      JackeyLove
-                    </h1>
-                    <Divider className={"my-4"}/>
-                    <div
-                        className={
-                          "grid align-middle px-3 gap-y-2 tracking-tighter"
-                        }
-                    >
-                      <List>
-                        <p>Team</p>
-                        <p>TOP E-SPORT</p>
-                      </List>
-                      <List>
-                        <p>Role</p>
-                        <p>AD Carry</p>
-                      </List>
-                      <List>
-                        <p>Birthday</p>
-                        <p>Nov,18,2000</p>
-                      </List>
-                    </div>
-                  </Box>
-                  <Box>
-                    <h1> Team History </h1>
-                    <Divider className={"my-4"}/>
-                    <div
-                        className={
-                          "grid gap-y-[0.97rem] px-3 align-middle tracking-tighter"
-                        }
-                    >
-                      {pageData.career.map((item, index) => {
-                        return (
-                            <List>
-                              <p>{item.team}</p>
-                              <p>{item.time}</p>
-                            </List>
-                        );
-                      })}
-                    </div>
-                  </Box>
-                </div>
-              </section>
-              <section>
-                <Box>
-                  <h1>Awards</h1>
-                  <Divider className={"my-4"}/>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 md:gap-x-12 px-3">
-                    {pageData.awards.map((item, index) => (
-                        <li key={index}>{item}</li>
-                    ))}
-                  </div>
-                </Box>
-              </section>
-              <section>
-                <Box>
-                  <h1>Recommendations</h1>
-                  <Divider className={"my-4"}/>
-                  <Recommendation/>
-                </Box>
-              </section>
-              <section>
-                <iframe
-                    className={"w-full rounded-2xl h-[450px] shadow-md"}
-                    allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-                    src={`https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj?theme=`+systemTheme}
-                />
-              </section>
-            </ScrollShadow>
-            <TypedBios/>
-          </div>
+      <>
+        <Script async src="https://us.umami.is/script.js" data-website-id="61824479-8621-45cf-981c-867d2ac2066d"/>
+        <div className={isLoading ? "loading" : "hidden"}>
+          <JackeyLoveIcon size={300} className="w-full"/>
         </div>
-        <div className="gallery">
-          <div className="animate-[scy_60s_linear_infinite] transform-gpu w-max grayscale-[50%]">
-            <div className="float-left grid grid-rows-8 grid-flow-col">
-              {images.map(({public_id, format}) => (
+        <main className={`${jetbrainsMono.variable}`}>
+          <div className="page md:shadow-[inset_0_0_70px_30px_rgba(0,0,0,0.6)]">
+            <div className={"content"}>
+              <ScrollShadow
+                  hideScrollBar offset={-8} size={6}
+                  className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] py-2 rounded-xl"
+              >
+                <section>
                   <Image
-                      radius="none"
-                      src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30/${public_id}.${format}`}
-                  width={180}
-                />
-              ))}
-            </div>
-            <div className="grid grid-rows-8 grid-flow-col">
-              {images.map(({ public_id, format }) => (
-                <Image
-                  radius="none"
-                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30/${public_id}.${format}`}
-                  width={180}
-                />
-              ))}
+                      classNames={{
+                        wrapper: "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.88] invert-[.02] z-[99] shadow-md rounded-xl"
+                      }}
+                      className={"md:min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu"}
+                      radius="lg" shadow="none" src="/img/handwrite.jpeg"
+                  />
+                  <div className={"grid gap-y-4 w-full md:w-[58%]"}>
+                    <Box>
+                      <h1>
+                        JackeyLove
+                      </h1>
+                      <Divider className={"my-4"}/>
+                      <div
+                          className={
+                            "grid align-middle px-3 gap-y-2 tracking-tighter"
+                          }
+                      >
+                        <List>
+                          <p>Team</p>
+                          <p>TOP E-SPORT</p>
+                        </List>
+                        <List>
+                          <p>Role</p>
+                          <p>AD Carry</p>
+                        </List>
+                        <List>
+                          <p>Birthday</p>
+                          <p>Nov,18,2000</p>
+                        </List>
+                      </div>
+                    </Box>
+                    <Box>
+                      <h1> Team History </h1>
+                      <Divider className={"my-4"}/>
+                      <div
+                          className={
+                            "grid gap-y-[0.97rem] px-3 align-middle tracking-tighter"
+                          }
+                      >
+                        {pageData.career.map((item, index) => {
+                          return (
+                              <List>
+                                <p>{item.team}</p>
+                                <p>{item.time}</p>
+                              </List>
+                          );
+                        })}
+                      </div>
+                    </Box>
+                  </div>
+                </section>
+                <section>
+                  <Box>
+                    <h1>Awards</h1>
+                    <Divider className={"my-4"}/>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 md:gap-x-12 px-3">
+                      {pageData.awards.map((item, index) => (
+                          <li key={index}>{item}</li>
+                      ))}
+                    </div>
+                  </Box>
+                </section>
+                <section>
+                  <Box>
+                    <h1>Recommendations</h1>
+                    <Divider className={"my-4"}/>
+                    <Recommendation/>
+                  </Box>
+                </section>
+                <section>
+                  <iframe
+                      className={"w-full rounded-2xl h-[450px] shadow-md"}
+                      allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+                      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                      src={`https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj?theme=` + systemTheme}
+                  />
+                </section>
+              </ScrollShadow>
+              <TypedBios/>
             </div>
           </div>
-        </div>
-      </main>
-    </>
+          <div className="gallery">
+            <div className="animate-[scy_60s_linear_infinite] transform-gpu w-max grayscale-[50%]">
+              <div className="float-left grid grid-rows-8 grid-flow-col">
+                {images.map(({public_id, format}) => (
+                    <Image
+                        radius="none"
+                        src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30/${public_id}.${format}`}
+                        width={180}
+                    />
+                ))}
+              </div>
+              <div className="grid grid-rows-8 grid-flow-col">
+                {images.map(({public_id, format}) => (
+                    <Image
+                        radius="none"
+                        src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30/${public_id}.${format}`}
+                        width={180}
+                    />
+                ))}
+              </div>
+            </div>
+          </div>
+        </main>
+      </>
   );
 };
 
@@ -146,9 +159,9 @@ export default Home;
 
 export async function getStaticProps() {
   const results = await cloudinary.v2.search
-    .expression(`folder:${process.env.CLOUDINARY_FOLDER}/*`)
-    .sort_by("public_id", "desc")
-    .max_results(image_len)
+      .expression(`folder:${process.env.CLOUDINARY_FOLDER}/*`)
+      .sort_by("public_id", "desc")
+      .max_results(image_len)
     .execute();
   let reducedResults: ImageProps[] = [];
 
