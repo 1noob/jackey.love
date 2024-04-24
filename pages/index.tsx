@@ -35,7 +35,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   return (
       <>
         <Script async src="https://us.umami.is/script.js" data-website-id="61824479-8621-45cf-981c-867d2ac2066d"/>
-        <div className={isLoading ? "loading" : "hidden"}>
+        <div className={isLoading ? "hidden md:loading" : "hidden"}>
           <JackeyLoveIcon size={300} className="w-full"/>
         </div>
         <main className={`${jetbrainsMono.variable}`}>
