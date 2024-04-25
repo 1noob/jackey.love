@@ -28,7 +28,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   useEffect(() => {
     fetch('https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d')
         .then(() => {
-          setIsLoading(false);
+          // setIsLoading(false);
         });
   }, []);
 
@@ -36,7 +36,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
       <>
         <Script async src="https://us.umami.is/script.js" data-website-id="61824479-8621-45cf-981c-867d2ac2066d"/>
         <main className={`${jetbrainsMono.variable}`}>
-          <div className="page md:shadow-[inset_0_0_70px_30px_rgba(0,0,0,0.6)]">
+          <div className={isLoading ? "hidden" : "page"}>
             <div className={"content"}>
               <ScrollShadow
                   hideScrollBar offset={-8} size={6}
@@ -126,10 +126,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <TypedBios/>
             </div>
           </div>
+          <div className={isLoading ? "loading" : "hidden"}>
+            <JackeyLoveIcon size={300} className="w-[60%] m-auto"/>
+          </div>
           <div className="gallery">
-            <div className={isLoading ? "loading" : "hidden"}>
-              <JackeyLoveIcon size={300} className="w-full"/>
-            </div>
             <div className="animate-[scy_60s_linear_infinite] transform-gpu w-max grayscale-[50%]">
               <div className="float-left grid grid-rows-8 grid-flow-col">
                 {images.map(({public_id, format}) => (
