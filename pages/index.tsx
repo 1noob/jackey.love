@@ -38,7 +38,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         <Script async src="https://us.umami.is/script.js" data-website-id="61824479-8621-45cf-981c-867d2ac2066d"/>
         <CSSTransition
             in={!isLoading}
-            timeout={300}
+            timeout={500}
             classNames="loading"
             unmountOnExit
         >
@@ -161,7 +161,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         </CSSTransition>
         <CSSTransition
             in={isLoading}
-            timeout={300}
+            timeout={500}
             classNames="loading"
             unmountOnExit
         >
