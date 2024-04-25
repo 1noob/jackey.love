@@ -20,14 +20,16 @@ main{
   @apply opacity-0;
 }
 .loading-enter-active {
-  @apply opacity-100 transition-opacity duration-500 ease-in-out delay-150;
+  @apply opacity-100;
+  transition: opacity 500ms, transform 500ms ease-in-out;
 }
 
 .loading-exit {
   @apply opacity-100;
 }
 .loading-exit-active {
-  @apply opacity-0 transition-opacity duration-500 ease-in-out delay-150;
+  @apply opacity-0;
+  transition: opacity 500ms, transform 500ms ease-in-out;
 }
 
 .content{
