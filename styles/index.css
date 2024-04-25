@@ -9,11 +9,25 @@
 }
 
 main{
-  @apply subpixel-antialiased text-[10px] sm:text-xs md:text-sm font-bold justify-center font-mono select-none;
+  @apply subpixel-antialiased text-[10px] sm:text-xs md:text-sm font-bold justify-center font-mono select-none will-change-transform;
 }
 
 .loading{
-  @apply fixed flex-1 w-full h-dvh bg-page z-[999] place-content-center;
+  @apply fixed flex-1 w-full h-dvh bg-page z-[999] place-content-center will-change-transform;
+}
+
+.loading-enter {
+  @apply opacity-0;
+}
+.loading-enter-active {
+  @apply opacity-100 transition-opacity duration-300 ease-in;
+}
+
+.loading-exit {
+  @apply opacity-100;
+}
+.loading-exit-active {
+  @apply opacity-0 transition-opacity duration-300 ease-out;
 }
 
 .content{
@@ -27,11 +41,6 @@ main{
 
 .gallery{
   @apply mobile:hidden my-auto overflow-hidden w-full h-dvh z-0 grid content-center;
-}
-
-.region-icon {
-  @apply inline-block text-center rotate-180 align-middle leading-3 font-black;
-  writing-mode: vertical-rl;
 }
 
 h1 {
