@@ -28,7 +28,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   useEffect(() => {
     fetch('https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d')
         .then(() => {
-          setIsLoading(false);
+          // setIsLoading(false);
         });
   }, []);
 
@@ -151,7 +151,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             </div>
           </div>
           <div className={isLoading ? "loading" : "hidden"}>
-            <JackeyLoveIcon size={300} className="w-[60%] m-auto h-dvh"/>
+            <JackeyLoveIcon size={300} className="w-[50%] md:w-[30%] m-auto h-dvh"/>
           </div>
         </main>
       </>
