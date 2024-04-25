@@ -28,7 +28,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   useEffect(() => {
     fetch('https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d')
         .then(() => {
-          // setIsLoading(false);
+          setIsLoading(false);
         });
   }, []);
 
