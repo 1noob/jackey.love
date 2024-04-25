@@ -151,7 +151,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             </div>
           </div>
           <div className={isLoading ? "loading" : "hidden"}>
-            <JackeyLoveIcon size={300} className="w-[50%] md:w-[30%] m-auto h-dvh"/>
+            <JackeyLoveIcon size={300} className="w-[50%] md:w-[35%] lg:w-[20%] m-auto h-dvh"/>
           </div>
         </main>
       </>
