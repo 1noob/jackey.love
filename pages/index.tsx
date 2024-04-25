@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import cloudinary from "../utils/cloudinary";
+import cloudinary from "@/utils/cloudinary";
 import type { ImageProps } from "@/utils/types";
 import { Divider, Image } from "@nextui-org/react";
 import React, {useEffect, useState} from "react";
@@ -137,7 +137,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                         radius="none"
                         src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30/${public_id}.${format}`}
                         width={180}
-                        alt={"JackeyLove, TES, IG"}
+                        alt={"JackeyLove, TES, IG, LOL, LPL"}
                     />
                 ))}
               </div>
@@ -147,7 +147,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                         radius="none"
                         src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30/${public_id}.${format}`}
                         width={180}
-                        alt={"JackeyLove, TES, IG"}
+                        alt={"JackeyLove, TES, IG, LOL , LPL"}
                     />
                 ))}
               </div>
