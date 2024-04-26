@@ -3,7 +3,7 @@ import cloudinary from "@/utils/cloudinary";
 import type { ImageProps } from "@/utils/types";
 import { Divider, Image } from "@nextui-org/react";
 import { ScrollShadow } from "@nextui-org/react";
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useLayoutEffect, useRef, useState} from "react";
 import { useTheme } from "next-themes";
 import { JetBrains_Mono } from "next/font/google";
 import { CSSTransition } from "react-transition-group";
@@ -24,24 +24,34 @@ const jetbrainsMono = JetBrains_Mono({
 const image_len = 160;
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
+
   const { systemTheme } = useTheme();
 
-  const [ isLoading, setIsLoading ] = useState(true);
-
+  const [ loaded, setStatus ] = useState(false);
   const nodeRef = useRef(null);
 
-  useEffect(() => {
-    fetch('https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d')
-        .then(() => {
-          setTimeout(()=> { setIsLoading(false) }, 1000);
-        });
+  // This will run one time after the component mounts
+  useLayoutEffect(() => {
+    // callback function to call when event triggers
+    const onPageLoad = () => {
+      setStatus(true);
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad, false);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener('load', onPageLoad);
+    }
   }, []);
 
   return (
       <>
         <Script async src="https://us.umami.is/script.js" data-website-id="61824479-8621-45cf-981c-867d2ac2066d"/>
         <CSSTransition
-            in={!isLoading}
+            in={loaded}
             timeout={500}
             classNames="loading"
             unmountOnExit
@@ -55,11 +65,13 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 >
                   <section>
                     <Image
+                        rel="preload"
                         classNames={{
                           wrapper: "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.88] invert-[.02] z-[99] shadow-md rounded-xl"
                         }}
                         className={"md:min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu"}
                         radius="lg" shadow="none" src="/img/handwrite.jpeg"
+                        loading="eager"
                         alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
                     />
                     <div className={"grid gap-y-4 w-full md:w-[58%]"}>
@@ -141,7 +153,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           </main>
         </CSSTransition>
         <CSSTransition
-            in={isLoading}
+            in={!loaded}
             timeout={500}
             classNames="loading"
             unmountOnExit
