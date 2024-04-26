@@ -45,9 +45,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             timeout={500}
             classNames="loading"
             unmountOnExit
-            nodeRef={nodeRef}
         >
-          <main className={`${jetbrainsMono.variable}`} ref={nodeRef}>
+          <main className={`${jetbrainsMono.variable}`}>
             <div className="page">
               <div className={"content"}>
                 <ScrollShadow
