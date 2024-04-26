@@ -47,7 +47,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             unmountOnExit
             nodeRef={nodeRef}
         >
-          <main className={`${jetbrainsMono.variable}`}>
+          <main className={`${jetbrainsMono.variable}`} ref={nodeRef}>
             <div className="page">
               <div className={"content"}>
                 <ScrollShadow
@@ -148,7 +148,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             unmountOnExit
             nodeRef={nodeRef}
         >
-          <div className="loading">
+          <div className="loading" ref={nodeRef}>
             <JackeyLoveIcon size={300} className="w-[50%] md:w-[35%] lg:w-[20%] m-auto h-dvh"/>
           </div>
         </CSSTransition>
