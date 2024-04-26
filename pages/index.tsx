@@ -3,7 +3,7 @@ import cloudinary from "@/utils/cloudinary";
 import type { ImageProps } from "@/utils/types";
 import { Divider, Image } from "@nextui-org/react";
 import { ScrollShadow } from "@nextui-org/react";
-import React, {useEffect, useLayoutEffect, useRef, useState} from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import { JetBrains_Mono } from "next/font/google";
 import { CSSTransition } from "react-transition-group";
@@ -24,10 +24,9 @@ const jetbrainsMono = JetBrains_Mono({
 const image_len = 160;
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
-
   const { systemTheme } = useTheme();
 
-  const [ loaded, setStatus ] = useState(false);
+  const [loaded, setStatus] = useState(false);
   const nodeRef = useRef(null);
 
   // This will run one time after the component mounts
@@ -38,132 +37,147 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
     };
 
     // Check if the page has already loaded
-    if (document.readyState === 'complete') {
+    if (document.readyState === "complete") {
       onPageLoad();
     } else {
-      window.addEventListener('load', onPageLoad, false);
+      window.addEventListener("load", onPageLoad, false);
       // Remove the event listener when component unmounts
-      return () => window.removeEventListener('load', onPageLoad);
+      return () => window.removeEventListener("load", onPageLoad);
     }
   }, []);
 
   return (
-      <>
-        <Script async src="https://us.umami.is/script.js" data-website-id="61824479-8621-45cf-981c-867d2ac2066d"/>
-        <CSSTransition
-            in={loaded}
-            timeout={500}
-            classNames="loading"
-            unmountOnExit
-        >
-          <main className={`${jetbrainsMono.variable}`}>
-            <div className="page">
-              <div className={"content"}>
-                <ScrollShadow
-                    hideScrollBar offset={-8} size={6}
-                    className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] py-2 rounded-xl"
-                >
-                  <section>
-                    <Image
-                        rel="preload"
-                        classNames={{
-                          wrapper: "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.88] invert-[.02] z-[99] shadow-md rounded-xl"
-                        }}
-                        className={"md:min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu"}
-                        radius="lg" shadow="none" src="/img/handwrite.jpeg"
-                        loading="eager"
-                        alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
-                    />
-                    <div className={"grid gap-y-4 w-full md:w-[58%]"}>
-                      <Box>
-                        <h1>
-                          JackeyLove
-                        </h1>
-                        <Divider className={"my-4"}/>
-                        <div
-                            className={
-                              "grid align-middle px-3 gap-y-2 tracking-tighter"
-                            }
-                        >
-                          <List>
-                            <p>Team</p>
-                            <p>TOP E-SPORT</p>
-                          </List>
-                          <List>
-                            <p>Role</p>
-                            <p>AD Carry</p>
-                          </List>
-                          <List>
-                            <p>Birthday</p>
-                            <p>Nov,18,2000</p>
-                          </List>
-                        </div>
-                      </Box>
-                      <Box>
-                        <h1> Team History </h1>
-                        <Divider className={"my-4"}/>
-                        <div
-                            className={
-                              "grid gap-y-[0.97rem] px-3 align-middle tracking-tighter"
-                            }
-                        >
-                          {pageData.career.map((item, index) => {
-                            return (
-                                <List>
-                                  <p>{item.team}</p>
-                                  <p>{item.time}</p>
-                                </List>
-                            );
-                          })}
-                        </div>
-                      </Box>
-                    </div>
-                  </section>
-                  <section>
+    <>
+      <Script
+        async
+        src="https://us.umami.is/script.js"
+        data-website-id="61824479-8621-45cf-981c-867d2ac2066d"
+      />
+      <CSSTransition
+        in={loaded}
+        timeout={500}
+        classNames="loading"
+        unmountOnExit
+      >
+        <main className={`${jetbrainsMono.variable}`}>
+          <div className="page">
+            <div className={"content"}>
+              <ScrollShadow
+                hideScrollBar
+                offset={-8}
+                size={6}
+                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] py-2 rounded-xl"
+              >
+                <section>
+                  <Image
+                    rel="preload"
+                    classNames={{
+                      wrapper:
+                        "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.88] invert-[.02] z-[99] shadow-md rounded-xl",
+                    }}
+                    className={
+                      "md:min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu"
+                    }
+                    radius="lg"
+                    shadow="none"
+                    src="/img/handwrite.jpeg"
+                    loading="eager"
+                    alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
+                  />
+                  <div className={"grid gap-y-4 w-full md:w-[58%]"}>
                     <Box>
-                      <h1>Awards</h1>
-                      <Divider className={"my-4"}/>
-                      <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 md:gap-x-12 px-3">
-                        {pageData.awards.map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
+                      <h1>JackeyLove</h1>
+                      <Divider className={"my-4"} />
+                      <div
+                        className={
+                          "grid align-middle px-3 gap-y-2 tracking-tighter"
+                        }
+                      >
+                        <List>
+                          <p>Team</p>
+                          <p>TOP E-SPORT</p>
+                        </List>
+                        <List>
+                          <p>Role</p>
+                          <p>AD Carry</p>
+                        </List>
+                        <List>
+                          <p>Birthday</p>
+                          <p>Nov,18,2000</p>
+                        </List>
                       </div>
                     </Box>
-                  </section>
-                  <section>
                     <Box>
-                      <h1>Recommendations</h1>
-                      <Divider className={"my-4"}/>
-                      <Recommendation/>
+                      <h1> Team History </h1>
+                      <Divider className={"my-4"} />
+                      <div
+                        className={
+                          "grid gap-y-[0.97rem] px-3 align-middle tracking-tighter"
+                        }
+                      >
+                        {pageData.career.map((item, index) => {
+                          return (
+                            <List>
+                              <p>{item.team}</p>
+                              <p>{item.time}</p>
+                            </List>
+                          );
+                        })}
+                      </div>
                     </Box>
-                  </section>
-                  <section>
-                    <iframe
-                        className={"w-full rounded-2xl h-[450px] shadow-md"}
-                        allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-                        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-                        src={`https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj?theme=` + systemTheme}
-                    />
-                  </section>
-                </ScrollShadow>
-                <TypedBios/>
-              </div>
+                  </div>
+                </section>
+                <section>
+                  <Box>
+                    <h1>Awards</h1>
+                    <Divider className={"my-4"} />
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 md:gap-x-12 px-3">
+                      {pageData.awards.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </div>
+                  </Box>
+                </section>
+                <section>
+                  <Box>
+                    <h1>Recommendations</h1>
+                    <Divider className={"my-4"} />
+                    <Recommendation />
+                  </Box>
+                </section>
+                <section>
+                  <iframe
+                    className={"w-full rounded-2xl h-[450px] shadow-md"}
+                    allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                    src={
+                      `https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj?theme=` +
+                      systemTheme
+                    }
+                  />
+                </section>
+              </ScrollShadow>
+              <TypedBios />
             </div>
-            <Gallery images={images}/>
-          </main>
-        </CSSTransition>
-        <CSSTransition
-            in={!loaded}
-            timeout={500}
-            classNames="loading"
-            unmountOnExit
-            nodeRef={nodeRef}
-        >
-          <div className="loading" ref={nodeRef}>
-            <JackeyLoveIcon size={300} className="w-[50%] md:w-[35%] lg:w-[20%] m-auto h-dvh"/>
           </div>
-        </CSSTransition>
-      </>
+          <Gallery images={images} />
+        </main>
+      </CSSTransition>
+      <CSSTransition
+        in={!loaded}
+        timeout={500}
+        classNames="loading"
+        unmountOnExit
+        nodeRef={nodeRef}
+      >
+        <div className="loading" ref={nodeRef}>
+          <JackeyLoveIcon
+            size={300}
+            className="w-[50%] md:w-[35%] lg:w-[20%] m-auto h-dvh"
+          />
+        </div>
+      </CSSTransition>
+    </>
   );
 };
 
@@ -171,10 +185,10 @@ export default Home;
 
 export async function getStaticProps() {
   const results = await cloudinary.v2.search
-      .expression(`folder:${process.env.CLOUDINARY_FOLDER}/*`)
-      .sort_by("public_id", "desc")
-      .max_results(image_len)
-      .execute();
+    .expression(`folder:${process.env.CLOUDINARY_FOLDER}/*`)
+    .sort_by("public_id", "desc")
+    .max_results(image_len)
+    .execute();
   let reducedResults: ImageProps[] = [];
 
   for (let result of results.resources) {

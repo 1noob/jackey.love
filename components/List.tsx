@@ -5,11 +5,7 @@ interface ListProps {
   className?: string;
 }
 const List: React.FC<ListProps> = ({ children, className }) => {
-  return (
-      <div className={"grid grid-cols-2"}>
-          {children}
-      </div>
-  );
+  return <div className={"grid grid-cols-2"}>{children}</div>;
 };
 
 export default List;
