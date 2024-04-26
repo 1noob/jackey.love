@@ -165,7 +165,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
       </CSSTransition>
       <CSSTransition
         in={!loaded}
-        timeout={500}
+        timeout={800}
         classNames="loading"
         unmountOnExit
         nodeRef={nodeRef}
