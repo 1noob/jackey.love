@@ -2,17 +2,19 @@ import type { NextPage } from "next";
 import cloudinary from "@/utils/cloudinary";
 import type { ImageProps } from "@/utils/types";
 import { Divider, Image } from "@nextui-org/react";
-import React, {useEffect, useState} from "react";
-import { JetBrains_Mono } from "next/font/google";
 import { ScrollShadow } from "@nextui-org/react";
+import React, {useEffect, useRef, useState} from "react";
+import { useTheme } from "next-themes";
+import { JetBrains_Mono } from "next/font/google";
+import { CSSTransition } from "react-transition-group";
+
 import Box from "@/components/Box";
 import List from "@/components/List";
 import Recommendation from "@/components/Recommendation";
 import Script from "next/script";
 import TypedBios from "@/components/typed-bios";
-import {useTheme} from "next-themes";
+import Gallery from "@/components/Gallery";
 import { JackeyLoveIcon } from "@/components/icon";
-import { CSSTransition } from "react-transition-group";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -25,6 +27,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const { systemTheme } = useTheme();
 
   const [ isLoading, setIsLoading ] = useState(true);
+
+  const nodeRef = useRef(null);
 
   useEffect(() => {
     fetch('https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d')
@@ -41,6 +45,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             timeout={500}
             classNames="loading"
             unmountOnExit
+            nodeRef={nodeRef}
         >
           <main className={`${jetbrainsMono.variable}`}>
             <div className="page">
@@ -133,30 +138,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 <TypedBios/>
               </div>
             </div>
-            <div className="gallery">
-              <div className="animate-[scy_60s_linear_infinite] transform-gpu w-max grayscale-[50%]">
-                <div className="float-left grid grid-rows-8 grid-flow-col">
-                  {images.map(({public_id, format}) => (
-                      <Image
-                          radius="none"
-                          src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30/${public_id}.${format}`}
-                          width={180}
-                          alt={"JackeyLove, TES, IG, LOL, LPL"}
-                      />
-                  ))}
-                </div>
-                <div className="grid grid-rows-8 grid-flow-col">
-                  {images.map(({public_id, format}) => (
-                      <Image
-                          radius="none"
-                          src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30/${public_id}.${format}`}
-                          width={180}
-                          alt={"JackeyLove, TES, IG, LOL , LPL"}
-                      />
-                  ))}
-                </div>
-              </div>
-            </div>
+            <Gallery images={images}/>
           </main>
         </CSSTransition>
         <CSSTransition
@@ -164,6 +146,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             timeout={500}
             classNames="loading"
             unmountOnExit
+            nodeRef={nodeRef}
         >
           <div className="loading">
             <JackeyLoveIcon size={300} className="w-[50%] md:w-[35%] lg:w-[20%] m-auto h-dvh"/>
