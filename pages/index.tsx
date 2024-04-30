@@ -29,6 +29,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const [loaded, setStatus] = useState(false);
   const nodeRef = useRef(null);
 
+  if (typeof document === 'undefined') {
+    React.useLayoutEffect = React.useEffect;
+  }
+
   // This will run one time after the component mounts
   useLayoutEffect(() => {
     // callback function to call when event triggers
@@ -76,7 +80,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                         "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.88] invert-[.02] z-[99] shadow-md rounded-xl",
                     }}
                     className={
-                      "md:min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu"
+                      "md:min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu duration-200 ease-in-out"
                     }
                     radius="lg"
                     shadow="none"
