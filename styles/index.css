@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
-  img[loading='lazy'] {
+  img[loading="lazy"] {
     clip-path: none;
   }
 }
 
-main{
+main {
   @apply subpixel-antialiased text-[10px] sm:text-xs md:text-sm font-bold justify-center font-mono select-none will-change-transform;
 }
 
-.loading{
+.loading {
   @apply fixed flex-1 w-full h-dvh bg-page z-[999] place-content-center will-change-transform;
 }
 
@@ -31,16 +31,16 @@ main{
   /*transition: opacity 500ms, transform 500ms ease-in-out;*/
 }
 
-.content{
+.content {
   @apply md:bg-content mx-auto max-w-2xl min-h-fit p-2 sm:p-4 md:pb-2 flex flex-col
   md:backdrop-blur-2xl rounded-xl;
 }
 
-.page{
+.page {
   @apply mobile:bg-page absolute w-full z-10 h-dvh place-content-center grid md:shadow-[inset_0_0_70px_30px_rgba(0,0,0,0.6)];
 }
 
-.gallery{
+.gallery {
   @apply mobile:hidden my-auto overflow-hidden w-full h-dvh z-0 grid content-center;
 }
 
@@ -56,7 +56,7 @@ h1 {
 }
 
 .light {
-  --page: 242 242 242 / 1;
+  --page: 248 250 252 / 1;
   --content: 255 255 255 / 0.5;
   --blur: 60 60 60 / 0.1;
   --card: 248 248 250 / 1;
