@@ -112,7 +112,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       </div>
                     </Box>
                     <Box>
-                      <h1> Team History </h1>
+                      <h1> Career </h1>
                       <Divider className={"my-4"} />
                       <div
                         className={
