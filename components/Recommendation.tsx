@@ -136,6 +136,13 @@ const data = {
       company: "IG",
       thumbnail: "/img/rookie.jpeg",
     },
+    {
+      text: "Most western fans know Jackeylove as the talented but inconsistent choker. Realistically though, Jackeylove is currently the best ADC in the world.",
+      name: "RichsWrach",
+      title: "Founder",
+      company: "H2K",
+      thumbnail: "/img/rich.png",
+    },
   ],
 };
 
