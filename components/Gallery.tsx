@@ -1,19 +1,23 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Image } from "@nextui-org/react";
 import type { ImageProps } from "@/utils/types";
+import shuffle from "lodash.shuffle";
 
 interface ListProps {
   images: ImageProps[];
 }
 
 const Gallery: React.FC<ListProps> = ({ images }) => {
+
+  const [data, setData] = useState(shuffle(images))
+
   return (
     <div className="gallery">
       <div className="animate-[scy_60s_linear_infinite] transform-gpu w-max grayscale-[50%]">
         <div className="float-left grid grid-rows-8 grid-flow-col">
-          {images.map(({ public_id, format }) => (
+          {data.map(({ public_id, format }) => (
             <Image
               rel="preload"
               radius="none"
@@ -25,7 +29,7 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
           ))}
         </div>
         <div className="grid grid-rows-8 grid-flow-col">
-          {images.map(({ public_id, format }) => (
+          {data.map(({ public_id, format }) => (
             <Image
               radius="none"
               src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30,w_1000/${public_id}.${format}`}
