@@ -141,7 +141,7 @@ const data = {
       name: "RichsWrach",
       title: "Founder",
       company: "H2K",
-      thumbnail: "/img/rich.png",
+      thumbnail: "/img/rich.jpeg",
     },
   ],
 };
