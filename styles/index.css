@@ -37,7 +37,7 @@ main {
 }
 
 .page {
-  @apply mobile:bg-page absolute w-full z-10 h-dvh place-content-center grid md:shadow-[inset_0_0_240px_40px_rgba(0,0,0,0.6)];
+  @apply mobile:bg-page absolute w-full z-10 h-dvh place-content-center grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)];
 }
 
 .gallery {
