@@ -70,7 +70,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 hideScrollBar
                 offset={-8}
                 size={6}
-                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] p-2 md:px-2 rounded-xl"
+                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] p-2 md:px-2"
               >
                 <section>
                   <Image
@@ -151,7 +151,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 </section>
                 <section>
                   <iframe
-                    className={"w-full rounded-2xl h-[455px] shadow-lg"}
+                    className={"w-full rounded-2xl h-[450px] shadow-lg"}
                     allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
                     sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
                     src={
