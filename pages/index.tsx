@@ -77,7 +77,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     rel="preload"
                     classNames={{
                       wrapper:
-                        "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.88] invert-[.02] z-[99] shadow-md rounded-xl",
+                        "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.88] invert-[.02] z-[99] shadow-lg rounded-xl",
                     }}
                     className={
                       "md:min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu duration-200 ease-in-out"
@@ -151,7 +151,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 </section>
                 <section>
                   <iframe
-                    className={"w-full rounded-2xl h-[450px] shadow-md"}
+                    className={"w-full rounded-2xl h-[450px] shadow-lg"}
                     allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
                     sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
                     src={
