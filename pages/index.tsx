@@ -151,7 +151,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 </section>
                 <section>
                   <iframe
-                    className={"w-full rounded-2xl h-[450px] shadow-lg"}
+                    className={"w-full rounded-2xl h-[455px] shadow-lg"}
                     allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
                     sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
                     src={
