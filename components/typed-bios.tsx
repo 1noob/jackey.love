@@ -28,7 +28,7 @@ const TypedBios = () => {
   }, []);
 
   return (
-    <div className={"grid grid-flow-col px-2 mt-2"}>
+    <div className={"grid grid-flow-col px-4 mt-2"}>
       <ul id="bios" className="hidden">
         <li>感觉我还有得救。</li>
         <li>我是天选，也是唯一。</li>
