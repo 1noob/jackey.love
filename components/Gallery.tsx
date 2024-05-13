@@ -15,8 +15,6 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
 
   const [data, setData] = useState(shuffle(images).slice(0, image_len))
 
-  console.log(data.length)
-
   return (
     <div className="gallery">
       <div className="animate-[scy_60s_linear_infinite] transform-gpu w-max grayscale-[50%]">

@@ -119,7 +119,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       >
                         {pageData.career.map((item, index) => {
                           return (
-                            <List>
+                            <List key={index}>
                               <p>{item.team}</p>
                               <p>{item.time}</p>
                             </List>
