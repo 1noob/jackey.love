@@ -9,9 +9,13 @@ interface ListProps {
   images: ImageProps[];
 }
 
+const image_len = 160;
+
 const Gallery: React.FC<ListProps> = ({ images }) => {
 
-  const [data, setData] = useState(shuffle(images))
+  const [data, setData] = useState(shuffle(images).slice(0, image_len))
+
+  console.log(data.length)
 
   return (
     <div className="gallery">

@@ -21,8 +21,6 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-const image_len = 160;
-
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const { systemTheme } = useTheme();
 
@@ -191,7 +189,7 @@ export async function getStaticProps() {
   const results = await cloudinary.v2.search
     .expression(`folder:${process.env.CLOUDINARY_FOLDER}/*`)
     .sort_by("public_id", "desc")
-    .max_results(image_len)
+    .max_results(500)
     .execute();
   let reducedResults: ImageProps[] = [];
 
@@ -202,11 +200,6 @@ export async function getStaticProps() {
       public_id: result.public_id,
       format: result.format,
     });
-  }
-
-  for (let i = reducedResults.length; i < image_len; i++) {
-    let rand_id = Math.floor(Math.random() * i);
-    reducedResults.push(reducedResults.at(rand_id));
   }
 
   return {
