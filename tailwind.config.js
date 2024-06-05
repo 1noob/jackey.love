@@ -14,10 +14,11 @@ module.exports = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: {
-      mono: ["JetBrains Mono Web", ...defaultTheme.fontFamily.mono],
-    },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-smiley)", ...defaultTheme.fontFamily.sans],
+        mono: ["var(--font-pixel)", ...defaultTheme.fontFamily.mono],
+      },
       backgroundColor: {
         page: "rgba(var(--page))",
         content: "rgba(var(--content))",

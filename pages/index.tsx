@@ -6,6 +6,7 @@ import { ScrollShadow } from "@nextui-org/react";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import { JetBrains_Mono } from "next/font/google";
+import localFont from 'next/font/local'
 import { CSSTransition } from "react-transition-group";
 
 import Box from "@/components/Box";
@@ -19,6 +20,30 @@ import { JackeyLoveIcon } from "@/components/icon";
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+});
+
+const SmileySans = localFont({
+  src: [
+    {
+      path: '../public/fonts/smiley/SmileySans-Oblique.otf.woff2',
+    },
+    {
+      path: '../public/fonts/smiley/SmileySans-Oblique.ttf.woff2',
+    }
+  ],
+  variable: '--font-smiley'
+});
+
+const PixelMono = localFont({
+  src: [
+    {
+      path: '../public/fonts/pixel/ark-pixel-10px-monospaced-latin.woff2',
+    },
+    {
+      path: '../public/fonts/pixel/ark-pixel-10px-monospaced-zh_cn.woff2',
+    }
+  ],
+  variable: '--font-pixel'
 });
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
@@ -61,7 +86,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         classNames="loading"
         unmountOnExit
       >
-        <main className={`${jetbrainsMono.variable}`}>
+        <main className={`${PixelMono.variable} font-mono`}>
           <div className="page">
             <div className={"content"}>
               <ScrollShadow
@@ -238,7 +263,7 @@ const pageData = {
     "2018 德玛西亚杯冠军",
     "2018 LPL年度最佳新秀",
     "2019 LPL春季赛冠军",
-    "2020 MSC季中杯冠军",
+    "2020 MSC季中赛冠军",
     "2020 LPL夏季赛冠军",
     "2020 LPL夏季赛一阵",
     "2020 LPL年度最佳ADC",
