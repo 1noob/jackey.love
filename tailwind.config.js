@@ -41,6 +41,8 @@ module.exports = {
         // mobile-m (iPhoneX)
         sm: { min: "375px" },
 
+        ul: { min: "390px" },
+
         // iPad Mini: 768
         md: { min: "768px" },
 
