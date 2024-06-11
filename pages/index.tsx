@@ -16,7 +16,6 @@ import Script from "next/script";
 import TypedBios from "@/components/typed-bios";
 import Gallery from "@/components/Gallery";
 import { JackeyLoveIcon } from "@/components/icon";
-import CarouselPlugin from "@/components/CarouselPlugin";
 import EmblaCarousel from "@/components/EmblaCarousel";
 import { EmblaOptionsType } from 'embla-carousel'
 
