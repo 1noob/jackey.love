@@ -49,7 +49,7 @@ const PixelMono = localFont({
 });
 
 const OPTIONS: EmblaOptionsType = { loop: true }
-const SLIDE_COUNT = 4
+const SLIDE_COUNT = 2
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
@@ -117,7 +117,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     loading="eager"
                     alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
                   />
-                  <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+                  <EmblaCarousel slides={SLIDES} options={OPTIONS} systemTheme={systemTheme} />
                   <div className={"grid gap-y-4 w-full md:w-[54%]"}>
                     <Box>
                       <h1>JackeyLove</h1>

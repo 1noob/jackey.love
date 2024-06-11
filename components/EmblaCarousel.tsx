@@ -9,18 +9,18 @@ import {
 import useEmblaCarousel from "embla-carousel-react";
 
 import { Image } from "@nextui-org/react";
-import { useTheme } from "next-themes";
 import Autoplay from "embla-carousel-autoplay";
 
 type PropType = {
   slides: number[];
   options?: EmblaOptionsType;
+  systemTheme: string;
 };
 
 const components = [];
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
+  const { slides, options, systemTheme } = props;
 
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({ playOnInit: true, delay: 3000 }),
@@ -48,40 +48,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       .on("reInit", () => setIsPlaying(autoplay.isPlaying()));
   }, [emblaApi]);
 
-  const { systemTheme } = useTheme();
 
   components.push(
     <Image
       rel="preload"
       classNames={{
         wrapper: "shadow-xl magin-auto dark:invert-[.88] invert-[.02]",
-      }}
-      className={"min-h-full"}
-      radius="lg"
-      shadow="none"
-      src="/img/handwrite.jpeg"
-      loading="eager"
-      alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
-    />
-  );
-
-  components.push(
-    <iframe
-      className={"w-full rounded-2xl h-full shadow-lg"}
-      allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-      src={
-        `https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj?theme=` +
-        systemTheme
-      }
-    />
-  );
-
-  components.push(
-    <Image
-      rel="preload"
-      classNames={{
-        wrapper: "shadow-xl magin-auto dark:invert-[.88]",
       }}
       className={"min-h-full"}
       radius="lg"
