@@ -28,6 +28,11 @@ module.exports = {
       boxShadow: {
         highlight: "inset 0 0 0 1px rgba(255, 255, 255, 0.05)",
       },
+      flex: {
+        '1': '0 0 100%',
+        '2': '0 0 80%',
+        '3': '0 0 60%'
+      },
       screens: {
         narrow: { raw: "(max-aspect-ratio: 3 / 2)" },
         wide: { raw: "(min-aspect-ratio: 3 / 2)" },
@@ -42,7 +47,7 @@ module.exports = {
         // mobile-m (iPhoneX)
         sm: { min: "375px" },
 
-        ul: { min: "390px" },
+        ul: { min: "450px" },
 
         // iPad Mini: 768
         md: { min: "768px" },

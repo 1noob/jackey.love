@@ -17,6 +17,8 @@ import TypedBios from "@/components/typed-bios";
 import Gallery from "@/components/Gallery";
 import { JackeyLoveIcon } from "@/components/icon";
 import CarouselPlugin from "@/components/CarouselPlugin";
+import EmblaCarousel from "@/components/EmblaCarousel";
+import { EmblaOptionsType } from 'embla-carousel'
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -46,6 +48,10 @@ const PixelMono = localFont({
   ],
   variable: '--font-pixel'
 });
+
+const OPTIONS: EmblaOptionsType = { loop: true }
+const SLIDE_COUNT = 4
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const { systemTheme } = useTheme();
@@ -112,7 +118,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     loading="eager"
                     alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
                   />
-                  <CarouselPlugin />
+                  <EmblaCarousel slides={SLIDES} options={OPTIONS} />
                   <div className={"grid gap-y-4 w-full md:w-[54%]"}>
                     <Box>
                       <h1>JackeyLove</h1>
