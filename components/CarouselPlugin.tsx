@@ -27,18 +27,18 @@ const CarouselPlugin = () => {
     >
       <CarouselContent>
         <CarouselItem className="pb-4">
-            <Image
-              rel="preload"
-              classNames={{
-                wrapper: "shadow-xl w-full dark:invert-[.88] invert-[.02]",
-              }}
-              className={"min-h-full"}
-              radius="lg"
-              shadow="none"
-              src="/img/handwrite.jpeg"
-              loading="eager"
-              alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
-            />
+          <Image
+            rel="preload"
+            classNames={{
+              wrapper: "shadow-lg magin-auto dark:invert-[.88] invert-[.02]",
+            }}
+            className={"min-h-full"}
+            radius="lg"
+            shadow="none"
+            src="/img/handwrite.jpeg"
+            loading="eager"
+            alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
+          />
         </CarouselItem>
         <CarouselItem className="pb-4">
           <iframe
@@ -52,6 +52,8 @@ const CarouselPlugin = () => {
           />
         </CarouselItem>
       </CarouselContent>
+      <CarouselPrevious className="left-0"/>
+      <CarouselNext className="right-0"/>
     </Carousel>
   );
 };
