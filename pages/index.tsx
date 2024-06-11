@@ -16,6 +16,7 @@ import Script from "next/script";
 import TypedBios from "@/components/typed-bios";
 import Gallery from "@/components/Gallery";
 import { JackeyLoveIcon } from "@/components/icon";
+import CarouselPlugin from "@/components/CarouselPlugin";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -100,10 +101,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     rel="preload"
                     classNames={{
                       wrapper:
-                        "md:h-full relative float-right w-full md:w-[40%] mobile:mb-4 dark:invert-[.88] invert-[.02] z-[99] shadow-lg rounded-xl",
+                        "hidden h-full md:flex relative float-right md:w-[45%] dark:invert-[.88] invert-[.02] z-[99] shadow-lg rounded-xl",
                     }}
                     className={
-                      "md:min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu duration-200 ease-in-out"
+                      "min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu duration-200 ease-in-out"
                     }
                     radius="lg"
                     shadow="none"
@@ -111,7 +112,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     loading="eager"
                     alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
                   />
-                  <div className={"grid gap-y-4 w-full md:w-[58%]"}>
+                  <CarouselPlugin />
+                  <div className={"grid gap-y-4 w-full md:w-[54%]"}>
                     <Box>
                       <h1>JackeyLove</h1>
                       <Divider className={"my-4"} />
@@ -172,7 +174,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     <Recommendation />
                   </Box>
                 </section>
-                <section>
+                <section className="hidden md:flex">
                   <iframe
                     className={"w-full rounded-2xl h-[450px] shadow-lg"}
                     allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
@@ -263,7 +265,7 @@ const pageData = {
     "2018 德玛西亚杯冠军",
     "2018 LPL年度最佳新秀",
     "2019 LPL春季赛冠军",
-    "2020 MSC季中赛冠军",
+    "2020 MSC季中杯冠军",
     "2020 LPL夏季赛冠军",
     "2020 LPL夏季赛一阵",
     "2020 LPL年度最佳ADC",
