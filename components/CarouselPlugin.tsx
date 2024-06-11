@@ -26,7 +26,7 @@ const CarouselPlugin = () => {
       onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>
-        <CarouselItem key={1} className="pb-4">
+        <CarouselItem key={1} className="pb-4 z-[99]">
           <Image
             rel="preload"
             classNames={{
@@ -40,7 +40,7 @@ const CarouselPlugin = () => {
             alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
           />
         </CarouselItem>
-        <CarouselItem key={2} className="pb-4">
+        <CarouselItem key={2} className="pb-4 z-[99]">
             <iframe
               className={"shadow-lg w-full rounded-2xl h-full"}
               allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
