@@ -66,7 +66,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   components.push(
     <iframe
-      className={"w-full rounded-2xl h-full shadow-lg"}
+      className={"w-full rounded-2xl h-full shadow-lg bg-card"}
       allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
       sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
       src={
