@@ -7,19 +7,12 @@ import useEmblaCarousel from "embla-carousel-react";
 import { Image } from "@nextui-org/react";
 import Autoplay from "embla-carousel-autoplay";
 
-type PropType = {
-  slides: number[];
-  options?: EmblaOptionsType;
-};
-
-const options: EmblaOptionsType = { loop: true }
-const SLIDE_COUNT = 2
-const slides = Array.from(Array(SLIDE_COUNT).keys())
-
+const options: EmblaOptionsType = { loop: true };
+const SLIDE_COUNT = 2;
+const slides = Array.from(Array(SLIDE_COUNT).keys());
 const components = [];
 
 const EmblaCarousel = () => {
-
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({
       playOnInit: true,
@@ -53,7 +46,7 @@ const EmblaCarousel = () => {
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((index) => (
-            <div className="embla__slide" key={index}>
+            <div className="embla__slide will-change-transform" key={index}>
               <div className="embla__slide__number pb-4 h-full">
                 {components[index]}
               </div>
@@ -62,8 +55,7 @@ const EmblaCarousel = () => {
         </div>
       </div>
 
-
-        {/* <div className="embla__dots">
+      {/* <div className="embla__dots">
           {scrollSnaps.map((_, index) => (
             <DotButton
               key={index}
