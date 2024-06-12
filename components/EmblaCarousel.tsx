@@ -32,7 +32,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     <Image
       rel="preload"
       classNames={{
-        wrapper: "shadow-xl magin-auto dark:invert-[.89] invert-[.02]",
+        wrapper: "magin-auto dark:invert-[.89] invert-[.02]",
       }}
       className={"min-h-full"}
       radius="lg"
