@@ -12,10 +12,13 @@ type PropType = {
   options?: EmblaOptionsType;
 };
 
+const options: EmblaOptionsType = { loop: true }
+const SLIDE_COUNT = 2
+const slides = Array.from(Array(SLIDE_COUNT).keys())
+
 const components = [];
 
-const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
+const EmblaCarousel = () => {
 
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({
