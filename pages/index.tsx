@@ -18,6 +18,7 @@ import { JackeyLoveIcon } from "@/components/icon";
 import EmblaCarousel from "@/components/EmblaCarousel";
 import { EmblaOptionsType } from 'embla-carousel'
 import Intro from "@/components/Intro";
+import AppleMusic from "@/components/AppleMusic";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -139,15 +140,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   </Box>
                 </section>
                 <section className="hidden md:flex">
-                  <iframe
-                    className={"w-full rounded-2xl h-[450px]"}
-                    allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-                    src={
-                      `https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj?theme=` +
-                      systemTheme
-                    }
-                  />
+                  <AppleMusic className="h-[450px]"/>
                 </section>
               </ScrollShadow>
               <TypedBios />
