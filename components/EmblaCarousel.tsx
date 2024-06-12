@@ -10,20 +10,18 @@ import Autoplay from "embla-carousel-autoplay";
 type PropType = {
   slides: number[];
   options?: EmblaOptionsType;
-  systemTheme: string;
 };
 
 const components = [];
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options, systemTheme } = props;
+  const { slides, options } = props;
 
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({
       playOnInit: true,
       delay: 6000,
       stopOnInteraction: false,
-      stopOnMouseEnter: true,
     }),
   ]);
 
