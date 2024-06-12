@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
+import AppleMusic from "./AppleMusic";
 import useEmblaCarousel from "embla-carousel-react";
 
 import { Image } from "@nextui-org/react";
@@ -44,21 +45,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     />
   );
 
-  const apple_music = (
-    <div className="bg-card w-full h-full rounded-2xl shadow-lg">
-      <iframe
-        className={"w-full h-[450px] rounded-2xl"}
-        allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-        src={
-          `https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj?theme=` +
-          systemTheme
-        }
-      />
-    </div>
-  );
-
-  components.push(apple_music);
+  components.push(<AppleMusic />);
 
   return (
     <section className="embla md:hidden">
