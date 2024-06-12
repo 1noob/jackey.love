@@ -23,7 +23,7 @@ module.exports = {
         page: "rgba(var(--page))",
         content: "rgba(var(--content))",
         blur: "rgba(var(--blur))",
-        card: "rgb(var(--card))",
+        card: "rgba(var(--card))",
       },
       boxShadow: {
         highlight: "inset 0 0 0 1px rgba(255, 255, 255, 0.05)",
@@ -31,12 +31,9 @@ module.exports = {
       flex: {
         '1': '0 0 100%',
         '2': '0 0 80%',
-        '3': '0 0 60%'
+        '3': '0 0 50%',
       },
       screens: {
-        narrow: { raw: "(max-aspect-ratio: 3 / 2)" },
-        wide: { raw: "(min-aspect-ratio: 3 / 2)" },
-        "taller-than-854": { raw: "(min-height: 854px)" },
 
         // mobile
         mobile: { max: "767px" },

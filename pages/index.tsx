@@ -10,7 +10,6 @@ import localFont from 'next/font/local'
 import { CSSTransition } from "react-transition-group";
 
 import Box from "@/components/Box";
-import List from "@/components/List";
 import Recommendation from "@/components/Recommendation";
 import Script from "next/script";
 import TypedBios from "@/components/typed-bios";
@@ -18,6 +17,7 @@ import Gallery from "@/components/Gallery";
 import { JackeyLoveIcon } from "@/components/icon";
 import EmblaCarousel from "@/components/EmblaCarousel";
 import { EmblaOptionsType } from 'embla-carousel'
+import Intro from "@/components/Intro";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -106,7 +106,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     rel="preload"
                     classNames={{
                       wrapper:
-                        "hidden h-full md:flex relative float-right md:w-[45%] dark:invert-[.88] invert-[.02] z-[99] shadow-lg rounded-xl",
+                        "hidden h-full md:flex relative float-right md:w-[45%] dark:invert-[.88] invert-[.02] z-[99] shadow-lg md:shadow-none rounded-xl",
                     }}
                     className={
                       "min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu duration-200 ease-in-out"
@@ -118,48 +118,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
                   />
                   <EmblaCarousel slides={SLIDES} options={OPTIONS} systemTheme={systemTheme} />
-                  <div className={"grid gap-y-4 w-full md:w-[54%]"}>
-                    <Box>
-                      <h1>JackeyLove</h1>
-                      <Divider className={"my-4"} />
-                      <div
-                        className={
-                          "grid align-middle px-3 gap-y-2 tracking-tighter"
-                        }
-                      >
-                        <List>
-                          <p>Team</p>
-                          <p>TOP E-SPORT</p>
-                        </List>
-                        <List>
-                          <p>Role</p>
-                          <p>AD Carry</p>
-                        </List>
-                        <List>
-                          <p>Birthday</p>
-                          <p>Nov,18,2000</p>
-                        </List>
-                      </div>
-                    </Box>
-                    <Box>
-                      <h1> Career </h1>
-                      <Divider className={"my-4"} />
-                      <div
-                        className={
-                          "grid gap-y-[0.97rem] px-3 align-middle tracking-tighter"
-                        }
-                      >
-                        {pageData.career.map((item, index) => {
-                          return (
-                            <List key={index}>
-                              <p>{item.team}</p>
-                              <p>{item.time}</p>
-                            </List>
-                          );
-                        })}
-                      </div>
-                    </Box>
-                  </div>
+                  <Intro />
                 </section>
                 <section>
                   <Box>
@@ -181,7 +140,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 </section>
                 <section className="hidden md:flex">
                   <iframe
-                    className={"w-full rounded-2xl h-[450px] shadow-lg"}
+                    className={"w-full rounded-2xl h-[450px]"}
                     allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
                     sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
                     src={
@@ -242,24 +201,6 @@ export async function getStaticProps() {
 }
 
 const pageData = {
-  career: [
-    {
-      time: "Jun,2016 - Apr,2017",
-      team: "Invictus Gaming",
-    },
-    {
-      time: "Apr,2017 - May,2017",
-      team: "Young Glory",
-    },
-    {
-      time: "May,2017 - Nov,2019",
-      team: "Invictus Gaming",
-    },
-    {
-      time: "Apr,2020 - Present",
-      team: "TOP E-SPORT",
-    },
-  ],
   awards: [
     "2016 NEST全国冠军",
     "2017 NEST全国冠军",
