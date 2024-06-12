@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
-import {
-  PrevButton,
-  NextButton,
-  usePrevNextButtons,
-} from "./EmblaCarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
 
 import { Image } from "@nextui-org/react";
@@ -23,37 +18,22 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const { slides, options, systemTheme } = props;
 
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    Autoplay({ playOnInit: true, delay: 3000 }),
+    Autoplay({
+      playOnInit: true,
+      delay: 3000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: true,
+    }),
   ]);
-  const [isPlaying, setIsPlaying] = useState(true);
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
-
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
-
-  useEffect(() => {
-    const autoplay = emblaApi?.plugins()?.autoplay;
-    if (!autoplay) return;
-
-    setIsPlaying(autoplay.isPlaying());
-    emblaApi
-      .on("autoplay:play", () => setIsPlaying(true))
-      .on("autoplay:stop", () => setIsPlaying(false))
-      .on("reInit", () => setIsPlaying(autoplay.isPlaying()));
-  }, [emblaApi]);
-
 
   components.push(
     <Image
       rel="preload"
       classNames={{
-        wrapper: "shadow-xl magin-auto dark:invert-[.88] invert-[.02]",
+        wrapper: "shadow-xl magin-auto dark:invert-[.89] invert-[.02]",
       }}
       className={"min-h-full"}
       radius="lg"
@@ -64,17 +44,21 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     />
   );
 
-  components.push(
-    <iframe
-      className={"w-full rounded-2xl h-full shadow-lg bg-card"}
-      allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-      src={
-        `https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj?theme=` +
-        systemTheme
-      }
-    />
+  const apple_music = (
+    <div className="bg-card w-full h-full rounded-2xl shadow-lg">
+      <iframe
+        className={"w-full h-[450px] rounded-2xl"}
+        allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+        src={
+          `https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj?theme=` +
+          systemTheme
+        }
+      />
+    </div>
   );
+
+  components.push(apple_music);
 
   return (
     <section className="embla md:hidden">
@@ -90,13 +74,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         </div>
       </div>
 
-      {/* <div className="embla__controls">
-        <div className="embla__buttons">
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div>
 
-        <div className="embla__dots">
+        {/* <div className="embla__dots">
           {scrollSnaps.map((_, index) => (
             <DotButton
               key={index}
@@ -106,8 +85,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               )}
             />
           ))}
-        </div>
-      </div> */}
+        </div> */}
     </section>
   );
 };
