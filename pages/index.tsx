@@ -118,7 +118,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     loading="eager"
                     alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
                   />
-                  <EmblaCarousel slides={SLIDES} options={OPTIONS} systemTheme={systemTheme} />
+                  <EmblaCarousel slides={SLIDES} options={OPTIONS}/>
                   <Intro />
                 </section>
                 <section>
