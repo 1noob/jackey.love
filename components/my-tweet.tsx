@@ -10,7 +10,7 @@ import {
   TweetActions,
   QuotedTweet,
   enrichTweet,
-  TweetReplies
+  TweetReplies,
 } from 'react-tweet'
  
 type Props = {
@@ -32,7 +32,6 @@ export const MyTweet = ({ tweet: t, components }: Props) => {
       <TweetInfo tweet={tweet} />
       <TweetActions tweet={tweet} />
       <TweetReplies tweet={tweet} />
-      {/* We're not including the `TweetReplies` component that adds the reply button */}
     </TweetContainer>
   )
 }

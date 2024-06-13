@@ -3,10 +3,10 @@
 import {
   type TweetProps,
   TweetNotFound,
-  TweetSkeleton,
   useTweet,
 } from "react-tweet";
 import { MyTweet } from "./my-tweet";
+import { TweetSkeleton } from "./tweet-skeleton";
 
 export const Tweet = ({
   id,
