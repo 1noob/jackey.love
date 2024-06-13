@@ -2,11 +2,11 @@
 
 import {
   type TweetProps,
-  TweetNotFound,
   useTweet,
 } from "react-tweet";
 import { MyTweet } from "./my-tweet";
 import { TweetSkeleton } from "./tweet-skeleton";
+import { TweetNotFound } from "./tweet-not-found";
 
 export const Tweet = ({
   id,
