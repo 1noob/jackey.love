@@ -8,13 +8,14 @@ interface TweetProps {
 
 const X: React.FC<TweetProps> = ({ className }) => {
   const { systemTheme } = useTheme();
+  const id = "1788487122485166261"
 
   return (
     <div
       data-theme={systemTheme}
       className={cn("w-full h-full", className)}
     >
-      <Tweet id="1788487122485166261" />
+      {Tweet({id: id})}
     </div>
   );
 };
