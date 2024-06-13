@@ -29,7 +29,7 @@ module.exports = {
         highlight: "inset 0 0 0 1px rgba(255, 255, 255, 0.05)",
       },
       cursor: {
-        'dot': 'url(/dot_32x32.png), auto',
+        'dot': 'url(/dot_32x32.png) 12 12, auto',
       },
       flex: {
         '1': '0 0 100%',
