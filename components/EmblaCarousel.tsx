@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Image } from "@nextui-org/react";
 import { EmblaOptionsType } from "embla-carousel";
-import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
+import Tweet from "./Tweet";
 import AppleMusic from "./AppleMusic";
 import useEmblaCarousel from "embla-carousel-react";
 
-import { Image } from "@nextui-org/react";
 import Autoplay from "embla-carousel-autoplay";
 
 const options: EmblaOptionsType = { loop: true };
-const SLIDE_COUNT = 2;
+const SLIDE_COUNT = 3;
 const slides = Array.from(Array(SLIDE_COUNT).keys());
 const components = [];
 
@@ -25,9 +25,9 @@ const EmblaCarousel = () => {
     <Image
       rel="preload"
       classNames={{
-        wrapper: "magin-auto dark:invert-[.89] invert-[.02]",
+        wrapper: "dark:invert-[.89] invert-[.02]",
       }}
-      className={"min-h-full"}
+      className={"w-full min-h-full"}
       radius="lg"
       shadow="none"
       src="/img/handwrite.jpeg"
@@ -37,6 +37,7 @@ const EmblaCarousel = () => {
   );
 
   components.push(<AppleMusic />);
+  components.push(<Tweet />);
 
   return (
     <section className="embla md:hidden">
