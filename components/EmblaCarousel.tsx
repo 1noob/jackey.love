@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Image } from "@nextui-org/react";
 import { EmblaOptionsType } from "embla-carousel";
-import XEmbed from "./XEmbed";
+import X from "./X";
 import AppleMusic from "./AppleMusic";
 import useEmblaCarousel from "embla-carousel-react";
 
@@ -37,14 +37,17 @@ const EmblaCarousel = () => {
   );
 
   components.push(<AppleMusic />);
-  components.push(<XEmbed />);
+  components.push(<X />);
 
   return (
     <section className="embla md:hidden">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((index) => (
-            <div className="embla__slide will-change-transform transform-gpu" key={index}>
+            <div
+              className="embla__slide will-change-transform transform-gpu"
+              key={index}
+            >
               <div className="embla__slide__number pb-4 h-full">
                 {components[index]}
               </div>

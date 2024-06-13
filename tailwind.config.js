@@ -3,6 +3,7 @@ const { nextui } = require("@nextui-org/react");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
+  important: true,
   darkMode: "class",
   future: {
     hoverOnlyWhenSupported: true,
