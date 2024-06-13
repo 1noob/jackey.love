@@ -21,9 +21,6 @@ const EmblaCarousel = () => {
     }),
   ]);
 
-  const { selectedIndex, scrollSnaps, onDotButtonClick } =
-    useDotButton(emblaApi);
-
   components.push(
     <Image
       rel="preload"
