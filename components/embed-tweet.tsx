@@ -8,7 +8,7 @@ import {
 } from "react-tweet";
 import { MyTweet } from "./my-tweet";
 
-export const Tweet = ({
+export const Tweet: React.FC = ({
   id,
   apiUrl,
   fallback = <TweetSkeleton />,
