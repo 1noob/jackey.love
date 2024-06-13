@@ -10,5 +10,6 @@ module.exports = {
         pathname: '/dtwhwtr5x/**'
       }
     ]
-  }
+  },
+  transpilePackages: ['react-tweet']
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Image } from "@nextui-org/react";
 import { EmblaOptionsType } from "embla-carousel";
-import Tweet from "./Tweet";
+import XEmbed from "./XEmbed";
 import AppleMusic from "./AppleMusic";
 import useEmblaCarousel from "embla-carousel-react";
 
@@ -25,7 +25,7 @@ const EmblaCarousel = () => {
     <Image
       rel="preload"
       classNames={{
-        wrapper: "dark:invert-[.89] invert-[.02]",
+        wrapper: "light:border dark:invert-[.89]",
       }}
       className={"w-full min-h-full"}
       radius="lg"
@@ -37,7 +37,7 @@ const EmblaCarousel = () => {
   );
 
   components.push(<AppleMusic />);
-  components.push(<Tweet />);
+  components.push(<XEmbed />);
 
   return (
     <section className="embla md:hidden">
