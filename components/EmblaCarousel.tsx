@@ -23,7 +23,6 @@ const EmblaCarousel = () => {
 
   components.push(
     <Image
-      rel="preload"
       classNames={{
         wrapper: "light:border dark:invert-[.89]",
       }}
@@ -31,13 +30,11 @@ const EmblaCarousel = () => {
       radius="lg"
       shadow="none"
       src="/img/handwrite.jpeg"
-      loading="eager"
-      alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
     />
   );
 
-  components.push(<AppleMusic />);
   components.push(<X />);
+  components.push(<AppleMusic />);
 
   return (
     <section className="embla md:hidden">
@@ -45,7 +42,7 @@ const EmblaCarousel = () => {
         <div className="embla__container">
           {slides.map((index) => (
             <div
-              className="embla__slide will-change-transform transform-gpu"
+              className="embla__slide"
               key={index}
             >
               <div className="embla__slide__number pb-4 h-full">
