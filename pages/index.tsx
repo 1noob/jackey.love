@@ -103,10 +103,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     rel="preload"
                     classNames={{
                       wrapper:
-                        "hidden h-full md:flex relative float-right md:w-[45%] dark:invert-[.88] invert-[.02] z-[99] shadow-lg md:shadow-none rounded-xl",
+                        "hidden h-full md:flex relative float-right md:w-[46%] dark:invert-[.88] z-[99] rounded-xl",
                     }}
                     className={
-                      "min-h-full md:hover:scale-[1.5] origin-top-right transform-gpu duration-200 ease-in-out"
+                      "min-h-full hover:scale-[1.5] origin-top-right transform-gpu duration-200 ease-in-out"
                     }
                     radius="lg"
                     shadow="none"
