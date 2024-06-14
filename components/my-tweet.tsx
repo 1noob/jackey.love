@@ -1,7 +1,6 @@
 import type { Tweet } from 'react-tweet/api'
 import {
   type TwitterComponents,
-  TweetContainer,
   TweetHeader,
   TweetInReplyTo,
   TweetBody,
@@ -12,6 +11,7 @@ import {
   enrichTweet,
   TweetReplies,
 } from 'react-tweet'
+import { TweetContainer } from './tweet-container'
  
 type Props = {
   tweet: Tweet
@@ -21,7 +21,7 @@ type Props = {
 export const MyTweet = ({ tweet: t, components }: Props) => {
   const tweet = enrichTweet(t)
   return (
-    <TweetContainer className="my-0 h-full">
+    <TweetContainer>
       <TweetHeader tweet={tweet} components={components} />
       {tweet.in_reply_to_status_id_str && <TweetInReplyTo tweet={tweet} />}
       <TweetBody tweet={tweet} />
