@@ -31,7 +31,7 @@ export const MyTweet = ({ tweet: t, components }: Props) => {
       {tweet.quoted_tweet && <QuotedTweet tweet={tweet.quoted_tweet} />}
       <TweetInfo tweet={tweet} />
       <TweetActions tweet={tweet} />
-      <TweetReplies tweet={tweet} />
+      <TweetReplies tweet={tweet}/>
     </TweetContainer>
   )
 }
