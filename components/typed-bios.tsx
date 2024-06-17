@@ -50,7 +50,7 @@ const TypedBios = () => {
         "
       </p>
       <ScrollShadow
-        className="w-full"
+        className="w-full rounded-full"
         offset={-2}
         size={12}
         orientation="horizontal"
@@ -102,7 +102,7 @@ const TypedBios = () => {
               target="_blank"
               aria-label="Cloudinary"
             >
-              <CloudinaryIcon size={18} />
+              <CloudinaryIcon size={18.5} />
             </Link>
           </div>
           <div className="w-max flex gap-2 pr-2 content-center">
@@ -150,7 +150,7 @@ const TypedBios = () => {
               target="_blank"
               aria-label="Cloudinary"
             >
-              <CloudinaryIcon size={18} />
+              <CloudinaryIcon size={18.5} />
             </Link>
           </div>
         </div>
