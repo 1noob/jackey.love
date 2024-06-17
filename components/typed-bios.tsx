@@ -52,7 +52,7 @@ const TypedBios = () => {
       <ScrollShadow
         className="w-full rounded-full"
         offset={-2}
-        size={12}
+        size={6}
         orientation="horizontal"
         hideScrollBar
       >
