@@ -59,7 +59,7 @@ const TypedBios = () => {
       >
         <div className={"animate-[scy_15s_linear_infinite] w-max flex"}>
           <div className="w-max flex gap-2 pr-2 content-center">
-          <Link
+            <Link
               href={"mailto:x@jackey.love"}
               target="_blank"
               aria-label="mail"
@@ -110,11 +110,11 @@ const TypedBios = () => {
               target="_blank"
               aria-label="Cloudinary"
             >
-              <CloudinaryIcon size={18.5} />
+              <CloudinaryIcon size={19} />
             </Link>
           </div>
           <div className="w-max flex gap-2 pr-2 content-center">
-          <Link
+            <Link
               href={"mailto:x@jackey.love"}
               target="_blank"
               aria-label="mail"
@@ -165,7 +165,7 @@ const TypedBios = () => {
               target="_blank"
               aria-label="Cloudinary"
             >
-              <CloudinaryIcon size={18.5} />
+              <CloudinaryIcon size={19} />
             </Link>
           </div>
         </div>
