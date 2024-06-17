@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Image } from "@nextui-org/react";
 import { EmblaOptionsType } from "embla-carousel";
-import X from "./X";
-import AppleMusic from "./AppleMusic";
+import X from "../tweet/X";
+import AppleMusic from "../AppleMusic";
 import useEmblaCarousel from "embla-carousel-react";
 
 import Autoplay from "embla-carousel-autoplay";

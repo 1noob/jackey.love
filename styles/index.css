@@ -80,7 +80,7 @@ h1 {
   margin-left: calc(var(--slide-spacing) * -1);
 }
 .embla__slide {
-  @apply flex-1 ul:flex-2 min-w-0;
+  @apply flex-1 pro:flex-2 max:flex-3 min-w-0;
   padding-left: var(--slide-spacing);
 }
 .embla__slide__number {
