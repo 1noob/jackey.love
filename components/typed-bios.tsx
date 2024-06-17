@@ -9,6 +9,7 @@ import {
   XIcon,
   UmamiIcon,
   CloudinaryIcon,
+  MailIcon,
 } from "@/components/icon";
 import Link from "next/link";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
@@ -56,8 +57,15 @@ const TypedBios = () => {
         orientation="horizontal"
         hideScrollBar
       >
-        <div className={"animate-[scy_12s_linear_infinite] w-max flex"}>
+        <div className={"animate-[scy_15s_linear_infinite] w-max flex"}>
           <div className="w-max flex gap-2 pr-2 content-center">
+          <Link
+              href={"mailto:x@jackey.love"}
+              target="_blank"
+              aria-label="mail"
+            >
+              <MailIcon size={18} />
+            </Link>
             <Link
               href={"https://m.weibo.cn/u/5966770936"}
               target="_blank"
@@ -106,6 +114,13 @@ const TypedBios = () => {
             </Link>
           </div>
           <div className="w-max flex gap-2 pr-2 content-center">
+          <Link
+              href={"mailto:x@jackey.love"}
+              target="_blank"
+              aria-label="mail"
+            >
+              <MailIcon size={18} />
+            </Link>
             <Link
               href={"https://m.weibo.cn/u/5966770936"}
               target="_blank"
