@@ -33,7 +33,7 @@ const EmblaCarousel = () => {
     />
   );
 
-  components.push(<X id="1788487122485166261"/>);
+  components.push(<X id="1788487122485166261" className="bg-page"/>);
   components.push(<AppleMusic className="border border-gray-200 dark:border-0"/>);
 
   return (
