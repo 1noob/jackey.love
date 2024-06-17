@@ -8,8 +8,7 @@ export const TweetNotFound = (_props: Props) => (
   <TweetContainer>
     <div className={"notfound-root"}>
       <h3>Tweet not found</h3>
-      <p>The embedded tweet could not be found…</p>
-      <p>Maybe you need a VPN...</p>
+      <p>Maybe you should be using a VPN...</p>
     </div>
   </TweetContainer>
 );
