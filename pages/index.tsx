@@ -6,7 +6,7 @@ import { ScrollShadow } from "@nextui-org/react";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import { JetBrains_Mono } from "next/font/google";
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
 import { CSSTransition } from "react-transition-group";
 
 import Box from "@/components/Box";
@@ -16,7 +16,7 @@ import TypedBios from "@/components/typed-bios";
 import Gallery from "@/components/Gallery";
 import { JackeyLoveIcon } from "@/components/icon";
 import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
-import { EmblaOptionsType } from 'embla-carousel'
+import { EmblaOptionsType } from "embla-carousel";
 import Intro from "@/components/Intro";
 import AppleMusic from "@/components/AppleMusic";
 
@@ -28,25 +28,25 @@ const jetbrainsMono = JetBrains_Mono({
 const SmileySans = localFont({
   src: [
     {
-      path: '../public/fonts/smiley/SmileySans-Oblique.otf.woff2',
+      path: "../public/fonts/smiley/SmileySans-Oblique.otf.woff2",
     },
     {
-      path: '../public/fonts/smiley/SmileySans-Oblique.ttf.woff2',
-    }
+      path: "../public/fonts/smiley/SmileySans-Oblique.ttf.woff2",
+    },
   ],
-  variable: '--font-smiley'
+  variable: "--font-smiley",
 });
 
 const PixelMono = localFont({
   src: [
     {
-      path: '../public/fonts/pixel/fusion-pixel-12px-monospaced-latin.woff2',
+      path: "../public/fonts/pixel/fusion-pixel-12px-monospaced-latin.woff2",
     },
     {
-      path: '../public/fonts/pixel/fusion-pixel-12px-monospaced-zh_hans.woff2',
-    }
+      path: "../public/fonts/pixel/fusion-pixel-12px-monospaced-zh_hans.woff2",
+    },
   ],
-  variable: '--font-pixel'
+  variable: "--font-pixel",
 });
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
@@ -55,7 +55,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const [loaded, setStatus] = useState(false);
   const nodeRef = useRef(null);
 
-  if (typeof document === 'undefined') {
+  if (typeof document === "undefined") {
     React.useLayoutEffect = React.useEffect;
   }
 
@@ -95,7 +95,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <ScrollShadow
                 hideScrollBar
                 offset={-999}
-                size={80}
+                size={systemTheme === "dark" ? 80 : 70}
                 className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] px-2 rounded-[24px]"
               >
                 <section>
@@ -136,7 +136,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   </Box>
                 </section>
                 <section className="hidden md:flex">
-                  <AppleMusic className="h-[450px]"/>
+                  <AppleMusic className="h-[450px]" />
                 </section>
               </ScrollShadow>
               <TypedBios />
