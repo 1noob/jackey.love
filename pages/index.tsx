@@ -95,7 +95,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <ScrollShadow
                 hideScrollBar
                 offset={-999}
-                size={systemTheme === "dark" ? 80 : 70}
+                size={systemTheme === "dark" ? 80 : 50}
                 className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] px-2 rounded-[25px]"
               >
                 <section>
@@ -103,7 +103,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     rel="preload"
                     classNames={{
                       wrapper:
-                        "hidden h-full md:flex relative float-right md:w-[45%] dark:invert-[.88] z-[99] rounded-xl",
+                        "hidden h-full md:flex relative float-right md:w-[45%] invert-[.1] dark:invert-[.88] z-[99] rounded-xl",
                     }}
                     className={
                       "min-h-full hover:scale-[1.5] origin-top-right transform-gpu duration-200 ease-in-out"
