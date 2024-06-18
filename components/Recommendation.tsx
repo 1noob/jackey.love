@@ -34,7 +34,7 @@ const Recommendation = () => {
                   </div>
                 </div>
                 <div className="flex-2">
-                  <div className={"indent-[-0.5rem]"}>“{item.text}”</div>
+                  <div className={"indent-[-1rem]"}>“{item.text}”</div>
                   <div className={"mt-4"}>
                     &mdash; {item.name}, {item.title}, {item.company}
                   </div>
