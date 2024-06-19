@@ -13,10 +13,12 @@ import {
 } from "@/components/icon";
 import Link from "next/link";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
+import { useTheme } from "next-themes";
 
 const TypedBios = () => {
   const el = React.useRef(null);
   const typed = React.useRef(null);
+  const { systemTheme } = useTheme();
 
   React.useEffect(() => {
     typed.current = new Typed(el.current, {
@@ -53,7 +55,7 @@ const TypedBios = () => {
       <ScrollShadow
         className="w-full rounded-full"
         offset={-2}
-        size={6}
+        size={systemTheme === "dark" ? 12 : 2}
         orientation="horizontal"
         hideScrollBar
       >
