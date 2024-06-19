@@ -36,7 +36,7 @@ main {
 }
 
 .content {
-  @apply md:bg-content mx-auto max-w-2xl min-w-[320px] min-h-fit mobile:pb-4 py-2 md:px-1 flex flex-col
+  @apply md:bg-content mx-auto max-w-2xl min-w-[320px] min-h-fit py-2 md:px-1 flex flex-col
   md:backdrop-blur-2xl rounded-xl;
 }
 

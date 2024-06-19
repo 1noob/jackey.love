@@ -97,10 +97,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 hideScrollBar
                 offset={-999}
                 size={
-                  innerWidth < 768 ? (systemTheme === "dark" ? 120 : 12) : 0
+                  innerWidth < 768 ? (systemTheme === "dark" ? 120 : 0) : 0
                 }
                 visibility="bottom"
-                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] rounded-xl mx-1"
+                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] md:rounded-xl mx-1 md:mb-4"
               >
                 <section>
                   <Image
@@ -132,7 +132,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     </div>
                   </Box>
                 </section>
-                <section>
+                <section className="mb-4 md:mb-0">
                   <Box>
                     <h1>Recommendations</h1>
                     <Divider className={"my-4"} />
