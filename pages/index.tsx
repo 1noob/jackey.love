@@ -4,6 +4,7 @@ import type { ImageProps } from "@/utils/types";
 import { Divider, Image } from "@nextui-org/react";
 import { ScrollShadow } from "@nextui-org/react";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useWindowSize } from "rooks";
 import { useTheme } from "next-themes";
 import { JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
@@ -16,7 +17,6 @@ import TypedBios from "@/components/typed-bios";
 import Gallery from "@/components/Gallery";
 import { JackeyLoveIcon } from "@/components/icon";
 import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
-import { EmblaOptionsType } from "embla-carousel";
 import Intro from "@/components/Intro";
 import AppleMusic from "@/components/AppleMusic";
 
@@ -51,6 +51,7 @@ const PixelMono = localFont({
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const { systemTheme } = useTheme();
+  const { innerWidth } = useWindowSize();
 
   const [loaded, setStatus] = useState(false);
   const nodeRef = useRef(null);
@@ -95,7 +96,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <ScrollShadow
                 hideScrollBar
                 offset={-999}
-                size={systemTheme === "dark" ? 80 : 50}
+                size={innerWidth < 768 ? systemTheme === "dark"? 70 : 30 : 90}
                 className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] px-2 rounded-[25px]"
               >
                 <section>

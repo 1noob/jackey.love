@@ -1,4 +1,4 @@
-import type { Tweet } from 'react-tweet/api'
+import type { Tweet } from "react-tweet/api";
 import {
   type TwitterComponents,
   TweetHeader,
@@ -10,16 +10,16 @@ import {
   QuotedTweet,
   enrichTweet,
   TweetReplies,
-} from 'react-tweet'
-import { TweetContainer } from './tweet-container'
- 
+} from "react-tweet";
+import { TweetContainer } from "./tweet-container";
+
 type Props = {
-  tweet: Tweet
-  components?: TwitterComponents
-}
- 
+  tweet: Tweet;
+  components?: TwitterComponents;
+};
+
 export const MyTweet = ({ tweet: t, components }: Props) => {
-  const tweet = enrichTweet(t)
+  const tweet = enrichTweet(t);
   return (
     <TweetContainer>
       <TweetHeader tweet={tweet} components={components} />
@@ -31,7 +31,7 @@ export const MyTweet = ({ tweet: t, components }: Props) => {
       {tweet.quoted_tweet && <QuotedTweet tweet={tweet.quoted_tweet} />}
       <TweetInfo tweet={tweet} />
       <TweetActions tweet={tweet} />
-      <TweetReplies tweet={tweet}/>
+      <TweetReplies tweet={tweet} />
     </TweetContainer>
-  )
-}
+  );
+};
