@@ -98,7 +98,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 offset={-999}
                 size={innerWidth < 768 ? systemTheme ==="dark"? 120: 20 : 0}
                 visibility="bottom"
-                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] dark:border-gray-700 rounded-xl mx-1"
+                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] rounded-xl mx-1"
               >
                 <section>
                   <Image
