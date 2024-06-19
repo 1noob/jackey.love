@@ -24,10 +24,10 @@ const EmblaCarousel = () => {
   components.push(
     <Image
       classNames={{
-        wrapper: "bg-white dark:bg-card min-w-full border dark:border-0",
+        wrapper: "bg-white dark:bg-card min-w-full border dark:border-gray-700 rounded-xl",
       }}
-      className={"m-auto h-[450px] dark:invert-[.89]"}
-      radius="lg"
+      className={"m-auto h-[450px] dark:invert-[.89] rounded-xl"}
+      radius="none"
       shadow="none"
       src="/img/handwrite.jpeg"
     />
@@ -35,7 +35,7 @@ const EmblaCarousel = () => {
 
   components.push(<X id="1788487122485166261" className="bg-page" />);
   components.push(
-    <AppleMusic className="border border-gray-200 dark:border-0" />
+    <AppleMusic className="border border-gray-200 dark:border-gray-700" />
   );
 
   return (
