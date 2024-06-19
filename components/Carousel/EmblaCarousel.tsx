@@ -25,7 +25,7 @@ const EmblaCarousel = () => {
     <Image
       classNames={{
         wrapper:
-          "bg-white dark:bg-card min-w-full rounded-xl border-dashed border dark:border-0",
+          "bg-white dark:bg-card min-w-full rounded-xl border-dashed border border-gray-300 dark:border-0",
       }}
       className={"m-auto h-[450px] dark:invert-[.89] rounded-xl"}
       radius="none"
@@ -36,7 +36,7 @@ const EmblaCarousel = () => {
 
   components.push(<X id="1788487122485166261" />);
   components.push(
-    <AppleMusic className="border-dashed border dark:border-0" />
+    <AppleMusic className="border-dashed border border-gray-300 dark:border-0" />
   );
 
   return (
