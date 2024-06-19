@@ -100,7 +100,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   innerWidth < 768 ? (systemTheme === "dark" ? 120 : 0) : 0
                 }
                 visibility="bottom"
-                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] md:rounded-xl mx-1 md:mb-4"
+                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] md:rounded-xl mx-1 mb-[-2px] md:mb-4"
               >
                 <section>
                   <Image
@@ -132,7 +132,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     </div>
                   </Box>
                 </section>
-                <section className="mb-4 md:mb-0">
+                <section>
                   <Box>
                     <h1>Recommendations</h1>
                     <Divider className={"my-4"} />
