@@ -5,11 +5,11 @@ import { Divider } from "@nextui-org/react";
 
 const Intro = () => {
   return (
-    <div className={"grid gap-y-4 w-full md:w-[54%]"}>
+    <div className={"grid gap-y-4 md:gap-y-2 w-full md:w-[54%]"}>
       <Box>
         <h1>JackeyLove</h1>
         <Divider className={"my-4"} />
-        <div className={"grid align-middle px-3 gap-y-2 tracking-tighter"}>
+        <div className={"grid align-middle px-3 gap-y-3 tracking-tighter"}>
           <List>
             <p>Team</p>
             <p>TOP E-SPORT</p>
@@ -28,7 +28,7 @@ const Intro = () => {
         <h1> Career </h1>
         <Divider className={"my-4"} />
         <div
-          className={"grid gap-y-[0.97rem] px-3 align-middle tracking-tighter"}
+          className={"grid gap-y-3 px-3 align-middle tracking-tighter"}
         >
           {data.career.map((item, index) => {
             return (

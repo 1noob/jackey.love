@@ -100,17 +100,17 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   innerWidth < 768 && systemTheme === "dark" ? 130 : 0
                 }
                 visibility="bottom"
-                className="grid gap-y-4 scroll-smooth h-dvh md:max-h-[50rem] rounded-xl mx-1 mb-[-2px] md:mb-4"
+                className="grid gap-y-4 md:gap-y-2 scroll-smooth h-dvh md:max-h-[50rem] rounded-xl mx-1 mb-[-2px] md:mb-2"
               >
                 <section>
                   <Image
                     rel="preload"
                     classNames={{
                       wrapper:
-                        "hidden h-full md:flex relative float-right md:w-[45%] invert-[.1] dark:invert-[.88] z-[99] rounded-xl",
+                        "hidden h-full md:flex relative float-right md:w-[45%] bg-white dark:bg-card z-[99] rounded-xl",
                     }}
                     className={
-                      "min-h-full hover:scale-[1.5] origin-top-right transform-gpu duration-200 ease-in-out rounded-xl"
+                      "h-[378px] w-full m-auto dark:invert-[.89] rounded-xl hover:scale-[1.5] origin-top-right transform-gpu duration-200 ease-in-out"
                     }
                     radius="none"
                     shadow="none"
