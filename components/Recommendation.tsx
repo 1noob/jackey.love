@@ -1,14 +1,19 @@
 import React from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Badge, Button, Image } from "@nextui-org/react";
+import { cn } from "@/lib/utils";
 
-const Recommendation = () => {
+interface Props {
+  className? : string
+}
+
+const Recommendation: React.FC<Props> = ({ className }) => {
   const slice_len = 2;
   const [viewAllRecs, setViewAllRecs] = React.useState(false);
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="flex flex-col gap-y-8 px-3">
+    <div className={cn("flex flex-col gap-y-8 px-3", className)}>
       <AnimatePresence initial={false}>
         {data.recommendations
           .slice(0, viewAllRecs ? data.recommendations.length : slice_len)

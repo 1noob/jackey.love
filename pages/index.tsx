@@ -136,7 +136,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <Box>
                     <h1>Recommendations</h1>
                     <Divider className={"my-4"} />
-                    <Recommendation />
+                    <Recommendation className="mb-10"/>
                   </Box>
                 </section>
                 <section className="hidden md:flex">
