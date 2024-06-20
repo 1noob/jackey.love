@@ -100,7 +100,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   innerWidth < 768 && systemTheme === "dark" ? 130 : 0
                 }
                 visibility="bottom"
-                className="grid gap-y-4 md:gap-y-2 scroll-smooth h-dvh md:max-h-[50rem] rounded-xl mx-1 mb-[-2px] md:mb-2"
+                className="grid gap-y-4 md:gap-y-2 scroll-smooth h-dvh md:max-h-[50rem] rounded-xl mx-1 mb-4 md:mb-2 border-dashed border-gray-300"
               >
                 <section>
                   <Image
