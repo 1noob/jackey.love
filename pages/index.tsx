@@ -97,7 +97,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 hideScrollBar
                 offset={-999}
                 size={
-                  innerWidth < 768 && systemTheme === "dark" ? 150 : 0
+                  innerWidth < 768 && systemTheme === "dark" ? 120 : 0
                 }
                 visibility="bottom"
                 className="scroll-none grid gap-y-4 md:gap-y-2 scroll-smooth h-dvh md:max-h-[50rem] rounded-xl mx-1 mb-1 md:mb-2 border-dashed border-gray-300"
