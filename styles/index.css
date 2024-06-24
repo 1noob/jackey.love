@@ -14,6 +14,18 @@
   }
 }
 
+@media (display-mode: fullscreen) {
+  body {
+    padding: 0;
+  }
+}
+
+@media (display-mode: standalone) {
+  body {
+    padding: 0;
+  }
+}
+
 body {
   @apply cursor-dot;
 }
