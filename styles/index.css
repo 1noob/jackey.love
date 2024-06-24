@@ -10,8 +10,6 @@
 
 body {
   @apply cursor-dot;
-  padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px)
-  env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 20px);
 }
 
 main {
@@ -42,8 +40,10 @@ main {
 }
 
 .content {
-  @apply md:bg-content mx-auto max-w-2xl min-w-[320px] min-h-fit py-1 md:py-2 md:px-1 flex flex-col
+  @apply md:bg-content mx-auto max-w-2xl min-w-[320px] min-h-fit flex flex-col
   md:backdrop-blur-2xl rounded-xl;
+  padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px)
+  env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 20px);
 }
 
 .page {
