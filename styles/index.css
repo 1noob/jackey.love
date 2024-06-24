@@ -8,18 +8,6 @@
   }
 }
 
-@media (display-mode: fullscreen) {
-  body {
-    padding: 0;
-  }
-}
-
-@media (display-mode: standalone) {
-  body {
-    padding: 0;
-  }
-}
-
 body {
   @apply cursor-dot;
   padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px)
