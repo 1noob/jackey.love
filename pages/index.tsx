@@ -94,7 +94,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           <div className="page">
             <div className={"content"}>
               <div
-                className="scroll-none grid gap-y-4 md:gap-y-2 scroll-smooth h-dvh overflow-y-auto no-scrollbar
+                className="scroll-none grid gap-y-4 md:gap-y-2 scroll-smooth h-full overflow-y-auto no-scrollbar
                 md:max-h-[50rem] rounded-xl mx-1 md:mb-2 border-dashed border-gray-300"
               >
                 <section>
