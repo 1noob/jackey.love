@@ -92,16 +92,16 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
       >
         <main className={`${PixelMono.variable} font-mono`}>
           <div
-            className="bg-page md:bg-transparent absolute w-full z-10 md:h-dvh place-content-center grid 
+            className="bg-page md:bg-transparent absolute w-full h-dvh z-10 md:place-content-center grid 
             md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]"
           >
             <div
-              className="md:bg-content mx-auto max-w-2xl min-w-[320px] min-h-fit 
+              className="md:bg-content mx-auto max-w-2xl min-w-[320px] h-dvh md:min-h-fit 
               p-1 md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl"
             >
-              <TypedBios className="hidden md:grid bottom-2"/>
+              <TypedBios className="bottom-2" />
               <div
-                className="scroll-none grid gap-y-4 md:gap-y-2 scroll-smooth h-full overflow-y-auto no-scrollbar
+                className="grid gap-y-4 md:gap-y-2 scroll-smooth h-full overflow-y-auto no-scrollbar
                 md:max-h-[50rem] rounded-xl border-dashed border-gray-300 md:mb-11"
               >
                 <section>
