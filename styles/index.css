@@ -49,6 +49,10 @@ main {
   overscroll-behavior: none;
 }
 
+.safe-area{
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 .gallery {
   @apply hidden my-auto overflow-hidden w-full h-dvh z-0 md:grid content-center;
 }

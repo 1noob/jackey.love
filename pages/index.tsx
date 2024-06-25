@@ -99,7 +99,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               className="md:bg-content mx-auto max-w-2xl min-w-[320px] md:min-h-fit 
               p-1 md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl"
             >
-              <TypedBios className="bottom-0 md:bottom-2 mobile:backdrop-blur-2xl"/>
+              <TypedBios className="bottom-0 md:bottom-2 mobile:backdrop-blur-2xl safe-area"/>
               <div
                 className="grid gap-y-4 md:gap-y-2 scroll-smooth h-full overflow-y-auto no-scrollbar
                 md:max-h-[50rem] rounded-xl border-dashed border-gray-300 md:mb-11"
