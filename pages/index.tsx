@@ -93,14 +93,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         <main className={`${PixelMono.variable} font-mono`}>
           <div className="page">
             <div className={"content"}>
-              <ScrollShadow
-                hideScrollBar
-                offset={-999}
-                size={
-                  innerWidth < 768 ? systemTheme === "dark" ? 120 : 60 : 0
-                }
-                visibility="bottom"
-                className="scroll-none grid gap-y-4 md:gap-y-2 scroll-smooth h-dvh md:max-h-[50rem] rounded-xl mx-1 md:mb-2 border-dashed border-gray-300"
+              <div
+                className="scroll-none grid gap-y-4 md:gap-y-2 scroll-smooth h-dvh overflow-y-auto no-scrollbar
+                md:max-h-[50rem] rounded-xl mx-1 md:mb-2 border-dashed border-gray-300"
               >
                 <section>
                   <Image
@@ -136,13 +131,13 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <Box>
                     <h1>Recommendations</h1>
                     <Divider className={"my-4"} />
-                    <Recommendation className="mobile:mb-10"/>
+                    <Recommendation className="mobile:mb-10" />
                   </Box>
                 </section>
                 <section className="hidden md:flex">
                   <AppleMusic className="h-[450px]" />
                 </section>
-              </ScrollShadow>
+              </div>
               <TypedBios />
             </div>
           </div>
