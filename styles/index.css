@@ -49,18 +49,6 @@ main {
   overscroll-behavior: none;
 }
 
-.content {
-  @apply md:bg-content mx-auto max-w-2xl min-w-[320px]
-  min-h-fit py-1 md:py-2 md:px-1 flex flex-col
-  md:backdrop-blur-2xl rounded-xl;
-  padding-bottom: max(env(safe-area-inset-bottom, 20px), 0.5rem);
-}
-
-.page {
-  @apply mobile:bg-page absolute w-full z-10 md:h-dvh place-content-center 
-  grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)];
-}
-
 .gallery {
   @apply hidden my-auto overflow-hidden w-full h-dvh z-0 md:grid content-center;
 }

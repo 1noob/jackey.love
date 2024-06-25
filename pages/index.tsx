@@ -91,11 +91,18 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         unmountOnExit
       >
         <main className={`${PixelMono.variable} font-mono`}>
-          <div className="page">
-            <div className={"content"}>
+          <div
+            className="bg-page md:bg-transparent absolute w-full z-10 md:h-dvh place-content-center grid 
+            md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]"
+          >
+            <div
+              className="md:bg-content mx-auto max-w-2xl min-w-[320px] min-h-fit 
+              p-1 md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl"
+            >
+              <TypedBios className="hidden md:grid bottom-2"/>
               <div
                 className="scroll-none grid gap-y-4 md:gap-y-2 scroll-smooth h-full overflow-y-auto no-scrollbar
-                md:max-h-[50rem] rounded-xl mx-1 md:mb-2 border-dashed border-gray-300"
+                md:max-h-[50rem] rounded-xl border-dashed border-gray-300 md:mb-11"
               >
                 <section>
                   <Image
@@ -131,14 +138,13 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <Box>
                     <h1>Recommendations</h1>
                     <Divider className={"my-4"} />
-                    <Recommendation className="mobile:mb-10" />
+                    <Recommendation />
                   </Box>
                 </section>
                 <section className="hidden md:flex">
                   <AppleMusic className="h-[450px]" />
                 </section>
               </div>
-              <TypedBios />
             </div>
           </div>
           <Gallery images={images} />
