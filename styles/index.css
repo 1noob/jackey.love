@@ -23,7 +23,7 @@ body {
 }
 
 main {
-  @apply subpixel-antialiased text-[12px] sm:text-xs md:text-sm font-bold justify-center select-none will-change-transform;
+  @apply subpixel-antialiased text-[12px] sm:text-xs md:text-sm font-bold select-none;
 }
 
 .loading {
