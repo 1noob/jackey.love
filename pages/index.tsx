@@ -144,7 +144,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <AppleMusic className="h-[450px]"/>
                 </section>
               </div>
-              <TypedBios className="md:fixed md:bottom-2 mobile:backdrop-blur-2xl safe-area"/>
+              <TypedBios className="md:fixed md:bottom-2 mobile:backdrop-blur-2xl"/>
             </div>
           </div>
           <Gallery images={images} />
