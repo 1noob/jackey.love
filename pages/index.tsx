@@ -90,14 +90,14 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         classNames="loading"
         unmountOnExit
       >
-        <main className={`${PixelMono.variable} font-mono safe-area`}>
+        <main className={`${PixelMono.variable} font-mono `}>
           <div
             className="bg-page md:bg-transparent absolute w-full h-dvh z-10 md:place-content-center grid 
             md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]"
           >
             <div
               className="md:bg-content mx-auto max-w-2xl min-w-[320px] md:min-h-fit 
-              p-2.5 md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl gap-y-2"
+              p-2.5 md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl gap-y-2 safe-area"
             >
               <div
                 className="grid gap-y-3 md:gap-y-2 h-full overflow-y-auto no-scrollbar
