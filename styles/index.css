@@ -20,6 +20,8 @@
 
 body {
   @apply cursor-dot;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 main {
@@ -47,10 +49,6 @@ main {
 
 .scroll-none {
   overscroll-behavior: none;
-}
-
-.safe-area{
-  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .gallery {
