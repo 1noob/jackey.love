@@ -40,7 +40,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
     <div
       className={cn(
         "z-[9999] grid grid-cols-6 p-2 mx-2.5 md:mx-2 md:px-3 left-0 right-0 max-w-full",
-        "rounded-xl mobile:rounded-t-none bg-card dark:bg-page/5 dark:md:bg-blur md:bg-blur md:backdrop-blur-2xl",
+        "rounded-xl mobile:rounded-t-none bg-blur backdrop-blur-2xl",
         "shadow-md md:shadow-sm",
         className
       )}
