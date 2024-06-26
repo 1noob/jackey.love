@@ -19,13 +19,13 @@
 }
 
 body {
-  @apply cursor-dot h-full;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
+  @apply cursor-dot;
 }
 
 main {
   @apply subpixel-antialiased text-[12px] sm:text-xs md:text-sm font-bold select-none;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .loading {
