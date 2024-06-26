@@ -54,10 +54,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
 
     const ctrlNav = () => {
       const current_y = window.scrollY;
-      if (current_y - prev_y > 50) {
+      if (current_y - prev_y > 30) {
         setShow(false);
       }
-      if (prev_y - current_y > 50 || current_y <= 100) {
+      if (prev_y - current_y > 30 || current_y <= 100) {
         setShow(true);
       }
 
