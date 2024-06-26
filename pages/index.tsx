@@ -100,7 +100,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               p-1 md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl gap-y-4"
             >
               <div
-                className="grid gap-y-4 md:gap-y-2 h-full overflow-y-auto no-scrollbar
+                className="grid gap-y-3 md:gap-y-2 h-full overflow-y-auto no-scrollbar
                 md:max-h-[50rem] rounded-xl border-dashed border-gray-300 md:mb-11"
               >
                 <section>
