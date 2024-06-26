@@ -101,7 +101,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             >
               <div
                 className="grid gap-y-3 md:gap-y-2 h-full overflow-y-auto no-scrollbar
-                md:max-h-[50rem] rounded-xl border-dashed border-gray-300 mobile:mt-11 md:mb-11 safe-area"
+                md:max-h-[50rem] rounded-xl border-dashed border-gray-300 mobile:mt-11 md:mb-11"
               >
                 <section>
                   <Image
@@ -144,7 +144,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <AppleMusic className="h-[450px]"/>
                 </section>
               </div>
-              <TypedBios className="safe-area fixed mobile:top-0 md:bottom-2"/>
+              <TypedBios className="fixed mobile:top-0 md:bottom-2"/>
             </div>
           </div>
           <Gallery images={images} />
