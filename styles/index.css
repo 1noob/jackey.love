@@ -18,26 +18,10 @@
   scrollbar-width: none; /* Firefox */
 }
 
-@supports (padding-top: constant(safe-area-inset-top)) {
-  body {
-    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-  }
-}
-
-@media (display-mode: fullscreen) {
-  body {
-    padding: 0;
-  }
-}
-
-@media (display-mode: standalone) {
-  body {
-    padding: 0;
-  }
-}
-
 body {
-  @apply cursor-dot;
+  @apply cursor-dot h-dvh;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 main {
