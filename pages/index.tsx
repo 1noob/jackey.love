@@ -50,8 +50,23 @@ const PixelMono = localFont({
 });
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
-  const { systemTheme } = useTheme();
-  const { innerWidth } = useWindowSize();
+  const [show, setShow] = useState(true);
+
+  const ctrlNav = () => {
+    if (window.scrollY > 100) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", ctrlNav);
+    return () => {
+      window.removeEventListener("scroll", ctrlNav);
+    };
+  }, []);
+
 
   const [loaded, setStatus] = useState(false);
   const nodeRef = useRef(null);
@@ -141,10 +156,17 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   </Box>
                 </section>
                 <section className="hidden md:flex">
-                  <AppleMusic className="h-[450px]"/>
+                  <AppleMusic className="h-[450px]" />
                 </section>
               </div>
-              <TypedBios className="safe-area-top fixed mobile:top-0 md:bottom-2"/>
+              <CSSTransition
+                in={show}
+                timeout={300}
+                classNames="loading"
+                unmountOnExit
+              >
+                <TypedBios className="safe-area-top fixed mobile:top-0 md:bottom-2" />
+              </CSSTransition>
             </div>
           </div>
           <Gallery images={images} />

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Typed from "typed.js";
 import {
   TiktokDarkIcon,
@@ -22,6 +22,7 @@ interface Props {
 }
 
 const TypedBios: React.FC<Props> = ({ className }) => {
+  
   const el = React.useRef(null);
   const typed = React.useRef(null);
   const { systemTheme } = useTheme();
@@ -46,7 +47,10 @@ const TypedBios: React.FC<Props> = ({ className }) => {
         className
       )}
     >
-      <JackeyLoveIcon className="w-full m-auto flex md:hidden justify-center"  size={60}/>
+      <JackeyLoveIcon
+        className="w-full flex m-auto md:hidden justify-center"
+        size={60}
+      />
       <div className="grid grid-cols-6">
         <ul id="bios" className="hidden">
           <li>感觉我还有得救。</li>
