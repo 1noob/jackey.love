@@ -49,7 +49,7 @@ main {
 }
 
 .nav-enter {
-  @apply opacity-50 translate-y-[-88px];
+  @apply opacity-50 translate-y-[-100px];
 }
 .nav-enter-active {
   @apply opacity-100 translate-y-0 transform-gpu transition-opacity duration-500 ease-in-out;
@@ -59,7 +59,7 @@ main {
   @apply opacity-100 translate-y-0;
 }
 .nav-exit-active {
-  @apply opacity-50 translate-y-[-88px] transform-gpu transition-opacity duration-500 ease-in-out;
+  @apply opacity-50 translate-y-[-100px] transform-gpu transition-opacity duration-500 ease-in-out;
 }
 
 .scroll-none {
