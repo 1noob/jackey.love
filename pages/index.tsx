@@ -2,10 +2,7 @@ import type { NextPage } from "next";
 import cloudinary from "@/utils/cloudinary";
 import type { ImageProps } from "@/utils/types";
 import { Divider, Image } from "@nextui-org/react";
-import { ScrollShadow } from "@nextui-org/react";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useWindowSize } from "rooks";
-import { useTheme } from "next-themes";
 import { JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { CSSTransition } from "react-transition-group";
@@ -52,7 +49,7 @@ const PixelMono = localFont({
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const [show, setShow] = useState(true);
 
-  if(window != undefined){
+  if (typeof window !== "undefined") {
     let prev_y = window.scrollY;
 
     const ctrlNav = () => {
