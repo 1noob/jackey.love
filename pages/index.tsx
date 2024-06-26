@@ -97,11 +97,11 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           >
             <div
               className="md:bg-content mx-auto max-w-2xl min-w-[320px] md:min-h-fit 
-              p-1 md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl gap-y-3 md:gap-y-2"
+              p-1 md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl gap-y-2"
             >
               <div
                 className="grid gap-y-3 md:gap-y-2 h-full overflow-y-auto no-scrollbar
-                md:max-h-[50rem] rounded-xl border-dashed border-gray-300 md:mb-11"
+                md:max-h-[50rem] rounded-xl border-dashed border-gray-300 mb-11"
               >
                 <section>
                   <Image
@@ -144,7 +144,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <AppleMusic className="h-[450px]"/>
                 </section>
               </div>
-              <TypedBios className="md:fixed md:bottom-2 mobile:backdrop-blur-2xl"/>
+              <TypedBios className="mobile:safe-area fixed bottom-0 md:bottom-2"/>
             </div>
           </div>
           <Gallery images={images} />
