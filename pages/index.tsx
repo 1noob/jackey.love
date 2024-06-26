@@ -97,7 +97,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           >
             <div
               className="md:bg-content mx-auto max-w-2xl min-w-[320px] md:min-h-fit 
-              p-1 md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl gap-y-4"
+              p-1 md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl gap-y-3 md:gap-y-2"
             >
               <div
                 className="grid gap-y-3 md:gap-y-2 h-full overflow-y-auto no-scrollbar
