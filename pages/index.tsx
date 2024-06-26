@@ -56,14 +56,14 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
       const current_y = window.scrollY;
       if (current_y - prev_y > 50) {
         setShow(false);
-      } 
-      if (prev_y - current_y > 50) {
+      }
+      if (prev_y - current_y > 50 || current_y <= 100) {
         setShow(true);
       }
-  
-      prev_y  = current_y;
+
+      prev_y = current_y;
     };
-  
+
     React.useEffect(() => {
       window.addEventListener("scroll", ctrlNav);
       return () => {
