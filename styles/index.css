@@ -19,13 +19,14 @@
 }
 
 body {
-  @apply cursor-dot;
+  @apply cursor-dot h-dvh;
+  min-height: -webkit-fill-available;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 main {
   @apply subpixel-antialiased text-[12px] sm:text-xs md:text-sm font-bold select-none;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .loading {
