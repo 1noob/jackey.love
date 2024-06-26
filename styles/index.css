@@ -50,7 +50,7 @@ main {
 }
 
 .safe-area{
-  padding: env(safe-area-inset-top) max(env(safe-area-inset-right),0.625rem) max(env(safe-area-inset-bottom),0.625rem) max(env(safe-area-inset-left),0.625rem);
+  padding: max(env(safe-area-inset-top),0.25rem) max(env(safe-area-inset-right),0.625rem) max(env(safe-area-inset-bottom),0.625rem) max(env(safe-area-inset-left),0.625rem);
 }
 
 .safe-area-top{
