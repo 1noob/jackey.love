@@ -52,26 +52,28 @@ const PixelMono = localFont({
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const [show, setShow] = useState(true);
 
-  let prev_y = window.scrollY;
+  if(window != undefined){
+    let prev_y = window.scrollY;
 
-  const ctrlNav = () => {
-    const current_y = window.scrollY;
-    if (current_y - prev_y > 50) {
-      setShow(false);
-    } 
-    if (prev_y - current_y > 50) {
-      setShow(true);
-    }
-
-    prev_y  = current_y;
-  };
-
-  React.useEffect(() => {
-    window.addEventListener("scroll", ctrlNav);
-    return () => {
-      window.removeEventListener("scroll", ctrlNav);
+    const ctrlNav = () => {
+      const current_y = window.scrollY;
+      if (current_y - prev_y > 50) {
+        setShow(false);
+      } 
+      if (prev_y - current_y > 50) {
+        setShow(true);
+      }
+  
+      prev_y  = current_y;
     };
-  }, []);
+  
+    React.useEffect(() => {
+      window.addEventListener("scroll", ctrlNav);
+      return () => {
+        window.removeEventListener("scroll", ctrlNav);
+      };
+    }, []);
+  }
 
   const [loaded, setStatus] = useState(false);
   const nodeRef = useRef(null);
