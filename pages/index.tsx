@@ -93,7 +93,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         <main className={`${PixelMono.variable} font-mono`}>
           <div
             className="bg-page md:bg-transparent absolute w-full h-dvh z-10 md:place-content-center grid 
-            md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]"
+            md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)] safe-area"
           >
             <div
               className="md:bg-content mx-auto max-w-2xl min-w-[320px] md:min-h-fit 
