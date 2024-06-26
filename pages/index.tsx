@@ -166,7 +166,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <CSSTransition
                 in={show}
                 timeout={300}
-                classNames="loading"
+                classNames="nav"
                 unmountOnExit
               >
                 <TypedBios className="safe-area-top fixed mobile:top-0 md:bottom-2" />

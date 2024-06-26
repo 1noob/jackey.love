@@ -41,8 +41,25 @@ main {
   @apply opacity-100;
 }
 .loading-exit-active {
-  @apply opacity-0 transform-gpu transition-opacity duration-500 ease-in-out;
-  /*transition: opacity 500ms, transform 500ms ease-in-out;*/
+  @apply opacity-0 transform-gpu transition-opacity duration-500 ease-in-out delay-300;
+}
+
+.nav {
+  @apply fixed;
+}
+
+.nav-enter {
+  @apply opacity-50 translate-y-[-88px];
+}
+.nav-enter-active {
+  @apply opacity-100 translate-y-0 transform-gpu transition-opacity duration-500 ease-in-out;
+}
+
+.nav-exit {
+  @apply opacity-100 translate-y-0;
+}
+.nav-exit-active {
+  @apply opacity-50 translate-y-[-88px] transform-gpu transition-opacity duration-500 ease-in-out;
 }
 
 .scroll-none {
