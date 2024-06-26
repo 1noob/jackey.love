@@ -101,7 +101,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             >
               <div
                 className="grid gap-y-3 md:gap-y-2 h-full overflow-y-auto no-scrollbar
-                md:max-h-[50rem] rounded-xl border-dashed border-gray-300 mb-11"
+                md:max-h-[50rem] rounded-xl border-dashed border-gray-300 mb-14 md:mb-11"
               >
                 <section>
                   <Image
