@@ -187,7 +187,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         <div className="loading safe-area" ref={nodeRef}>
           <JackeyLoveIcon
             size={300}
-            className="w-[50%] md:w-[35%] lg:w-[20%] m-auto h-dvh safe-area"
+            className="w-[50%] md:w-[35%] lg:w-[20%] m-auto h-full"
           />
         </div>
       </CSSTransition>
