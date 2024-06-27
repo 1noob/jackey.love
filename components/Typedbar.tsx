@@ -19,7 +19,7 @@ const Typedbar: React.FC<Props> = ({ className }) => {
       }}
       shouldHideOnScroll
     >
-      <NavbarContent className="flex w-full" justify="center">
+      <NavbarContent className="flex w-full pt-2" justify="center">
         <JackeyLoveLogo
           className="w-full flex m-auto justify-center"
           size={innerWidth < 768 ? 25 : 30}
