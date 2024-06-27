@@ -27,7 +27,7 @@ main {
 }
 
 .loading {
-  @apply fixed flex-1 w-full h-dvh bg-page z-[999] place-content-center will-change-transform;
+  @apply fixed flex-1 w-full h-dvh bg-page z-[999] place-content-center;
 }
 
 .loading-enter {
