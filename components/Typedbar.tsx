@@ -14,7 +14,7 @@ const Typedbar: React.FC<Props> = ({ className }) => {
   return (
     <Navbar
       classNames={{
-        base: cn("rounded-b-xl md:rounded-xl bg-blur backdrop-blur-md", className),
+        base: cn("border md:border-none rounded-b-xl md:rounded-xl bg-blur backdrop-blur-md", className),
         wrapper: "rounded-b-xl md:rounded-xl p-2 grid grid-rows-2 grid-cols-1 h-full gap-y-2",
       }}
       shouldHideOnScroll
