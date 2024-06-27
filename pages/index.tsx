@@ -16,6 +16,7 @@ import { JackeyLoveIcon } from "@/components/icon";
 import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
 import Intro from "@/components/Intro";
 import AppleMusic from "@/components/AppleMusic";
+import Typedbar from "@/components/Typedbar";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -118,9 +119,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               className="md:bg-content mx-auto max-w-2xl min-w-[320px] md:min-h-fit 
               md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl gap-y-2 safe-area"
             >
+              <Typedbar className="md:bottom-2"/>
               <div
                 className="grid gap-y-3 md:gap-y-2 h-full overflow-y-auto no-scrollbar
-                md:max-h-[50rem] rounded-xl border-dashed border-gray-300 mobile:mt-[100px] md:mb-11"
+                md:max-h-[50rem] rounded-xl border-dashed border-gray-300"
               >
                 <section>
                   <Image
@@ -163,14 +165,14 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <AppleMusic className="h-[450px]" />
                 </section>
               </div>
-              <CSSTransition
+              {/* <CSSTransition
                 in={show}
                 timeout={300}
                 classNames="nav"
                 unmountOnExit
               >
                 <TypedBios className="safe-area-top fixed mobile:top-0 md:bottom-2" />
-              </CSSTransition>
+              </CSSTransition> */}
             </div>
           </div>
           <Gallery images={images} />

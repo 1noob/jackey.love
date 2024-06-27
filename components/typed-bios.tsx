@@ -22,7 +22,6 @@ interface Props {
 }
 
 const TypedBios: React.FC<Props> = ({ className }) => {
-  
   const el = React.useRef(null);
   const typed = React.useRef(null);
   const { systemTheme } = useTheme();
@@ -39,18 +38,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
   }, []);
 
   return (
-    <div
-      className={cn(
-        "z-[9999] p-2 mx-2.5 md:mx-2 md:px-3 left-0 right-0 max-w-full",
-        "rounded-xl mobile:rounded-t-none bg-blur backdrop-blur-2xl",
-        "shadow-md md:shadow-sm",
-        className
-      )}
-    >
-      <JackeyLoveIcon
-        className="w-full flex m-auto md:hidden justify-center"
-        size={60}
-      />
+    <div className={cn("px-2 w-full", className)}>
       <div className="grid grid-cols-6">
         <ul id="bios" className="hidden">
           <li>感觉我还有得救。</li>
