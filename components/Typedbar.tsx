@@ -3,12 +3,14 @@ import { Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
 import { cn } from "@/lib/utils";
 import TypedBios from "./typed-bios";
 import { JackeyLoveIcon, JackeyLoveLogo } from "./icon";
+import { useWindowSize } from "rooks";
 
 interface Props {
   className?: string;
 }
 
 const Typedbar: React.FC<Props> = ({ className }) => {
+  const { innerWidth } = useWindowSize();
   return (
     <Navbar
       classNames={{
@@ -20,11 +22,11 @@ const Typedbar: React.FC<Props> = ({ className }) => {
       <NavbarContent className="flex w-full" justify="center">
         <JackeyLoveLogo
           className="w-full flex m-auto justify-center"
-          size={30}
+          size={innerWidth < 768 ? 25 : 30}
         />
       </NavbarContent>
       <NavbarContent justify="center">
-        <TypedBios/>
+        <TypedBios />
       </NavbarContent>
     </Navbar>
   );
