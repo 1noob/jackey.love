@@ -21,7 +21,7 @@ const Typedbar: React.FC<Props> = ({ className }) => {
     >
       <NavbarContent className="flex w-full pt-2" justify="center">
         <JackeyLoveLogo
-          className="w-full flex m-auto justify-center"
+          className="dark:brightness-150 w-full flex m-auto justify-center"
           size={innerWidth < 768 ? 25 : 30}
         />
       </NavbarContent>
