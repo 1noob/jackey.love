@@ -47,31 +47,6 @@ const PixelMono = localFont({
 });
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
-  // const [show, setShow] = useState(true);
-
-  // if (typeof window !== "undefined") {
-  //   let prev_y = window.scrollY;
-
-  //   const ctrlNav = () => {
-  //     const current_y = window.scrollY;
-  //     if (current_y - prev_y > 20) {
-  //       setShow(false);
-  //     }
-  //     if (prev_y - current_y > 20 || current_y <= 100) {
-  //       setShow(true);
-  //     }
-
-  //     prev_y = current_y;
-  //   };
-
-  //   React.useEffect(() => {
-  //     window.addEventListener("scroll", ctrlNav);
-  //     return () => {
-  //       window.removeEventListener("scroll", ctrlNav);
-  //     };
-  //   }, []);
-  // }
-
   const [loaded, setStatus] = useState(false);
   const nodeRef = useRef(null);
 
@@ -164,14 +139,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <AppleMusic className="h-[450px]" />
                 </section>
               </div>
-              {/* <CSSTransition
-                in={show}
-                timeout={300}
-                classNames="nav"
-                unmountOnExit
-              >
-                <TypedBios className="safe-area-top fixed mobile:top-0 md:bottom-2" />
-              </CSSTransition> */}
             </div>
           </div>
           <Gallery images={images} />
@@ -185,10 +152,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         nodeRef={nodeRef}
       >
         <div className="loading" ref={nodeRef}>
-          <JackeyLoveIcon
-            size={300}
-            className="dark:brightness-150 w-[50%] md:w-[35%] lg:w-[20%] mx-auto"
-          />
           <JackeyLoveIcon
             size={300}
             className="dark:brightness-150 w-[50%] md:w-[35%] lg:w-[20%] mx-auto"

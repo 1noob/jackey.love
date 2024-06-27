@@ -34,14 +34,14 @@ main {
   @apply opacity-0;
 }
 .loading-enter-active {
-  @apply opacity-100 transform-gpu transition-opacity duration-500 ease-in-out;
+  @apply opacity-100 transform-gpu transition-opacity duration-1000 ease-in-out;
 }
 
 .loading-exit {
   @apply opacity-100;
 }
 .loading-exit-active {
-  @apply opacity-0 transform-gpu transition-opacity duration-500 ease-in-out delay-300;
+  @apply opacity-0 transform-gpu transition-opacity duration-1000 ease-in-out;
 }
 
 .nav {
