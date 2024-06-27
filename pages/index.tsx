@@ -118,7 +118,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               className="md:bg-content mx-auto max-w-2xl min-w-[320px] md:min-h-fit 
               md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl safe-area"
             >
-              <Typedbar className="md:bottom-2 safe-area-top"/>
+              <Typedbar className="safe-area-top border-b-2 md:border-none"/>
               <div
                 className="grid gap-y-3 mobile:p-2 md:gap-y-2 h-full overflow-y-auto no-scrollbar
                 md:max-h-[50rem] rounded-xl border-dashed border-gray-300"
