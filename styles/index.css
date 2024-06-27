@@ -19,7 +19,7 @@
 }
 
 body {
-  @apply cursor-dot h-dvh;
+  @apply cursor-dot h-dvh static;
 }
 
 main {
@@ -27,21 +27,21 @@ main {
 }
 
 .loading {
-  @apply fixed flex-1 w-full h-full bg-page z-[999] place-content-center;
+  @apply absolute w-full h-full bg-page z-[999] place-content-center;
 }
 
 .loading-enter {
   @apply opacity-0;
 }
 .loading-enter-active {
-  @apply opacity-100 transform-gpu transition-opacity duration-1000 ease-in-out;
+  @apply opacity-100 transform-gpu transition-opacity duration-500 ease-in-out;
 }
 
 .loading-exit {
   @apply opacity-100;
 }
 .loading-exit-active {
-  @apply opacity-0 transform-gpu transition-opacity duration-1000 ease-in-out;
+  @apply opacity-0 transform-gpu transition-opacity duration-500 ease-in-out delay-300;
 }
 
 .nav {
