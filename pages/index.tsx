@@ -10,7 +10,6 @@ import { CSSTransition } from "react-transition-group";
 import Box from "@/components/Box";
 import Recommendation from "@/components/Recommendation";
 import Script from "next/script";
-import TypedBios from "@/components/typed-bios";
 import Gallery from "@/components/Gallery";
 import { JackeyLoveIcon } from "@/components/icon";
 import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
@@ -48,30 +47,30 @@ const PixelMono = localFont({
 });
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
-  const [show, setShow] = useState(true);
+  // const [show, setShow] = useState(true);
 
-  if (typeof window !== "undefined") {
-    let prev_y = window.scrollY;
+  // if (typeof window !== "undefined") {
+  //   let prev_y = window.scrollY;
 
-    const ctrlNav = () => {
-      const current_y = window.scrollY;
-      if (current_y - prev_y > 20) {
-        setShow(false);
-      }
-      if (prev_y - current_y > 20 || current_y <= 100) {
-        setShow(true);
-      }
+  //   const ctrlNav = () => {
+  //     const current_y = window.scrollY;
+  //     if (current_y - prev_y > 20) {
+  //       setShow(false);
+  //     }
+  //     if (prev_y - current_y > 20 || current_y <= 100) {
+  //       setShow(true);
+  //     }
 
-      prev_y = current_y;
-    };
+  //     prev_y = current_y;
+  //   };
 
-    React.useEffect(() => {
-      window.addEventListener("scroll", ctrlNav);
-      return () => {
-        window.removeEventListener("scroll", ctrlNav);
-      };
-    }, []);
-  }
+  //   React.useEffect(() => {
+  //     window.addEventListener("scroll", ctrlNav);
+  //     return () => {
+  //       window.removeEventListener("scroll", ctrlNav);
+  //     };
+  //   }, []);
+  // }
 
   const [loaded, setStatus] = useState(false);
   const nodeRef = useRef(null);
@@ -117,11 +116,11 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           >
             <div
               className="md:bg-content mx-auto max-w-2xl min-w-[320px] md:min-h-fit 
-              md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl gap-y-2 safe-area"
+              md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl safe-area"
             >
-              <Typedbar className="md:bottom-2"/>
+              <Typedbar className="md:bottom-2 safe-area-top"/>
               <div
-                className="grid gap-y-3 md:gap-y-2 h-full overflow-y-auto no-scrollbar
+                className="grid gap-y-3 mobile:p-2 md:gap-y-2 h-full overflow-y-auto no-scrollbar
                 md:max-h-[50rem] rounded-xl border-dashed border-gray-300"
               >
                 <section>
