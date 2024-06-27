@@ -17,7 +17,6 @@ const Typedbar: React.FC<Props> = ({ className }) => {
         base: cn("rounded-b-xl md:rounded-xl", className),
         wrapper: "bg-card rounded-b-xl md:rounded-xl bg-blur p-2 grid grid-rows-2 grid-cols-1 h-full gap-y-2",
       }}
-      isBordered={innerWidth < 768 ? true : false}
       shouldHideOnScroll
     >
       <NavbarContent className="flex w-full" justify="center">

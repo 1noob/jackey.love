@@ -118,7 +118,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               className="md:bg-content mx-auto max-w-2xl min-w-[320px] md:min-h-fit 
               md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl safe-area md:gap-y-2"
             >
-              <Typedbar className=""/>
+              <Typedbar />
               <div
                 className="grid gap-y-3 mobile:p-2 md:gap-y-2 h-full overflow-y-auto no-scrollbar
                 md:max-h-[50rem] rounded-xl border-dashed border-gray-300"
@@ -187,7 +187,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         <div className="loading safe-area" ref={nodeRef}>
           <JackeyLoveIcon
             size={300}
-            className="w-[50%] md:w-[35%] lg:w-[20%] m-auto h-dvh"
+            className="w-[50%] md:w-[35%] lg:w-[20%] m-auto h-dvh safe-area"
           />
         </div>
       </CSSTransition>
