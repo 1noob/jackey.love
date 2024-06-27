@@ -38,7 +38,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
   }, []);
 
   return (
-    <div className={cn("px-1 md:px-2 w-full", className)}>
+    <div className={cn("px-1 w-full", className)}>
       <div className="grid grid-cols-6">
         <ul id="bios" className="hidden">
           <li>感觉我还有得救。</li>

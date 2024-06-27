@@ -184,10 +184,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         unmountOnExit
         nodeRef={nodeRef}
       >
-        <div className="loading safe-area" ref={nodeRef}>
+        <div className="loading safe-area flex" ref={nodeRef}>
           <JackeyLoveIcon
             size={300}
-            className="w-[50%] md:w-[35%] lg:w-[20%] m-auto h-full"
+            className="dark:brightness-150 w-[50%] md:w-[35%] lg:w-[20%] mx-auto h-full"
           />
         </div>
       </CSSTransition>
