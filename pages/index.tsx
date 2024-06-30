@@ -91,11 +91,11 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           >
             <div
               className="md:bg-content mx-auto max-w-2xl min-w-[320px] md:min-h-fit 
-              md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl safe-area gap-y-1 md:gap-y-2"
+              md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl safe-area md:gap-y-2"
             >
               <Typedbar />
               <div
-                className="grid gap-y-3 mobile:p-2 md:gap-y-2 h-full overflow-y-auto no-scrollbar
+                className="grid mobile:p-2 gap-y-2 h-full overflow-y-auto no-scrollbar
                 md:max-h-[50rem] rounded-xl"
               >
                 <section>
