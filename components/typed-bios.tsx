@@ -3,14 +3,12 @@
 import React, { useEffect, useState } from "react";
 import Typed from "typed.js";
 import {
-  TiktokDarkIcon,
   TiktokIcon,
   SinaIcon,
   XIcon,
   UmamiIcon,
   CloudinaryIcon,
   MailIcon,
-  JackeyLoveIcon,
 } from "@/components/icon";
 import Link from "next/link";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
@@ -93,17 +91,8 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                 href={"https://v.douyin.com/iYdXGgMa/"}
                 target="_blank"
                 aria-label="Tiktok"
-                className="hidden dark:flex"
               >
                 <TiktokIcon size={16.5} />
-              </Link>
-              <Link
-                href={"https://v.douyin.com/iYdXGgMa/"}
-                target="_blank"
-                aria-label="Tiktok"
-                className="dark:hidden"
-              >
-                <TiktokDarkIcon size={16.5} />
               </Link>
               <Link
                 href={"https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"}
@@ -148,17 +137,8 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                 href={"https://v.douyin.com/iYdXGgMa/"}
                 target="_blank"
                 aria-label="Tiktok"
-                className="hidden dark:flex"
               >
                 <TiktokIcon size={16.5} />
-              </Link>
-              <Link
-                href={"https://v.douyin.com/iYdXGgMa/"}
-                target="_blank"
-                aria-label="Tiktok"
-                className="dark:hidden"
-              >
-                <TiktokDarkIcon size={16.5} />
               </Link>
               <Link
                 href={"https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"}
