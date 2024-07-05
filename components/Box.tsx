@@ -13,7 +13,7 @@ const Box: React.FC<BoxProps> = ({ children, className }) => {
       shadow="none"
       radius="none"
       className={
-        "rounded-xl bg-card dark:bg-card md:bg-blur dark:md:bg-blur border-dashed border border-gray-400 dark:border-0 md:border-0"
+        "rounded-xl bg-card dark:bg-card md:bg-blur dark:md:bg-blur border-dashed border border-gray-400 dark:border-none md:border-none"
       }
       classNames={{
         body: "overflow-hidden",
