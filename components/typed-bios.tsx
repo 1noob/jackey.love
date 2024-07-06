@@ -64,7 +64,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
           orientation="horizontal"
           hideScrollBar
         >
-          <div className={"animate-[scy_20s_linear_infinite] w-max flex"}>
+          <div className={"animate-[scy_30s_linear_infinite] w-max flex"}>
             <div className="w-max flex gap-2 pr-2 content-center">
               <Link
                 href={"mailto:x@jackey.love"}
