@@ -12,7 +12,7 @@ const Intro = () => {
         <div className={"grid align-middle px-3 gap-y-3 tracking-tighter"}>
           <List>
             <p>Team</p>
-            <p>TOP E-SPORT</p>
+            <p>TOP ESPORTS</p>
           </List>
           <List>
             <p>Role</p>
@@ -60,7 +60,7 @@ const data = {
     },
     {
       time: "Apr,2020 - Present",
-      team: "TOP E-SPORT",
+      team: "TOP ESPORTS",
     },
   ],
 };
