@@ -84,7 +84,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         classNames="loading"
         unmountOnExit
       >
-        <main className={`${PixelMono.variable} font-mono `}>
+        <main className={`${PixelMono.variable} font-mono no-scrollbar`}>
           <div
             className="bg-page md:bg-transparent absolute w-full h-dvh z-10 md:place-content-center grid 
             md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]"
