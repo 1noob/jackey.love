@@ -151,7 +151,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         unmountOnExit
         nodeRef={nodeRef}
       >
-        <div className="loading no-scrollbar" ref={nodeRef}>
+        <div className="loading" ref={nodeRef}>
           <JackeyLoveIcon
             size={300}
             className="dark:brightness-150 w-[50%] md:w-[35%] lg:w-[20%] m-auto"
