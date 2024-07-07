@@ -152,10 +152,12 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         nodeRef={nodeRef}
       >
         <div className="loading" ref={nodeRef}>
-          <JackeyLoveIcon
-            size={300}
-            className="dark:brightness-150 w-[50%] md:w-[35%] lg:w-[20%] m-auto"
-          />
+          <div className="w-full h-svh place-content-center">
+            <JackeyLoveIcon
+              size={300}
+              className="dark:brightness-150 w-[50%] md:w-[35%] lg:w-[20%] m-auto"
+            />
+          </div>
         </div>
       </CSSTransition>
     </>
