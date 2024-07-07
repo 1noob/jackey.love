@@ -27,7 +27,8 @@ main {
 }
 
 .loading {
-  @apply absolute w-full h-lvh bg-page z-[999] place-content-center overflow-hidden;
+  @apply absolute w-full h-dvh bg-page z-[999] place-content-center;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 .loading-enter {
