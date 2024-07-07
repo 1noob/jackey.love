@@ -27,7 +27,7 @@ main {
 }
 
 .loading {
-  @apply absolute w-full h-lvh bg-page z-[999] place-content-start;
+  @apply absolute w-full h-full bg-page z-[999] place-content-center;
 }
 
 .loading-enter {
