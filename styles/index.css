@@ -75,7 +75,7 @@ main {
 }
 
 .safe-area-bottom{
-  margin-bottom: max(env(safe-area-inset-bottom), 20px);
+  margin-bottom: env(safe-area-inset-bottom);
 }
 
 .gallery {
