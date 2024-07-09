@@ -19,7 +19,7 @@
 }
 
 body {
-  @apply cursor-dot;
+  @apply cursor-dot safe-area;
 }
 
 main {
@@ -50,6 +50,10 @@ main {
 
 .safe-area{
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.safe-area-m{
+  margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 .safe-area-top{
