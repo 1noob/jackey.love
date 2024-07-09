@@ -147,11 +147,11 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
       <CSSTransition
         in={!loaded}
         timeout={800}
-        classNames="loading"
+        classNames="loading-page"
         unmountOnExit
         nodeRef={nodeRef}
       >
-        <div className="loading" ref={nodeRef}>
+        <div className="loading-page" ref={nodeRef}>
           <JackeyLoveIcon
             size={300}
             className="h-full dark:brightness-150 w-[50%] md:w-[35%] lg:w-[20%] m-auto"

@@ -26,22 +26,22 @@ main {
   @apply subpixel-antialiased text-[12px] sm:text-xs md:text-sm font-bold select-none;
 }
 
-.loading {
+.loading-page {
   @apply bg-blur backdrop-blur-xl fixed w-full h-lvh z-[999] place-content-center;
   top: env(safe-area-inset-top);
 }
 
-.loading-enter {
+.loading-page-enter {
   @apply opacity-0;
 }
-.loading-enter-active {
+.loading-page-enter-active {
   @apply opacity-100 transform-gpu transition-opacity duration-500 ease-in-out;
 }
 
-.loading-exit {
+.loading-page-exit {
   @apply opacity-100;
 }
-.loading-exit-active {
+.loading-page-exit-active {
   @apply opacity-0 transform-gpu transition-opacity duration-500 ease-in-out delay-300;
 }
 
