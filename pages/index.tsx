@@ -144,23 +144,23 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           <Gallery images={images} />
         </main>
       </CSSTransition>
-      <CSSTransition
+      {/* <CSSTransition
         in={!loaded}
         timeout={800}
         classNames="loading-page"
         unmountOnExit
         nodeRef={nodeRef}
-      >
+      > */}
         <div
-          className="bg-blur backdrop-blur-xl fixed top-0 w-full h-screen z-[999] content-center"
+          className="bg-blur backdrop-blur-xl fixed top-0 w-full h-screen z-[999]"
           ref={nodeRef}
         >
           <JackeyLoveLogo
             size={300}
-            className="dark:brightness-150 w-[40%] md:w-[30%] lg:w-[20%] mx-auto"
+            className="h-full dark:brightness-150 w-[40%] md:w-[30%] lg:w-[20%] m-auto"
           />
         </div>
-      </CSSTransition>
+      {/* </CSSTransition> */}
     </>
   );
 };
