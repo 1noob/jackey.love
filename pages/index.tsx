@@ -154,7 +154,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         <div className="loading" ref={nodeRef}>
           <JackeyLoveIcon
             size={300}
-            className="h-svh justify-start dark:brightness-150 w-[50%] md:w-[35%] lg:w-[20%] m-auto"
+            className="dark:brightness-150 w-[50%] md:w-[35%] lg:w-[20%] m-auto"
           />
         </div>
       </CSSTransition>
