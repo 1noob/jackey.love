@@ -19,7 +19,7 @@
 }
 
 body {
-  @apply cursor-dot static;
+  @apply cursor-dot;
 }
 
 main {
@@ -27,7 +27,7 @@ main {
 }
 
 .loading {
-  @apply absolute w-full h-lvh bg-blur backdrop-blur-xl z-[999] place-content-center;
+  @apply fixed w-full h-lvh bg-blur backdrop-blur-xl z-[999] place-content-center;
 
 }
 
@@ -43,24 +43,6 @@ main {
 }
 .loading-exit-active {
   @apply opacity-0 transform-gpu transition-opacity duration-500 ease-in-out delay-300;
-}
-
-.nav {
-  @apply fixed;
-}
-
-.nav-enter {
-  @apply opacity-0;
-}
-.nav-enter-active {
-  @apply opacity-100 transform-gpu transition-opacity duration-500 ease-in-out;
-}
-
-.nav-exit {
-  @apply opacity-100;
-}
-.nav-exit-active {
-  @apply opacity-0 transform-gpu transition-opacity duration-500 ease-in-out;
 }
 
 .scroll-none {
