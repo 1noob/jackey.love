@@ -149,7 +149,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         timeout={800}
         classNames="loading-page"
         unmountOnExit
-        enter={false}
         nodeRef={nodeRef}
       >
         <div className="bg-blur backdrop-blur-xl fixed w-full h-lvh z-[999] place-content-center" ref={nodeRef}>

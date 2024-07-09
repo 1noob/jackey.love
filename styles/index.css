@@ -19,7 +19,7 @@
 }
 
 body {
-  @apply cursor-dot;
+  @apply h-lvh cursor-dot;
 }
 
 main {
@@ -30,16 +30,14 @@ main {
   @apply opacity-0;
 }
 .loading-page-enter-active {
-  @apply opacity-100;
-  transition: opacity 500ms;
+  @apply opacity-100 transition-opacity ease-in-out;
 }
 
 .loading-page-exit {
   @apply opacity-100;
 }
 .loading-page-exit-active {
-  @apply opacity-0;
-  transition: opacity 500ms;
+  @apply opacity-0 transition-opacity ease-in-out delay-300;
 }
 
 .scroll-none {
