@@ -151,10 +151,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         unmountOnExit
         nodeRef={nodeRef}
       >
-        <div className="bg-blur backdrop-blur-xl fixed top-0 w-full min-h-lvh z-[999] place-content-center" ref={nodeRef}>
+        <div className="bg-blur backdrop-blur-xl fixed top-0 w-full min-h-lvh z-[999] content-center" ref={nodeRef}>
           <JackeyLoveIcon
             size={300}
-            className="h-full dark:brightness-150 w-[50%] md:w-[35%] lg:w-[20%] mx-auto"
+            className="dark:brightness-150 w-[50%] md:w-[35%] lg:w-[20%] mx-auto"
           />
         </div>
       </CSSTransition>
