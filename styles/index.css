@@ -110,7 +110,7 @@ h1 {
   border-radius: 5px;
   background-image: var(--tweet-skeleton-gradient);
   background-size: 400% 100%;
-  animation: loading 8s ease-in-out infinite;
+  animation: skeleton-loading 8s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -120,7 +120,7 @@ h1 {
   }
 }
 
-@keyframes loading {
+@keyframes skeleton-loading {
   0% {
     background-position: 200% 0;
   }
