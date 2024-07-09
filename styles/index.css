@@ -27,7 +27,7 @@ main {
 }
 
 .loading-page {
-  @apply bg-blur backdrop-blur-xl absolute w-full h-lvh z-[999] place-content-center;
+  @apply bg-blur backdrop-blur-xl fixed w-full h-lvh z-[999] place-content-center;
 }
 
 .loading-page-enter {
