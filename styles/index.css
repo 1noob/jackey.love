@@ -41,7 +41,7 @@ main {
   @apply opacity-100;
 }
 .loading-page-exit-active {
-  @apply opacity-0 transition-opacity ease-in-out delay-300;
+  @apply opacity-0 transition-opacity delay-300;
 }
 
 .scroll-none {
