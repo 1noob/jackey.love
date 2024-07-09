@@ -30,11 +30,18 @@ main {
   @apply bg-blur backdrop-blur-xl fixed w-full h-lvh z-[999] place-content-center;
 }
 
+.loading-page-enter {
+  @apply opacity-0;
+}
+.loading-page-enter-active {
+  @apply opacity-100 transition-opacity;
+}
+
 .loading-page-exit {
   @apply opacity-100;
 }
 .loading-page-exit-active {
-  @apply opacity-0 transition-opacity duration-500 ease-in-out delay-300;
+  @apply opacity-0 transition-opacity ease-in-out delay-300;
 }
 
 .scroll-none {
