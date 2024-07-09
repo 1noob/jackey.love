@@ -19,7 +19,7 @@
 }
 
 body {
-  @apply cursor-dot h-fit;
+  @apply cursor-dot h-lvh;
 }
 
 main {
