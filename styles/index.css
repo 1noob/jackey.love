@@ -30,14 +30,16 @@ main {
   @apply opacity-0;
 }
 .loading-page-enter-active {
-  @apply opacity-100 transition-opacity delay-100;
+  @apply opacity-100 ease-in;
+  transition: opacity 500ms;
 }
 
 .loading-page-exit {
   @apply opacity-100;
 }
 .loading-page-exit-active {
-  @apply opacity-0 transition-opacity delay-300;
+  @apply opacity-0 ease-out;
+  transition: opacity 500ms;
 }
 
 .scroll-none {
