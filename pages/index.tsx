@@ -152,7 +152,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         nodeRef={nodeRef}
       > */}
         <div
-          className="m-0 bg-blur backdrop-blur-xl fixed top-0 w-full h-screen z-[999] border border-red-500"
+          className="m-0 p-0 bg-blur backdrop-blur-xl fixed top-0 w-full h-screen z-[999] border border-red-500"
           ref={nodeRef}
         >
           <JackeyLoveLogo
