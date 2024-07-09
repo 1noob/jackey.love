@@ -91,7 +91,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           >
             <div
               className="md:bg-content mx-auto max-w-2xl min-w-[320px] md:min-h-fit 
-              md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl safe-area md:gap-y-2"
+              md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl md:gap-y-2"
             >
               <Typedbar />
               <div
@@ -152,7 +152,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         nodeRef={nodeRef}
       > */}
         <div
-          className="m-0 p-0 bg-blur backdrop-blur-xl fixed top-0 w-full h-screen z-[999] border border-red-500"
+          className="bg-blur backdrop-blur-xl fixed top-0 w-full h-screen z-[999] border border-red-500"
           ref={nodeRef}
         >
           <JackeyLoveLogo

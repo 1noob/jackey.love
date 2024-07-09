@@ -19,7 +19,7 @@
 }
 
 body {
-  @apply cursor-dot p-0;
+  @apply cursor-dot safe-area;
 }
 
 main {
