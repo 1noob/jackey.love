@@ -81,7 +81,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
       <CSSTransition
         in={loaded}
         timeout={500}
-        classNames="loading"
+        classNames="loading-page"
         unmountOnExit
       >
         <main className={`${PixelMono.variable} font-mono`}>
