@@ -34,7 +34,7 @@ main {
   @apply opacity-0;
 }
 .loading-page-enter-active {
-  @apply opacity-100 transition-opacity duration-500 ease-in-out;
+  @apply opacity-100 transition-opacity duration-300 ease-in-out;
 }
 
 .loading-page-exit {
