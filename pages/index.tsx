@@ -151,7 +151,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         unmountOnExit
         nodeRef={nodeRef}
       >
-        <div className="bg-blur backdrop-blur-xl fixed top-0 bottom-0 w-full h-lvh z-[999] place-content-center" ref={nodeRef}>
+        <div className="bg-blur backdrop-blur-xl fixed top-0 w-full max-h-lvh z-[999] place-content-center" ref={nodeRef}>
           <JackeyLoveIcon
             size={300}
             className="dark:brightness-150 w-[50%] md:w-[35%] lg:w-[20%] mx-auto"
