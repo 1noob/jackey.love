@@ -91,7 +91,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           >
             <div
               className="md:bg-content mx-auto max-w-2xl min-w-[320px] md:min-h-fit 
-              md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl md:gap-y-2"
+              md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl safe-area md:gap-y-2"
             >
               <Typedbar />
               <div
@@ -154,7 +154,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         <div className="loading" ref={nodeRef}>
           <JackeyLoveIcon
             size={300}
-            className="h-full dark:brightness-150 w-[50%] md:w-[35%] lg:w-[20%] m-auto"
+            className="h-full safe-area-m dark:brightness-150 w-[50%] md:w-[35%] lg:w-[20%] m-auto"
           />
         </div>
       </CSSTransition>
