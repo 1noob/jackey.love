@@ -28,7 +28,6 @@ main {
 
 .loading {
   @apply fixed w-full h-lvh bg-blur backdrop-blur-xl z-[999] place-content-center;
-
 }
 
 .loading-enter {
