@@ -30,7 +30,7 @@ main {
   @apply opacity-0;
 }
 .loading-page-enter-active {
-  @apply opacity-100 ease-in;
+  @apply opacity-100;
   transition: opacity 500ms;
 }
 
@@ -38,7 +38,7 @@ main {
   @apply opacity-100;
 }
 .loading-page-exit-active {
-  @apply opacity-0 ease-out;
+  @apply opacity-0;
   transition: opacity 500ms;
 }
 
