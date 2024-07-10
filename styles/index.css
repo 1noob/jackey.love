@@ -30,14 +30,14 @@ main {
   @apply opacity-0;
 }
 .loading-page-enter-active {
-  @apply opacity-100 transition-opacity ease-in-out;
+  @apply opacity-100 transition-opacity duration-1000 ease-in-out;
 }
 
 .loading-page-exit {
   @apply opacity-100;
 }
 .loading-page-exit-active {
-  @apply opacity-0 transition-opacity ease-in-out delay-300;
+  @apply opacity-0 transition-opacity duration-1000 ease-in-out delay-300;
 }
 
 .scroll-none {
