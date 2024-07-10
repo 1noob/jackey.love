@@ -151,8 +151,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         unmountOnExit
         nodeRef={nodeRef}
       > */}
+      {/* 使用 safe-area 进行定位会导致抖动 */}
         <div
-          className="bg-blur backdrop-blur-xl fixed top-0 w-full h-svh z-[999] border border-red-500 "
+          className="bg-blur backdrop-blur-xl fixed top-0 w-full h-lvh z-[999] border border-red-500 "
           ref={nodeRef}
         >
           <JackeyLoveLogo
