@@ -152,12 +152,12 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         nodeRef={nodeRef}
       > */}
         <div
-          className="bg-blur backdrop-blur-xl fixed top-0 w-full h-lvh z-[999] border border-red-500"
+          className="bg-blur backdrop-blur-xl fixed w-full h-svh z-[999] border border-red-500 "
           ref={nodeRef}
         >
           <JackeyLoveLogo
             size={300}
-            className="h-lvh dark:brightness-150 w-[40%] md:w-[30%] lg:w-[20%] m-auto"
+            className="dark:brightness-150 w-[40%] md:w-[30%] lg:w-[20%] m-auto"
           />
         </div>
       {/* </CSSTransition> */}
