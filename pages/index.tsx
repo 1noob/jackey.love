@@ -144,27 +144,27 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           <Gallery images={images} />
         </main>
       </CSSTransition>
-      {/* <CSSTransition
+      <CSSTransition
         in={!loaded}
         timeout={800}
         classNames="loading-page"
         unmountOnExit
         nodeRef={nodeRef}
-      > */}
-      {/* 
-        使用 safe-area 进行定位会导致抖动
-        使用 lvh 会先出现 svh 再延伸为 lvh
-       */}
-      <div
-        className="bg-blur backdrop-blur-xl fixed top-0 w-full h-lvh z-[999] border border-red-500 "
-        ref={nodeRef}
       >
-        <JackeyLoveLogo
-          size={300}
-          className="h-svh absolute top-0 left-[30%] md:left-[35%] lg:left-[40%] ldark:brightness-150 w-[40%] md:w-[30%] lg:w-[20%] m-auto"
-        />
-      </div>
-      {/* </CSSTransition> */}
+        {/* 
+          使用 safe-area 进行定位会导致抖动
+          使用 lvh 会先出现 svh 再延伸为 lvh
+        */}
+        <div
+          className="bg-blur backdrop-blur-xl fixed top-0 w-full h-lvh z-[999]"
+          ref={nodeRef}
+        >
+          <JackeyLoveLogo
+            size={300}
+            className="h-svh absolute top-0 left-[30%] md:left-[35%] lg:left-[40%] ldark:brightness-150 w-[40%] md:w-[30%] lg:w-[20%] m-auto"
+          />
+        </div>
+      </CSSTransition>
     </>
   );
 };
