@@ -91,7 +91,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           >
             <div
               className="md:bg-content mx-auto max-w-2xl min-w-[320px] md:min-h-fit 
-              md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl md:gap-y-2"
+              md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl md:gap-y-2 safe-area"
             >
               <Typedbar />
               <div
