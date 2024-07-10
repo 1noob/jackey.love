@@ -1,8 +1,8 @@
 import React from "react";
-import { Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
+import { Navbar, NavbarContent } from "@nextui-org/react";
 import { cn } from "@/lib/utils";
 import TypedBios from "./typed-bios";
-import { JackeyLoveIcon, JackeyLoveLogo } from "./icon";
+import { JackeyLoveLogo } from "./icon";
 import { useWindowSize } from "rooks";
 
 interface Props {
