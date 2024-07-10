@@ -158,7 +158,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         >
           <JackeyLoveLogo
             size={300}
-            className="dark:brightness-150 w-[40%] md:w-[30%] lg:w-[20%] m-auto"
+            className="h-lvh dark:brightness-150 w-[40%] md:w-[30%] lg:w-[20%] m-auto"
           />
         </div>
       {/* </CSSTransition> */}
