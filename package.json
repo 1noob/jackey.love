@@ -7,8 +7,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.4",
-    "@heroicons/react": "^2.0.13",
     "@nextui-org/react": "^2.2.9",
     "@nextui-org/scroll-shadow": "^2.1.12",
     "@types/react-dom": "^18.3.0",
