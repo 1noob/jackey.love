@@ -11,7 +11,7 @@ import Box from "@/components/Box";
 import Recommendation from "@/components/Recommendation";
 import Script from "next/script";
 import Gallery from "@/components/Gallery";
-import { JackeyLoveLogo } from "@/components/icon";
+import { JackeyLoveIcon } from "@/components/icon";
 import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
 import Intro from "@/components/Intro";
 import AppleMusic from "@/components/AppleMusic";
@@ -160,7 +160,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           className="bg-blur backdrop-blur-xl fixed top-0 w-full h-lvh z-[999]"
           ref={nodeRef}
         >
-          <JackeyLoveLogo
+          <JackeyLoveIcon
             size={300}
             className="h-svh absolute top-0 left-[30%] md:left-[35%] lg:left-[40%] dark:brightness-150 w-[40%] md:w-[30%] lg:w-[20%] m-auto"
           />

@@ -23,6 +23,10 @@ const TypedBios: React.FC<Props> = ({ className }) => {
   const el = React.useRef(null);
   const typed = React.useRef(null);
   const { systemTheme } = useTheme();
+  const iconSet = [];
+
+  iconSet.push([<XIcon/>, <TiktokIcon/>, <UmamiIcon/>, <CloudinaryIcon/>, <MailIcon/>, <SinaIcon/>])
+
 
   React.useEffect(() => {
     typed.current = new Typed(el.current, {
@@ -65,41 +69,46 @@ const TypedBios: React.FC<Props> = ({ className }) => {
           hideScrollBar
         >
           <div className={"animate-[scy_30s_linear_infinite] w-max flex"}>
-            <div className="w-max flex gap-2 pr-2 content-center">
+            <div className="w-max flex gap-2 pr-2">
               <Link
                 href={"mailto:x@jackey.love"}
                 target="_blank"
                 aria-label="mail"
+                className="grid content-center"
               >
-                <MailIcon size={18} />
+                <MailIcon />
               </Link>
               <Link
                 href={"https://m.weibo.cn/u/5966770936"}
                 target="_blank"
                 aria-label="Weibo"
+                className="grid\ content-center"
               >
-                <SinaIcon size={18} />
+                <SinaIcon />
               </Link>
               <Link
-                href={"https://twitter.com/TESJKL1118"}
+                href={"https://x.com/TESJKL1118"}
                 target="_blank"
                 aria-label="Twitter"
+                className="grid content-center"
               >
-                <XIcon size={18} />
+                <XIcon />
               </Link>
               <Link
                 href={"https://v.douyin.com/iYdXGgMa/"}
                 target="_blank"
                 aria-label="Tiktok"
+                className="grid content-center"
               >
-                <TiktokIcon size={16.5} />
+                <TiktokIcon />
               </Link>
               <Link
                 href={"https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"}
                 target="_blank"
                 aria-label="Umami"
+                className="grid content-center"
               >
-                <UmamiIcon size={17.5} />
+                <UmamiIcon />
               </Link>
               <Link
                 href={
@@ -107,8 +116,9 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                 }
                 target="_blank"
                 aria-label="Cloudinary"
+                className="grid content-center"
               >
-                <CloudinaryIcon size={19} />
+                <CloudinaryIcon />
               </Link>
             </div>
             <div className="w-max flex gap-2 pr-2 content-center">
@@ -116,36 +126,41 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                 href={"mailto:x@jackey.love"}
                 target="_blank"
                 aria-label="mail"
+                className="grid content-center"
               >
-                <MailIcon size={18} />
+                <MailIcon />
               </Link>
               <Link
                 href={"https://m.weibo.cn/u/5966770936"}
                 target="_blank"
                 aria-label="Weibo"
+                className="grid content-center"
               >
-                <SinaIcon size={18} />
+                <SinaIcon />
               </Link>
               <Link
-                href={"https://twitter.com/TESJKL1118"}
+                href={"https://x.com/TESJKL1118"}
                 target="_blank"
                 aria-label="Twitter"
+                className="grid content-center"
               >
-                <XIcon size={18} />
+                <XIcon />
               </Link>
               <Link
                 href={"https://v.douyin.com/iYdXGgMa/"}
                 target="_blank"
                 aria-label="Tiktok"
+                className="grid content-center"
               >
-                <TiktokIcon size={16.5} />
+                <TiktokIcon />
               </Link>
               <Link
                 href={"https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"}
                 target="_blank"
                 aria-label="Umami"
+                className="grid content-center"
               >
-                <UmamiIcon size={17.5} />
+                <UmamiIcon />
               </Link>
               <Link
                 href={
@@ -153,8 +168,9 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                 }
                 target="_blank"
                 aria-label="Cloudinary"
+                className="grid content-center"
               >
-                <CloudinaryIcon size={19} />
+                <CloudinaryIcon />
               </Link>
             </div>
           </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, NavbarContent } from "@nextui-org/react";
 import { cn } from "@/lib/utils";
 import TypedBios from "./typed-bios";
-import { JackeyLoveLogo } from "./icon";
+import { JackeyLoveIcon } from "./icon";
 import { useWindowSize } from "rooks";
 
 interface Props {
@@ -20,7 +20,7 @@ const Typedbar: React.FC<Props> = ({ className }) => {
       shouldHideOnScroll
     >
       <NavbarContent className="flex w-full pt-2" justify="center">
-        <JackeyLoveLogo
+        <JackeyLoveIcon
           className="dark:brightness-150 w-full flex m-auto justify-center"
           size={innerWidth < 768 ? 25 : 30}
         />
