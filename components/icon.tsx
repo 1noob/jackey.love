@@ -224,7 +224,7 @@ const UmamiIcon: React.FC<IconSvgProps> = ({
 };
 
 const CloudinaryIcon: React.FC<IconSvgProps> = ({
-  size = 21,
+  size = 21.5,
   width,
   height,
   ...props
