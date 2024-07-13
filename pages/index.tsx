@@ -149,6 +149,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         timeout={800}
         classNames="loading-page"
         unmountOnExit
+        enter={false}
         nodeRef={nodeRef}
       >
         {/* 

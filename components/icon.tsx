@@ -320,8 +320,8 @@ const JackeyLoveLogo: React.FC<IconSvgProps> = ({
           r="967.321"
           id="gradient-0"
         >
-          <stop offset="0" stop-color="rgb(0% 18.431% 65.49%)" />
-          <stop offset="1" stop-color="rgb(0% 10.889% 49.447%)" />
+          <stop offset="0" stopColor="rgb(0% 18.431% 65.49%)" />
+          <stop offset="1" stopColor="rgb(0% 10.889% 49.447%)" />
         </radialGradient>
         <radialGradient
           gradientUnits="userSpaceOnUse"
@@ -330,8 +330,8 @@ const JackeyLoveLogo: React.FC<IconSvgProps> = ({
           r="3813.889"
           id="gradient-1"
         >
-          <stop offset="0" stop-color="rgb(0% 18.431% 65.49%)" />
-          <stop offset="1" stop-color="rgb(0% 10.889% 49.447%)" />
+          <stop offset="0" stopColor="rgb(0% 18.431% 65.49%)" />
+          <stop offset="1" stopColor="rgb(0% 10.889% 49.447%)" />
         </radialGradient>
       </defs>
       <g
