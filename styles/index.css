@@ -26,6 +26,10 @@ main {
   @apply subpixel-antialiased text-[12px] sm:text-xs md:text-sm font-bold select-none;
 }
 
+.bg-box{
+  @apply bg-card border-dashed border border-gray-400 dark:border-transparent md:border-transparent;
+}
+
 .loading-page-enter {
   @apply opacity-0;
 }
@@ -150,13 +154,13 @@ h1 {
   box-sizing: border-box;
   /* border: var(--tweet-border); */
   border-radius: 12px;
-  background-color: var(--tweet-bg-color);
-  transition-property: background-color, box-shadow;
-  transition-duration: 0.2s;
+  /* background-color: var(--tweet-bg-color); */
+  /* transition-property: background-color, box-shadow;
+  transition-duration: 0.2s; */
 }
-.container-root:hover {
+/* .container-root:hover {
   background-color: var(--tweet-bg-color-hover);
-}
+} */
 .container-article {
   position: relative;
   box-sizing: inherit;

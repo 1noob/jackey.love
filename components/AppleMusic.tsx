@@ -8,7 +8,7 @@ const AppleMusic: React.FC<AppleMusicProps> = ({ className }) => {
   const { systemTheme } = useTheme();
 
   return (
-    <div className={cn("h-full bg-card w-full rounded-[12px] border-dashed border border-gray-400 dark:border-transparent md:border-transparent", className)}>
+    <div className={cn("h-full w-full rounded-[12px] bg-box", className)}>
       <iframe
         id="embedPlayer"
         className={"w-full h-[450px] rounded-[12px]"}
