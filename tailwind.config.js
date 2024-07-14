@@ -30,15 +30,14 @@ module.exports = {
         highlight: "inset 0 0 0 1px rgba(255, 255, 255, 0.05)",
       },
       cursor: {
-        'dot': 'url(/dot_32x32.png) 12 12, auto',
+        dot: "url(/dot_32x32.png) 12 12, auto",
       },
       flex: {
-        '1': '0 0 100%',
-        '2': '0 0 80%',
-        '3': '0 0 60%',
+        1: "0 0 100%",
+        2: "0 0 80%",
+        3: "0 0 60%",
       },
       screens: {
-
         // mobile
         mobile: { max: "767px" },
 
@@ -48,9 +47,7 @@ module.exports = {
         // mobile-m (iPhoneX)
         sm: { min: "375px" },
 
-        pro: { min: "450px"},
-
-        max: { min: "550px" },
+        pro: { min: "450px", max: "767px" },
 
         // iPad Mini: 768
         md: { min: "768px" },

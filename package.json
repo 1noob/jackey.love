@@ -7,6 +7,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@frank-mayer/react-tag-cloud": "^1.2.1",
     "@nextui-org/react": "^2.2.9",
     "@nextui-org/scroll-shadow": "^2.1.12",
     "@types/react-dom": "^18.3.0",

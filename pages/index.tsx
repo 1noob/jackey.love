@@ -16,6 +16,7 @@ import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
 import Intro from "@/components/Intro";
 import AppleMusic from "@/components/AppleMusic";
 import Typedbar from "@/components/Typedbar";
+import TagCloud3d from "@/components/TagCloud3d";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -90,7 +91,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]"
           >
             <div
-              className="md:bg-content mx-auto max-w-2xl min-w-[320px] md:min-h-fit 
+              className="md:bg-content mx-auto max-w-3xl min-w-[320px] md:min-h-fit 
               md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl md:gap-y-2 safe-area"
             >
               <Typedbar />
@@ -98,8 +99,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 className="grid mobile:p-2 gap-y-2 h-full overflow-y-auto no-scrollbar
                 md:max-h-[50rem] rounded-xl"
               >
-                <section>
-                  <Image
+                <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
+                  {/* <Image
                     rel="preload"
                     classNames={{
                       wrapper:
@@ -113,9 +114,12 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     src="/img/handwrite.jpeg"
                     loading="eager"
                     alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
-                  />
+                  /> */}
                   <EmblaCarousel />
-                  <Intro />
+                  <Intro/>
+                  {/* <Box className="hidden h-full md:flex w-full relative">
+                    <TagCloud3d />
+                  </Box> */}
                 </section>
                 <section>
                   <Box>
@@ -134,9 +138,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     <Divider className={"my-4"} />
                     <Recommendation />
                   </Box>
-                </section>
-                <section className="hidden md:flex">
-                  <AppleMusic className="h-[450px]" />
                 </section>
               </div>
             </div>

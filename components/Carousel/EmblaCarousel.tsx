@@ -6,11 +6,11 @@ import AppleMusic from "../AppleMusic";
 import useEmblaCarousel from "embla-carousel-react";
 
 import Autoplay from "embla-carousel-autoplay";
+import TagCloud3d from "../TagCloud3d";
 
 const options: EmblaOptionsType = { loop: true };
-const SLIDE_COUNT = 3;
+const SLIDE_COUNT = 4;
 const slides = Array.from(Array(SLIDE_COUNT).keys());
-const components = [];
 
 const EmblaCarousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
@@ -21,33 +21,36 @@ const EmblaCarousel = () => {
     }),
   ]);
 
+  let components = [];
+
   components.push(
     <Image
       classNames={{
         wrapper:
-          "bg-white dark:bg-card min-w-full rounded-xl border-dashed border dark:border-transparent border-gray-400",
+          "bg-white dark:bg-card min-w-full h-full grid place-content-center rounded-[12px] border-dashed border dark:border-transparent border-gray-400",
       }}
-      className={"m-auto h-[450px] dark:invert-[.89] rounded-xl"}
+      className={"m-auto h-[450px] dark:invert-[.89] rounded-[12px]"}
       radius="none"
       shadow="none"
       src="/img/handwrite.jpeg"
     />
   );
 
+  components.push(
+    <TagCloud3d className="bg-card md:bg-blur border-dashed border border-gray-400 dark:border-transparent" />
+  );
   components.push(<X id="1788487122485166261" />);
   components.push(
     <AppleMusic className="border-dashed border border-gray-400 dark:border-transparent" />
   );
 
   return (
-    <section className="embla md:hidden">
-      <div className="embla__viewport" ref={emblaRef}>
+    <section className="embla w-full h-full">
+      <div className="embla__viewport rounded-[12px]" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
-              <div className="embla__slide__number pb-2 h-full">
-                {components[index]}
-              </div>
+              <div className="w-full h-full">{components[index]}</div>
             </div>
           ))}
         </div>
