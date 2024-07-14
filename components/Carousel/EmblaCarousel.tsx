@@ -36,13 +36,9 @@ const EmblaCarousel = () => {
     />
   );
 
-  components.push(
-    <TagCloud3d />
-  );
+  components.push(<TagCloud3d />);
   components.push(<X id="1788487122485166261" />);
-  components.push(
-    <AppleMusic />
-  );
+  components.push(<AppleMusic />);
 
   return (
     <section className="embla w-full h-full">
