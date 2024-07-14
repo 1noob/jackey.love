@@ -14,8 +14,8 @@ const TagCloud3d: React.FC<Props> = ({ className }) => {
     <TagCloud
       options={(w: Window & typeof globalThis): TagCloudOptions => ({
         radius: Math.min(320, w.innerWidth, w.innerHeight) / 2,
-        initSpeed: "slow",
-        maxSpeed: "slow",
+        initSpeed: "normal",
+        maxSpeed: "fast",
       })}
       onClickOptions={{ passive: true }}
       className={cn(
