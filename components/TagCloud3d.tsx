@@ -17,7 +17,6 @@ const TagCloud3d: React.FC<Props> = ({ className }) => {
 
         maxSpeed: "fast",
       })}
-      onClick={(tag: string, ev: MouseEvent) => alert(tag)}
       onClickOptions={{ passive: true }}
       className={cn(
         "w-full h-full rounded-[12px] grid place-content-center bg-box",

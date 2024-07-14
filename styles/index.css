@@ -158,9 +158,11 @@ h1 {
   /* transition-property: background-color, box-shadow;
   transition-duration: 0.2s; */
 }
+
 /* .container-root:hover {
   background-color: var(--tweet-bg-color-hover);
 } */
+
 .container-article {
   position: relative;
   box-sizing: inherit;
