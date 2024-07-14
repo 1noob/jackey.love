@@ -6,7 +6,7 @@ type Props = { className?: string; children: ReactNode };
 export const TweetContainer = ({ className, children }: Props) => (
   <div
     className={clsx(
-      "react-tweet-theme container-root h-[450px] border-dashed border-gray-400 border dark:border-transparent",
+      "bg-card react-tweet-theme container-root h-[450px] border-dashed border-gray-400 border dark:border-transparent md:border-transparent",
       className
     )}
   >

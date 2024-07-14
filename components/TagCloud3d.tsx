@@ -17,7 +17,7 @@ const TagCloud3d: React.FC<Props> = ({ className }) => {
         maxSpeed: "fast",
       })}
       className={cn(
-        "w-full h-full rounded-[12px] grid place-content-center",
+        "w-full h-full rounded-[12px] grid place-content-center bg-card border-dashed border border-gray-400 dark:border-transparent md:border-transparent",
         className
       )}
     >
