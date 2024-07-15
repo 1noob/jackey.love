@@ -25,8 +25,14 @@ const TypedBios: React.FC<Props> = ({ className }) => {
   const { systemTheme } = useTheme();
   const iconSet = [];
 
-  iconSet.push([<XIcon/>, <TiktokIcon/>, <UmamiIcon/>, <CloudinaryIcon/>, <MailIcon/>, <SinaIcon/>])
-
+  iconSet.push([
+    <XIcon />,
+    <TiktokIcon />,
+    <UmamiIcon />,
+    <CloudinaryIcon />,
+    <MailIcon />,
+    <SinaIcon />,
+  ]);
 
   React.useEffect(() => {
     typed.current = new Typed(el.current, {
@@ -43,10 +49,9 @@ const TypedBios: React.FC<Props> = ({ className }) => {
     <div className={cn("px-1 w-full", className)}>
       <div className="grid grid-cols-6">
         <ul id="bios" className="hidden">
-          <li>感觉我还有得救。</li>
-          <li>我是天选，也是唯一。</li>
           <li>跟自己的热爱。</li>
-          <li>伟大，无需多言。</li>
+          <li>打败我，你就是LPL第一AD。</li>
+          <li>17岁的我马上就要拿到LPL冠军了。</li>
           <li>好好调整，哥几个等你回来。</li>
           <li>本台记者喻文波为您报道。</li>
           <li>再给我一次机会，我还是会E上去。</li>

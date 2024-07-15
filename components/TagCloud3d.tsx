@@ -23,7 +23,8 @@ const TagCloud3d: React.FC<Props> = ({ className }) => {
       )}
     >
       {[
-        "伟大性格",
+        "伟大",
+        "无需多言",
         "闪现向前",
         "天选唯一",
         "白开水",
@@ -39,6 +40,9 @@ const TagCloud3d: React.FC<Props> = ({ className }) => {
         "JKL指挥的",
         "每天抗塔",
         "坚毅眼神",
+        "明年寄了",
+        "那就开摆",
+        "越战老兵",
       ]}
     </TagCloud>
   );
