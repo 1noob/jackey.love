@@ -27,7 +27,7 @@ main {
 }
 
 .bg-box{
-  @apply bg-card border-dashed border border-gray-400 dark:border-transparent md:border-transparent;
+  @apply bg-card border-dashed border border-gray-400 dark:border-transparent md:border-none;
 }
 
 .loading-page-enter {
