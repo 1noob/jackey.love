@@ -35,7 +35,7 @@ module.exports = {
       flex: {
         1: "0 0 100%",
         2: "0 0 80%",
-        3: "0 0 70%",
+        3: "0 0 55%",
       },
       screens: {
         // mobile
@@ -47,7 +47,7 @@ module.exports = {
         // mobile-m (iPhoneX)
         sm: { min: "375px" },
 
-        pro: { min: "450px", max: "767px" },
+        max: { min: "550px", max: "767px" },
 
         // iPad Mini: 768
         md: { min: "768px" },
