@@ -14,11 +14,11 @@ export const Tweet = ({
 }: TweetProps) => {
   const { data, error, isLoading } = useTweet(id, apiUrl);
 
-  if (isLoading) return fallback;
-  if (error || !data) {
-    const NotFound = components?.TweetNotFound || TweetNotFound;
-    return <NotFound error={onError ? onError(error) : error} />;
-  }
+  if (isLoading || error || !data) return fallback;
+  // if (error || !data) {
+  //   const NotFound = components?.TweetNotFound || TweetNotFound;
+  //   return <NotFound error={onError ? onError(error) : error} />;
+  // }
 
   return <MyTweet tweet={data} components={components} />;
 };
