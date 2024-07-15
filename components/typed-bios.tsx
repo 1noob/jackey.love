@@ -57,7 +57,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
           "
           <span
             ref={el}
-            className="text-neutral-900 dark:text-neutral-200 text-sm"
+            className="text-neutral-900 dark:text-neutral-200 text-sm italic"
           />
           "
         </p>
