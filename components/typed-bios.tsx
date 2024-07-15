@@ -47,7 +47,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
 
   return (
     <div className={cn("px-1 w-full", className)}>
-      <div className="grid grid-cols-6">
+      <div className="grid grid-cols-6 italic">
         <ul id="bios" className="hidden">
           <li>跟自己的热爱。</li>
           <li>打败我，你就是LPL第一AD。</li>
@@ -62,7 +62,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
           "
           <span
             ref={el}
-            className="text-neutral-900 dark:text-neutral-200 text-sm italic"
+            className="text-neutral-900 dark:text-neutral-200 text-sm"
           />
           "
         </p>
