@@ -14,12 +14,13 @@ const TagCloud3d: React.FC<Props> = ({ className }) => {
     <TagCloud
       options={(w: Window & typeof globalThis): TagCloudOptions => ({
         radius: Math.min(320, w.innerWidth, w.innerHeight) / 2,
-        initSpeed: "normal",
+        initSpeed: "fast",
         maxSpeed: "fast",
+        keep: false,
       })}
       onClickOptions={{ passive: true }}
       className={cn(
-        "w-full h-full rounded-[12px] grid place-content-center bg-box",
+        "w-full h-full rounded-[12px] grid place-content-center bg-box pointer-events-none",
         className
       )}
     >
