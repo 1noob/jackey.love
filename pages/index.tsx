@@ -163,7 +163,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         >
           <JackeyLoveIcon
             size={300}
-            className="h-svh absolute top-0 left-[30%] md:left-[35%] lg:left-[40%] dark:brightness-150 w-[40%] md:w-[30%] lg:w-[20%] m-auto"
+            className="h-svh absolute top-0 left-[30%] md:left-[35%] lg:left-[40%] xl:left-[45%] dark:brightness-150 w-[40%] md:w-[30%] lg:w-[20%] xl:w-[10%] m-auto"
           />
         </div>
       </CSSTransition>
