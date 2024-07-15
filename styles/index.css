@@ -96,7 +96,7 @@ h1 {
   margin-left: calc(var(--slide-spacing) * -1);
 }
 .embla__slide {
-  @apply flex-1 pro:flex-2 md:flex-1;
+  @apply flex-1 pro:flex-3 md:flex-1;
   padding-left: var(--slide-spacing);
 }
 
