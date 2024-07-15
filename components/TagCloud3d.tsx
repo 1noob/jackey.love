@@ -1,20 +1,18 @@
-import React from "react";
 import { TagCloud, TagCloudOptions } from "@frank-mayer/react-tag-cloud";
-import { useWindowSize } from "rooks";
+import React, { useEffect } from "react";
 import { cn } from "@/lib/utils";
-// same as: import TagCloud from "@frank-mayer/react-tag-cloud"
+import { useWindowSize } from "rooks";
 
 interface Props {
   className?: string;
 }
 
 const TagCloud3d: React.FC<Props> = ({ className }) => {
-  const { innerWidth, innerHeight } = useWindowSize();
   return (
     <TagCloud
       options={(w: Window & typeof globalThis): TagCloudOptions => ({
         radius: Math.min(320, w.innerWidth, w.innerHeight) / 2,
-        initSpeed: "fast",
+        initSpeed: "normal",
         maxSpeed: "fast",
         keep: false,
       })}
@@ -39,7 +37,7 @@ const TagCloud3d: React.FC<Props> = ({ className }) => {
         "AD开团",
         "接Q辣舞",
         "JKL指挥的",
-        "抗塔",
+        "每天抗塔",
         "坚毅眼神",
       ]}
     </TagCloud>
