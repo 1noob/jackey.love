@@ -8,7 +8,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import TagCloud3d from "../TagCloud3d";
 
-const options: EmblaOptionsType = { loop: true , duration: 100};
+const options: EmblaOptionsType = { loop: true , duration: 30};
 const SLIDE_COUNT = 4;
 const TWEEN_FACTOR_BASE = 0.52
 const slides = Array.from(Array(SLIDE_COUNT).keys());
@@ -19,7 +19,7 @@ const EmblaCarousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({
       playOnInit: true,
-      delay: 6000,
+      delay: 5000,
       stopOnInteraction: false,
     }),
   ]);
