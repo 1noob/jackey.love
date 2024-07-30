@@ -14,9 +14,7 @@ import Gallery from "@/components/Gallery";
 import { JackeyLoveIcon } from "@/components/icon";
 import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
 import Intro from "@/components/Intro";
-import AppleMusic from "@/components/AppleMusic";
 import Typedbar from "@/components/Typedbar";
-import TagCloud3d from "@/components/TagCloud3d";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
