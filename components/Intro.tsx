@@ -9,7 +9,7 @@ const Intro = () => {
       <Box>
         <h1>JackeyLove</h1>
         <Divider className={"my-4"} />
-        <div className={"grid align-middle px-3 gap-y-3 tracking-tighter"}>
+        <div className={"grid px-3 gap-y-3"}>
           <List>
             <p>Team</p>
             <p>TOP ESPORTS</p>
@@ -28,7 +28,7 @@ const Intro = () => {
         <h1> Career </h1>
         <Divider className={"my-4"} />
         <div
-          className={"grid gap-y-3 px-3 align-middle tracking-tighter"}
+          className={"grid gap-y-3 px-3"}
         >
           {data.career.map((item, index) => {
             return (

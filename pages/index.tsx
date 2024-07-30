@@ -37,11 +37,14 @@ const SmileySans = localFont({
 
 const PixelMono = localFont({
   src: [
+    // {
+    //   path: "../public/fonts/pixel/fusion-pixel-12px-monospaced-latin.woff2",
+    // },
+    // {
+    //   path: "../public/fonts/pixel/fusion-pixel-12px-monospaced-zh_hans.woff2",
+    // },
     {
-      path: "../public/fonts/pixel/fusion-pixel-12px-monospaced-latin.woff2",
-    },
-    {
-      path: "../public/fonts/pixel/fusion-pixel-12px-monospaced-zh_hans.woff2",
+      path: "../public/fonts/pixel/zpix.woff2",
     },
   ],
   variable: "--font-pixel",
@@ -100,26 +103,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 md:max-h-[50rem] rounded-xl"
               >
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
-                  {/* <Image
-                    rel="preload"
-                    classNames={{
-                      wrapper:
-                        "hidden h-full md:flex relative float-right md:w-[45%] bg-white dark:bg-card z-[99] rounded-xl",
-                    }}
-                    className={
-                      "h-[378px] w-full m-auto dark:invert-[.89] rounded-xl hover:scale-[1.5] origin-top-right transform-gpu duration-200 ease-in-out"
-                    }
-                    radius="none"
-                    shadow="none"
-                    src="/img/handwrite.jpeg"
-                    loading="eager"
-                    alt={"JackeyLove, 喻文波, Yu-WenBo, 阿水, 水子哥, 哥哥"}
-                  /> */}
                   <EmblaCarousel />
-                  <Intro/>
-                  {/* <Box className="hidden h-full md:flex w-full relative">
-                    <TagCloud3d />
-                  </Box> */}
+                  <Intro />
                 </section>
                 <section>
                   <Box>
