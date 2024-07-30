@@ -37,14 +37,11 @@ const SmileySans = localFont({
 
 const PixelMono = localFont({
   src: [
-    // {
-    //   path: "../public/fonts/pixel/fusion-pixel-12px-monospaced-latin.woff2",
-    // },
-    // {
-    //   path: "../public/fonts/pixel/fusion-pixel-12px-monospaced-zh_hans.woff2",
-    // },
     {
-      path: "../public/fonts/pixel/zpix.woff2",
+      path: "../public/fonts/pixel/fusion-pixel-12px-monospaced-latin.woff2",
+    },
+    {
+      path: "../public/fonts/pixel/fusion-pixel-12px-monospaced-zh_hans.woff2",
     },
   ],
   variable: "--font-pixel",
