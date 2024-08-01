@@ -59,13 +59,14 @@ const TypedBios: React.FC<Props> = ({ className }) => {
           <li>哥们的韦鲁斯还需要练吗?</li>
         </ul>
         <p className={"w-full h-full col-span-5"}>
-          "
+          “
           <span
             ref={el}
             className="text-neutral-900 dark:text-neutral-200 text-sm"
           />
-          "
+          ”
         </p>
+        
         <ScrollShadow
           className="w-full rounded-full"
           offset={-2}
@@ -180,6 +181,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
             </div>
           </div>
         </ScrollShadow>
+        
       </div>
     </div>
   );

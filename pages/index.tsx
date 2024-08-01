@@ -90,7 +90,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           >
             <div
               className="md:bg-content mx-auto max-w-3xl min-w-[320px] md:min-h-fit 
-              md:p-2 flex flex-col md:backdrop-blur-2xl rounded-xl md:gap-y-2 safe-area"
+              md:p-2 flex flex-col md:backdrop-blur-2xl rounded-[16px] md:gap-y-2 safe-area"
             >
               <Typedbar />
               <div
@@ -104,7 +104,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 <section>
                   <Box>
                     <h1>Awards</h1>
-                    <Divider className={"my-4"} />
+                    <Divider className={"my-4 md:h-0.5"} />
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 md:gap-x-12 px-3">
                       {pageData.awards.map((item, index) => (
                         <li key={index}>{item}</li>
@@ -115,7 +115,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 <section>
                   <Box>
                     <h1>Recommendations</h1>
-                    <Divider className={"my-4"} />
+                    <Divider className={"my-4 md:h-0.5"} />
                     <Recommendation />
                   </Box>
                 </section>

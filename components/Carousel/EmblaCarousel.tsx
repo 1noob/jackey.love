@@ -100,7 +100,7 @@ const EmblaCarousel = () => {
     <Image
       classNames={{
         wrapper:
-          "bg-white dark:bg-card min-w-full h-full grid place-content-center rounded-[12px] border-dashed border dark:border-transparent md:border-transparent border-gray-400",
+          "min-w-full h-full grid place-content-center rounded-[12px] bg-box",
       }}
       className={"m-auto h-[450px] dark:invert-[.89] rounded-[12px]"}
       radius="none"
@@ -119,7 +119,7 @@ const EmblaCarousel = () => {
         <div className="embla__container">
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
-              <div className="embla__slide__number w-full h-full">{components[index]}</div>
+              <div className="embla__slide__number w-full h-full md:grayscale-[50%]">{components[index]}</div>
             </div>
           ))}
         </div>

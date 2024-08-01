@@ -33,6 +33,7 @@ const TagCloud3d: React.FC<Props> = ({ className }) => {
       >
         {[
           "大头",
+          "杰阔",
           "伟大",
           "装杯",
           "小主播",

@@ -8,7 +8,7 @@ const Intro = () => {
     <div className={"grid gap-y-2 w-full"}>
       <Box>
         <h1>JackeyLove</h1>
-        <Divider className={"my-4"} />
+        <Divider className={"my-4 md:h-0.5"} />
         <div className={"grid px-3 gap-y-3"}>
           <List>
             <p>Team</p>
@@ -26,7 +26,7 @@ const Intro = () => {
       </Box>
       <Box>
         <h1> Career </h1>
-        <Divider className={"my-4"} />
+        <Divider className={"my-4 md:h-0.5"} />
         <div
           className={"grid gap-y-3 px-3"}
         >

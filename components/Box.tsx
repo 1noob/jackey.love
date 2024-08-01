@@ -14,7 +14,7 @@ const Box: React.FC<BoxProps> = ({ children, className }) => {
       shadow="none"
       radius="none"
       className={cn(
-        "rounded-xl !bg-card md:!bg-blur border-dashed border border-gray-400 dark:border-transparent md:border-none",
+        "rounded-[12px] !bg-card md:!bg-blur border-dashed border border-gray-400 dark:border-transparent md:border-none",
         className
       )}
       classNames={{
