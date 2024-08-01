@@ -27,6 +27,7 @@ const TagCloud3d: React.FC<Props> = ({ className }) => {
         "无需多言",
         "闪现向前",
         "天选唯一",
+        "年少成名",
         "白开水",
         "伤害大王",
         "无效输出",
