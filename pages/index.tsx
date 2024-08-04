@@ -1,8 +1,8 @@
-import type { NextPage } from "next";
+import NextPage from "next";
 import cloudinary from "@/utils/cloudinary";
 import type { ImageProps } from "@/utils/types";
-import { Divider, Image } from "@nextui-org/react";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { Divider } from "@nextui-org/react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { CSSTransition } from "react-transition-group";
@@ -15,6 +15,7 @@ import { JackeyLoveIcon } from "@/components/icon";
 import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
 import Intro from "@/components/Intro";
 import Typedbar from "@/components/Typedbar";
+import Statics from "@/components/statics";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -118,6 +119,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     <Divider className={"my-4 md:h-0.5"} />
                     <Recommendation />
                   </Box>
+                </section>
+                <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
+                  <Statics title="LPL" url="https://stat.jackey.love/lpl-stat/JackeyLove"/>
+                  <Statics title="Worlds" url="https://stat.jackey.love/world-stat/JackeyLove"/>       
                 </section>
               </div>
             </div>

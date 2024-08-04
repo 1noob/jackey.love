@@ -39,10 +39,10 @@ const MailIcon: React.FC<IconSvgProps> = ({
     >
       <g
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         transform="matrix(1, 0, 0, 1, 0, -64.72410583496094)"
       >
-        <g fill-rule="nonzero">
+        <g fillRule="nonzero">
           <path
             d="M34.91 448.818h81.454V251L0 163.727V413.91c0 19.287 15.622 34.91 34.91 34.91z"
             fill="#4285f4"
@@ -63,7 +63,7 @@ const MailIcon: React.FC<IconSvgProps> = ({
         <path
           d="M0 117.182v46.545L116.364 251V99.727L83.782 75.291C49.25 49.4 0 74.04 0 117.18z"
           fill="#c5221f"
-          fill-rule="nonzero"
+          fillRule="nonzero"
         />
       </g>
     </svg>
@@ -122,11 +122,11 @@ const TiktokIcon: React.FC<IconSvgProps> = ({
       width={size || width}
       {...props}
     >
-      <g id="SVGRepo_bgCarrier" stroke-width="0" />
+      <g id="SVGRepo_bgCarrier" strokeWidth="0" />
       <g
         id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <g
         id="SVGRepo_iconCarrier"

@@ -19,6 +19,10 @@ const Intro = () => {
             <p>AD Carry</p>
           </List>
           <List>
+            <p>Country</p>
+            <p>CHINA</p>
+          </List>
+          <List>
             <p>Birthday</p>
             <p>Nov,18,2000</p>
           </List>
