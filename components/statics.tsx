@@ -41,7 +41,7 @@ const Statics: React.FC<Props> = ({ title, url }) => {
               return (
                 <div
                   key={index}
-                  className="grid grid-cols-6 gap-x-1 text-gray-600 dark:text-gray-300 text-[10px]"
+                  className="grid grid-cols-6 gap-x-1 text-gray-600 dark:text-gray-300 text-[10px] md:text-xs"
                 >
                   <p className="col-span-2">{item["name"]}</p>
                   <p className="col-span-2">
