@@ -4,10 +4,10 @@ import { Badge, Button, Image } from "@nextui-org/react";
 import { cn } from "@/lib/utils";
 
 interface Props {
-  className? : string
+  className?: string;
 }
 
-const Recommendation: React.FC<Props> = ({ className }) => {
+const Evaluation: React.FC<Props> = ({ className }) => {
   const slice_len = 2;
   const [viewAllRecs, setViewAllRecs] = React.useState(false);
   const shouldReduceMotion = useReducedMotion();
@@ -15,8 +15,8 @@ const Recommendation: React.FC<Props> = ({ className }) => {
   return (
     <div className={cn("flex flex-col gap-y-8 px-3", className)}>
       <AnimatePresence initial={false}>
-        {data.recommendations
-          .slice(0, viewAllRecs ? data.recommendations.length : slice_len)
+        {data
+          .slice(0, viewAllRecs ? data.length : slice_len)
           .map((item, index) => {
             return (
               <motion.div
@@ -39,7 +39,9 @@ const Recommendation: React.FC<Props> = ({ className }) => {
                   </div>
                 </div>
                 <div className="flex-2">
-                  <div className={"indent-[-0.8rem] md:indent-[-0.9rem]"}>“{item.text}”</div>
+                  <div className={"indent-[-0.8rem] md:indent-[-0.9rem]"}>
+                    “{item.text}”
+                  </div>
                   <div className={"mt-4"}>
                     &mdash; {item.name}, {item.title}, {item.company}
                   </div>
@@ -51,7 +53,7 @@ const Recommendation: React.FC<Props> = ({ className }) => {
       {!viewAllRecs && (
         <div className={"mb-2 mx-auto text-white"}>
           <Badge
-            content={data.recommendations.length - slice_len}
+            content={data.length - slice_len}
             color="danger"
             variant="solid"
             showOutline={false}
@@ -111,44 +113,42 @@ const Recommendation: React.FC<Props> = ({ className }) => {
   );
 };
 
-const data = {
-  recommendations: [
-    {
-      text: "我总是告诉我们的队员，我们的队伍有 JackeyLove 是件好事，因为他有很棒的性格和天赋，他是一个非常成熟的人，总是乐于接受反馈。JackeyLove 是一名令我有很高期待的选手。",
-      name: "Kim",
-      title: "Coach",
-      company: "IG",
-      thumbnail: "/img/kim.jpeg",
-    },
-    {
-      text: "Nobody wants to be flashing forward to make the mistake in the Game five, but Jackey says I will flashing forward. I will be the hero.",
-      name: "CaptainFlowers",
-      title: "Comment",
-      company: "LEC",
-      thumbnail: "/img/captainflowers.jpeg",
-    },
-    {
-      text: "我对他最突出的印象是冷静，而且判断也颇为准确。尽管有些时候他会有些奇怪的被击杀，但是他的操作和对线都很棒。另外就是他本身似乎眉宇之间透着一股和年龄不符的英气，身高不算高的他却给人一种器宇轩昂的感觉，我觉得他是一名很有魅力的选手。据我暗中观察，他在选手中似乎也挺有威望哟。",
-      name: "MintyBlue藏马",
-      title: "Ceo",
-      company: "IG",
-      thumbnail: "/img/mintyblue.jpeg",
-    },
-    {
-      text: "我个人觉得我自己的风格这个赛季会变得很多，因为我们来了个新选手 JackeyLove。他是一个打法很凶的 ADC，我就没必要一直在对线的情况下打出优势了，我也可以慢慢发育，我也觉得自己的打团能力也不是很差的，所以打到后期也有 JackeyLove，就觉得线上不要很急，就慢慢打。",
-      name: "Rookie",
-      title: "Mid",
-      company: "IG",
-      thumbnail: "/img/rookie.jpeg",
-    },
-    {
-      text: "Most western fans know Jackeylove as the talented but inconsistent choker. Realistically though, Jackeylove is currently the best ADC in the world.",
-      name: "RichsWrach",
-      title: "Founder",
-      company: "H2K",
-      thumbnail: "/img/rich.jpeg",
-    },
-  ],
-};
+const data = [
+  {
+    text: "我总是告诉我们的队员，我们的队伍有 JackeyLove 是件好事，因为他有很棒的性格和天赋，他是一个非常成熟的人，总是乐于接受反馈。JackeyLove 是一名令我有很高期待的选手。",
+    name: "Kim",
+    title: "Coach",
+    company: "IG",
+    thumbnail: "/img/kim.jpeg",
+  },
+  {
+    text: "Nobody wants to be flashing forward to make the mistake in the Game five, but Jackey says I will flashing forward. I will be the hero.",
+    name: "CaptainFlowers",
+    title: "Comment",
+    company: "LEC",
+    thumbnail: "/img/captainflowers.jpeg",
+  },
+  {
+    text: "我对他最突出的印象是冷静，而且判断也颇为准确。尽管有些时候他会有些奇怪的被击杀，但是他的操作和对线都很棒。另外就是他本身似乎眉宇之间透着一股和年龄不符的英气，身高不算高的他却给人一种器宇轩昂的感觉，我觉得他是一名很有魅力的选手。据我暗中观察，他在选手中似乎也挺有威望哟。",
+    name: "MintyBlue藏马",
+    title: "Ceo",
+    company: "IG",
+    thumbnail: "/img/mintyblue.jpeg",
+  },
+  {
+    text: "我个人觉得我自己的风格这个赛季会变得很多，因为我们来了个新选手 JackeyLove。他是一个打法很凶的 ADC，我就没必要一直在对线的情况下打出优势了，我也可以慢慢发育，我也觉得自己的打团能力也不是很差的，所以打到后期也有 JackeyLove，就觉得线上不要很急，就慢慢打。",
+    name: "Rookie",
+    title: "Mid",
+    company: "IG",
+    thumbnail: "/img/rookie.jpeg",
+  },
+  {
+    text: "Most western fans know Jackeylove as the talented but inconsistent choker. Realistically though, Jackeylove is currently the best ADC in the world.",
+    name: "RichsWrach",
+    title: "Founder",
+    company: "H2K",
+    thumbnail: "/img/rich.jpeg",
+  },
+];
 
-export default Recommendation;
+export default Evaluation;

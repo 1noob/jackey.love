@@ -8,7 +8,7 @@ import localFont from "next/font/local";
 import { CSSTransition } from "react-transition-group";
 
 import Box from "@/components/Box";
-import Recommendation from "@/components/Recommendation";
+import Evaluation from "@/components/evaluation";
 import Script from "next/script";
 import Gallery from "@/components/Gallery";
 import { JackeyLoveIcon } from "@/components/icon";
@@ -115,9 +115,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 </section>
                 <section>
                   <Box>
-                    <h1>Recommendations</h1>
+                    <h1>Evaluations</h1>
                     <Divider className={"my-4 md:h-0.5"} />
-                    <Recommendation />
+                    <Evaluation />
                   </Box>
                 </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
