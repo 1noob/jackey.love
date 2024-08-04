@@ -16,7 +16,7 @@ const Stat: React.FC<Props> = ({ title, url }) => {
   if (data != undefined) {
     return (
       <Box>
-        <h1 className="ws">Statics / {title}</h1>
+        <h1 className="ws">Stat / {title}</h1>
         <Divider className={"my-4 md:h-0.5"} />
         <div className="grid gap-4">
           <div className="flex justify-between gap-2">
