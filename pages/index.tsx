@@ -1,4 +1,4 @@
-import NextPage from "next";
+import type { NextPage } from "next";
 import cloudinary from "@/utils/cloudinary";
 import type { ImageProps } from "@/utils/types";
 import { Divider } from "@nextui-org/react";
@@ -121,8 +121,14 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   </Box>
                 </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
-                  <Statics title="LPL" url="https://stat.jackey.love/lpl-stat/JackeyLove"/>
-                  <Statics title="Worlds" url="https://stat.jackey.love/world-stat/JackeyLove"/>       
+                  <Statics
+                    title="LPL"
+                    url="https://stat.jackey.love/lpl-stat/JackeyLove"
+                  />
+                  <Statics
+                    title="Worlds"
+                    url="https://stat.jackey.love/world-stat/JackeyLove"
+                  />
                 </section>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import AppProps from "next/app";
+import type { AppProps } from "next/app";
 import "@/styles/index.css";
 import Head from "next/head";
 import { NextUIProvider } from "@nextui-org/react";
