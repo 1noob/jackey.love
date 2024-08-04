@@ -5,14 +5,14 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="description" content="League of Legends esports player" />
+          <meta name="description" content="伟大，无需多言。" />
 
           <meta property="og:url" content="https://www.jackey.love" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="JackeyLove" />
           <meta
             property="og:description"
-            content="League of Legends esports player"
+            content="伟大，无需多言。"
           />
           <meta
             property="og:image"
@@ -24,7 +24,7 @@ class MyDocument extends Document {
           <meta name="twitter:title" content="JackeyLove" />
           <meta
             name="twitter:description"
-            content="League of Legends esports player"
+            content="伟大，无需多言。"
           />
           <meta
             name="twitter:image"
