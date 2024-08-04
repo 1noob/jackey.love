@@ -15,7 +15,7 @@ import { JackeyLoveIcon } from "@/components/icon";
 import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
 import Intro from "@/components/Intro";
 import Typedbar from "@/components/Typedbar";
-import Statics from "@/components/statics";
+import Stat from "@/components/statistics";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -121,11 +121,11 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   </Box>
                 </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
-                  <Statics
+                  <Stat
                     title="LPL"
                     url="https://stat.jackey.love/lpl-stat/JackeyLove"
                   />
-                  <Statics
+                  <Stat
                     title="Worlds"
                     url="https://stat.jackey.love/world-stat/JackeyLove"
                   />

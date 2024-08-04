@@ -23,7 +23,7 @@ body {
 }
 
 main {
-  @apply subpixel-antialiased text-[12px] sm:text-xs md:text-sm font-bold select-none;
+  @apply subpixel-antialiased text-[10px] sm:text-xs md:text-sm font-bold select-none;
 }
 
 .bg-box {

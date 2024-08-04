@@ -1,5 +1,5 @@
 import React from "react";
-import { Chip, Divider } from "@nextui-org/react";
+import { Divider } from "@nextui-org/react";
 import useSWR from "swr";
 import Box from "./Box";
 import List from "./List";
@@ -9,7 +9,7 @@ interface Props {
   url: string;
 }
 
-const Statics: React.FC<Props> = ({ title, url }) => {
+const Stat: React.FC<Props> = ({ title, url }) => {
   const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
   const { data } = useSWR(url, fetcher);
 
@@ -19,7 +19,7 @@ const Statics: React.FC<Props> = ({ title, url }) => {
         <h1 className="ws">Statics / {title}</h1>
         <Divider className={"my-4 md:h-0.5"} />
         <div className="grid gap-4">
-          <div className="flex justify-between gap-2 ">
+          <div className="flex justify-between gap-2">
             <div className="bg-orange-500 dark:bg-orange-800 place-content-center px-2 rounded-md grow">
               KDA:{data[0]["kills"]}/{data[0]["deaths"]}/{data[0]["assists"]}
             </div>
@@ -30,8 +30,8 @@ const Statics: React.FC<Props> = ({ title, url }) => {
               Games:{data[0]["total"]}
             </div>
           </div>
-          <div className={"grid gap-y-3 px-3"}>
-            <div className="grid grid-cols-6 gap-x-1 text-xs">
+          <div className={"grid gap-y-3 px-2 whitespace-nowrap"}>
+            <div className="grid grid-cols-6 text-xs">
               <p className="col-span-2">Champion</p>
               <p className="col-span-2">KDA</p>
               <p>Games</p>
@@ -41,7 +41,7 @@ const Statics: React.FC<Props> = ({ title, url }) => {
               return (
                 <div
                   key={index}
-                  className="grid grid-cols-6 gap-x-1 text-gray-600 dark:text-gray-300 text-[10px] md:text-xs"
+                  className="grid grid-cols-6 text-gray-600 dark:text-gray-300 text-[10px] md:text-xs"
                 >
                   <p className="col-span-2">{item["name"]}</p>
                   <p className="col-span-2">
@@ -64,4 +64,4 @@ const Statics: React.FC<Props> = ({ title, url }) => {
   }
 };
 
-export default Statics;
+export default Stat;
