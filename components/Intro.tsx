@@ -31,9 +31,7 @@ const Intro = () => {
       <Box>
         <h1> Career </h1>
         <Divider className={"my-4 md:h-0.5"} />
-        <div
-          className={"grid gap-y-3 px-3"}
-        >
+        <div className={"grid gap-y-3 px-3"}>
           {data.career.map((item, index) => {
             return (
               <List key={index}>

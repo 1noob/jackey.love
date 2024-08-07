@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import cloudinary from "@/utils/cloudinary";
 import type { ImageProps } from "@/utils/types";
-import { Divider } from "@nextui-org/react";
+import { Divider, Image } from "@nextui-org/react";
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
@@ -16,6 +16,10 @@ import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
 import Intro from "@/components/Intro";
 import Typedbar from "@/components/Typedbar";
 import Stat from "@/components/statistics";
+import X from "@/components/tweet/X";
+import AppleMusic from "@/components/AppleMusic";
+import TagCloud3d from "@/components/TagCloud3d";
+import MatchSchedule from "@/components/match-schedule";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -71,6 +75,33 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
     }
   }, []);
 
+  let components_top = [];
+  let components_bot = [];
+
+  components_top.push(
+    <Image
+      classNames={{
+        wrapper:
+          "min-w-full h-full grid place-content-center rounded-[12px] bg-box",
+      }}
+      className={"m-auto h-[450px] dark:invert-[.89] rounded-[12px]"}
+      radius="none"
+      shadow="none"
+      src="/img/handwrite.jpeg"
+    />
+  );
+
+  components_top.push(<TagCloud3d />);
+  components_top.push(<X id="1788487122485166261" />);
+  components_top.push(<AppleMusic />);
+
+  components_bot.push(
+    <Stat title="LPL" url="https://stat.jackey.love/lpl-stat/JackeyLove" />
+  );
+  components_bot.push(
+    <Stat title="Worlds" url="https://stat.jackey.love/world-stat/JackeyLove" />
+  );
+
   return (
     <>
       <Script
@@ -99,7 +130,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 md:max-h-[50rem] rounded-xl"
               >
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
-                  <EmblaCarousel />
+                  <EmblaCarousel components={components_top} />
                   <Intro />
                 </section>
                 <section>
@@ -121,14 +152,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   </Box>
                 </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
-                  <Stat
-                    title="LPL"
-                    url="https://stat.jackey.love/lpl-stat/JackeyLove"
-                  />
-                  <Stat
-                    title="Worlds"
-                    url="https://stat.jackey.love/world-stat/JackeyLove"
-                  />
+                  <EmblaCarousel components={components_bot} />
+                  <MatchSchedule url="https://stat.jackey.love/match-schedule/JackeyLove"/>
                 </section>
               </div>
             </div>

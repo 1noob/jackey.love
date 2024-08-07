@@ -37,7 +37,7 @@ const Stat: React.FC<Props> = ({ title, url }) => {
               <p>Games</p>
               <p>WinRate</p>
             </div>
-            {data[1].slice(0, 10).map((item, index) => {
+            {data[1].slice(0, 12).map((item, index) => {
               return (
                 <div
                   key={index}
@@ -54,7 +54,7 @@ const Stat: React.FC<Props> = ({ title, url }) => {
             })}
           </div>
         </div>
-        <span className="pt-4 text-[10px] md:font-light text-gray-400 md:text-gray-600 md:dark:text-gray-400 text-right">
+        <span className="pt-7 text-[10px] md:font-light text-gray-400 md:text-gray-600 md:dark:text-gray-400 text-right">
           {title === "LPL"
             ? 'Exclude "Regional Finals" and "Demacia Cup"'
             : 'Include "World Finals", "MSI", "RR" and "EWC"'}
