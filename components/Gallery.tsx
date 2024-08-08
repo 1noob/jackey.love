@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Image } from "@nextui-org/react";
-import type { ImageProps } from "@/types/types";
+import type { ImageProps } from "@/types";
 import shuffle from "lodash.shuffle";
 
 interface ListProps {
