@@ -68,7 +68,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
         </p>
         
         <ScrollShadow
-          className="w-full rounded-[8px] grayscale-[30%]"
+          className="w-full rounded-[8px]"
           offset={-2}
           size={systemTheme === "dark" ? 12 : 2}
           orientation="horizontal"
