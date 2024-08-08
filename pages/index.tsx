@@ -1,10 +1,8 @@
 import type { NextPage } from "next";
-import cloudinary from "@/utils/cloudinary";
-import type { ImageProps } from "@/utils/types";
+import cloudinary from "@/lib/cloudinary";
+import type { ImageProps } from "@/types";
 import { Divider, Image } from "@nextui-org/react";
 import React, { useLayoutEffect, useRef, useState } from "react";
-import { JetBrains_Mono } from "next/font/google";
-import localFont from "next/font/local";
 import { CSSTransition } from "react-transition-group";
 
 import Box from "@/components/Box";
@@ -20,35 +18,7 @@ import X from "@/components/tweet/X";
 import AppleMusic from "@/components/AppleMusic";
 import TagCloud3d from "@/components/TagCloud3d";
 import MatchSchedule from "@/components/match-schedule";
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-});
-
-const SmileySans = localFont({
-  src: [
-    {
-      path: "../public/fonts/smiley/SmileySans-Oblique.otf.woff2",
-    },
-    {
-      path: "../public/fonts/smiley/SmileySans-Oblique.ttf.woff2",
-    },
-  ],
-  variable: "--font-smiley",
-});
-
-const PixelMono = localFont({
-  src: [
-    {
-      path: "../public/fonts/pixel/fusion-pixel-12px-monospaced-latin.woff2",
-    },
-    {
-      path: "../public/fonts/pixel/fusion-pixel-12px-monospaced-zh_hans.woff2",
-    },
-  ],
-  variable: "--font-pixel",
-});
+import { PixelMono } from "@/types/fonts";
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const [loaded, setStatus] = useState(false);
