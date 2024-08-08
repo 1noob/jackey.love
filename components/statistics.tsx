@@ -20,13 +20,13 @@ const Stat: React.FC<Props> = ({ title, url }) => {
         <Divider className={"my-4 md:h-0.5"} />
         <div className="grid gap-4">
           <div className="flex justify-between gap-2">
-            <div className="bg-blue-50 dark:bg-blue-950 place-content-center p-2 rounded-md grow text-center">
-              KDA:{data[0]["kills"]}/{data[0]["deaths"]}/{data[0]["assists"]}
-            </div>
-            <div className="bg-blue-50 dark:bg-blue-950 place-content-center p-2 rounded-md grow text-center">
+            <div className="bg-blue-50 dark:bg-blue-950 place-content-center p-2 rounded-md">
               Wins:{data[0]["wins"]}
             </div>
             <div className="bg-blue-50 dark:bg-blue-950 place-content-center p-2 rounded-md grow text-center">
+              KDA:{data[0]["kills"]}/{data[0]["deaths"]}/{data[0]["assists"]}
+            </div>
+            <div className="bg-blue-50 dark:bg-blue-950 place-content-center p-2 rounded-md">
               Games:{data[0]["total"]}
             </div>
           </div>
