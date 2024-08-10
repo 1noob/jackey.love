@@ -5,7 +5,7 @@ import { Divider } from "@nextui-org/react";
 
 const Intro = () => {
   return (
-    <div className={"grid gap-y-2 w-full"}>
+    <div className={"grid gap-y-2 w-full text-nowrap"}>
       <Box>
         <h1>JackeyLove</h1>
         <Divider className={"my-4 md:h-0.5"} />

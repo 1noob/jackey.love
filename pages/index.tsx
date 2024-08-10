@@ -107,9 +107,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <Box>
                     <h1>Awards</h1>
                     <Divider className={"my-4 md:h-0.5"} />
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 md:gap-x-12 px-3">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-y-3 px-3 text-nowrap">
                       {pageData.awards.map((item, index) => (
-                        <li key={index}>{item}</li>
+                        <li key={index} >{item}</li>
                       ))}
                     </div>
                   </Box>
@@ -203,5 +203,7 @@ const pageData = {
     "2022 LPL夏季赛一阵",
     "LPL10周年 十大选手",
     "2023 LPL夏季赛三阵",
+    "2024 LPL春季赛三阵",
+    "2024 LPL夏季赛二阵",
   ],
 };
