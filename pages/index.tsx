@@ -19,10 +19,26 @@ import AppleMusic from "@/components/AppleMusic";
 import TagCloud3d from "@/components/TagCloud3d";
 import MatchSchedule from "@/components/match-schedule";
 import { PixelMono } from "@/types/fonts";
+import useSWR from "swr";
+
+const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const [loaded, setStatus] = useState(false);
   const nodeRef = useRef(null);
+
+  const lpl_swr = useSWR(
+    "https://stat.jackey.love/lpl-stat/JackeyLove",
+    fetcher
+  );
+  const world_swr = useSWR(
+    "https://stat.jackey.love/world-stat/JackeyLove",
+    fetcher
+  );
+  const schedule_swr = useSWR(
+    "https://stat.jackey.love/match-schedule/JackeyLove",
+    fetcher
+  );
 
   if (typeof document === "undefined") {
     React.useLayoutEffect = React.useEffect;
@@ -65,12 +81,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   components_top.push(<X id="1788487122485166261" />);
   components_top.push(<AppleMusic />);
 
-  components_bot.push(
-    <Stat title="LPL" url="https://stat.jackey.love/lpl-stat/JackeyLove" />
-  );
-  components_bot.push(
-    <Stat title="Worlds" url="https://stat.jackey.love/world-stat/JackeyLove" />
-  );
+  components_bot.push(<Stat title="LPL" data={lpl_swr.data} />);
+  components_bot.push(<Stat title="Worlds" data={world_swr.data} />);
 
   return (
     <>
@@ -96,7 +108,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             >
               <Typedbar />
               <div
-                className="grid mobile:p-2 gap-y-2 h-full overflow-y-auto no-scrollbar
+                className="grid gap-y-2 mobile:p-2 h-full overflow-y-auto no-scrollbar
                 md:max-h-[50rem] rounded-xl"
               >
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
@@ -109,7 +121,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     <Divider className={"my-4 md:h-0.5"} />
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-y-3 px-3 text-nowrap">
                       {pageData.awards.map((item, index) => (
-                        <li key={index} >{item}</li>
+                        <li key={index}>{item}</li>
                       ))}
                     </div>
                   </Box>
@@ -122,7 +134,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   </Box>
                 </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
-                  <MatchSchedule url="https://stat.jackey.love/match-schedule/JackeyLove"/>
+                  <MatchSchedule data={schedule_swr.data} />
                   <EmblaCarousel components={components_bot} />
                 </section>
               </div>

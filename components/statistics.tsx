@@ -1,18 +1,13 @@
 import React from "react";
 import { Divider } from "@nextui-org/react";
-import useSWR from "swr";
-import Box from "./Box";
-import List from "./List";
+import Box from "./Box";  
 
 interface Props {
   title: string;
-  url: string;
+  data: any;
 }
 
-const Stat: React.FC<Props> = ({ title, url }) => {
-  const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
-  const { data } = useSWR(url, fetcher);
-
+const Stat: React.FC<Props> = ({ title, data }) => {
   if (data != undefined) {
     return (
       <Box>
