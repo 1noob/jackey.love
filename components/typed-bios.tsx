@@ -88,7 +88,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                 href={"https://m.weibo.cn/u/5966770936"}
                 target="_blank"
                 aria-label="Weibo"
-                className="grid\ content-center"
+                className="grid content-center"
               >
                 <SinaIcon />
               </Link>
