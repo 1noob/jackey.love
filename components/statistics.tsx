@@ -40,7 +40,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
               return (
                 <div
                   key={index}
-                  className="grid grid-cols-6 text-gray-600 dark:text-gray-300 leading-4 text-xs font-light"
+                  className="grid grid-cols-6 text-gray-600 dark:text-gray-300 text-xs font-light"
                 >
                   <p className="col-span-2">{item["name"]}</p>
                   <p className="col-span-2">
