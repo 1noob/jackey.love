@@ -40,7 +40,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
               return (
                 <div
                   key={index}
-                  className="grid grid-cols-6 text-gray-600 dark:text-gray-300 text-[10px] leading-4"
+                  className="grid grid-cols-6 text-gray-600 dark:text-gray-300 leading-4 text-xs font-light"
                 >
                   <p className="col-span-2">{item["name"]}</p>
                   <p className="col-span-2">
@@ -51,7 +51,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
                 </div>
               );
             })}
-            <span className="text-[10px] leading-4 text-gray-400 md:text-gray-600 md:dark:text-gray-400 text-center">
+            <span className="text-[10px] leading-4 font-thin text-gray-400 md:text-gray-600 md:dark:text-gray-400 text-center">
             {title === "LPL"
               ? 'Exclude "Regional Finals" and "Demacia Cup"'
               : 'Include "World Finals", "MSI", "RR" and "EWC"'}
