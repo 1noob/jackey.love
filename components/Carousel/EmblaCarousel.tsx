@@ -97,7 +97,7 @@ const EmblaCarousel = ({components}) => {
         <div className="embla__container">
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
-              <div className="embla__slide__number w-full h-full md:grayscale-[30%]">{components[index]}</div>
+              <div className="embla__slide__number w-full h-full">{components[index]}</div>
             </div>
           ))}
         </div>

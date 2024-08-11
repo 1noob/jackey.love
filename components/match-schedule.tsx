@@ -21,6 +21,7 @@ import {
   IG,
   AL,
 } from "@/public/img/team/team-icon";
+import Link from "next/link";
 
 interface Props {
   data: any;
@@ -58,15 +59,15 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
             return (
               <div
                 key={index}
-                className="text-center grid gap-2 bg-blue-50 dark:bg-gray-900 rounded-[12px] p-3"
+                className="text-center grid gap-3 bg-blue-50 dark:bg-gray-900 rounded-md p-2 text-nowrap"
               >
                 <span>{item["StandardName"]}</span>
                 <div className="grid grid-cols-3">
-                  <div className="grid grid-cols-1 justify-center w-full">
+                  <div className="grid grid-cols-1 justify-center w-full gap-1.5">
                     {Icon[item["Team1"]]}
-                    <span className="uppercase">{item["Team1"]}</span>
+                    <span className="uppercase text-xs">{item["Team1"]}</span>
                   </div>
-                  <div className="place-content-center grid grid-cols-1">
+                  <div className="place-content-center grid grid-cols-1 gap-1">
                     <div className="text-4xl">
                       <span>
                         {item["Team1Score"] == null ? 0 : item["Team1Score"]}
@@ -78,12 +79,16 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
                     </div>
                     <span>BO{item["BestOf"]}</span>
                   </div>
-                  <div className="grid grid-cols-1 justify-center w-full">
+                  <div className="grid grid-cols-1 justify-center w-full gap-1.5">
                     {Icon[item["Team2"]]}
-                    <span className="uppercase">{item["Team2"]}</span>
+                    <span className="uppercase text-xs">{item["Team2"]}</span>
                   </div>
                 </div>
-                <span>{item["DateTime CST"]}</span>
+                <div className="px-2 grid grid-cols-3 text-xs md:text-[12px] text-gray-500 md:text-gray-600 md:dark:text-gray-400 gap-y-2">
+                  <span className="text-start">{item["DateTime CST"].slice(5,)}</span>
+                  <span className="text-center">{item["Day of Week"]}</span>
+                  <Link className="text-end" href={item["Stream"]}>{item["Stream"].slice(12,)}</Link>
+                </div>
               </div>
             );
           })}

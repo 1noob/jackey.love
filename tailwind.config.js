@@ -19,6 +19,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-smiley)", ...defaultTheme.fontFamily.sans],
         mono: ["var(--font-pixel)", ...defaultTheme.fontFamily.mono],
+        jet: ["var(--font-jetbrains)", ...defaultTheme.fontFamily.mono],
       },
       backgroundColor: {
         page: "rgba(var(--page))",
@@ -47,7 +48,7 @@ module.exports = {
         // mobile-m (iPhoneX)
         sm: { min: "375px" },
 
-        max: { min: "550px", max: "767px" },
+        std: { min: "448px" },
 
         // iPad Mini: 768
         md: { min: "768px" },

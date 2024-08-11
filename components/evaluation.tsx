@@ -13,7 +13,7 @@ const Evaluation: React.FC<Props> = ({ className }) => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className={cn("flex flex-col gap-y-8 px-3", className)}>
+    <div className={cn("flex flex-col gap-y-8 px-2", className)}>
       <AnimatePresence initial={false}>
         {data
           .slice(0, viewAllRecs ? data.length : slice_len)
@@ -39,7 +39,7 @@ const Evaluation: React.FC<Props> = ({ className }) => {
                   </div>
                 </div>
                 <div className="flex-2">
-                  <div className={"indent-[-0.8rem] md:indent-[-0.9rem]"}>
+                  <div className={"indent-[-0.5rem]"}>
                     “{item.text}”
                   </div>
                   <div className={"mt-4"}>

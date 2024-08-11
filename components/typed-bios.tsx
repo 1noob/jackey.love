@@ -46,31 +46,30 @@ const TypedBios: React.FC<Props> = ({ className }) => {
   }, []);
 
   return (
-    <div className={cn("px-1 w-full", className)}>
-      <div className="grid grid-cols-6 italic">
-        <ul id="bios" className="hidden">
-          <li>跟自己的热爱。</li>
-          <li>打败我，你就是LPL第一AD。</li>
-          <li>17岁的我马上就要拿到LPL冠军了。</li>
-          <li>好好调整，哥几个等你回来。</li>
-          <li>本台记者喻文波为您报道。</li>
-          <li>再给我一次机会，我还是会E上去。</li>
-          <li>伊泽瑞尔的精髓就是要E!</li>
-          <li>哥们的韦鲁斯还需要练吗?</li>
-        </ul>
-        <p className={"w-full h-full col-span-5"}>
-          “
-          <span
-            ref={el}
-            className="text-neutral-900 dark:text-neutral-200 text-sm"
-          />
-          ”
-        </p>
-        
+    <div className={cn("w-full", className)}>
+      <div className="flex justify-between italic text-sm leading-3">
+        <div>
+          <ul id="bios" className="hidden">
+            <li>跟自己的热爱。</li>
+            <li>打败我，你就是LPL第一AD。</li>
+            <li>17岁的我马上就要拿到LPL冠军了。</li>
+            <li>好好调整，哥几个等你回来。</li>
+            <li>本台记者喻文波为您报道。</li>
+            <li>再给我一次机会，我还是会E上去。</li>
+            <li>伊泽瑞尔的精髓就是要E!</li>
+            <li>哥们的韦鲁斯还需要练吗?</li>
+          </ul>
+          <p className={"w-full h-full grow content-center"}>
+            “
+            <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
+            ”
+          </p>
+        </div>
+
         <ScrollShadow
-          className="w-full rounded-[8px]"
+          className="max-w-[75px] rounded-[8px] content-center"
           offset={-2}
-          size={systemTheme === "dark" ? 12 : 2}
+          size={systemTheme === "dark" ? 6 : 2}
           orientation="horizontal"
           hideScrollBar
         >
@@ -181,7 +180,6 @@ const TypedBios: React.FC<Props> = ({ className }) => {
             </div>
           </div>
         </ScrollShadow>
-        
       </div>
     </div>
   );

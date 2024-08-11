@@ -18,7 +18,7 @@ import X from "@/components/tweet/X";
 import AppleMusic from "@/components/AppleMusic";
 import TagCloud3d from "@/components/TagCloud3d";
 import MatchSchedule from "@/components/match-schedule";
-import { PixelMono } from "@/types/fonts";
+import { jetbrainsMono } from "@/types/fonts";
 import useSWR from "swr";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
@@ -27,15 +27,15 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const [loaded, setStatus] = useState(false);
   const nodeRef = useRef(null);
 
-  const lpl_swr = useSWR(
+  const { data: lpl } = useSWR(
     "https://stat.jackey.love/lpl-stat/JackeyLove",
     fetcher
   );
-  const world_swr = useSWR(
+  const { data: world } = useSWR(
     "https://stat.jackey.love/world-stat/JackeyLove",
     fetcher
   );
-  const schedule_swr = useSWR(
+  const { data: schedule } = useSWR(
     "https://stat.jackey.love/match-schedule/JackeyLove",
     fetcher
   );
@@ -47,17 +47,21 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   // This will run one time after the component mounts
   useLayoutEffect(() => {
     // callback function to call when event triggers
-    const onPageLoad = () => {
+    const onDataLoad = () => {
       setStatus(true);
     };
 
-    // Check if the page has already loaded
-    if (document.readyState === "complete") {
-      onPageLoad();
+    // Check if the data has already loaded
+    if (
+      lpl !== "undefined" &&
+      world !== "undefined" &&
+      schedule !== "undefined"
+    ) {
+      onDataLoad();
     } else {
-      window.addEventListener("load", onPageLoad, false);
+      window.addEventListener("load", onDataLoad, false);
       // Remove the event listener when component unmounts
-      return () => window.removeEventListener("load", onPageLoad);
+      return () => window.removeEventListener("load", onDataLoad);
     }
   }, []);
 
@@ -81,8 +85,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   components_top.push(<X id="1788487122485166261" />);
   components_top.push(<AppleMusic />);
 
-  components_bot.push(<Stat title="LPL" data={lpl_swr.data} />);
-  components_bot.push(<Stat title="Worlds" data={world_swr.data} />);
+  components_bot.push(<Stat title="LPL" data={lpl} />);
+  components_bot.push(<Stat title="Worlds" data={world} />);
 
   return (
     <>
@@ -97,19 +101,19 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         classNames="loading-page"
         unmountOnExit
       >
-        <main className={`${PixelMono.variable} font-mono`}>
+        <main className={`${jetbrainsMono.variable} font-jet`}>
           <div
             className="bg-page md:bg-transparent absolute w-full h-dvh z-10 md:place-content-center grid 
             md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]"
           >
             <div
-              className="md:bg-content mx-auto max-w-3xl min-w-[320px] md:min-h-fit 
+              className="md:bg-content mx-auto max-w-md md:max-w-3xl min-w-[320px] md:min-h-fit 
               md:p-2 flex flex-col md:backdrop-blur-2xl rounded-[16px] md:gap-y-2 safe-area"
             >
               <Typedbar />
               <div
-                className="grid gap-y-2 mobile:p-2 h-full overflow-y-auto no-scrollbar
-                md:max-h-[50rem] rounded-xl"
+                className="grid gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar
+                md:max-h-[54rem] rounded-xl"
               >
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                   <EmblaCarousel components={components_top} />
@@ -119,8 +123,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <Box>
                     <h1>Awards</h1>
                     <Divider className={"my-4 md:h-0.5"} />
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-y-3 px-3 text-nowrap">
-                      {pageData.awards.map((item, index) => (
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 px-2 text-nowrap">
+                      {Awards.map((item, index) => (
                         <li key={index}>{item}</li>
                       ))}
                     </div>
@@ -134,7 +138,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   </Box>
                 </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
-                  <MatchSchedule data={schedule_swr.data} />
+                  <MatchSchedule data={schedule} />
                   <EmblaCarousel components={components_bot} />
                 </section>
               </div>
@@ -195,27 +199,25 @@ export async function getStaticProps() {
   };
 }
 
-const pageData = {
-  awards: [
-    "2016 NEST全国冠军",
-    "2017 NEST全国冠军",
-    "2018 LPL春季赛二阵",
-    "2018 LPL夏季赛三阵",
-    "2018 亚洲对抗赛冠军",
-    "2018 全球总决赛冠军",
-    "2018 德玛西亚杯冠军",
-    "2018 LPL年度最佳新秀",
-    "2019 LPL春季赛冠军",
-    "2020 MSC季中杯冠军",
-    "2020 LPL夏季赛冠军",
-    "2020 LPL夏季赛一阵",
-    "2020 LPL年度最佳ADC",
-    "2020 德玛西亚杯冠军",
-    "2021 德玛西亚杯冠军",
-    "2022 LPL夏季赛一阵",
-    "LPL10周年 十大选手",
-    "2023 LPL夏季赛三阵",
-    "2024 LPL春季赛三阵",
-    "2024 LPL夏季赛二阵",
-  ],
-};
+const Awards = [
+  "2016 NEST全国冠军",
+  "2017 NEST全国冠军",
+  "2018 LPL春季赛二阵",
+  "2018 LPL夏季赛三阵",
+  "2018 亚洲对抗赛冠军",
+  "2018 全球总决赛冠军",
+  "2018 德玛西亚杯冠军",
+  "2018 LPL年度最佳新秀",
+  "2019 LPL春季赛冠军",
+  "2020 MSC季中杯冠军",
+  "2020 LPL夏季赛冠军",
+  "2020 LPL夏季赛一阵",
+  "2020 LPL年度最佳ADC",
+  "2020 德玛西亚杯冠军",
+  "2021 德玛西亚杯冠军",
+  "2022 LPL夏季赛一阵",
+  "LPL10周年 十大选手",
+  "2023 LPL夏季赛三阵",
+  "2024 LPL春季赛三阵",
+  "2024 LPL夏季赛二阵",
+];

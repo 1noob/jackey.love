@@ -2,7 +2,7 @@ import { JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
 const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+  variable: "--font-jetbrains",
   subsets: ["latin"],
 });
 
@@ -29,5 +29,6 @@ const PixelMono = localFont({
   ],
   variable: "--font-pixel",
 });
+
 
 export { SmileySans, PixelMono, jetbrainsMono };
