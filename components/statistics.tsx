@@ -40,7 +40,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
               return (
                 <div
                   key={index}
-                  className="grid grid-cols-6 text-gray-600 dark:text-gray-300 text-[10px] md:text-xs"
+                  className="grid grid-cols-6 text-gray-600 dark:text-gray-300 text-[10px] leading-4"
                 >
                   <p className="col-span-2">{item["name"]}</p>
                   <p className="col-span-2">
@@ -57,6 +57,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
               : 'Include "World Finals", "MSI", "RR" and "EWC"'}
           </span>
           </div>
+          
         </div>
       </Box>
     );
