@@ -51,7 +51,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
                 </div>
               );
             })}
-            <span className="text-[10px] leading-4 font-thin text-gray-400 md:text-gray-600 md:dark:text-gray-400 text-center">
+            <span className="text-[10px] leading-4 font-light text-gray-400 md:text-gray-600 md:dark:text-gray-400 text-center">
             {title === "LPL"
               ? 'Exclude "Regional Finals" and "Demacia Cup"'
               : 'Include "World Finals", "MSI", "RR" and "EWC"'}
