@@ -47,7 +47,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
 
   return (
     <div className={cn("w-full", className)}>
-      <div className="flex justify-between italic text-sm leading-3">
+      <div className="flex justify-between">
         <div>
           <ul id="bios" className="hidden">
             <li>跟自己的热爱。</li>
@@ -67,9 +67,9 @@ const TypedBios: React.FC<Props> = ({ className }) => {
         </div>
 
         <ScrollShadow
-          className="max-w-[75px] rounded-[8px] content-center"
+          className="max-w-[60px] md:max-w-[75px] content-center"
           offset={-2}
-          size={systemTheme === "dark" ? 6 : 2}
+          size={systemTheme === "dark" ? 12 : 2}
           orientation="horizontal"
           hideScrollBar
         >
