@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Stat: React.FC<Props> = ({ title, data }) => {
-  if (data != undefined) {
+  if (data !== "undefined") {
     return (
       <Box>
         <h1>Stat/{title}</h1>
