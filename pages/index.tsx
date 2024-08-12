@@ -24,69 +24,12 @@ import useSWR from "swr";
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
-  const [loaded, setStatus] = useState(false);
   const nodeRef = useRef(null);
 
-  const { data: lpl } = useSWR(
-    "https://stat.jackey.love/lpl-stat/JackeyLove",
+  const { data, isLoading } = useSWR(
+    "https://stat.jackey.love/JackeyLove",
     fetcher
   );
-  const { data: world } = useSWR(
-    "https://stat.jackey.love/world-stat/JackeyLove",
-    fetcher
-  );
-  const { data: schedule } = useSWR(
-    "https://stat.jackey.love/match-schedule/JackeyLove",
-    fetcher
-  );
-
-  if (typeof document === "undefined") {
-    React.useLayoutEffect = React.useEffect;
-  }
-
-  // This will run one time after the component mounts
-  useLayoutEffect(() => {
-    // callback function to call when event triggers
-    const onDataLoad = () => {
-      setStatus(true);
-    };
-
-    // Check if the data has already loaded
-    if (
-      lpl != "undefined" &&
-      world != "undefined" &&
-      schedule != "undefined"
-    ) {
-      onDataLoad();
-    } else {
-      window.addEventListener("load", onDataLoad, false);
-      // Remove the event listener when component unmounts
-      return () => window.removeEventListener("load", onDataLoad);
-    }
-  }, []);
-
-  let components_top = [];
-  let components_bot = [];
-
-  components_top.push(
-    <Image
-      classNames={{
-        wrapper:
-          "min-w-full h-full grid place-content-center rounded-[12px] bg-box",
-      }}
-      className={"m-auto h-[450px] dark:invert-[.89] rounded-[12px]"}
-      radius="none"
-      shadow="none"
-      src="/img/handwrite.jpeg"
-    />
-  );
-
-  components_top.push(<TagCloud3d />);
-  components_top.push(<X id="1788487122485166261" />);
-  components_top.push(<AppleMusic />);
-
-  components_bot.push(<Stat title="LPL" data={lpl} />);
-  components_bot.push(<Stat title="Worlds" data={world} />);
 
   return (
     <>
@@ -96,7 +39,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         data-website-id="61824479-8621-45cf-981c-867d2ac2066d"
       />
       <CSSTransition
-        in={loaded}
+        in={!isLoading}
         timeout={500}
         classNames="loading-page"
         unmountOnExit
@@ -116,7 +59,25 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 md:max-h-[55rem] rounded-xl"
               >
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
-                  <EmblaCarousel components={components_top} />
+                  <EmblaCarousel
+                    components={[
+                      <Image
+                        classNames={{
+                          wrapper:
+                            "min-w-full h-full grid place-content-center rounded-[12px] bg-box",
+                        }}
+                        className={
+                          "m-auto h-[450px] dark:invert-[.89] rounded-[12px]"
+                        }
+                        radius="none"
+                        shadow="none"
+                        src="/img/handwrite.jpeg"
+                      />,
+                      <TagCloud3d />,
+                      <X id="1788487122485166261" />,
+                      <AppleMusic />,
+                    ]}
+                  />
                   <Intro />
                 </section>
                 <section>
@@ -138,8 +99,13 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   </Box>
                 </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
-                  <MatchSchedule data={schedule} />
-                  <EmblaCarousel components={components_bot} />
+                  <MatchSchedule data={data?.[2]} />
+                  <EmblaCarousel
+                    components={[
+                      <Stat title="LPL" data={data?.[0]} />,
+                      <Stat title="Worlds" data={data?.[1]} />,
+                    ]}
+                  />
                 </section>
               </div>
             </div>
@@ -148,7 +114,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         </main>
       </CSSTransition>
       <CSSTransition
-        in={!loaded}
+        in={isLoading}
         timeout={800}
         classNames="loading-page"
         unmountOnExit
