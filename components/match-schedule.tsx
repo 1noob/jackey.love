@@ -49,7 +49,7 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
     "Anyone's Legend": <AL size={40} className="w-full py-1" />,
   };
 
-  if (data != "undefined") {
+  if (data != undefined) {
     return (
       <Box>
         <h1>Schedule</h1>
