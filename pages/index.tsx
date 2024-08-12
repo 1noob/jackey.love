@@ -53,9 +53,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
 
     // Check if the data has already loaded
     if (
-      lpl !== "undefined" &&
-      world !== "undefined" &&
-      schedule !== "undefined"
+      lpl != "undefined" &&
+      world != "undefined" &&
+      schedule != "undefined"
     ) {
       onDataLoad();
     } else {
