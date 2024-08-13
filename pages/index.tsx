@@ -57,7 +57,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <Typedbar />
               <div
                 className="grid gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar
-                md:max-h-[55rem] rounded-xl"
+                md:max-h-[55.5rem] rounded-xl"
               >
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                   <EmblaCarousel
