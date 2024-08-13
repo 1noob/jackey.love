@@ -20,6 +20,7 @@ import TagCloud3d from "@/components/TagCloud3d";
 import MatchSchedule from "@/components/match-schedule";
 import { jetbrainsMono } from "@/types/fonts";
 import useSWR from "swr";
+import Bilibili from "@/components/bilibili";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
@@ -56,7 +57,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <Typedbar />
               <div
                 className="grid gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar
-                md:max-h-[55rem] rounded-xl"
+                md:max-h-[55rem] rounded-xl snap-y"
               >
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                   <EmblaCarousel
@@ -97,6 +98,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     <Divider className={"my-4 md:h-0.5"} />
                     <Evaluation />
                   </Box>
+                </section>
+                <section className="hidden md:flex snap-center">
+                  <Bilibili className="h-[423px]"/>
                 </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                   <MatchSchedule data={data?.[2]} />
