@@ -99,7 +99,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     <Evaluation />
                   </Box>
                 </section>
-                <section className="hidden md:flex">
+                <section className="hidden">
                   <Bilibili className="h-[423px]"/>
                 </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
