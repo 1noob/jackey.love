@@ -99,9 +99,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     <Evaluation />
                   </Box>
                 </section>
-                <section className="hidden">
-                  <Bilibili className="h-[423px]"/>
-                </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                   <MatchSchedule data={data?.[2]} />
                   <EmblaCarousel
