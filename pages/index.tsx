@@ -57,7 +57,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <Typedbar />
               <div
                 className="grid gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar
-                md:max-h-[55rem] rounded-xl snap-y"
+                md:max-h-[55rem] rounded-xl"
               >
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                   <EmblaCarousel
@@ -99,7 +99,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     <Evaluation />
                   </Box>
                 </section>
-                <section className="hidden md:flex snap-center">
+                <section className="hidden md:flex">
                   <Bilibili className="h-[423px]"/>
                 </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
