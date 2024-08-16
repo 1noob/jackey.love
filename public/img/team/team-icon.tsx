@@ -360,6 +360,7 @@ const EDG: React.FC<IconSvgProps> = ({
 
 const LNG: React.FC<IconSvgProps> = ({
   size = 16,
+  shapeRendering="geometricPrecision",
   width,
   height,
   ...props
@@ -370,6 +371,7 @@ const LNG: React.FC<IconSvgProps> = ({
       width={size || width}
       viewBox="0 0 5000 5000"
       {...props}
+      
     >
       <path
         fill="#04FAFB"
@@ -2215,6 +2217,7 @@ const LGD: React.FC<IconSvgProps> = ({
 
 const OMG: React.FC<IconSvgProps> = ({
   size = 16,
+  shapeRendering="geometricPrecision",
   width,
   height,
   ...props
@@ -2251,7 +2254,7 @@ const OMG: React.FC<IconSvgProps> = ({
   );
 };
 
-const UP: React.FC<IconSvgProps> = ({ size = 16, width, height, ...props }) => {
+const UP: React.FC<IconSvgProps> = ({ size = 16, shapeRendering="geometricPrecision", width, height, ...props }) => {
   return (
     <svg
       height={size || height}
@@ -2406,7 +2409,7 @@ const BLG: React.FC<IconSvgProps> = ({
   );
 };
 
-const AL: React.FC<IconSvgProps> = ({ size = 16, width, height, ...props }) => {
+const AL: React.FC<IconSvgProps> = ({ size = 16, shapeRendering="geometricPrecision", width, height, ...props }) => {
   return (
     <svg
       height={size || height}
