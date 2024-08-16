@@ -20,7 +20,6 @@ import TagCloud3d from "@/components/TagCloud3d";
 import MatchSchedule from "@/components/match-schedule";
 import { jetbrainsMono } from "@/types/fonts";
 import useSWR from "swr";
-import Bilibili from "@/components/bilibili";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
