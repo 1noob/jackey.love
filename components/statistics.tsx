@@ -12,7 +12,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
     <Box>
       <h1>Stat/{title}</h1>
       <Divider className={"my-4 md:h-0.5"} />
-      <div className="grid gap-2">
+      <div className="grid gap-2 w-full">
         <div className="flex justify-between gap-2">
           <div className="bg-blue-50 dark:bg-blue-900 place-content-center p-2 rounded-md">
             Wins:{data[0]["wins"]}
