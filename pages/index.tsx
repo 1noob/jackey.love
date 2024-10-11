@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import cloudinary from "@/lib/cloudinary";
 import type { ImageProps } from "@/types";
 import { Divider, Image } from "@nextui-org/react";
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 
 import Box from "@/components/Box";

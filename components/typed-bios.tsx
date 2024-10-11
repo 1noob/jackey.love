@@ -59,7 +59,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
             <li>伊泽瑞尔的精髓就是要E!</li>
             <li>哥们的韦鲁斯还需要练吗?</li>
           </ul>
-          <p className={"w-full h-full grow content-center"}>
+          <p className={"w-full h-full grow content-center text-[14px]/4"}>
             “
             <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
             ”

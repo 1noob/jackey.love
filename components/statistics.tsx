@@ -35,11 +35,13 @@ const Stat: React.FC<Props> = ({ title, data }) => {
             <p>Games</p>
             <p>WinRate</p>
           </div>
-          {data[1].slice(0, 14).map((item, index) => {
+          <Divider className="mt-1"/>
+          <div className="grid divide-y-2 divide-gray-300 dark:divide-gray-800 divide-dotted">
+            {data[1].slice(0, 10).map((item, index) => {
             return (
               <div
                 key={index}
-                className="grid grid-cols-6 text-gray-600 dark:text-gray-300 text-xs font-light"
+                className="grid grid-cols-6 text-gray-600 dark:text-gray-300 text-xs font-light py-1.5"
               >
                 <p className="col-span-2">{item["name"]}</p>
                 <p className="col-span-2">
@@ -50,6 +52,8 @@ const Stat: React.FC<Props> = ({ title, data }) => {
               </div>
             );
           })}
+          </div>
+          <Divider className="mt-2.5"/>
           <span className="text-[10px] leading-4 font-light text-gray-400 md:text-gray-600 md:dark:text-gray-400 text-center">
             {title === "LPL"
               ? 'Exclude "Regional Finals" and "Demacia Cup"'

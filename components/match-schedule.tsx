@@ -20,8 +20,10 @@ import {
   BLG,
   IG,
   AL,
-} from "@/public/img/team/team-icon";
+} from "@/public/img/team/lpl-icon";
 import Link from "next/link";
+import { DK, GENG, SKT } from "@/public/img/team/lck-icon";
+import { FNC } from "@/public/img/team/lec-icon";
 
 interface Props {
   data: any;
@@ -36,7 +38,7 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
     "TBD": <LPL size={40} className="w-full py-1" />,
     "EDward Gaming": <EDG size={40} className="w-full" />,
     "LNG Esports": <LNG size={40} className="w-full" />,
-    "Weibo Gaming": <WBG size={40} className="w-full" />,
+    "Weibo Gaming": <WBG size={40} className="w-full py-0.5" />,
     "Team WE": <WE size={40} className="w-full" />,
     "Ninjas in Pyjamas.CN": <NIP size={40} className="w-full py-0.5" />,
     "Rare Atom": <RA size={40} className="w-full" />,
@@ -47,6 +49,10 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
     "Bilibili Gaming": <BLG size={40} className="w-full py-2" />,
     "Invictus Gaming": <IG size={40} className="w-full" />,
     "Anyone's Legend": <AL size={40} className="w-full py-1" />,
+    "T1": <SKT size={40} className="w-full" />,
+    "Dplus KIA": <DK size={40} className="w-full py-2"/>,
+    "Fnatic": <FNC size={40} className="w-full py-1.5" />,
+    "Gen.G": <GENG size={40} className="w-full py-1.5" />
   };
 
   return (
@@ -58,11 +64,12 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
           return (
             <div
               key={index}
-              className="text-center grid gap-3 bg-blue-50 dark:bg-gray-900 rounded-md p-2 text-nowrap"
+              className="text-center grid bg-blue-50 dark:bg-gray-900 rounded-md p-2 text-nowrap gap-2"
             >
               <span>{item["StandardName"]}</span>
               <div className="grid grid-cols-3">
                 <div className="grid grid-cols-1 justify-center w-full gap-1.5">
+                  {/* {Icon["T1"]} */}
                   {Icon[item["Team1"]]}
                   <span className="uppercase text-xs">{item["Team1"]}</span>
                 </div>
@@ -83,7 +90,8 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
                   <span className="uppercase text-xs">{item["Team2"]}</span>
                 </div>
               </div>
-              <div className="px-2 grid grid-cols-3 text-xs md:text-[12px] text-gray-500 md:text-gray-600 md:dark:text-gray-400 gap-y-2">
+              <Divider/>
+              <div className="px-4 grid grid-cols-3 text-[10px]/4 text-gray-500 md:text-gray-600 md:dark:text-gray-400">
                 <span className="text-start">
                   {item["DateTime CST"].slice(5)}
                 </span>
