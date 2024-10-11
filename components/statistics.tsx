@@ -41,7 +41,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
             return (
               <div
                 key={index}
-                className="grid grid-cols-6 text-gray-600 dark:text-gray-300 text-xs font-light py-1.5"
+                className="grid grid-cols-6 text-gray-600 dark:text-gray-300 text-xs py-1.5"
               >
                 <p className="col-span-2">{item["name"]}</p>
                 <p className="col-span-2">
@@ -54,7 +54,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
           })}
           </div>
           <Divider className="mt-2.5"/>
-          <span className="text-[10px] leading-4 font-light text-gray-400 md:text-gray-600 md:dark:text-gray-400 text-center">
+          <span className="text-[10px]/4 leading-4 text-gray-500 md:text-gray-600 md:dark:text-gray-400 text-center">
             {title === "LPL"
               ? 'Exclude "Regional Finals" and "Demacia Cup"'
               : 'Include "World Finals", "MSI", "RR" and "EWC"'}
