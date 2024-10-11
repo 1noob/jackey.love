@@ -22,8 +22,8 @@ import {
   AL,
 } from "@/public/img/team/lpl-icon";
 import Link from "next/link";
-import { DK, GENG, SKT } from "@/public/img/team/lck-icon";
-import { FNC } from "@/public/img/team/lec-icon";
+import { DK, GENG, HLE, T1 } from "@/public/img/team/lck-icon";
+import { FNC, G2 } from "@/public/img/team/lec-icon";
 
 interface Props {
   data: any;
@@ -49,10 +49,12 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
     "Bilibili Gaming": <BLG size={40} className="w-full py-2" />,
     "Invictus Gaming": <IG size={40} className="w-full" />,
     "Anyone's Legend": <AL size={40} className="w-full py-1" />,
-    "T1": <SKT size={40} className="w-full" />,
+    "T1": <T1 size={40} className="w-full py-2.5" />,
     "Dplus KIA": <DK size={40} className="w-full py-2"/>,
     "Fnatic": <FNC size={40} className="w-full py-1.5" />,
-    "Gen.G": <GENG size={40} className="w-full py-1.5" />
+    "Gen.G": <GENG size={40} className="w-full py-1.5" />,
+    "G2 Esports": <G2 size={40} className="w-full py-0.5" />,
+    "Hanwha Life Esports": <HLE size={40} className="w-full py-1.5" />,
   };
 
   return (
@@ -69,7 +71,7 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
               <span>{item["StandardName"]}</span>
               <div className="grid grid-cols-3">
                 <div className="grid grid-cols-1 justify-center w-full gap-1.5">
-                  {/* {Icon["T1"]} */}
+                  {/* {Icon["Hanwha Life Esports"]} */}
                   {Icon[item["Team1"]]}
                   <span className="uppercase text-xs">{item["Team1"]}</span>
                 </div>
