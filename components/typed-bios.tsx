@@ -60,17 +60,17 @@ const TypedBios: React.FC<Props> = ({ className }) => {
             <li>伊泽瑞尔的精髓就是要E!</li>
             <li>哥们的韦鲁斯还需要练吗?</li>
           </ul>
-          <p className={`w-full h-full grow content-end text-base ${handWrite.variable} font-hw`}>
+          <p className={`w-full h-full grow content-end text-base ${handWrite.variable} font-hw text-neutral-900 dark:text-neutral-300`}>
             “
-            <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
+            <span ref={el} className="" />
             ”
           </p>
         </div>
 
         <ScrollShadow
-          className="max-w-[65px] md:max-w-[80px] content-center rounded-md grayscale-[33%]"
+          className="max-w-[65px] md:max-w-[80px] content-center rounded-lg grayscale-[33%] shadow-inner border dark:border-none"
           offset={-2}
-          size={systemTheme === "dark" ? 12 : 4}
+          size={systemTheme === "dark" ? 6 : 0}
           orientation="horizontal"
           hideScrollBar
         >
@@ -83,7 +83,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   aria-label="Weibo"
                   className="grid content-center"
                 >
-                  <SinaIcon />
+                  <SinaIcon/>
                 </Link>
                 <Link
                   href={"https://x.com/TESJKL1118"}
