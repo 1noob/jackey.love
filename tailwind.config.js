@@ -20,6 +20,7 @@ module.exports = {
         sans: ["var(--font-smiley)", ...defaultTheme.fontFamily.sans],
         mono: ["var(--font-pixel)", ...defaultTheme.fontFamily.mono],
         jet: ["var(--font-jetbrains)", ...defaultTheme.fontFamily.mono],
+        hw: ["var(--font-handwrite)", ...defaultTheme.fontFamily.sans],
       },
       backgroundColor: {
         page: "rgba(var(--page))",

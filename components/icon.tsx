@@ -192,7 +192,7 @@ const SinaIcon: React.FC<IconSvgProps> = ({
 };
 
 const UmamiIcon: React.FC<IconSvgProps> = ({
-  size = 18,
+  size = 17,
   width,
   height,
   ...props
@@ -224,7 +224,7 @@ const UmamiIcon: React.FC<IconSvgProps> = ({
 };
 
 const CloudinaryIcon: React.FC<IconSvgProps> = ({
-  size = 21.5,
+  size = 20,
   width,
   height,
   ...props

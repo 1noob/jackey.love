@@ -1,8 +1,14 @@
-import { JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Ma_Shan_Zheng } from "next/font/google";
 import localFont from "next/font/local";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
+  subsets: ["latin"],
+});
+
+const handWrite = Ma_Shan_Zheng({
+  weight: "400",
+  variable: "--font-handwrite",
   subsets: ["latin"],
 });
 
@@ -31,4 +37,4 @@ const PixelMono = localFont({
 });
 
 
-export { SmileySans, PixelMono, jetbrainsMono };
+export { SmileySans, PixelMono, jetbrainsMono, handWrite };

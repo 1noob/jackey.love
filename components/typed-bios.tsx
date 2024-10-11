@@ -14,6 +14,7 @@ import Link from "next/link";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
+import { handWrite } from "@/types/fonts";
 
 interface Props {
   className?: string;
@@ -59,7 +60,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
             <li>伊泽瑞尔的精髓就是要E!</li>
             <li>哥们的韦鲁斯还需要练吗?</li>
           </ul>
-          <p className={"w-full h-full grow content-center text-[14px]/4"}>
+          <p className={`w-full h-full grow content-end text-base ${handWrite.variable} font-hw`}>
             “
             <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
             ”
@@ -67,116 +68,130 @@ const TypedBios: React.FC<Props> = ({ className }) => {
         </div>
 
         <ScrollShadow
-          className="max-w-[60px] md:max-w-[75px] content-center"
+          className="max-w-[65px] md:max-w-[80px] content-center rounded-md grayscale-[33%]"
           offset={-2}
-          size={systemTheme === "dark" ? 12 : 2}
+          size={systemTheme === "dark" ? 12 : 4}
           orientation="horizontal"
           hideScrollBar
         >
-          <div className={"animate-[scy_30s_linear_infinite] w-max flex"}>
-            <div className="w-max flex gap-2 pr-2">
-              <Link
-                href={"mailto:x@jackey.love"}
-                target="_blank"
-                aria-label="mail"
-                className="grid content-center"
-              >
-                <MailIcon />
-              </Link>
-              <Link
-                href={"https://m.weibo.cn/u/5966770936"}
-                target="_blank"
-                aria-label="Weibo"
-                className="grid content-center"
-              >
-                <SinaIcon />
-              </Link>
-              <Link
-                href={"https://x.com/TESJKL1118"}
-                target="_blank"
-                aria-label="Twitter"
-                className="grid content-center"
-              >
-                <XIcon />
-              </Link>
-              <Link
-                href={"https://v.douyin.com/iYdXGgMa/"}
-                target="_blank"
-                aria-label="Tiktok"
-                className="grid content-center"
-              >
-                <TiktokIcon />
-              </Link>
-              <Link
-                href={"https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"}
-                target="_blank"
-                aria-label="Umami"
-                className="grid content-center"
-              >
-                <UmamiIcon />
-              </Link>
-              <Link
-                href={
-                  "https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d"
-                }
-                target="_blank"
-                aria-label="Cloudinary"
-                className="grid content-center"
-              >
-                <CloudinaryIcon />
-              </Link>
+          <div className={"animate-[scy_30s_linear_infinite] w-max"}>
+            <div className="w-max flex">
+              <div className="w-max flex gap-3 pr-3">
+                <Link
+                  href={"https://m.weibo.cn/u/5966770936"}
+                  target="_blank"
+                  aria-label="Weibo"
+                  className="grid content-center"
+                >
+                  <SinaIcon />
+                </Link>
+                <Link
+                  href={"https://x.com/TESJKL1118"}
+                  target="_blank"
+                  aria-label="Twitter"
+                  className="grid content-center"
+                >
+                  <XIcon />
+                </Link>
+                <Link
+                  href={"https://v.douyin.com/iYdXGgMa/"}
+                  target="_blank"
+                  aria-label="Tiktok"
+                  className="grid content-center"
+                >
+                  <TiktokIcon />
+                </Link>
+              </div>
+              <div className="w-max flex gap-3 pr-3">
+                <Link
+                  href={"https://m.weibo.cn/u/5966770936"}
+                  target="_blank"
+                  aria-label="Weibo"
+                  className="grid content-center"
+                >
+                  <SinaIcon />
+                </Link>
+                <Link
+                  href={"https://x.com/TESJKL1118"}
+                  target="_blank"
+                  aria-label="Twitter"
+                  className="grid content-center"
+                >
+                  <XIcon />
+                </Link>
+                <Link
+                  href={"https://v.douyin.com/iYdXGgMa/"}
+                  target="_blank"
+                  aria-label="Tiktok"
+                  className="grid content-center"
+                >
+                  <TiktokIcon />
+                </Link>
+              </div>
             </div>
-            <div className="w-max flex gap-2 pr-2 content-center">
-              <Link
-                href={"mailto:x@jackey.love"}
-                target="_blank"
-                aria-label="mail"
-                className="grid content-center"
-              >
-                <MailIcon />
-              </Link>
-              <Link
-                href={"https://m.weibo.cn/u/5966770936"}
-                target="_blank"
-                aria-label="Weibo"
-                className="grid content-center"
-              >
-                <SinaIcon />
-              </Link>
-              <Link
-                href={"https://x.com/TESJKL1118"}
-                target="_blank"
-                aria-label="Twitter"
-                className="grid content-center"
-              >
-                <XIcon />
-              </Link>
-              <Link
-                href={"https://v.douyin.com/iYdXGgMa/"}
-                target="_blank"
-                aria-label="Tiktok"
-                className="grid content-center"
-              >
-                <TiktokIcon />
-              </Link>
-              <Link
-                href={"https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"}
-                target="_blank"
-                aria-label="Umami"
-                className="grid content-center"
-              >
-                <UmamiIcon />
-              </Link>
-              <Link
-                href={
-                  "https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d"
-                }
-                target="_blank"
-                aria-label="Cloudinary"
-                className="grid content-center"
-              >
-                <CloudinaryIcon />
-              </Link>
+          </div>
+          <div className={"animate-[scy_30s_linear_infinite] w-max"}>
+            <div className="w-max flex">
+              <div className="w-max flex gap-3 pl-3">
+                <Link
+                  href={"mailto:x@jackey.love"}
+                  target="_blank"
+                  aria-label="mail"
+                  className="grid content-center"
+                >
+                  <MailIcon />
+                </Link>
+                <Link
+                  href={
+                    "https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"
+                  }
+                  target="_blank"
+                  aria-label="Umami"
+                  className="grid content-center"
+                >
+                  <UmamiIcon />
+                </Link>
+                <Link
+                  href={
+                    "https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d"
+                  }
+                  target="_blank"
+                  aria-label="Cloudinary"
+                  className="grid content-center"
+                >
+                  <CloudinaryIcon />
+                </Link>
+              </div>
+              <div className="w-max flex gap-3 pl-3">
+                <Link
+                  href={"mailto:x@jackey.love"}
+                  target="_blank"
+                  aria-label="mail"
+                  className="grid content-center"
+                >
+                  <MailIcon />
+                </Link>
+                <Link
+                  href={
+                    "https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"
+                  }
+                  target="_blank"
+                  aria-label="Umami"
+                  className="grid content-center"
+                >
+                  <UmamiIcon />
+                </Link>
+                <Link
+                  href={
+                    "https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d"
+                  }
+                  target="_blank"
+                  aria-label="Cloudinary"
+                  className="grid content-center"
+                >
+                  <CloudinaryIcon />
+                </Link>
+              </div>
             </div>
           </div>
         </ScrollShadow>
