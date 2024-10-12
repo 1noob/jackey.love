@@ -9,34 +9,34 @@ const Intro = () => {
       <Box>
         <h1>JackeyLove</h1>
         <Divider className={"my-4 md:h-0.5"} />
-        <div className={"grid px-2 gap-3"}>
+        <div className={"grid px-2 divide-y-1 md:divide-y-2 divide-gray-300 dark:divide-gray-800 divide-dashed md:divide-dotted"}>
           <List>
-            <p>Team</p>
-            <p>TOP ESPORTS</p>
+            <p className="py-2 md:py-1.5">Team</p>
+            <p className="py-2 md:py-1.5">TOP ESPORTS</p>
           </List>
           <List>
-            <p>Role</p>
-            <p>AD Carry</p>
+            <p className="py-2 md:py-1.5">Role</p>
+            <p className="py-2 md:py-1.5">AD Carry</p>
           </List>
           <List>
-            <p>Country</p>
-            <p>CHINA</p>
+            <p className="py-2 md:py-1.5">Country</p>
+            <p className="py-2 md:py-1.5">China</p>
           </List>
           <List>
-            <p>Birthday</p>
-            <p>Nov,18,2000</p>
+            <p className="py-2 md:py-1.5">Birthday</p>
+            <p className="py-2 md:py-1.5">Nov,18,2000</p>
           </List>
         </div>
       </Box>
       <Box>
         <h1> Career </h1>
         <Divider className={"my-4 md:h-0.5"} />
-        <div className={"grid gap-3 px-2"}>
+        <div className={"grid px-2 divide-y-1 md:divide-y-2 divide-gray-300 dark:divide-gray-800 divide-dashed md:divide-dotted"}>
           {data.career.map((item, index) => {
             return (
               <List key={index}>
-                <p>{item.team}</p>
-                <p>{item.time}</p>
+                <p className="py-2 md:py-1.5">{item.team}</p>
+                <p className="py-2 md:py-1.5">{item.time}</p>
               </List>
             );
           })}
