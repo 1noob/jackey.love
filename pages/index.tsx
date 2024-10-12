@@ -68,12 +68,11 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 onClick={() => (innerWidth > 768 ? setOpacity(false) : null)}
               >
                 <JackeyLoveIcon
-                  className="dark:brightness-150 justify-center fixed left-0 right-0 m-auto top-0 bottom-0"
-                  size={innerWidth < 1440 ? 50: 70}
+                  className="brightness-125 dark:brightness-150 justify-center fixed top-0 bottom-0 left-[30%] md:left-[35%] lg:left-[42%] xl:left-[46%] w-[40%] md:w-[30%] lg:w-[16%] xl:w-[8%] m-auto"
+                  size={300}
                 />
               </button>
             </CSSTransition>
-
             <CSSTransition
               in={!opacity}
               timeout={500}
@@ -161,7 +160,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         >
           <JackeyLoveIcon
             size={300}
-            className="h-svh absolute top-0 left-[30%] md:left-[35%] lg:left-[40%] xl:left-[45%] dark:brightness-150 w-[40%] md:w-[30%] lg:w-[20%] xl:w-[10%] m-auto"
+            className="h-svh absolute dark:brightness-150 top-0 left-[30%] md:left-[35%] lg:left-[40%] xl:left-[45%] w-[40%] md:w-[30%] lg:w-[20%] xl:w-[10%] m-auto"
           />
         </div>
       </CSSTransition>
