@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import cloudinary from "@/lib/cloudinary";
 import type { ImageProps } from "@/types";
 import { Divider, Image } from "@nextui-org/react";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 
 import Box from "@/components/Box";
@@ -20,11 +20,20 @@ import TagCloud3d from "@/components/TagCloud3d";
 import MatchSchedule from "@/components/match-schedule";
 import { jetbrainsMono } from "@/types/fonts";
 import useSWR from "swr";
+import { cn } from "@/lib/utils";
+import { useWindowSize } from "rooks";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
+  const { innerWidth } = useWindowSize();
   const nodeRef = useRef(null);
+
+  const [opacity, setOpacity] = useState<boolean>(false);
+
+  const getChildOpacity = (val: boolean) => {
+    setOpacity(val);
+  };
 
   const { data, isLoading } = useSWR(
     "https://stat.jackey.love/JackeyLove",
@@ -49,66 +58,87 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             className="bg-page md:bg-transparent absolute w-full h-dvh z-10 md:place-content-center grid 
             md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]"
           >
-            <div
-              className="md:bg-content mx-auto max-w-md md:max-w-3xl min-w-[320px] md:min-h-fit 
-              md:p-2 flex flex-col md:backdrop-blur-2xl rounded-[16px] md:gap-y-2 safe-area"
+            <CSSTransition
+              in={opacity}
+              timeout={500}
+              classNames="loading-page"
+              unmountOnExit
             >
-              <Typedbar />
-              <div
-                className="grid gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar
-                md:max-h-[55.5rem] rounded-xl"
+              <button
+                onClick={() => (innerWidth > 768 ? setOpacity(false) : null)}
               >
-                <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
-                  <EmblaCarousel
-                    components={[
-                      <Image
-                        classNames={{
-                          wrapper:
-                            "min-w-full h-full grid place-content-center rounded-[12px] bg-box",
-                        }}
-                        className={
-                          "m-auto h-[450px] dark:invert-[.89] rounded-[12px]"
-                        }
-                        radius="none"
-                        shadow="none"
-                        src="/img/handwrite.jpeg"
-                      />,
-                      <TagCloud3d />,
-                      <X id="1788487122485166261" />,
-                      <AppleMusic />,
-                    ]}
-                  />
-                  <Intro />
-                </section>
-                <section>
-                  <Box>
-                    <h1>Awards</h1>
-                    <Divider className={"my-4 md:h-0.5"} />
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 px-2 text-nowrap">
-                      {Awards.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </div>
-                  </Box>
-                </section>
-                <section>
-                  <Box>
-                    <h1>Evaluations</h1>
-                    <Divider className={"my-4 md:h-0.5"} />
-                    <Evaluation />
-                  </Box>
-                </section>
-                <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
-                  <MatchSchedule data={data?.[2]} />
-                  <EmblaCarousel
-                    components={[
-                      <Stat title="LPL" data={data?.[0]} />,
-                      <Stat title="Worlds" data={data?.[1]} />,
-                    ]}
-                  />
-                </section>
+                <JackeyLoveIcon
+                  className="dark:brightness-150 justify-center fixed left-0 right-0 m-auto top-0 bottom-0"
+                  size={innerWidth < 1440 ? 50: 70}
+                />
+              </button>
+            </CSSTransition>
+
+            <CSSTransition
+              in={!opacity}
+              timeout={500}
+              classNames="loading-page"
+              unmountOnExit
+            >
+              <div
+                className={cn(
+                  "md:bg-content mx-auto max-w-md md:max-w-3xl min-w-[320px] md:min-h-fit md:p-2 flex flex-col md:backdrop-blur-2xl rounded-[16px] md:gap-y-2 safe-area"
+                )}
+              >
+                <Typedbar getOpacity={getChildOpacity} />
+                <div className="grid gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
+                  <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
+                    <EmblaCarousel
+                      components={[
+                        <Image
+                          classNames={{
+                            wrapper:
+                              "min-w-full h-full grid place-content-center rounded-[12px] bg-box",
+                          }}
+                          className={
+                            "m-auto h-[450px] dark:invert-[.89] rounded-[12px]"
+                          }
+                          radius="none"
+                          shadow="none"
+                          src="/img/handwrite.jpeg"
+                        />,
+                        <TagCloud3d />,
+                        <X id="1788487122485166261" />,
+                        <AppleMusic />,
+                      ]}
+                    />
+                    <Intro />
+                  </section>
+                  <section>
+                    <Box>
+                      <h1>Awards</h1>
+                      <Divider className={"my-4 md:h-0.5"} />
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 px-2 text-nowrap">
+                        {Awards.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </div>
+                    </Box>
+                  </section>
+                  <section>
+                    <Box>
+                      <h1>Evaluations</h1>
+                      <Divider className={"my-4 md:h-0.5"} />
+                      <Evaluation />
+                    </Box>
+                  </section>
+                  <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
+                    <MatchSchedule data={data?.[2]} />
+                    <EmblaCarousel
+                      components={[
+                        <Stat title="LPL" data={data?.[0]} />,
+                        <Stat title="Worlds" data={data?.[1]} />,
+                      ]}
+                    />
+                  </section>
+                </div>
               </div>
-            </div>
+            </CSSTransition>
           </div>
           <Gallery images={images} />
         </main>
