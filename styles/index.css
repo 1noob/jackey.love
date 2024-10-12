@@ -40,6 +40,7 @@ main {
 .loading-page-exit {
   @apply opacity-100;
 }
+
 .loading-page-exit-active {
   @apply opacity-0 transition-opacity duration-1000 ease-in-out delay-1000;
 }
@@ -51,6 +52,10 @@ main {
 .safe-area {
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
     env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.ws{
+  word-spacing: -1px;
 }
 
 .safe-area-top {

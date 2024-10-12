@@ -24,16 +24,8 @@ const TypedBios: React.FC<Props> = ({ className }) => {
   const el = React.useRef(null);
   const typed = React.useRef(null);
   const { systemTheme } = useTheme();
-  const iconSet = [];
-
-  iconSet.push([
-    <XIcon />,
-    <TiktokIcon />,
-    <UmamiIcon />,
-    <CloudinaryIcon />,
-    <MailIcon />,
-    <SinaIcon />,
-  ]);
+  const d = new Date();
+  const year = d.getFullYear();
 
   React.useEffect(() => {
     typed.current = new Typed(el.current, {
@@ -49,7 +41,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
   return (
     <div className={cn("w-full", className)}>
       <div className="flex justify-between">
-        <div>
+        <div className="grid grid-cols-1">
           <ul id="bios" className="hidden">
             <li>跟自己的热爱。</li>
             <li>打败我，你就是LPL第一AD。</li>
@@ -60,10 +52,14 @@ const TypedBios: React.FC<Props> = ({ className }) => {
             <li>伊泽瑞尔的精髓就是要E!</li>
             <li>哥们的韦鲁斯还需要练吗?</li>
           </ul>
-          <p className={`w-full h-full grow content-end text-base ${handWrite.variable} font-hw text-neutral-900 dark:text-neutral-300`}>
+          <p
+            className={`w-full h-full grow content-end text-base ${handWrite.variable} font-hw text-neutral-900 dark:text-neutral-300`}
+          >
             “
-            <span ref={el} className="" />
-            ”
+            <span ref={el} />”
+          </p>
+          <p className="text-[10px]/4 w-full h-full grow content-end text-gray-500 md:text-gray-600 md:dark:text-gray-400 ws">
+            JackeyLove ⓒ 2016-{year}
           </p>
         </div>
 
@@ -83,7 +79,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   aria-label="Weibo"
                   className="grid content-center"
                 >
-                  <SinaIcon/>
+                  <SinaIcon />
                 </Link>
                 <Link
                   href={"https://x.com/TESJKL1118"}
