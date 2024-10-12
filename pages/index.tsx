@@ -29,7 +29,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const { innerWidth } = useWindowSize();
   const nodeRef = useRef(null);
 
-  const [opacity, setOpacity] = useState<boolean>(false);
+  const [opacity, setOpacity] = useState<boolean>(
+    innerWidth > 768 ? true : false
+  );
 
   const getChildOpacity = (val: boolean) => {
     setOpacity(val);
@@ -65,10 +67,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               unmountOnExit
             >
               <button
-                onClick={() => (innerWidth > 768 ? setOpacity(false) : null)}
+                onClick={() => (innerWidth > 768 ? setOpacity(!opacity) : null)}
               >
                 <JackeyLoveIcon
-                  className="brightness-125 dark:brightness-150 justify-center fixed top-0 bottom-0 left-[30%] md:left-[35%] lg:left-[42%] xl:left-[46%] w-[40%] md:w-[30%] lg:w-[16%] xl:w-[8%] m-auto"
+                  className="brightness-125 dark:brightness-150 fixed top-0 bottom-0 left-[30%] md:left-[35%] lg:left-[42%] xl:left-[46%] w-[40%] md:w-[30%] lg:w-[16%] xl:w-[8%] m-auto"
                   size={300}
                 />
               </button>
@@ -84,7 +86,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   "md:bg-content mx-auto max-w-md md:max-w-3xl min-w-[320px] md:min-h-fit md:p-2 flex flex-col md:backdrop-blur-2xl rounded-[16px] md:gap-y-2 safe-area"
                 )}
               >
-                <Typedbar getOpacity={getChildOpacity} />
+                <Typedbar getOpacity={getChildOpacity} parentOpacity={opacity} />
                 <div className="grid gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
                   <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                     <EmblaCarousel
@@ -160,7 +162,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         >
           <JackeyLoveIcon
             size={300}
-            className="h-svh absolute dark:brightness-150 top-0 left-[30%] md:left-[35%] lg:left-[40%] xl:left-[45%] w-[40%] md:w-[30%] lg:w-[20%] xl:w-[10%] m-auto"
+            className="h-svh absolute brightness-125 dark:brightness-150 top-0 left-[30%] md:left-[35%] lg:left-[42%] xl:left-[46%] w-[40%] md:w-[30%] lg:w-[16%] xl:w-[8%] m-auto"
           />
         </div>
       </CSSTransition>

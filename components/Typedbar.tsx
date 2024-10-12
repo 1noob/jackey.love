@@ -8,11 +8,16 @@ import { useWindowSize } from "rooks";
 interface Props {
   className?: string;
   getOpacity: Function;
+  parentOpacity: boolean;
 }
 
-const Typedbar: React.FC<Props> = ({ className, getOpacity }) => {
+const Typedbar: React.FC<Props> = ({
+  className,
+  getOpacity,
+  parentOpacity,
+}) => {
   const { innerWidth } = useWindowSize();
-  const [opacity, setOpacity] = useState<boolean>(false);
+  const [opacity, setOpacity] = useState<boolean>(parentOpacity);
 
   const changeOpacity = (val: boolean) => {
     if (innerWidth > 768) {
@@ -33,7 +38,7 @@ const Typedbar: React.FC<Props> = ({ className, getOpacity }) => {
       shouldHideOnScroll
     >
       <NavbarContent className="flex w-full pt-2" justify="center">
-        <button onClick={() => changeOpacity(true)}>
+        <button onClick={() => changeOpacity(!opacity)}>
           <JackeyLoveIcon
             className="dark:brightness-150 w-full flex m-auto justify-center"
             size={innerWidth < 768 ? 25 : 30}
