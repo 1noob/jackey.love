@@ -31,7 +31,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
         >
           <div className="grid grid-cols-6 text-xs">
             <p className="col-span-2">Champion</p>
-            <p className="col-span-2">KDA</p>
+            <p className="col-span-2">K/D/A</p>
             <p>Games</p>
             <p>WinRate</p>
           </div>
