@@ -56,10 +56,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         unmountOnExit
       >
         <main className={`${jetbrainsMono.variable} font-jet`}>
-          <div
-            className="bg-page md:bg-transparent absolute w-full h-dvh z-10 md:place-content-center grid 
-            md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]"
-          >
+          <div className="bg-page md:bg-transparent absolute w-full h-dvh z-10 md:place-content-center grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
             <CSSTransition
               in={opacity}
               timeout={500}
@@ -86,7 +83,10 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   "md:bg-content mx-auto max-w-md md:max-w-3xl min-w-[320px] md:min-h-fit md:p-2 flex flex-col md:backdrop-blur-2xl rounded-[16px] md:gap-y-2 safe-area"
                 )}
               >
-                <Typedbar getOpacity={getChildOpacity} parentOpacity={opacity} />
+                <Typedbar
+                  getOpacity={getChildOpacity}
+                  parentOpacity={opacity}
+                />
                 <div className="grid gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
                   <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                     <EmblaCarousel
@@ -142,7 +142,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               </div>
             </CSSTransition>
           </div>
-          <Gallery images={images} />
+          <Gallery images={images}/>
         </main>
       </CSSTransition>
       <CSSTransition
