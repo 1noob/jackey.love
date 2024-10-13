@@ -10,7 +10,7 @@ interface Props {
 const Stat: React.FC<Props> = ({ title, data }) => {
   return (
     <Box>
-      <h1>Stats/{title}</h1>
+      <h1>Stats[{title}]</h1>
       <Divider className={"my-4 md:h-0.5"} />
       <div className="grid gap-2 w-full">
         <div className="flex justify-between gap-2">
@@ -18,7 +18,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
             Wins:{data[0]["wins"]}
           </div>
           <div className="bg-blue-50 dark:bg-blue-900 place-content-center p-2 rounded-md grow text-center">
-            KDA:{data[0]["kills"]}/{data[0]["deaths"]}/{data[0]["assists"]}
+            K/D/A:[{data[0]["kills"]}/{data[0]["deaths"]}/{data[0]["assists"]}]
           </div>
           <div className="bg-blue-50 dark:bg-blue-900 place-content-center p-2 rounded-md">
             Games:{data[0]["total"]}
