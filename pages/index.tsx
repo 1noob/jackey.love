@@ -70,7 +70,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 onClick={() => (innerWidth > 768 ? setOpacity(!opacity) : null)}
               >
                 <JackeyLoveIcon
-                  className="brightness-125 dark:brightness-150 fixed top-0 bottom-0 left-[30%] md:left-[35%] lg:left-[42%] xl:left-[46%] w-[40%] md:w-[30%] lg:w-[16%] xl:w-[8%] m-auto"
+                  className="brightness-125 dark:brightness-150 h-svh fixed top-0 left-[30%] md:left-[35%] lg:left-[42%] xl:left-[46%] w-[40%] md:w-[30%] lg:w-[16%] xl:w-[8%] m-auto"
                   size={300}
                 />
               </button>
