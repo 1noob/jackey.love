@@ -68,7 +68,7 @@ main {
 }
 
 .gallery {
-  @apply hidden my-auto overflow-hidden w-full h-dvh z-0 md:grid content-center;
+  @apply hidden my-auto overflow-hidden w-full h-lvh z-0 md:grid content-center;
 }
 
 h1 {
