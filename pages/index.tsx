@@ -63,12 +63,12 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               classNames="loading-info"
               unmountOnExit
             >
-              <button className="w-full h-svh fixed top-0">
+              <button className="w-full h-svh fixed top-0 cursor-dot">
                 <JackeyLoveIcon
                   onClick={() =>
                     innerWidth > 768 ? setOpacity(!opacity) : null
                   }
-                  className="brightness-125 dark:brightness-150 left-[30%] md:left-[35%] lg:left-[42%] xl:left-[46%] w-[40%] md:w-[30%] lg:w-[16%] xl:w-[8%] m-auto"
+                  className="brightness-125 dark:brightness-150 left-[30%] md:left-[35%] lg:left-[42%] xl:left-[46%] w-[40%] md:w-[30%] lg:w-[16%] xl:w-[8%] m-auto cursor-pointer"
                   size={300}
                 />
               </button>
