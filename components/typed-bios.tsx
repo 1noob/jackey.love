@@ -9,6 +9,7 @@ import {
   UmamiIcon,
   CloudinaryIcon,
   MailIcon,
+  HuyaIcon,
 } from "@/components/icon";
 import Link from "next/link";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
@@ -72,7 +73,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
         >
           <div className={"animate-[scy_30s_linear_infinite] w-max"}>
             <div className="w-max flex">
-              <div className="w-max flex gap-3 pr-3">
+              <div className="w-max flex gap-2 pr-2">
                 <Link
                   href={"https://m.weibo.cn/u/5966770936"}
                   target="_blank"
@@ -98,7 +99,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   <TiktokIcon />
                 </Link>
               </div>
-              <div className="w-max flex gap-3 pr-3">
+              <div className="w-max flex gap-2 pr-2">
                 <Link
                   href={"https://m.weibo.cn/u/5966770936"}
                   target="_blank"
@@ -128,14 +129,14 @@ const TypedBios: React.FC<Props> = ({ className }) => {
           </div>
           <div className={"animate-[scy_30s_linear_infinite] w-max"}>
             <div className="w-max flex">
-              <div className="w-max flex gap-3 pl-3">
+              <div className="w-max flex gap-2 pl-2">
                 <Link
-                  href={"mailto:x@jackey.love"}
+                  href={"https://huya.com/111800"}
                   target="_blank"
-                  aria-label="mail"
+                  aria-label="Huya"
                   className="grid content-center"
                 >
-                  <MailIcon />
+                  <HuyaIcon />
                 </Link>
                 <Link
                   href={
@@ -158,14 +159,14 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   <CloudinaryIcon />
                 </Link>
               </div>
-              <div className="w-max flex gap-3 pl-3">
+              <div className="w-max flex gap-2 pl-2">
                 <Link
-                  href={"mailto:x@jackey.love"}
+                  href={"https://huya.com/111800"}
                   target="_blank"
-                  aria-label="mail"
+                  aria-label="Huya"
                   className="grid content-center"
                 >
-                  <MailIcon />
+                  <HuyaIcon />
                 </Link>
                 <Link
                   href={
