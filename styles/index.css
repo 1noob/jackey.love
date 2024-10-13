@@ -43,6 +43,22 @@ main {
 }
 
 .loading-page-exit-active {
+  @apply opacity-0 transition-opacity duration-1000 ease-in-out delay-500;
+}
+
+.loading-info-enter {
+  @apply opacity-0;
+}
+
+.loading-info-enter-active {
+  @apply opacity-100 transition-opacity duration-1000 ease-in-out;
+}
+
+.loading-info-exit {
+  @apply opacity-100;
+}
+
+.loading-info-exit-active {
   @apply opacity-0 transition-opacity duration-1000 ease-in-out;
 }
 

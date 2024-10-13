@@ -63,7 +63,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             <CSSTransition
               in={opacity}
               timeout={500}
-              classNames="loading-page"
+              classNames="loading-info"
               unmountOnExit
             >
               <button
@@ -78,7 +78,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             <CSSTransition
               in={!opacity}
               timeout={500}
-              classNames="loading-page"
+              classNames="loading-info"
               unmountOnExit
             >
               <div
