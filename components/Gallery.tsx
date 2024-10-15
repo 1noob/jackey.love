@@ -17,7 +17,7 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
 
   return (
     <div className="gallery">
-      <div className="animate-[scy_80s_linear_infinite] transform-gpu w-max grayscale-[50%]">
+      <div className="animate-[scy_90s_linear_infinite] transform-gpu w-max grayscale-[50%]">
         <div className="float-left grid grid-rows-8 grid-flow-col">
           {data.map(({ public_id, format }) => (
             <Image
