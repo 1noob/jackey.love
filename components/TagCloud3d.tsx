@@ -62,6 +62,7 @@ const TagCloud3d: React.FC<Props> = ({ className }) => {
           "那就开摆",
           "越战老兵",
           "年少成名",
+          "搏至无韩",
         ]}
       </TagCloud>
       <div className="flex justify-between text-xs">
