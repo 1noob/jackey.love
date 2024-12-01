@@ -50,7 +50,7 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
     "Invictus Gaming": <IG size={40} className="w-full" />,
     "Anyone's Legend": <AL size={40} className="w-full py-1" />,
     "T1": <T1 size={40} className="w-full py-2.5" />,
-    "Dplus KIA": <DK size={40} className="w-full py-2"/>,
+    "Dplus KIA": <DK size={40} className="w-full py-2" />,
     "Fnatic": <FNC size={40} className="w-full py-1.5" />,
     "Gen.G": <GENG size={40} className="w-full py-1.5" />,
     "G2 Esports": <G2 size={40} className="w-full py-0.5" />,
@@ -73,7 +73,7 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
               <div className="grid grid-cols-3">
                 <div className="grid grid-cols-1 justify-center w-full gap-1.5">
                   {/* {Icon["Esports"]} */}
-                  {Icon[item["Team1"]]?Icon[item["Team1"]]:Icon["Esports"]}
+                  {Icon[item["Team1"]] ? Icon[item["Team1"]] : Icon["Esports"]}
                   <span className="uppercase text-xs">{item["Team1"]}</span>
                 </div>
                 <div className="place-content-center grid grid-cols-1 gap-1">
@@ -89,11 +89,11 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
                   <span>BO{item["BestOf"]}</span>
                 </div>
                 <div className="grid grid-cols-1 justify-center w-full gap-1.5">
-                  {Icon[item["Team2"]]?Icon[item["Team2"]]:Icon["Esports"]}
+                  {Icon[item["Team2"]] ? Icon[item["Team2"]] : Icon["Esports"]}
                   <span className="uppercase text-xs">{item["Team2"]}</span>
                 </div>
               </div>
-              <Divider/>
+              <Divider />
               <div className="px-4 grid grid-cols-3 text-[10px]/4 text-gray-500 md:text-gray-600 md:dark:text-gray-400">
                 <span className="text-start">
                   {item["DateTime CST"].slice(5)}
