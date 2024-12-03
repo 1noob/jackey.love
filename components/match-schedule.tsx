@@ -58,6 +58,32 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
     "Esports": <Esports size={40} className="w-full py-1.5" />,
   };
 
+  const Team_Name = {
+    "Royal Never Give Up": "RNG",
+    "FunPlus Phoenix": "FPX",
+    "Top Esports": "TES",
+    "JD Gaming": "JDG",
+    "EDward Gaming": "EDG",
+    "LNG Esports": "LNG",
+    "Weibo Gaming": "WBG",
+    "Team WE": "WE",
+    "Ninjas in Pyjamas.CN": "NIP",
+    "Rare Atom": "RA",
+    "ThunderTalk Gaming": "TT",
+    "LGD Gaming": "LGD",
+    "Oh My God": "OMG",
+    "Ultra Prime": "UP",
+    "Bilibili Gaming": "BLG",
+    "Invictus Gaming": "IG",
+    "Anyone's Legend": "AL",
+    "T1": "T1",
+    "Dplus KIA": "DK",
+    "Fnatic": "FNC",
+    "Gen.G": "GENG",
+    "G2 Esports": "G2",
+    "Hanwha Life Esports": "HLE",
+  }
+
   return (
     <Box>
       <h1>Schedule</h1>
@@ -74,7 +100,7 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
                 <div className="grid grid-cols-1 justify-center w-full gap-1.5">
                   {/* {Icon["Esports"]} */}
                   {Icon[item["Team1"]] ? Icon[item["Team1"]] : Icon["Esports"]}
-                  <span className="uppercase text-xs">{item["Team1"]}</span>
+                  <span className="uppercase text-xs">{Team_Name[item["Team1"]]}</span>
                 </div>
                 <div className="place-content-center grid grid-cols-1 gap-1">
                   <div className="text-4xl">
@@ -90,7 +116,7 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
                 </div>
                 <div className="grid grid-cols-1 justify-center w-full gap-1.5">
                   {Icon[item["Team2"]] ? Icon[item["Team2"]] : Icon["Esports"]}
-                  <span className="uppercase text-xs">{item["Team2"]}</span>
+                  <span className="uppercase text-xs">{Team_Name[item["Team2"]]}</span>
                 </div>
               </div>
               <Divider />
