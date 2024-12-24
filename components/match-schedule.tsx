@@ -124,16 +124,18 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
                 </div>
               </div>
               <Divider />
-              <div className="px-4 grid grid-cols-3 text-[10px]/4 text-gray-500 md:text-gray-600 md:dark:text-gray-400">
-                <span className="text-start">
+              <div className="grid grid-cols-3 text-[10px]/4 text-gray-500 md:text-gray-600 md:dark:text-gray-400">
+                <span className="text-center">
                   {item["DateTime CST"].slice(5)}
                 </span>
                 <span className="text-center">{item["Day of Week"]}</span>
                 {item["Stream"] ? (
-                  <Link className="text-end" href={item["Stream"]}>
+                  <Link className="text-center" href={item["Stream"]}>
                     {item["Stream"].slice(12)}
                   </Link>
-                ):(<span className="text-end">stream unavailable</span>)}
+                ) : (
+                  <span className="text-center">stream unavailable</span>
+                )}
               </div>
             </div>
           );
