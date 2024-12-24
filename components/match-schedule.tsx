@@ -35,7 +35,7 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
     "FunPlus Phoenix": <FPX size={40} className="w-full py-2" />,
     "Top Esports": <TES size={40} className="w-full py-0.5" />,
     "JD Gaming": <JDG size={40} className="w-full py-1" />,
-    "TBD": <LPL size={40} className="w-full py-1" />,
+    TBD: <LPL size={40} className="w-full py-1" />,
     "EDward Gaming": <EDG size={40} className="w-full" />,
     "LNG Esports": <LNG size={40} className="w-full" />,
     "Weibo Gaming": <WBG size={40} className="w-full py-0.5" />,
@@ -49,13 +49,13 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
     "Bilibili Gaming": <BLG size={40} className="w-full py-2" />,
     "Invictus Gaming": <IG size={40} className="w-full" />,
     "Anyone's Legend": <AL size={40} className="w-full py-1" />,
-    "T1": <T1 size={40} className="w-full py-2.5" />,
+    T1: <T1 size={40} className="w-full py-2.5" />,
     "Dplus KIA": <DK size={40} className="w-full py-2" />,
-    "Fnatic": <FNC size={40} className="w-full py-1.5" />,
+    Fnatic: <FNC size={40} className="w-full py-1.5" />,
     "Gen.G": <GENG size={40} className="w-full py-1.5" />,
     "G2 Esports": <G2 size={40} className="w-full py-0.5" />,
     "Hanwha Life Esports": <HLE size={40} className="w-full py-1.5" />,
-    "Esports": <Esports size={40} className="w-full py-1.5" />,
+    Esports: <Esports size={40} className="w-full py-1.5" />,
   };
 
   const Team_Name = {
@@ -76,13 +76,13 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
     "Bilibili Gaming": "BLG",
     "Invictus Gaming": "IG",
     "Anyone's Legend": "AL",
-    "T1": "T1",
+    T1: "T1",
     "Dplus KIA": "DK",
-    "Fnatic": "FNC",
+    Fnatic: "FNC",
     "Gen.G": "GENG",
     "G2 Esports": "G2",
     "Hanwha Life Esports": "HLE",
-  }
+  };
 
   return (
     <Box>
@@ -100,7 +100,9 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
                 <div className="grid grid-cols-1 justify-center w-full gap-1.5">
                   {/* {Icon["Esports"]} */}
                   {Icon[item["Team1"]] ? Icon[item["Team1"]] : Icon["Esports"]}
-                  <span className="uppercase text-xs">{Team_Name[item["Team1"]]}</span>
+                  <span className="uppercase text-xs">
+                    {Team_Name[item["Team1"]]}
+                  </span>
                 </div>
                 <div className="place-content-center grid grid-cols-1 gap-1">
                   <div className="text-4xl">
@@ -116,7 +118,9 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
                 </div>
                 <div className="grid grid-cols-1 justify-center w-full gap-1.5">
                   {Icon[item["Team2"]] ? Icon[item["Team2"]] : Icon["Esports"]}
-                  <span className="uppercase text-xs">{Team_Name[item["Team2"]]}</span>
+                  <span className="uppercase text-xs">
+                    {Team_Name[item["Team2"]]}
+                  </span>
                 </div>
               </div>
               <Divider />
@@ -125,9 +129,11 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
                   {item["DateTime CST"].slice(5)}
                 </span>
                 <span className="text-center">{item["Day of Week"]}</span>
-                <Link className="text-end" href={item["Stream"]}>
-                  {item["Stream"].slice(12)}
-                </Link>
+                {item["Stream"] && (
+                  <Link className="text-end" href={item["Stream"]}>
+                    {item["Stream"].slice(12)}
+                  </Link>
+                )}
               </div>
             </div>
           );

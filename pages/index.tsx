@@ -22,6 +22,7 @@ import { jetbrainsMono } from "@/types/fonts";
 import useSWR from "swr";
 import { cn } from "@/lib/utils";
 import { useWindowSize } from "rooks";
+import Weibo from "@/components/Weibo";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
