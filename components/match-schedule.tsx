@@ -129,11 +129,11 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
                   {item["DateTime CST"].slice(5)}
                 </span>
                 <span className="text-center">{item["Day of Week"]}</span>
-                {item["Stream"] && (
+                {item["Stream"] ? (
                   <Link className="text-end" href={item["Stream"]}>
                     {item["Stream"].slice(12)}
                   </Link>
-                )}
+                ):"stream unavailable"}
               </div>
             </div>
           );
