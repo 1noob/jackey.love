@@ -133,7 +133,7 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
                   <Link className="text-end" href={item["Stream"]}>
                     {item["Stream"].slice(12)}
                   </Link>
-                ):"stream unavailable"}
+                ):(<span className="text-end">stream unavailable</span>)}
               </div>
             </div>
           );
