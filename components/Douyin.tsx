@@ -6,7 +6,7 @@ interface Props {
   vid: string;
 }
 const Douyin: React.FC<Props> = ({ className, vid }) => {
-  const { systemTheme } = useTheme();
+  // https://open.douyin.com/api/douyin/v1/video/get_iframe_by_video?video_id={vid}
 
   return (
     <div className={cn("h-full w-full place-content-center rounded-[12px] bg-transparent", className)}>
