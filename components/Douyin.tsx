@@ -11,7 +11,7 @@ const Douyin: React.FC<Props> = ({ className, vid }) => {
   return (
     <div className={cn("h-full w-full place-content-center rounded-[12px] bg-transparent", className)}>
       <iframe
-        className={"h-[720px] w-[324px] md:w-full md:h-[458px] m-auto rounded-[12px] bg-transparent"}
+        className={"h-[720px] w-[324px] md:w-full md:h-[458px] m-auto rounded-[12px]"}
         src={`https://open.douyin.com/player/video?vid=${vid}&autoplay=0`}
       />
     </div>
