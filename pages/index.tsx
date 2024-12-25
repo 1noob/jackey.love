@@ -23,6 +23,7 @@ import useSWR from "swr";
 import { cn } from "@/lib/utils";
 import { useWindowSize } from "rooks";
 import Weibo from "@/components/Weibo";
+import Douyin from "@/components/Douyin";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
@@ -82,7 +83,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             >
               <div
                 className={cn(
-                  "md:bg-content mx-auto max-w-md md:max-w-3xl min-w-[320px] md:min-h-fit md:p-2 flex flex-col md:backdrop-blur-2xl rounded-[16px] md:gap-y-2 safe-area"
+                  "md:bg-content mx-auto max-w-md md:max-w-3xl min-w-[324px] md:min-h-fit md:p-2 flex flex-col md:backdrop-blur-2xl rounded-[16px] md:gap-y-2 safe-area"
                 )}
               >
                 <Typedbar
@@ -138,6 +139,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                         <Stat title="Worlds" data={data?.[1]} />,
                       ]}
                     />
+                  </section>
+                  <section className="hidden md:flex">
+                    <Douyin vid="7426681902712638757"/>
                   </section>
                 </div>
               </div>

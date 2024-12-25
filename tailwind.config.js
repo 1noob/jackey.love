@@ -44,7 +44,7 @@ module.exports = {
         mobile: { max: "767px" },
 
         // mobile-s
-        xs: { min: "320px" },
+        xs: { min: "324px" },
 
         // mobile-m (iPhoneX)
         sm: { min: "375px" },
