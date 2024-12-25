@@ -15,13 +15,13 @@ const Stat: React.FC<Props> = ({ title, data }) => {
       <div className="grid gap-2 w-full text-nowrap">
         <div className="flex justify-between gap-2 text-[10px]/4 sm:text-[12px]/4 md:text-[12px]/5">
           <div className="bg-blue-50 dark:bg-blue-900 place-content-center p-2 rounded-md">
-            Wins:{data[0]["wins"]}
+            胜场 [{data[0]["wins"]}]
           </div>
           <div className="bg-blue-50 dark:bg-blue-900 place-content-center p-2 rounded-md grow text-center">
-            K/D/A:[{data[0]["kills"]}/{data[0]["deaths"]}/{data[0]["assists"]}]
+            <span className="font-black">KDA</span> [{data[0]["kills"]}/{data[0]["deaths"]}/{data[0]["assists"]}]
           </div>
           <div className="bg-blue-50 dark:bg-blue-900 place-content-center p-2 rounded-md">
-            Games:{data[0]["total"]}
+            场次 [{data[0]["total"]}]
           </div>
         </div>
         <div
@@ -30,10 +30,10 @@ const Stat: React.FC<Props> = ({ title, data }) => {
           }
         >
           <div className="grid grid-cols-6 text-xs">
-            <p className="col-span-2">Champion</p>
-            <p className="col-span-2">K/D/A</p>
-            <p>Games</p>
-            <p>WinRate</p>
+            <p className="col-span-2">英雄</p>
+            <p className="col-span-2 font-black">KDA</p>
+            <p>场次</p>
+            <p>胜率</p>
           </div>
           <Divider className="mt-1"/>
           <div className="grid divide-y-2 divide-gray-300 dark:divide-gray-800 divide-dotted">
