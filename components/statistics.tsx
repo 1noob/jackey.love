@@ -10,17 +10,17 @@ interface Props {
 const Stat: React.FC<Props> = ({ title, data }) => {
   return (
     <Box>
-      <h1>Stats[{title}]</h1>
+      <h1>Data[{title}]</h1>
       <Divider className={"my-4 md:h-0.5"} />
       <div className="grid gap-2 w-full text-nowrap">
         <div className="flex justify-between gap-2 text-[10px]/4 sm:text-[12px]/4 md:text-[12px]/5">
-          <div className="bg-blue-50 dark:bg-blue-900 place-content-center p-2 rounded-md">
+          <div className="bg-blue-50 dark:bg-gray-900 place-content-center p-2 rounded-md">
             胜场 [{data[0]["wins"]}]
           </div>
-          <div className="bg-blue-50 dark:bg-blue-900 place-content-center p-2 rounded-md grow text-center">
+          <div className="bg-blue-50 dark:bg-gray-900 place-content-center p-2 rounded-md grow text-center">
             <span className="font-black">KDA</span> [{data[0]["kills"]}/{data[0]["deaths"]}/{data[0]["assists"]}]
           </div>
-          <div className="bg-blue-50 dark:bg-blue-900 place-content-center p-2 rounded-md">
+          <div className="bg-blue-50 dark:bg-gray-900 place-content-center p-2 rounded-md">
             场次 [{data[0]["total"]}]
           </div>
         </div>
@@ -53,7 +53,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
             );
           })}
           </div>
-          <Divider className="mt-2.5"/>
+          <Divider className="mt-[11px]"/>
           <span className="text-[10px]/4 leading-4 text-gray-500 md:text-gray-600 md:dark:text-gray-400 text-center">
             {title === "LPL"
               ? 'Exclude "Regional Finals" and "Demacia Cup"'
