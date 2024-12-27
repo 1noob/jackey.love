@@ -17,13 +17,14 @@ const Typedbar: React.FC<Props> = ({
   parentOpacity,
 }) => {
   const { innerWidth } = useWindowSize();
-  const [opacity, setOpacity] = useState<boolean>(parentOpacity);
+  const [opacity, setOpacity] = useState<boolean>(
+    parentOpacity == undefined ? true : parentOpacity
+  );
+  console.log(opacity);
 
   const changeOpacity = (val: boolean) => {
-    if (innerWidth > 768) {
-      setOpacity(val);
-      getOpacity(val);
-    }
+    setOpacity(val);
+    getOpacity(val);
   };
 
   return (
@@ -37,7 +38,7 @@ const Typedbar: React.FC<Props> = ({
       }}
       shouldHideOnScroll
     >
-      <NavbarContent className="flex w-full pt-2" justify="center">
+      <NavbarContent className="flex w-full pt-2 pointer-events-none md:pointer-events-auto" justify="center">
         <button onClick={() => changeOpacity(!opacity)}>
           <JackeyLoveIcon
             className="dark:brightness-150 w-full flex m-auto justify-center"

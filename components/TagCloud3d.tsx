@@ -1,5 +1,5 @@
 import { TagCloud, TagCloudOptions } from "@frank-mayer/react-tag-cloud";
-import React, { useEffect } from "react";
+import React from "react";
 import { cn } from "@/lib/utils";
 import Box from "./Box";
 

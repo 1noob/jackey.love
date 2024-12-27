@@ -2,7 +2,13 @@ import type { NextPage } from "next";
 import cloudinary from "@/lib/cloudinary";
 import type { ImageProps } from "@/types";
 import { Divider, Image } from "@nextui-org/react";
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  useEffect,
+  useInsertionEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { CSSTransition } from "react-transition-group";
 
 import Box from "@/components/Box";
@@ -22,17 +28,12 @@ import { jetbrainsMono } from "@/types/fonts";
 import useSWR from "swr";
 import { cn } from "@/lib/utils";
 import Douyin from "@/components/Douyin";
-import { useWindowSize } from "@uidotdev/usehooks";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
-  const innerWidth = useWindowSize().width;
   const nodeRef = useRef(null);
-
-  const [opacity, setOpacity] = useState<boolean>(
-    innerWidth > 768 ? true : false
-  );
+  const [opacity, setOpacity] = useState<boolean>();
 
   const getChildOpacity = (val: boolean) => {
     setOpacity(val);
@@ -66,9 +67,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             >
               <button className="w-full h-svh fixed top-0 cursor-dot">
                 <JackeyLoveIcon
-                  onClick={() =>
-                    innerWidth > 768 ? setOpacity(!opacity) : null
-                  }
+                  onClick={() => setOpacity(!opacity)}
                   className="brightness-125 dark:brightness-150 left-[30%] md:left-[35%] lg:left-[42%] xl:left-[46%] w-[40%] md:w-[30%] lg:w-[16%] xl:w-[8%] m-auto"
                   size={300}
                 />
@@ -77,7 +76,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             <CSSTransition
               in={!opacity}
               timeout={500}
-              classNames="loading-info"
+              classNames="loading-page"
               unmountOnExit
             >
               <div
