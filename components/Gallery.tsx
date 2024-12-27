@@ -21,6 +21,7 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
         <div className="float-left grid grid-rows-8 grid-flow-col">
           {data.map(({ public_id, format }) => (
             <Image
+              key={public_id}
               rel="preload"
               radius="none"
               src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30,w_1000/${public_id}.${format}`}
@@ -34,6 +35,7 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
           {data.map(({ public_id, format }) => (
             <Image
               radius="none"
+              key={public_id+'_copy'}
               src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30,w_1000/${public_id}.${format}`}
               width={180}
               alt={"JackeyLove, TES, IG, LOL , LPL"}
