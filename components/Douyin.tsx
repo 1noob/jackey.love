@@ -1,4 +1,3 @@
-import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -9,10 +8,16 @@ const Douyin: React.FC<Props> = ({ className, vid }) => {
   // https://open.douyin.com/api/douyin/v1/video/get_iframe_by_video?video_id={vid}
 
   return (
-    <div className={cn("h-full w-full place-content-center rounded-[12px] bg-transparent", className)}>
+    <div
+      className={cn(
+        "h-full w-full place-content-center rounded-[12px] bg-transparent",
+        className
+      )}
+    >
       <iframe
-        allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-        className={"h-[720px] w-[324px] md:w-full md:h-[458px] m-auto rounded-[12px]"}
+        className={
+          "h-[720px] w-[324px] md:w-full md:h-[458px] m-auto rounded-[12px]"
+        }
         src={`https://open.douyin.com/player/video?vid=${vid}&autoplay=0`}
       />
     </div>

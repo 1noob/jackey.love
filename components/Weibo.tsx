@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 interface Props {
   className?: string;
 }
+
 const Weibo: React.FC<Props> = ({ className }) => {
   return (
     <div className={cn("h-full w-full rounded-[12px] bg-box", className)}>

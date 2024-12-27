@@ -1,16 +1,19 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { EmblaCarouselType, EmblaEventType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-
 import Autoplay from "embla-carousel-autoplay";
-
 
 const options: EmblaOptionsType = { loop: true , duration: 30};
 const TWEEN_FACTOR_BASE = 0.2
 const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max)
 
-const EmblaCarousel = ({components}) => {
+interface Props {
+  className?: string;
+  components: any;
+}
+
+const EmblaCarousel: React.FC<Props> = ({ className, components }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({
       playOnInit: true,

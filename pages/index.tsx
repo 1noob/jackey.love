@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import cloudinary from "@/lib/cloudinary";
 import type { ImageProps } from "@/types";
 import { Divider, Image } from "@nextui-org/react";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 
 import Box from "@/components/Box";
@@ -21,14 +21,13 @@ import MatchSchedule from "@/components/match-schedule";
 import { jetbrainsMono } from "@/types/fonts";
 import useSWR from "swr";
 import { cn } from "@/lib/utils";
-import { useWindowSize } from "rooks";
-import Weibo from "@/components/Weibo";
 import Douyin from "@/components/Douyin";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
-  const { innerWidth } = useWindowSize();
+  const innerWidth = useWindowSize().width;
   const nodeRef = useRef(null);
 
   const [opacity, setOpacity] = useState<boolean>(
@@ -108,7 +107,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                         />,
                         <TagCloud3d />,
                         <X id="1788487122485166261" />,
-                        <AppleMusic />,
+                        <AppleMusic id="jackeylove-live/pl.u-gxbll0JC5vEGkPj" />,
                       ]}
                     />
                     <Intro />
@@ -141,7 +140,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     />
                   </section>
                   <section className="hidden md:flex">
-                    <Douyin vid="7426681902712638757"/>
+                    <Douyin vid="7426681902712638757" />
                   </section>
                 </div>
               </div>

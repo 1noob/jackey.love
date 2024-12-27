@@ -3,8 +3,11 @@ import { cn } from "@/lib/utils";
 
 interface AppleMusicProps {
   className?: string;
+  id: string;
 }
-const AppleMusic: React.FC<AppleMusicProps> = ({ className }) => {
+
+// jackeylove-live/pl.u-gxbll0JC5vEGkPj
+const AppleMusic: React.FC<AppleMusicProps> = ({ className, id }) => {
   const { systemTheme } = useTheme();
 
   return (
@@ -15,8 +18,7 @@ const AppleMusic: React.FC<AppleMusicProps> = ({ className }) => {
         allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
         sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
         src={
-          `https://embed.music.apple.com/cn/playlist/jackeylove-live/pl.u-gxbll0JC5vEGkPj?theme=` +
-          systemTheme
+          `https://embed.music.apple.com/cn/playlist/${id}?theme=` + systemTheme
         }
       />
     </div>

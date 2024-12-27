@@ -11,7 +11,7 @@ const TagCloud3d: React.FC<Props> = ({ className }) => {
   return (
     <Box
       className={cn(
-        "w-full h-full grid grid-flow-row justify-stretch",
+        "w-full h-full grid grid-flow-row justify-stretch overflow-hidden",
         className
       )}
     >
@@ -27,7 +27,7 @@ const TagCloud3d: React.FC<Props> = ({ className }) => {
           maxSpeed: "fast",
         })}
         className={
-          "w-full h-full rounded-[12px] grid place-content-center pointer-events-none"
+          "w-full h-full rounded-[12px] grid place-content-center pointer-events-none transform-gpu"
         }
         onClickOptions={{ passive: true }}
       >
@@ -36,8 +36,8 @@ const TagCloud3d: React.FC<Props> = ({ className }) => {
           "杰阔",
           "伟大",
           "装杯",
+          "柴犬",
           "小主播",
-          "扬名立万",
           "1557",
           "无需多言",
           "闪现向前",
@@ -54,7 +54,7 @@ const TagCloud3d: React.FC<Props> = ({ className }) => {
           "好好调整",
           "无需多言",
           "AD开团",
-          "接Q辣舞",
+          "杰克辣舞",
           "JKL指挥的",
           "每天抗塔",
           "坚毅眼神",
