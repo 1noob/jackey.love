@@ -130,11 +130,12 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     </Box>
                   </section>
                   <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
-                    <MatchSchedule data={data?.[2]} />
+                    <MatchSchedule data={data?.[3]} />
                     <EmblaCarousel
                       components={[
                         <Stat title="LPL" data={data?.[0]} />,
                         <Stat title="Worlds" data={data?.[1]} />,
+                        <Stat title="All" data={data?.[2]} />,
                       ]}
                     />
                   </section>

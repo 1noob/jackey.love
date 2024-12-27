@@ -8,6 +8,11 @@ interface Props {
 }
 
 const Stat: React.FC<Props> = ({ title, data }) => {
+  const tips = {
+    LPL: 'Exclude "Regional Finals" and "Demacia Cup',
+    Worlds: 'Include "World Finals", "MSI", "RR" and "EWC"',
+    All: '"Entire Career"',
+  };
   return (
     <Box>
       <h1>Data[{title}]</h1>
@@ -18,7 +23,8 @@ const Stat: React.FC<Props> = ({ title, data }) => {
             胜场 [{data[0]["wins"]}]
           </div>
           <div className="bg-blue-50 dark:bg-gray-900 place-content-center p-2 rounded-md grow text-center">
-            <span className="font-black">KDA</span> [{data[0]["kills"]}/{data[0]["deaths"]}/{data[0]["assists"]}]
+            <span className="font-black">KDA</span> [{data[0]["kills"]}/
+            {data[0]["deaths"]}/{data[0]["assists"]}]
           </div>
           <div className="bg-blue-50 dark:bg-gray-900 place-content-center p-2 rounded-md">
             场次 [{data[0]["total"]}]
@@ -35,29 +41,27 @@ const Stat: React.FC<Props> = ({ title, data }) => {
             <p>场次</p>
             <p>胜率</p>
           </div>
-          <Divider className="mt-1"/>
+          <Divider className="mt-1" />
           <div className="grid divide-y-2 divide-gray-300 dark:divide-gray-800 divide-dotted">
             {data[1].slice(0, 10).map((item, index) => {
-            return (
-              <div
-                key={index}
-                className="grid grid-cols-6 text-gray-600 dark:text-gray-300 text-xs py-1.5"
-              >
-                <p className="col-span-2">{item["name"]}</p>
-                <p className="col-span-2">
-                  {item["kills"]}/{item["deaths"]}/{item["assists"]}
-                </p>
-                <p>{item["games"]}</p>
-                <p>{item["win_rate"]}</p>
-              </div>
-            );
-          })}
+              return (
+                <div
+                  key={index}
+                  className="grid grid-cols-6 text-gray-600 dark:text-gray-300 text-xs py-1.5"
+                >
+                  <p className="col-span-2">{item["name"]}</p>
+                  <p className="col-span-2">
+                    {item["kills"]}/{item["deaths"]}/{item["assists"]}
+                  </p>
+                  <p>{item["games"]}</p>
+                  <p>{item["win_rate"]}</p>
+                </div>
+              );
+            })}
           </div>
-          <Divider className="mt-[11px]"/>
+          <Divider className="mt-[11px]" />
           <span className="text-[10px]/4 leading-4 text-gray-500 md:text-gray-600 md:dark:text-gray-400 text-center">
-            {title === "LPL"
-              ? 'Exclude "Regional Finals" and "Demacia Cup"'
-              : 'Include "World Finals", "MSI", "RR" and "EWC"'}
+            {tips[title]}
           </span>
         </div>
       </div>
