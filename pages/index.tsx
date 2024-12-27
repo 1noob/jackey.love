@@ -40,7 +40,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   };
 
   const { data, isLoading } = useSWR(
-    "https://stat.jackey.love/JackeyLove",
+    "https://stats.jackey.love/JackeyLove",
     fetcher
   );
 
