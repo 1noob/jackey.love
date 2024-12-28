@@ -4,8 +4,6 @@ import type { ImageProps } from "@/types";
 import { Divider, Image } from "@nextui-org/react";
 import React, {
   useEffect,
-  useInsertionEffect,
-  useLayoutEffect,
   useRef,
   useState,
 } from "react";
@@ -33,10 +31,11 @@ const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const nodeRef = useRef(null);
-  const [opacity, setOpacity] = useState<boolean>();
+  const [opacity, setOpacity] = useState<boolean>(false);
 
   const getChildOpacity = (val: boolean) => {
     setOpacity(val);
+    return val;
   };
 
   const { data, isLoading } = useSWR(
@@ -76,7 +75,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             <CSSTransition
               in={!opacity}
               timeout={500}
-              classNames="loading-page"
+              classNames="loading-info"
               unmountOnExit
             >
               <div
