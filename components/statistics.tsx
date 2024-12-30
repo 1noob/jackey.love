@@ -11,7 +11,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
   const tips = {
     LPL: 'Exclude "Regional Finals" and "Demacia Cup',
     Worlds: 'Include "World Finals", "MSI", "RR" and "EWC"',
-    All: '"Entire Career"',
+    All: '"All For JackeyLove"',
   };
   return (
     <Box>
