@@ -14,7 +14,7 @@ import Evaluation from "@/components/evaluation";
 import Script from "next/script";
 import Gallery from "@/components/Gallery";
 import { JackeyLoveIcon } from "@/components/icon";
-import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
+import EmblaCarousel from "@/components/EmblaCarousel";
 import Intro from "@/components/Intro";
 import Typedbar from "@/components/Typedbar";
 import Stat from "@/components/statistics";
