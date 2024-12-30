@@ -31,35 +31,19 @@ main {
   @apply bg-card border-dashed border border-gray-400 dark:border-transparent md:border-none;
 }
 
-.loading-page-enter {
+.loading-enter {
   @apply opacity-0;
 }
 
-.loading-page-enter-active {
+.loading-enter-active {
   @apply opacity-100 transition-opacity duration-1000 ease-in-out;
 }
 
-.loading-page-exit {
+.loading-exit {
   @apply opacity-100;
 }
 
-.loading-page-exit-active {
-  @apply opacity-0 transition-opacity duration-1000 ease-in-out delay-500;
-}
-
-.loading-info-enter {
-  @apply opacity-0;
-}
-
-.loading-info-enter-active {
-  @apply opacity-100 transition-opacity duration-1000 ease-in-out;
-}
-
-.loading-info-exit {
-  @apply opacity-100;
-}
-
-.loading-info-exit-active {
+.loading-exit-active {
   @apply opacity-0 transition-opacity duration-1000 ease-in-out;
 }
 

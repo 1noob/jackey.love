@@ -18,7 +18,6 @@ const Typedbar: React.FC<Props> = ({
 }) => {
   const { innerWidth } = useWindowSize();
   const [opacity, setOpacity] = useState<boolean>(parentOpacity);
-  console.log(opacity);
 
   const changeOpacity = (val: boolean) => {
     setOpacity(val);

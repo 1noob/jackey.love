@@ -52,7 +52,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
       <CSSTransition
         in={!isLoading}
         timeout={500}
-        classNames="loading-page"
+        classNames="loading"
         unmountOnExit
       >
         <main className={`${jetbrainsMono.variable} font-jet`}>
@@ -60,7 +60,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             <CSSTransition
               in={opacity}
               timeout={500}
-              classNames="loading-info"
+              classNames="loading"
               unmountOnExit
             >
               <button className="w-full h-svh fixed top-0 cursor-dot">
@@ -74,7 +74,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             <CSSTransition
               in={!opacity}
               timeout={500}
-              classNames="loading-info"
+              classNames="loading"
               unmountOnExit
             >
               <div
@@ -147,7 +147,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
       <CSSTransition
         in={isLoading}
         timeout={800}
-        classNames="loading-page"
+        classNames="loading"
         unmountOnExit
         enter={false}
         nodeRef={nodeRef}
