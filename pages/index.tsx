@@ -137,9 +137,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       ]}
                     />
                   </section>
-                  <section className="hidden md:flex">
-                    <Douyin vid="7426681902712638757" />
-                  </section>
                 </div>
               </div>
             </CSSTransition>

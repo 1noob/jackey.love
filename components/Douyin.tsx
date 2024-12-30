@@ -25,3 +25,7 @@ const Douyin: React.FC<Props> = ({ className, vid }) => {
 };
 
 export default Douyin;
+
+const vid_set = [
+  "7426681902712638757",  
+]
