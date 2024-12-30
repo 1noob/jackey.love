@@ -3,7 +3,6 @@ import cloudinary from "@/lib/cloudinary";
 import type { ImageProps } from "@/types";
 import { Divider, Image } from "@nextui-org/react";
 import React, {
-  useEffect,
   useRef,
   useState,
 } from "react";
