@@ -140,7 +140,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <section>
                     <Box>
                       <div className="text-center text-gray-600 dark:text-gray-300 text-xs flex justify-between">
-                        <div>SONG <a className="underline" href="https:x.com/zhousongjie">(zhousongjie)</a></div>
+                        <div>SONG <a className="underline" href="https:x.com/zhousongjie">(@zhousongjie)</a></div>
                         <a className="underline" href="https://github.com/1noob/jackey.love">Source</a>
                       </div>
                     </Box>
