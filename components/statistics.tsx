@@ -32,7 +32,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
         </div>
         <div
           className={
-            "grid gap-2 whitespace-nowrap bg-blue-50 dark:bg-neutral-900 rounded-md p-2"
+            "grid gap-2 bg-blue-50 dark:bg-neutral-900 rounded-md p-2"
           }
         >
           <div className="grid grid-cols-6 text-xs">
