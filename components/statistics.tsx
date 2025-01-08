@@ -15,7 +15,10 @@ const Stat: React.FC<Props> = ({ title, data }) => {
   };
   return (
     <Box>
-      <h1>Data[{title}]</h1>
+      <div className="flex justify-between">
+        <h1>Data</h1>
+        <h1>{title}</h1>
+      </div>
       <Divider className={"my-4 md:h-0.5"} />
       <div className="grid gap-2 w-full text-nowrap">
         <div className="flex justify-between gap-2 text-[10px]/4 sm:text-[12px]/4 md:text-[12px]/5">
@@ -31,9 +34,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
           </div>
         </div>
         <div
-          className={
-            "grid gap-2 bg-blue-50 dark:bg-neutral-900 rounded-md p-2"
-          }
+          className={"grid gap-2 bg-blue-50 dark:bg-neutral-900 rounded-md p-2"}
         >
           <div className="grid grid-cols-6 text-xs">
             <p className="col-span-2">英雄</p>
