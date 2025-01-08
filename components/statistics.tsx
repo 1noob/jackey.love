@@ -17,7 +17,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
     <Box>
       <div className="flex justify-between">
         <h1>Statistics</h1>
-        <h1>{title}</h1>
+        <h1>"{title}"</h1>
       </div>
       <Divider className={"my-4 md:h-0.5"} />
       <div className="grid gap-2 w-full text-nowrap">
