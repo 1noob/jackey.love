@@ -2,6 +2,7 @@ import React from "react";
 import Box from "./Box";
 import List from "./List";
 import { Divider } from "@nextui-org/react";
+import { CNIcon } from "./icon";
 
 const Intro = () => {
   return (
@@ -54,11 +55,11 @@ const data = {
     },
     {
       one: "Role",
-      two: "AD Carry",
+      two: "Bot Laner",
     },
     {
       one: "Country",
-      two: "China",
+      two: <span className="flex gap-1"><CNIcon />China</span>,
     },
     {
       one: "Birthday",
