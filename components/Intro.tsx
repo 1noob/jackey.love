@@ -3,8 +3,10 @@ import Box from "./Box";
 import List from "./List";
 import { Divider } from "@nextui-org/react";
 import { CNIcon } from "./icon";
+import { useWindowSize } from "rooks";
 
 const Intro = () => {
+  const { innerWidth } = useWindowSize();
   return (
     <div className={"grid gap-y-2 w-full text-nowrap"}>
       <Box>
@@ -59,7 +61,12 @@ const data = {
     },
     {
       one: "Country",
-      two: <span className="flex gap-2"><CNIcon size={14}/>China</span>,
+      two: (
+        <span className="flex gap-2">
+          <CNIcon size={innerWidth > 768 ? 16 : 14} />
+          China
+        </span>
+      ),
     },
     {
       one: "Birthday",
