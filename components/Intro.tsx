@@ -59,7 +59,7 @@ const data = {
     },
     {
       one: "Country",
-      two: <span className="flex gap-2"><CNIcon className="pb-0.5"/>China</span>,
+      two: <span className="flex gap-2"><CNIcon/>China</span>,
     },
     {
       one: "Birthday",
