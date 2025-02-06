@@ -5,8 +5,9 @@ import { Divider } from "@nextui-org/react";
 import { CNIcon } from "./icon";
 import { useWindowSize } from "rooks";
 
+const { innerWidth } = useWindowSize();
+
 const Intro = () => {
-  const { innerWidth } = useWindowSize();
   return (
     <div className={"grid gap-y-2 w-full text-nowrap"}>
       <Box>
