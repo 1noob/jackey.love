@@ -5,9 +5,8 @@ import { Divider } from "@nextui-org/react";
 import { CNIcon } from "./icon";
 import { useWindowSize } from "rooks";
 
-const { innerWidth } = useWindowSize();
-
 const Intro = () => {
+  const { innerWidth } = useWindowSize();
   return (
     <div className={"grid gap-y-2 w-full text-nowrap"}>
       <Box>
@@ -64,7 +63,7 @@ const data = {
       one: "Country",
       two: (
         <span className="flex gap-2">
-          <CNIcon size={innerWidth > 768 ? 16 : 14} />
+          <CNIcon className="w-[21px] md:w-[25px]" />
           China
         </span>
       ),
