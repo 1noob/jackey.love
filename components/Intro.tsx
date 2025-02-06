@@ -63,7 +63,7 @@ const data = {
       one: "Country",
       two: (
         <span className="flex gap-2">
-          <CNIcon className="w-[20px] md:w-[25px]" />
+          <CNIcon className="w-[21px] md:w-[25px]" />
           China
         </span>
       ),
