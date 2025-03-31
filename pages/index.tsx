@@ -115,7 +115,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       <Divider className={"my-4 md:h-0.5"} />
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 px-2 text-nowrap">
                         {Awards.map((item, index) => (
-                          <li key={index}>{item}</li>
+                          <p key={index}>- {item}</p>
                         ))}
                       </div>
                     </Box>
