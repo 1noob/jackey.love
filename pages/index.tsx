@@ -79,14 +79,14 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             >
               <div
                 className={cn(
-                  "md:bg-content mx-auto max-w-md md:max-w-3xl min-w-[324px] md:min-h-fit md:p-2 flex flex-col md:backdrop-blur-2xl rounded-[16px] md:gap-y-2 safe-area"
+                  "md:bg-content mx-auto max-w-md md:max-w-3xl min-w-[324px] md:min-h-full md:p-2 flex flex-col md:backdrop-blur-2xl rounded-[16px] md:gap-y-2 safe-area"
                 )}
               >
                 <Typedbar
                   getOpacity={getChildOpacity}
                   parentOpacity={opacity}
                 />
-                <div className="grid gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
+                <div className="flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
                   <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                     <EmblaCarousel
                       components={[

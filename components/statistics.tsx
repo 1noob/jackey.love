@@ -14,7 +14,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
     All: '"All For JackeyLove"',
   };
   return (
-    <Box>
+      <Box>
       <div className="flex justify-between">
         <h1>Stats</h1>
         <h1>"{title}"</h1>
