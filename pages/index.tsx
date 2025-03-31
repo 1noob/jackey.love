@@ -21,7 +21,7 @@ import X from "@/components/tweet/X";
 import AppleMusic from "@/components/AppleMusic";
 import TagCloud3d from "@/components/TagCloud3d";
 import MatchSchedule from "@/components/match-schedule";
-import { jetbrainsMono } from "@/types/fonts";
+import { ChillReunion, jetbrainsMono } from "@/types/fonts";
 import useSWR from "swr";
 import { cn } from "@/lib/utils";
 import Douyin from "@/components/Douyin";
@@ -55,7 +55,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         classNames="loading"
         unmountOnExit
       >
-        <main className={`${jetbrainsMono.variable} font-jet`}>
+        <main className={`${ChillReunion.variable} font-chill`}>
           <div className="bg-page md:bg-transparent absolute w-full h-dvh z-10 md:place-content-center grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
             <CSSTransition
               in={opacity}
@@ -140,7 +140,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <section>
                     <Box>
                       <div className="text-center text-gray-600 dark:text-gray-300 text-xs flex justify-between">
-                        <div>SONG (<a className="underline" href="https://x.com/zhousongjie">@zhousongjie</a>)</div>
+                        <a className="underline" href="https://x.com/zhousongjie">SONG</a>
                         <a className="underline" href="https://github.com/1noob/jackey.love">Source</a>
                       </div>
                     </Box>

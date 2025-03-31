@@ -17,7 +17,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-smiley)", ...defaultTheme.fontFamily.sans],
+        sans: ["var(--font-chill)", ...defaultTheme.fontFamily.sans],
         mono: ["var(--font-pixel)", ...defaultTheme.fontFamily.mono],
         jet: ["var(--font-jetbrains)", ...defaultTheme.fontFamily.mono],
         hw: ["var(--font-handwrite)", ...defaultTheme.fontFamily.sans],
