@@ -17,10 +17,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-chill)", ...defaultTheme.fontFamily.sans],
-        mono: ["var(--font-pixel)", ...defaultTheme.fontFamily.mono],
-        jet: ["var(--font-jetbrains)", ...defaultTheme.fontFamily.mono],
-        hw: ["var(--font-handwrite)", ...defaultTheme.fontFamily.sans],
+        chill: ["var(--font-chill)"],
+        mono: ["var(--font-pixel)"],
+        jet: ["var(--font-jetbrains)"],
+        hw: ["var(--font-handwrite)"],
       },
       backgroundColor: {
         page: "rgba(var(--page))",
