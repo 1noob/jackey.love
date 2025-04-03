@@ -39,7 +39,7 @@ const Evaluation: React.FC<Props> = ({ className }) => {
                   </div>
                 </div>
                 <div className="flex-2">
-                  <div className={"indent-[-7px] md:indent-[-8px]"}>
+                  <div className={"indent-[-13px] md:indent-[-14px]"}>
                     “{item.text}”
                   </div>
                   <div className={"mt-4 indent-[0.2rem]"}>
