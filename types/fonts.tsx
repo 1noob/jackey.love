@@ -1,8 +1,10 @@
-import { JetBrains_Mono, Ma_Shan_Zheng, Noto_Sans_SC  } from "next/font/google";
+import { JetBrains_Mono, Ma_Shan_Zheng, Noto_Sans_SC } from "next/font/google";
 import localFont from "next/font/local";
 
-const ChillReunion = localFont({ src: 'ChillReunion_Round.woff2', variable:'--font-chill' })
-const Smiley = localFont({ src: 'SmileySans-Oblique.otf.woff2', variable:'--font-smiley' })
+const ChillReunion = localFont({ src: [{ path: '../public/fonts/ChillReunion_Round.woff2' }], variable: '--font-chill' })
+const Smiley = localFont({ src: [{ path: '../public/fonts/SmileySans-Oblique.otf.woff2' }], variable: '--font-smiley' })
+const Pixel = localFont({ src: [{ path: '../public/fonts/Uranus_Pixel_11Px.woff2' }], variable: '--font-pixel' })
+
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
@@ -16,34 +18,10 @@ const handWrite = Ma_Shan_Zheng({
 });
 
 const notoSansSC = Noto_Sans_SC({
-  subsets: ['cyrillic'], 
+  subsets: ['cyrillic'],
   variable: '--font-zh',
   display: 'swap'
 })
 
-const SmileySans = localFont({
-  src: [
-    {
-      path: "../public/fonts/smiley/SmileySans-Oblique.otf.woff2",
-    },
-    {
-      path: "../public/fonts/smiley/SmileySans-Oblique.ttf.woff2",
-    },
-  ],
-  variable: "--font-smiley",
-});
 
-const PixelMono = localFont({
-  src: [
-    {
-      path: "../public/fonts/pixel/fusion-pixel-12px-monospaced-latin.woff2",
-    },
-    {
-      path: "../public/fonts/pixel/fusion-pixel-12px-monospaced-zh_hans.woff2",
-    },
-  ],
-  variable: "--font-pixel",
-});
-
-
-export { SmileySans, PixelMono, jetbrainsMono, handWrite, ChillReunion, Smiley, notoSansSC };
+export { jetbrainsMono, handWrite, ChillReunion, Smiley, notoSansSC, Pixel };

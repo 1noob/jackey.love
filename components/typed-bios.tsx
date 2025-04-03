@@ -54,13 +54,13 @@ const TypedBios: React.FC<Props> = ({ className }) => {
             <li>哥们的韦鲁斯还需要练吗?</li>
           </ul>
           <p
-            className={`${handWrite.variable} font-handwrite w-full h-full grow content-end text-sm md:text-base text-neutral-900 dark:text-neutral-300`}
+            className={`w-full h-full grow content-end text-sm md:text-base text-neutral-900 dark:text-neutral-300`}
           >
-            “
-            <span ref={el} />”
+            
+            <span ref={el} />
           </p>
-          <p className="text-[10px]/4 w-full h-full grow content-end text-gray-500 md:text-gray-600 md:dark:text-gray-400 ws">
-            JackeyLove ⓒ 2016-{year}
+          <p className="text-[10px]/4 w-full h-full grow content-end text-gray-500 md:text-gray-600 md:dark:text-gray-400">
+            &copy; 2016-{year} JackeyLove. All rights reserved.
           </p>
         </div>
 

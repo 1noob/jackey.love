@@ -21,7 +21,7 @@ import X from "@/components/tweet/X";
 import AppleMusic from "@/components/AppleMusic";
 import TagCloud3d from "@/components/TagCloud3d";
 import MatchSchedule from "@/components/match-schedule";
-import { ChillReunion } from "@/types/fonts";
+import { ChillReunion, Pixel } from "@/types/fonts";
 import useSWR from "swr";
 import { cn } from "@/lib/utils";
 
@@ -54,7 +54,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         classNames="loading"
         unmountOnExit
       >
-        <main className={`${ChillReunion.variable} font-chill`}>
+        <main className={`${Pixel.variable} font-pixel`}>
           <div className="bg-page md:bg-transparent absolute w-full h-dvh z-10 md:place-content-center grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
             <CSSTransition
               in={opacity}
