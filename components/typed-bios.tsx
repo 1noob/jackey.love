@@ -54,7 +54,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
             <li>哥们的韦鲁斯还需要练吗?</li>
           </ul>
           <p
-            className={`w-full h-full grow content-end text-sm md:text-base text-neutral-900 dark:text-neutral-300`}
+            className={`font-handwrite w-full h-full grow content-end text-sm md:text-base text-neutral-900 dark:text-neutral-300`}
           >
             “
             <span ref={el} />”
