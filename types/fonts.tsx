@@ -1,8 +1,8 @@
-import { JetBrains_Mono, Ma_Shan_Zheng } from "next/font/google";
+import { JetBrains_Mono, Ma_Shan_Zheng, Noto_Sans_SC  } from "next/font/google";
 import localFont from "next/font/local";
 
-const ChillReunion = localFont({ src: './ChillReunion_Round.woff2', variable:'--font-chill' })
-const Smiley = localFont({ src: './SmileySans-Oblique.otf.woff2', variable:'--font-smiley' })
+const ChillReunion = localFont({ src: 'ChillReunion_Round.woff2', variable:'--font-chill' })
+const Smiley = localFont({ src: 'SmileySans-Oblique.otf.woff2', variable:'--font-smiley' })
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
@@ -14,6 +14,12 @@ const handWrite = Ma_Shan_Zheng({
   variable: "--font-handwrite",
   subsets: ["latin"],
 });
+
+const notoSansSC = Noto_Sans_SC({
+  subsets: ['cyrillic'], 
+  variable: '--font-zh',
+  display: 'swap'
+})
 
 const SmileySans = localFont({
   src: [
@@ -40,4 +46,4 @@ const PixelMono = localFont({
 });
 
 
-export { SmileySans, PixelMono, jetbrainsMono, handWrite, ChillReunion, Smiley };
+export { SmileySans, PixelMono, jetbrainsMono, handWrite, ChillReunion, Smiley, notoSansSC };

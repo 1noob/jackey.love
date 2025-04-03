@@ -1,4 +1,5 @@
 module.exports = {
+  optimizeFonts: true,
   images: {
     formats: ['image/avif', 'image/webp'],
     domains: ["res.cloudinary.com"],
