@@ -89,7 +89,7 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
       <h1>Schedule</h1>
       <Divider className={"my-4 md:h-0.5"} />
       <div className="grid gap-2">
-        {data.map((item, index) => {
+        {data?.map((item, index) => {
           return (
             <div
               key={index}
