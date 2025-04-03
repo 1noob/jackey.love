@@ -2,6 +2,7 @@ import { JetBrains_Mono, Ma_Shan_Zheng } from "next/font/google";
 import localFont from "next/font/local";
 
 const ChillReunion = localFont({ src: './ChillReunion_Round.woff2', variable:'--font-chill' })
+const Smiley = localFont({ src: './SmileySans-Oblique.otf.woff2', variable:'--font-smiley' })
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
@@ -39,4 +40,4 @@ const PixelMono = localFont({
 });
 
 
-export { SmileySans, PixelMono, jetbrainsMono, handWrite, ChillReunion };
+export { SmileySans, PixelMono, jetbrainsMono, handWrite, ChillReunion, Smiley };

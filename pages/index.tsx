@@ -24,7 +24,6 @@ import MatchSchedule from "@/components/match-schedule";
 import { ChillReunion, jetbrainsMono } from "@/types/fonts";
 import useSWR from "swr";
 import { cn } from "@/lib/utils";
-import Douyin from "@/components/Douyin";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
@@ -37,7 +36,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
     return val;
   };
 
-  const { data, isLoading } = useSWR(
+  const { data, isLoading, error } = useSWR(
     "https://stats.jackey.love/JackeyLove",
     fetcher
   );
@@ -50,7 +49,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         data-website-id="61824479-8621-45cf-981c-867d2ac2066d"
       />
       <CSSTransition
-        in={!isLoading}
+        in={!isLoading && !error}
         timeout={500}
         classNames="loading"
         unmountOnExit
@@ -111,22 +110,23 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   </section>
                   <section>
                     <Box>
-                      <h1>Awards</h1>
-                      <Divider className={"my-4 md:h-0.5"} />
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 px-2 text-nowrap">
-                        {Awards.map((item, index) => (
-                          <p key={index}>- {item}</p>
-                        ))}
-                      </div>
-                    </Box>
-                  </section>
-                  <section>
-                    <Box>
                       <h1>Evaluations</h1>
                       <Divider className={"my-4 md:h-0.5"} />
                       <Evaluation />
                     </Box>
                   </section>
+                  <section>
+                    <Box>
+                      <h1>Awards</h1>
+                      <Divider className={"my-4 md:h-0.5"} />
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 px-2 text-nowrap">
+                        {Awards.map((item, index) => (
+                          <p key={index}>&bull; {item}</p>
+                        ))}
+                      </div>
+                    </Box>
+                  </section>
+                  
                   <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                     <MatchSchedule data={data?.[3]} />
                     <EmblaCarousel
@@ -153,7 +153,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         </main>
       </CSSTransition>
       <CSSTransition
-        in={isLoading}
+        in={isLoading || error}
         timeout={800}
         classNames="loading"
         unmountOnExit
@@ -225,4 +225,6 @@ const Awards = [
   "2023 LPL夏季赛三阵",
   "2024 LPL春季赛三阵",
   "2024 LPL夏季赛二阵",
+  "2025 LPL第一赛段冠军",
+  "2025 LPL第一赛段FMVP",
 ];

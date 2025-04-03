@@ -18,9 +18,10 @@ module.exports = {
     extend: {
       fontFamily: {
         chill: ["var(--font-chill)"],
-        mono: ["var(--font-pixel)"],
-        jet: ["var(--font-jetbrains)"],
-        hw: ["var(--font-handwrite)"],
+        smiley: ["var(--font-smiley)"],
+        pixel: ["var(--font-pixel)"],
+        jetbrains: ["var(--font-jetbrains)"],
+        handwrite: ["var(--font-handwrite)"],
       },
       backgroundColor: {
         page: "rgba(var(--page))",
