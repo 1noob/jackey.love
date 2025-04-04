@@ -126,7 +126,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       </div>
                     </Box>
                   </section>
-
                   <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                     <MatchSchedule data={data?.[3]} />
                     <EmblaCarousel

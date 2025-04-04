@@ -70,24 +70,24 @@ const data = {
     },
     {
       one: "Birthday",
-      two: "Nov,18,2000",
+      two: "Nov, 18, 2000",
     },
   ],
   career: [
     {
-      time: "Jun,2016 - Apr,2017",
+      time: "Jun, 2016 - Apr, 2017",
       team: "Invictus Gaming",
     },
     {
-      time: "Apr,2017 - May,2017",
+      time: "Apr, 2017 - May, 2017",
       team: "Young Glory",
     },
     {
-      time: "May,2017 - Nov,2019",
+      time: "May, 2017 - Nov, 2019",
       team: "Invictus Gaming",
     },
     {
-      time: "Apr,2020 - Present",
+      time: "Apr, 2020 - Present",
       team: "TOP ESPORTS",
     },
   ],
