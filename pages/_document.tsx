@@ -20,7 +20,7 @@ class MyDocument extends Document {
           />
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="twitter:domain" content="jackey.love" />
-          <meta property="twitter:url" content="https://www.jackey.love" />
+          <meta property="twitter:url" content="https://jackey.love" />
           <meta name="twitter:title" content="JackeyLove" />
           <meta
             name="twitter:description"
