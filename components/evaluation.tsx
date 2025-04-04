@@ -43,7 +43,7 @@ const Evaluation: React.FC<Props> = ({ className }) => {
                     “{item.text}”
                   </div>
                   <div className={"mt-4 indent-[0.2rem]"}>
-                    &mdash; {item.name}. {item.title}, {item.company}. {item.time}
+                    &mdash; {item.name}.&nbsp;{item.title},&nbsp;{item.company}.&nbsp;{item.time}
                   </div>
                 </div>
               </motion.div>
