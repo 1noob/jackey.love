@@ -26,7 +26,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
             胜场 [{data[0]["wins"]}]
           </div>
           <div className="bg-blue-50 dark:bg-neutral-900 place-content-center p-2 rounded-md grow text-center">
-            <span className="font-black">KDA</span> [{data[0]["kills"]}/
+            <span>KDA</span> [{data[0]["kills"]}/
             {data[0]["deaths"]}/{data[0]["assists"]}]
           </div>
           <div className="bg-blue-50 dark:bg-neutral-900 place-content-center p-2 rounded-md text-center">
@@ -38,7 +38,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
         >
           <div className="grid grid-cols-6 text-xs">
             <p className="col-span-2">英雄</p>
-            <p className="col-span-2 font-black">KDA</p>
+            <p className="col-span-2">KDA</p>
             <p>场次</p>
             <p>胜率</p>
           </div>
