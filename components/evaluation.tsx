@@ -2,7 +2,6 @@ import React from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Badge, Button, Image } from "@nextui-org/react";
 import { cn } from "@/lib/utils";
-import { time } from "console";
 
 interface Props {
   className?: string;

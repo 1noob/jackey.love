@@ -24,7 +24,7 @@ body {
 }
 
 main {
-  @apply antialiased text-[10px] sm:text-xs md:text-sm select-none font-bold;
+  @apply antialiased text-[10px] sm:text-xs md:text-sm select-none;
 }
 
 .bg-box {
