@@ -45,6 +45,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
         <div className="grid grid-cols-1">
           <ul id="bios" className="hidden">
             <li>跟自己的热爱。</li>
+            <li>我们会创造新的历史。</li>
             <li>打败我，你就是LPL第一AD。</li>
             <li>17岁的我马上就要拿到LPL冠军了。</li>
             <li>好好调整，哥几个等你回来。</li>
