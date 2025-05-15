@@ -3,7 +3,7 @@ import React from "react";
 import { IconSvgProps } from "@/types";
 
 const XIcon: React.FC<IconSvgProps> = ({
-  size = 14,
+  size = 12,
   width,
   height,
   ...props
