@@ -79,7 +79,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   href={"https://m.weibo.cn/u/5966770936"}
                   target="_blank"
                   aria-label="Weibo"
-                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
+                  className="grid content-center border shadow-sm border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <SinaIcon />
                 </Link>
@@ -87,7 +87,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   href={"https://x.com/TESJKL1118"}
                   target="_blank"
                   aria-label="Twitter"
-                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
+                  className="grid content-center border shadow-sm border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <XIcon />
                 </Link>
@@ -95,7 +95,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   href={"https://v.douyin.com/iYdXGgMa/"}
                   target="_blank"
                   aria-label="Tiktok"
-                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
+                  className="grid content-center border shadow-sm border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <TiktokIcon />
                 </Link>
@@ -105,7 +105,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   href={"https://m.weibo.cn/u/5966770936"}
                   target="_blank"
                   aria-label="Weibo"
-                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
+                  className="grid content-center border shadow-sm border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <SinaIcon />
                 </Link>
@@ -113,7 +113,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   href={"https://x.com/TESJKL1118"}
                   target="_blank"
                   aria-label="Twitter"
-                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
+                  className="grid content-center border shadow-sm border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <XIcon />
                 </Link>
@@ -121,7 +121,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   href={"https://v.douyin.com/iYdXGgMa/"}
                   target="_blank"
                   aria-label="Tiktok"
-                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
+                  className="grid content-center border shadow-sm border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <TiktokIcon />
                 </Link>
@@ -135,7 +135,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   href={"https://huya.com/111800"}
                   target="_blank"
                   aria-label="Huya"
-                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
+                  className="grid content-center border shadow-sm border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <HuyaIcon />
                 </Link>
@@ -145,7 +145,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   }
                   target="_blank"
                   aria-label="Umami"
-                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
+                  className="grid content-center border shadow-sm border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <UmamiIcon />
                 </Link>
@@ -155,7 +155,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   }
                   target="_blank"
                   aria-label="Cloudinary"
-                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
+                  className="grid content-center border shadow-sm border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <CloudinaryIcon />
                 </Link>
@@ -165,7 +165,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   href={"https://huya.com/111800"}
                   target="_blank"
                   aria-label="Huya"
-                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
+                  className="grid content-center border shadow-sm border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <HuyaIcon />
                 </Link>
@@ -175,7 +175,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   }
                   target="_blank"
                   aria-label="Umami"
-                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
+                  className="grid content-center border shadow-sm border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <UmamiIcon />
                 </Link>
@@ -185,7 +185,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   }
                   target="_blank"
                   aria-label="Cloudinary"
-                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
+                  className="grid content-center border shadow-sm border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <CloudinaryIcon />
                 </Link>
