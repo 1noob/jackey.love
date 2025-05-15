@@ -89,3 +89,21 @@ h1 {
   --blur: 255 255 255 / 0.4;
   --card: 255 255 255 / 1;
 }
+
+.shine{
+  color: hsla(0, 0%, 100%, .65);
+  background-image: -webkit-linear-gradient(left, #cddc39, #ff9800 25%, #cddc39 50%, #ff9800 75%, #cddc39);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 100%;
+  animation: maskedAnimation 12s infinite linear;
+}
+
+@keyframes maskedAnimation {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
