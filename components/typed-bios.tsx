@@ -66,7 +66,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
         </div>
 
         <ScrollShadow
-          className="max-w-[65px] md:max-w-[80px] content-center rounded-lg grayscale-[33%] shadow-inner border dark:border-transparent"
+          className="flex flex-col gap-1 max-w-[50px] md:max-w-[60px] content-center rounded-sm border dark:border-transparent"
           offset={-2}
           size={systemTheme === "dark" ? 6 : 0}
           orientation="horizontal"
@@ -74,12 +74,12 @@ const TypedBios: React.FC<Props> = ({ className }) => {
         >
           <div className={"animate-[scy_30s_linear_infinite] w-max"}>
             <div className="w-max flex">
-              <div className="w-max flex gap-2 pr-2">
+              <div className="w-max flex gap-1 pr-1">
                 <Link
                   href={"https://m.weibo.cn/u/5966770936"}
                   target="_blank"
                   aria-label="Weibo"
-                  className="grid content-center"
+                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <SinaIcon />
                 </Link>
@@ -87,7 +87,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   href={"https://x.com/TESJKL1118"}
                   target="_blank"
                   aria-label="Twitter"
-                  className="grid content-center"
+                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <XIcon />
                 </Link>
@@ -95,17 +95,17 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   href={"https://v.douyin.com/iYdXGgMa/"}
                   target="_blank"
                   aria-label="Tiktok"
-                  className="grid content-center"
+                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <TiktokIcon />
                 </Link>
               </div>
-              <div className="w-max flex gap-2 pr-2">
-                <Link
+              <div className="w-max flex gap-1 pr-1">
+              <Link
                   href={"https://m.weibo.cn/u/5966770936"}
                   target="_blank"
                   aria-label="Weibo"
-                  className="grid content-center"
+                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <SinaIcon />
                 </Link>
@@ -113,7 +113,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   href={"https://x.com/TESJKL1118"}
                   target="_blank"
                   aria-label="Twitter"
-                  className="grid content-center"
+                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <XIcon />
                 </Link>
@@ -121,21 +121,21 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   href={"https://v.douyin.com/iYdXGgMa/"}
                   target="_blank"
                   aria-label="Tiktok"
-                  className="grid content-center"
+                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <TiktokIcon />
                 </Link>
               </div>
             </div>
           </div>
-          <div className={"animate-[scy_30s_linear_infinite] w-max"}>
+          <div className={"animate-[scy_30s_linear_infinite] w-max -ml-4"}>
             <div className="w-max flex">
-              <div className="w-max flex gap-2 pl-2">
+              <div className="w-max flex gap-1 pl-1">
                 <Link
                   href={"https://huya.com/111800"}
                   target="_blank"
                   aria-label="Huya"
-                  className="grid content-center"
+                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <HuyaIcon />
                 </Link>
@@ -145,7 +145,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   }
                   target="_blank"
                   aria-label="Umami"
-                  className="grid content-center"
+                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <UmamiIcon />
                 </Link>
@@ -155,17 +155,17 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   }
                   target="_blank"
                   aria-label="Cloudinary"
-                  className="grid content-center"
+                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <CloudinaryIcon />
                 </Link>
               </div>
-              <div className="w-max flex gap-2 pl-2">
+              <div className="w-max flex gap-1 pl-1">
                 <Link
                   href={"https://huya.com/111800"}
                   target="_blank"
                   aria-label="Huya"
-                  className="grid content-center"
+                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <HuyaIcon />
                 </Link>
@@ -175,7 +175,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   }
                   target="_blank"
                   aria-label="Umami"
-                  className="grid content-center"
+                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <UmamiIcon />
                 </Link>
@@ -185,7 +185,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
                   }
                   target="_blank"
                   aria-label="Cloudinary"
-                  className="grid content-center"
+                  className="grid content-center border border-gray-400 rounded-md p-px w-5 h-5 justify-center"
                 >
                   <CloudinaryIcon />
                 </Link>

@@ -21,7 +21,7 @@ import X from "@/components/tweet/X";
 import AppleMusic from "@/components/AppleMusic";
 import TagCloud3d from "@/components/TagCloud3d";
 import MatchSchedule from "@/components/match-schedule";
-import { ChillReunion, Pixel } from "@/types/fonts";
+import { Pixel } from "@/types/fonts";
 import useSWR from "swr";
 import { cn } from "@/lib/utils";
 

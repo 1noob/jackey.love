@@ -3,7 +3,7 @@ import React from "react";
 import { IconSvgProps } from "@/types";
 
 const XIcon: React.FC<IconSvgProps> = ({
-  size = 16,
+  size = 14,
   width,
   height,
   ...props
@@ -71,7 +71,7 @@ const MailIcon: React.FC<IconSvgProps> = ({
 };
 
 const TwitterIcon: React.FC<IconSvgProps> = ({
-  size = 18,
+  size = 15,
   width,
   height,
   ...props
@@ -92,7 +92,7 @@ const TwitterIcon: React.FC<IconSvgProps> = ({
 };
 
 const HuyaIcon: React.FC<IconSvgProps> = ({
-  size = 18,
+  size = 14,
   width,
   height,
   ...props
@@ -1950,7 +1950,7 @@ const GithubIcon: React.FC<IconSvgProps> = ({
 };
 
 const TiktokIcon: React.FC<IconSvgProps> = ({
-  size = 17,
+  size = 14,
   width,
   height,
   ...props
@@ -1998,7 +1998,7 @@ const TiktokIcon: React.FC<IconSvgProps> = ({
 };
 
 const SinaIcon: React.FC<IconSvgProps> = ({
-  size = 21,
+  size = 15,
   width,
   height,
   ...props
@@ -2032,7 +2032,7 @@ const SinaIcon: React.FC<IconSvgProps> = ({
 };
 
 const UmamiIcon: React.FC<IconSvgProps> = ({
-  size = 17,
+  size = 15,
   width,
   height,
   ...props
@@ -2064,7 +2064,7 @@ const UmamiIcon: React.FC<IconSvgProps> = ({
 };
 
 const CloudinaryIcon: React.FC<IconSvgProps> = ({
-  size = 20,
+  size = 15,
   width,
   height,
   ...props
