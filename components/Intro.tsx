@@ -87,7 +87,7 @@ const data = {
       team: "Invictus Gaming",
     },
     {
-      time: "Apr, 2020 - Present",
+      time: "Apr, 2020 - \"Forever\"",
       team: "TOP ESPORTS",
     },
   ],
