@@ -95,12 +95,12 @@ h1 {
   animation: maskedAnimation 12s infinite linear;
 }
 
+/* .dot-background {
+  background: rgb(235, 235, 235) fixed 0 0 /10px 10px radial-gradient(#cbcbcb 1px, transparent 0)
+} */
+
+
 .dot-background {
-  background: rgb(240, 240, 240) fixed 0 0 /10px 10px radial-gradient(#aaaaaa 1px, transparent 0)
-}
-
-
-.dark .dot-background {
   background: rgb(20, 20, 20) fixed 0 0 /10px 10px radial-gradient(#4c4c4c 1px, transparent 0)
 }
 

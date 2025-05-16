@@ -26,7 +26,7 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
               shadow="none"
               radius="none"
               classNames={{
-                wrapper: "rounded-sm border-8 border-white dark:border-black",
+                wrapper: "rounded-sm border-8 border-black",
               }}
               src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30,w_1000/${public_id}.${format}`}
               width={180}
@@ -42,7 +42,7 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
               shadow="none"
               radius="none"
               classNames={{
-                wrapper: "rounded-sm border-8 border-white dark:border-black",
+                wrapper: "rounded-sm border-8 border-black",
               }}
               src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/ar_1:1,c_fill,g_auto,q_30,w_1000/${public_id}.${format}`}
               width={180}
