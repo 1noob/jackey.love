@@ -16,7 +16,7 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
   const [data, setData] = useState(shuffle(images).slice(0, image_len))
 
   return (
-    <div className="hidden z-0 md:grid justify-center content-center rotate-[75deg]">
+    <div className="hidden z-0 md:grid justify-center content-center rotate-[75deg] origin-center">
       <div className="flex gap-5 animate-[scy_100s_linear_infinite] transform-gpu w-max h-max grayscale-[75%] dot-background">
         <div className="float-left grid grid-rows-16 grid-flow-col gap-5">
           {data.map(({ public_id, format }) => (
