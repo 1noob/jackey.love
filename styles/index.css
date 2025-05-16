@@ -88,7 +88,7 @@ h1 {
 
 .shine{
   color: hsla(0, 0%, 100%, .65);
-  background-image: -webkit-linear-gradient(left, #cddc39, #ff9800 25%, #cddc39 50%, #ff9800 75%, #cddc39);
+  background-image: -webkit-linear-gradient(left, #002fa7, #fc8eac  25%, #002fa7 50%, #fc8eac 75%, #002fa7);
   -webkit-text-fill-color: transparent;
   background-clip: text;
   background-size: 200% 100%;
