@@ -55,14 +55,14 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         unmountOnExit
       >
         <main className={`${Pixel.variable} font-pixel`}>
-          <div className="bg-page md:bg-transparent absolute w-full h-dvh z-10 md:place-content-center grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
+          <div className="bg-page md:bg-transparent absolute left-0 w-full h-dvh z-10 md:place-content-center grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
             <CSSTransition
               in={opacity}
               timeout={500}
               classNames="loading"
               unmountOnExit
             >
-              <button className="w-full h-svh fixed top-0 cursor-dot">
+              <button className="w-full h-svh fixed top-0 left-0 cursor-dot">
                 <JackeyLoveIcon
                   onClick={() => setOpacity(!opacity)}
                   className="brightness-125 dark:brightness-150 left-[30%] md:left-[35%] lg:left-[42%] xl:left-[46%] w-[40%] md:w-[30%] lg:w-[16%] xl:w-[8%] m-auto"
@@ -78,14 +78,14 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             >
               <div
                 className={cn(
-                  "md:bg-content mx-auto max-w-md md:max-w-3xl min-w-[324px] md:min-h-full md:p-2 flex flex-col md:backdrop-blur-2xl rounded-[16px] md:gap-y-2 safe-area"
+                  "md:bg-content mx-auto max-w-md md:max-w-3xl min-w-[324px] md:h-[75%] self-center md:p-2 flex flex-col md:backdrop-blur-2xl rounded-[16px] md:gap-y-2 safe-area"
                 )}
               >
                 <Typedbar
                   getOpacity={getChildOpacity}
                   parentOpacity={opacity}
                 />
-                <div className="flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
+                <div className="md:shadow-md flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
                   <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                     <EmblaCarousel
                       components={[
@@ -164,7 +164,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           使用 lvh 会先出现 svh 再延伸为 lvh
         */}
         <div
-          className="bg-blur backdrop-blur-xl fixed top-0 w-full h-lvh z-[999]"
+          className="bg-blur backdrop-blur-xl fixed top-0 left-0 w-full h-lvh z-[999]"
           ref={nodeRef}
         >
           <JackeyLoveIcon

@@ -20,11 +20,11 @@
 }
 
 body {
-  @apply cursor-dot md:overflow-hidden;
+  @apply cursor-dot;
 }
 
 main {
-  @apply antialiased text-[10px] sm:text-xs md:text-sm select-none;
+  @apply antialiased text-[10px] sm:text-xs md:text-sm select-none overflow-hidden h-lvh;
 }
 
 .bg-box {
@@ -66,10 +66,6 @@ main {
 
 .safe-area-bottom {
   margin-bottom: env(safe-area-inset-bottom);
-}
-
-.gallery {
-  @apply hidden my-auto overflow-hidden w-full h-lvh z-0 md:grid content-center;
 }
 
 h1 {
