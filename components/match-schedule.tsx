@@ -123,7 +123,7 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
                   </span>
                 </div>
               </div>
-              <Divider className="border-gray-400 dark:border-gray-700 border-dashed m-0"/>
+              <Divider className="border-dashed m-0"/>
               <div className="grid grid-cols-3 text-[10px]/4 text-gray-500 md:text-gray-600 md:dark:text-gray-400">
                 <span className="text-center">
                   {item["DateTime CST"].slice(5)}
