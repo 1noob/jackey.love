@@ -43,7 +43,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
             <p>胜率</p>
           </div>
           <Divider className="border-dashed m-0"/>
-          <div className="grid divide-y-1 divide-gray-400/50 dark:divide-gray-800/50 divide-dotted">
+          <div className="grid divide-y divide-gray-400/50 dark:divide-gray-800/50 divide-dotted">
             {data[1].slice(0, 11).map((item, index) => {
               return (
                 <div
