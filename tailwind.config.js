@@ -83,28 +83,5 @@ module.exports = {
         },
       },
     },
-  },
-  plugins: [
-    heroui({
-      addCommonColors: true,
-      themes: {
-        light: {
-          colors: {
-            danger: {
-              DEFAULT: "#eb1b2e",
-            },
-            // ... rest of the colors
-          },
-        },
-        dark: {
-          colors: {
-            danger: {
-              DEFAULT: "#eb1b2e",
-            },
-          },
-          // ... rest of the colors
-        },
-      },
-    }),
-  ],
+  }
 };
