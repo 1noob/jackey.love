@@ -26,6 +26,7 @@
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hide-on-scroll": "^1.1.4",
     "react-hooks-global-state": "^2.1.0",
     "react-scripts": "^4.0.0",
     "react-swipeable": "^7.0.1",

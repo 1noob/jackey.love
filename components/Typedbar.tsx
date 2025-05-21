@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Navbar, NavbarContent } from "@heroui/react";
 import { cn } from "@/lib/utils";
-import TypedBios from "./typed-bios";
-import { JackeyLoveIcon } from "./icon";
+import TypedBios from "@/components/typed-bios";
+import { JackeyLoveIcon } from "@/components/icon";
 import { useWindowSize } from "rooks";
 
 interface Props {

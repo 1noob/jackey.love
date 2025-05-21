@@ -96,7 +96,6 @@ const EmblaCarousel: React.FC<Props> = ({ className, components }) => {
   }, [emblaApi, tweenScale]);
 
   const slides = Array.from(Array(components.length).keys());
-  const progressNode = useRef<HTMLDivElement>(null);
 
   return (
     <section className="m-auto w-full h-fit">

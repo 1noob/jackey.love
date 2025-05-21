@@ -57,8 +57,6 @@ const Evaluation: React.FC<Props> = ({ className }) => {
               radius="full"
               className="bg-black/10 dark:bg-white/10 shadow-md py-1 px-3 rounded-full"
               onPress={() => setViewAllRecs(true)}
-              size="md"
-              variant="solid"
             >
               <svg
                 width="18"

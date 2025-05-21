@@ -25,6 +25,7 @@ import MatchSchedule from "@/components/match-schedule";
 import { Pixel } from "@/types/fonts";
 import useSWR from "swr";
 import { cn } from "@/lib/utils";
+import { HideScroll } from "react-hide-on-scroll";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
@@ -85,8 +86,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 <Typedbar
                   getOpacity={getChildOpacity}
                   parentOpacity={opacity}
+                  className="z-10 fixed md:relative"
                 />
-                <div className="md:shadow-md flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
+                <div className="mt-[90px] md:m-0 !z-0 md:shadow-md flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
                   <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                     <EmblaCarousel
                       components={[
