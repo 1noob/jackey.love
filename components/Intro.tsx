@@ -14,7 +14,7 @@ const Intro = () => {
         <Divider />
         <div
           className={
-            "grid px-2 divide-y-1 divide-gray-500/50 dark:divide-gray-600/50 divide-dashed"
+            "grid px-2 divide-y divide-gray-500/50 dark:divide-gray-600/50 divide-dashed"
           }
         >
           {data.info.map((item, index) => {
@@ -32,7 +32,7 @@ const Intro = () => {
         <Divider />
         <div
           className={
-            "grid px-2 divide-y-1 divide-gray-500/50 dark:divide-gray-600/50 divide-dashed"
+            "grid px-2 divide-y divide-gray-500/50 dark:divide-gray-600/50 divide-dashed"
           }
         >
           {data.career.map((item, index) => {
