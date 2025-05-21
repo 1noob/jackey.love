@@ -93,7 +93,7 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
           return (
             <div
               key={index}
-              className="text-center grid bg-blue-50/50 dark:bg-gray-900 rounded-md p-2 text-nowrap gap-2"
+              className="text-center grid bg-blue-50/50 dark:bg-gray-900/50 rounded-md p-2 text-nowrap gap-2"
             >
               <span>{item["StandardName"]}</span>
               <div className="grid grid-cols-3">

@@ -22,19 +22,19 @@ const Stat: React.FC<Props> = ({ title, data }) => {
       <Divider />
       {data && (<div className="grid gap-2 w-full text-nowrap">
         <div className="flex justify-between gap-2 text-[10px]/4 sm:text-[12px]/4 md:text-[12px]/5">
-          <div className="bg-blue-50/50 dark:bg-gray-900 place-content-center p-1.5 rounded-md text-center">
+          <div className="bg-blue-50/50 dark:bg-gray-900/50 place-content-center p-1.5 rounded-md text-center">
             胜场 [{data[0]["wins"]}]
           </div>
-          <div className="bg-blue-50/50 dark:bg-gray-900 place-content-center p-1.5 rounded-md grow text-center">
+          <div className="bg-blue-50/50 dark:bg-gray-900/50 place-content-center p-1.5 rounded-md grow text-center">
             <span>KDA</span> [{data[0]["kills"]}/
             {data[0]["deaths"]}/{data[0]["assists"]}]
           </div>
-          <div className="bg-blue-50/50 dark:bg-gray-900 place-content-center p-1.5 rounded-md text-center">
+          <div className="bg-blue-50/50 dark:bg-gray-900/50 place-content-center p-1.5 rounded-md text-center">
             场次 [{data[0]["total"]}]
           </div>
         </div>
         <div
-          className={"grid gap-2 bg-blue-50/50 dark:bg-gray-900 rounded-md p-2"}
+          className={"grid gap-2 bg-blue-50/50 dark:bg-gray-900/50 rounded-md p-2"}
         >
           <div className="grid grid-cols-6 text-xs">
             <p className="col-span-2">英雄</p>
