@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
 import cloudinary from "@/lib/cloudinary";
 import type { ImageProps } from "@/types";
-import { Divider, Image } from "@nextui-org/react";
+import { Image } from "@heroui/react";
+import Divider from "@/components/divider";
 import React, {
   useRef,
   useState,
@@ -55,7 +56,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         unmountOnExit
       >
         <main className={`${Pixel.variable} font-pixel`}>
-          <div className="bg-page md:bg-transparent absolute left-0 w-full h-dvh z-10 md:place-content-center grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
+          <div className="bg-page md:bg-transparent absolute left-0 w-full h-lvh z-10 md:place-content-center grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
             <CSSTransition
               in={opacity}
               timeout={500}
@@ -111,14 +112,14 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   <section>
                     <Box>
                       <h1>Evaluations</h1>
-                      <Divider className={"my-4 md:h-0.5"} />
+                      <Divider className={"my-4"} />
                       <Evaluation />
                     </Box>
                   </section>
                   <section>
                     <Box>
                       <h1>Awards</h1>
-                      <Divider className={"my-4 md:h-0.5"} />
+                      <Divider className={"my-4"} />
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 px-2 text-nowrap">
                         {Awards.map((item, index) => (
                           <p key={index}>&bull;&nbsp;{item}</p>
@@ -138,7 +139,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   </section>
                   <section>
                     <Box>
-                      <div className="text-center text-gray-600 dark:text-gray-300 text-xs flex justify-between">
+                      <div className="px-1 text-center text-gray-600 dark:text-gray-300 text-xs flex justify-between">
                         <a className="underline" href="mailto:song@jackey.love">SONG</a>
                         <a className="underline" href="https://github.com/1noob/jackey.love">Source</a>
                       </div>

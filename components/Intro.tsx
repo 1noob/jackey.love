@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "./Box";
 import List from "./List";
-import { Divider } from "@nextui-org/react";
+import Divider from "./divider";
 import { CNIcon } from "./icon";
 import { useWindowSize } from "rooks";
 
@@ -11,17 +11,17 @@ const Intro = () => {
     <div className={"grid gap-y-2 w-full text-nowrap"}>
       <Box>
         <h1>JackeyLove</h1>
-        <Divider className={"my-4 md:h-0.5"} />
+        <Divider />
         <div
           className={
-            "grid px-2 divide-y-1 md:divide-y-2 divide-gray-300 dark:divide-gray-800 divide-dashed md:divide-dotted"
+            "grid px-2 divide-y-1 divide-gray-500 dark:divide-gray-600 divide-dashed"
           }
         >
           {data.info.map((item, index) => {
             return (
               <List key={index}>
-                <p className="py-2 md:py-1.5">{item.one}</p>
-                <p className="py-2 md:py-1.5">{item.two}</p>
+                <p className="py-2">{item.one}</p>
+                <p className="py-2">{item.two}</p>
               </List>
             );
           })}
@@ -29,17 +29,17 @@ const Intro = () => {
       </Box>
       <Box>
         <h1> Career </h1>
-        <Divider className={"my-4 md:h-0.5"} />
+        <Divider />
         <div
           className={
-            "grid px-2 divide-y-1 md:divide-y-2 divide-gray-300 dark:divide-gray-800 divide-dashed md:divide-dotted"
+            "grid px-2 divide-y-1 divide-gray-500 dark:divide-gray-600 divide-dashed"
           }
         >
           {data.career.map((item, index) => {
             return (
               <List key={index}>
-                <p className="py-2 md:py-1.5">{item.team}</p>
-                <p className="py-2 md:py-1.5">{item.time}</p>
+                <p className="py-2">{item.team}</p>
+                <p className="py-2">{item.time}</p>
               </List>
             );
           })}

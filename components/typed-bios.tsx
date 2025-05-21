@@ -12,7 +12,7 @@ import {
   HuyaIcon,
 } from "@/components/icon";
 import Link from "next/link";
-import { ScrollShadow } from "@nextui-org/scroll-shadow";
+import { ScrollShadow } from "@heroui/react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import { handWrite } from "@/types/fonts";
@@ -66,9 +66,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
         </div>
 
         <ScrollShadow
-          className="flex flex-col gap-1 max-w-[60px] content-center rounded-sm"
-          offset={-2}
-          size={systemTheme === "dark" ? 6 : 0}
+          className="flex flex-col gap-1 max-w-[60px] content-center rounded-sm overflow-hidden"
           orientation="horizontal"
           hideScrollBar
         >

@@ -1,4 +1,4 @@
-import { Card, CardBody } from "@nextui-org/react";
+import { Card, CardBody } from "@heroui/react";
 import React from "react";
 import { cn } from "@/lib/utils";
 
@@ -14,7 +14,7 @@ const Box: React.FC<BoxProps> = ({ children, className }) => {
       shadow="none"
       radius="none"
       className={cn(
-        "rounded-[12px] !bg-card md:!bg-blur border-dashed border border-gray-400 dark:border-transparent md:border-none",
+        "p-2 rounded-[12px] !bg-card md:!bg-blur border-dashed border border-gray-400 dark:border-transparent md:border-none",
         className
       )}
       classNames={{

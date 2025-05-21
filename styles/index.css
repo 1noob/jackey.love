@@ -24,7 +24,7 @@ body {
 }
 
 main {
-  @apply antialiased text-[10px] sm:text-xs md:text-sm select-none overflow-hidden h-lvh;
+  @apply antialiased text-[10px] sm:text-xs md:text-sm select-none overflow-hidden h-dvh;
 }
 
 .bg-box {
@@ -36,7 +36,7 @@ main {
 }
 
 .loading-enter-active {
-  @apply opacity-100 transition-opacity duration-1000 ease-in-out;
+  @apply opacity-100 transition-opacity duration-500 ease-in-out;
 }
 
 .loading-exit {
@@ -44,7 +44,7 @@ main {
 }
 
 .loading-exit-active {
-  @apply opacity-0 transition-opacity duration-1000 ease-in-out;
+  @apply opacity-0 transition-opacity duration-500 ease-in-out;
 }
 
 .scroll-none {

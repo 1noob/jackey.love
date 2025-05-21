@@ -1,6 +1,6 @@
 import React from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Badge, Button, Image } from "@nextui-org/react";
+import { Badge, Button, Image } from "@heroui/react";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -22,10 +22,11 @@ const Evaluation: React.FC<Props> = ({ className }) => {
               <motion.div
                 key={index}
                 className="flex flex-col md:flex-row"
-                initial={{ opacity: 0, y: 100, scale: 0.9 }}
+                initial={{ opacity: 0, y: 0, scale: 1.2 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 0, scale: 0.9 }}
                 transition={{
-                  duration: shouldReduceMotion ? 0 : 0.2,
+                  duration: 0.3,
                 }}
               >
                 <div className="w-28 flex-shrink-0">
@@ -52,17 +53,12 @@ const Evaluation: React.FC<Props> = ({ className }) => {
       </AnimatePresence>
       {!viewAllRecs && (
         <div className={"mb-2 mx-auto text-white"}>
-          <Badge
-            content={data.length - slice_len}
-            color="danger"
-            variant="solid"
-            showOutline={false}
-          >
             <Button
               radius="full"
-              className="bg-black/10 dark:bg-white/10 shadow-md"
-              onClick={() => setViewAllRecs(true)}
-              size="sm"
+              className="bg-black/10 dark:bg-white/10 shadow-md py-1 px-3 rounded-full"
+              onPress={() => setViewAllRecs(true)}
+              size="md"
+              variant="solid"
             >
               <svg
                 width="18"
@@ -80,16 +76,13 @@ const Evaluation: React.FC<Props> = ({ className }) => {
                 />
               </svg>
             </Button>
-          </Badge>
         </div>
       )}
       {viewAllRecs && (
         <div className={"mb-2 mx-auto text-white"}>
           <Button
-            radius="full"
-            className="bg-black/10 dark:bg-white/10 shadow-md"
-            onClick={() => setViewAllRecs(false)}
-            size="sm"
+            className="bg-black/10 dark:bg-white/10 shadow-md py-1 px-3 rounded-full"
+            onPress={() => setViewAllRecs(false)}
           >
             <svg
               width="18"

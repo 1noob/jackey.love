@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Image } from "@nextui-org/react";
+import { Image } from "@heroui/react";
 import type { ImageProps } from "@/types";
 import shuffle from "lodash.shuffle";
 

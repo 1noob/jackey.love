@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider, Image } from "@nextui-org/react";
+import Divider from "@/components/divider";
 import Box from "./Box";
 import {
   EDG,
@@ -87,17 +87,17 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
   return (
     <Box>
       <h1>Schedule</h1>
-      <Divider className={"my-4 md:h-0.5"} />
+      <Divider />
       <div className="grid gap-2">
         {data?.map((item, index) => {
           return (
             <div
               key={index}
-              className="text-center grid bg-blue-50 dark:bg-gray-900 rounded-md p-2 text-nowrap gap-2"
+              className="text-center grid bg-blue-50/50 dark:bg-gray-900 rounded-md p-2 text-nowrap gap-2"
             >
               <span>{item["StandardName"]}</span>
               <div className="grid grid-cols-3">
-                <div className="grid grid-cols-1 justify-center w-full gap-1.5">
+                <div className="grid grid-cols-1 justify-center w-full gap-1">
                   {/* {Icon["Esports"]} */}
                   {Icon[item["Team1"]] ? Icon[item["Team1"]] : Icon["Esports"]}
                   <span className="uppercase text-xs">
@@ -116,14 +116,14 @@ const MatchSchedule: React.FC<Props> = ({ data }) => {
                   </div>
                   <span>BO{item["BestOf"]}</span>
                 </div>
-                <div className="grid grid-cols-1 justify-center w-full gap-1.5">
+                <div className="grid grid-cols-1 justify-center w-full gap-1">
                   {Icon[item["Team2"]] ? Icon[item["Team2"]] : Icon["Esports"]}
                   <span className="uppercase text-xs">
                     {Team_Name[item["Team2"]]}
                   </span>
                 </div>
               </div>
-              <Divider />
+              <Divider className="border-gray-400 dark:border-gray-700 border-dashed m-0"/>
               <div className="grid grid-cols-3 text-[10px]/4 text-gray-500 md:text-gray-600 md:dark:text-gray-400">
                 <span className="text-center">
                   {item["DateTime CST"].slice(5)}

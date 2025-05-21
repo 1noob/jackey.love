@@ -1,5 +1,5 @@
 const plugin = require("tailwindcss/plugin");
-const { nextui } = require("@nextui-org/react");
+const { heroui } = require("@heroui/react");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -85,7 +85,7 @@ module.exports = {
     },
   },
   plugins: [
-    nextui({
+    heroui({
       addCommonColors: true,
       themes: {
         light: {

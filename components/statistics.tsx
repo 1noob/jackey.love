@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider } from "@nextui-org/react";
+import Divider from "@/components/divider";
 import Box from "./Box";
 
 interface Props {
@@ -19,22 +19,22 @@ const Stat: React.FC<Props> = ({ title, data }) => {
         <h1>Stats</h1>
         <h1>"{title}"</h1>
       </div>
-      <Divider className={"my-4 md:h-0.5"} />
+      <Divider />
       {data && (<div className="grid gap-2 w-full text-nowrap">
         <div className="flex justify-between gap-2 text-[10px]/4 sm:text-[12px]/4 md:text-[12px]/5">
-          <div className="bg-blue-50 dark:bg-neutral-900 place-content-center p-2 rounded-md text-center">
+          <div className="bg-blue-50/50 dark:bg-gray-900 place-content-center p-1.5 rounded-md text-center">
             胜场 [{data[0]["wins"]}]
           </div>
-          <div className="bg-blue-50 dark:bg-neutral-900 place-content-center p-2 rounded-md grow text-center">
+          <div className="bg-blue-50/50 dark:bg-gray-900 place-content-center p-1.5 rounded-md grow text-center">
             <span>KDA</span> [{data[0]["kills"]}/
             {data[0]["deaths"]}/{data[0]["assists"]}]
           </div>
-          <div className="bg-blue-50 dark:bg-neutral-900 place-content-center p-2 rounded-md text-center">
+          <div className="bg-blue-50/50 dark:bg-gray-900 place-content-center p-1.5 rounded-md text-center">
             场次 [{data[0]["total"]}]
           </div>
         </div>
         <div
-          className={"grid gap-2 bg-blue-50 dark:bg-neutral-900 rounded-md p-2"}
+          className={"grid gap-2 bg-blue-50/50 dark:bg-gray-900 rounded-md p-2"}
         >
           <div className="grid grid-cols-6 text-xs">
             <p className="col-span-2">英雄</p>
@@ -42,9 +42,9 @@ const Stat: React.FC<Props> = ({ title, data }) => {
             <p>场次</p>
             <p>胜率</p>
           </div>
-          <Divider className="mt-1" />
-          <div className="grid divide-y-2 divide-gray-300 dark:divide-gray-800 divide-dotted">
-            {data[1].slice(0, 10).map((item, index) => {
+          <Divider className="border-gray-400 dark:border-gray-700 border-dashed m-0"/>
+          <div className="grid divide-y-1 divide-gray-400 dark:divide-gray-800 divide-dotted">
+            {data[1].slice(0, 11).map((item, index) => {
               return (
                 <div
                   key={index}
@@ -60,8 +60,8 @@ const Stat: React.FC<Props> = ({ title, data }) => {
               );
             })}
           </div>
-          <Divider className="mt-[11px]" />
-          <span className="text-[10px]/4 leading-4 text-gray-500 md:text-gray-600 md:dark:text-gray-400 text-center">
+          <Divider className="border-gray-400 dark:border-gray-700 border-dashed m-0" />
+          <span className="text-[10px]/4 text-gray-500 md:text-gray-600 md:dark:text-gray-400 text-center">
             {tips[title]}
           </span>
         </div>

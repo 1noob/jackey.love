@@ -1,4 +1,3 @@
-import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
 interface Props {
