@@ -61,7 +61,7 @@ main {
 }
 
 .safe-area-top {
-  padding-top: env(safe-area-inset-top);
+  margin-top: env(safe-area-inset-top);
 }
 
 .safe-area-bottom {

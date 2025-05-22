@@ -85,12 +85,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 <Typedbar
                   getOpacity={getChildOpacity}
                   parentOpacity={opacity}
-                  className="safe-area-top z-10 fixed md:hidden mx-auto max-w-md"
-                />
-                <Typedbar
-                  getOpacity={getChildOpacity}
-                  parentOpacity={opacity}
-                  className="opacity-0 md:opacity-100"
                 />
                 <div className="md:m-0 !z-0 md:shadow-md flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
                   <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
