@@ -25,7 +25,6 @@ import MatchSchedule from "@/components/match-schedule";
 import { Pixel } from "@/types/fonts";
 import useSWR from "swr";
 import { cn } from "@/lib/utils";
-import { HideScroll } from "react-hide-on-scroll";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
