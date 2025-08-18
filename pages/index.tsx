@@ -79,14 +79,15 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             >
               <div
                 className={cn(
-                  "md:bg-content mx-auto max-w-md md:max-w-3xl min-w-[324px] h-full md:h-[75%] self-center md:p-2 flex flex-col md:backdrop-blur-2xl rounded-[16px] md:gap-y-2 safe-area"
+                  "md:backdrop-blur-xl mx-auto max-w-md md:max-w-3xl min-w-[324px] h-full md:h-[75%] self-center md:p-2 flex flex-col rounded-[16px] md:gap-y-2 safe-area"
                 )}
               >
+
                 <Typedbar
                   getOpacity={getChildOpacity}
                   parentOpacity={opacity}
                 />
-                <div className="md:m-0 !z-0 md:shadow-md flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
+                <div className="md:m-0 !z-[3] md:shadow-md flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
                   <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                     <EmblaCarousel
                       components={[
@@ -146,10 +147,66 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                     </Box>
                   </section>
                 </div>
+
               </div>
             </CSSTransition>
           </div>
           <Gallery images={images} />
+          <svg className="hidden">
+            <filter
+              id="glass-distortion"
+              x="0%"
+              y="0%"
+              width="100%"
+              height="100%"
+              filterUnits="objectBoundingBox"
+            >
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.001 0.005"
+                numOctaves="1"
+                seed="17"
+                result="turbulence"
+              />
+
+              <feComponentTransfer in="turbulence" result="mapped">
+                <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+                <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+                <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+              </feComponentTransfer>
+
+              <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+
+              <feSpecularLighting
+                in="softMap"
+                surfaceScale="5"
+                specularConstant="1"
+                specularExponent="100"
+                lighting-color="white"
+                result="specLight"
+              >
+                <fePointLight x="-200" y="-200" z="300" />
+              </feSpecularLighting>
+
+              <feComposite
+                in="specLight"
+                operator="arithmetic"
+                k1="0"
+                k2="1"
+                k3="1"
+                k4="0"
+                result="litImage"
+              />
+
+              <feDisplacementMap
+                in="SourceGraphic"
+                in2="softMap"
+                scale="200"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              />
+            </filter>
+          </svg>
         </main>
       </CSSTransition>
       <CSSTransition
@@ -204,6 +261,7 @@ export async function getStaticProps() {
   };
 }
 
+
 const Awards = [
   "2016 NEST全国冠军",
   "2017 NEST全国冠军",
@@ -227,4 +285,5 @@ const Awards = [
   "2024 LPL夏季赛二阵",
   "2025 LPL第一赛段冠军",
   "2025 LPL第一赛段FMVP",
+  "2025 LPL第二赛段一阵",
 ];

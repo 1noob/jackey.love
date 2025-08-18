@@ -28,7 +28,7 @@ const Typedbar: React.FC<Props> = ({
     <Navbar
       classNames={{
         base: cn(
-          "border-b dark:border-gray-900 md:border-none std:rounded-b-[12px] md:rounded-[12px] bg-page/10 md:bg-blur backdrop-blur-xl",
+          "z-10 border-b dark:border-gray-900 md:border-none std:rounded-b-[12px] md:rounded-[12px] bg-page/10 md:bg-blur backdrop-blur-xl",
           className
         ),
         wrapper: "p-2 grid grid-rows-2 grid-cols-1 h-full gap-y-2",
