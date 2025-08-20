@@ -25,6 +25,8 @@ import MatchSchedule from "@/components/match-schedule";
 import { Pixel } from "@/types/fonts";
 import useSWR from "swr";
 import { cn } from "@/lib/utils";
+import Navbar from "@/components/Navbar";
+import TypedBios from "@/components/typed-bios";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
@@ -79,15 +81,14 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             >
               <div
                 className={cn(
-                  "md:backdrop-blur-xl mx-auto max-w-md md:max-w-3xl min-w-[324px] h-full md:h-[75%] self-center md:p-2 flex flex-col rounded-[16px] md:gap-y-2 safe-area"
+                  "md:backdrop-blur-xl md:backdrop-brightness-200 mx-auto max-w-md md:max-w-3xl min-w-[324px] h-full md:h-[75%] self-center md:p-2 flex flex-col rounded-[16px] md:gap-y-2 safe-area"
                 )}
               >
-
-                <Typedbar
+                <Navbar
                   getOpacity={getChildOpacity}
                   parentOpacity={opacity}
                 />
-                <div className="md:m-0 !z-[3] md:shadow-md flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
+                <div className="mt-16 mb-14 md:m-0 !z-[3] flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
                   <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                     <EmblaCarousel
                       components={[
@@ -128,7 +129,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       </div>
                     </Box>
                   </section>
-                  <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
+                  <section className="md:m-0 grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                     <MatchSchedule data={data?.[3]} />
                     <EmblaCarousel
                       components={[
@@ -138,75 +139,15 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                       ]}
                     />
                   </section>
-                  <section>
-                    <Box>
-                      <div className="p-1 text-center text-gray-600 dark:text-gray-300 text-xs flex justify-between">
-                        <a className="underline" href="mailto:song@jackey.love">SONG</a>
-                        <a className="underline" href="https://github.com/1noob/jackey.love">Source</a>
-                      </div>
-                    </Box>
-                  </section>
                 </div>
-
+                <div className="p-2 rounded-[12px] md:px-2 w-full flex justify-between mx-auto max-w-[432px] md:max-w-3xl min-w-[324px] z-10 fixed bottom-0 md:relative self-center">
+                  <TypedBios className="rounded-[12px] flex" />
+                  <div className="rounded-[12px] absolute md:hidden inset-0 pointer-events-none z-[-1] bg-white/20 dark:bg-black/20 backdrop-blur-sm backdrop-brightness-200 border border-white/30" />
+                </div>
               </div>
             </CSSTransition>
           </div>
           <Gallery images={images} />
-          <svg className="hidden">
-            <filter
-              id="glass-distortion"
-              x="0%"
-              y="0%"
-              width="100%"
-              height="100%"
-              filterUnits="objectBoundingBox"
-            >
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency="0.001 0.005"
-                numOctaves="1"
-                seed="17"
-                result="turbulence"
-              />
-
-              <feComponentTransfer in="turbulence" result="mapped">
-                <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
-                <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
-                <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
-              </feComponentTransfer>
-
-              <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
-
-              <feSpecularLighting
-                in="softMap"
-                surfaceScale="5"
-                specularConstant="1"
-                specularExponent="100"
-                lighting-color="white"
-                result="specLight"
-              >
-                <fePointLight x="-200" y="-200" z="300" />
-              </feSpecularLighting>
-
-              <feComposite
-                in="specLight"
-                operator="arithmetic"
-                k1="0"
-                k2="1"
-                k3="1"
-                k4="0"
-                result="litImage"
-              />
-
-              <feDisplacementMap
-                in="SourceGraphic"
-                in2="softMap"
-                scale="200"
-                xChannelSelector="R"
-                yChannelSelector="G"
-              />
-            </filter>
-          </svg>
         </main>
       </CSSTransition>
       <CSSTransition

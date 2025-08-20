@@ -2128,7 +2128,6 @@ const JackeyLoveIcon: React.FC<IconSvgProps> = ({
       </defs>
       <g
         transform="matrix(0.10000000149011612, 0, 0, -0.10000000149011612, -38.76008224487304, 704)"
-        fill="#000000"
         stroke="none"
       >
         <path
@@ -2151,7 +2150,11 @@ const CNIcon: React.FC<IconSvgProps> = ({
   ...props
 }) => {
   return (
-    <svg height={size || height} viewBox="0 0 4096 2731" {...props}>
+    <svg 
+      width={size || width}
+      height={size || height} 
+      viewBox="0 0 4096 2731" {...props}
+    >
       <path
         fill="#EE1C25"
         opacity="1.000000"

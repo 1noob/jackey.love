@@ -1,21 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Typed from "typed.js";
-import {
-  TiktokIcon,
-  SinaIcon,
-  XIcon,
-  UmamiIcon,
-  CloudinaryIcon,
-  MailIcon,
-  HuyaIcon,
-} from "@/components/icon";
-import Link from "next/link";
-import { ScrollShadow } from "@heroui/react";
-import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
-import { handWrite } from "@/types/fonts";
 
 interface Props {
   className?: string;
@@ -24,7 +11,6 @@ interface Props {
 const TypedBios: React.FC<Props> = ({ className }) => {
   const el = React.useRef(null);
   const typed = React.useRef(null);
-  const { systemTheme } = useTheme();
   const d = new Date();
   const year = d.getFullYear();
 
@@ -65,132 +51,7 @@ const TypedBios: React.FC<Props> = ({ className }) => {
           </p>
         </div>
 
-        <ScrollShadow
-          className="flex flex-col gap-1 max-w-[60px] content-center rounded-sm overflow-hidden"
-          orientation="horizontal"
-          hideScrollBar
-        >
-          <div className={"animate-[scy_30s_linear_infinite] w-max"}>
-            <div className="w-max flex">
-              <div className="w-max flex gap-1 pr-1">
-                <Link
-                  href={"https://m.weibo.cn/u/5966770936"}
-                  target="_blank"
-                  aria-label="Weibo"
-                  className="grid content-center border shadow-sm border-gray-400 dark:border-gray-600 rounded-md p-px w-5 h-5 justify-center"
-                >
-                  <SinaIcon />
-                </Link>
-                <Link
-                  href={"https://x.com/TESJKL1118"}
-                  target="_blank"
-                  aria-label="Twitter"
-                  className="grid content-center border shadow-sm border-gray-400 dark:border-gray-600 rounded-md p-px w-5 h-5 justify-center"
-                >
-                  <XIcon />
-                </Link>
-                <Link
-                  href={"https://v.douyin.com/iYdXGgMa/"}
-                  target="_blank"
-                  aria-label="Tiktok"
-                  className="grid content-center border shadow-sm border-gray-400 dark:border-gray-600 rounded-md p-px w-5 h-5 justify-center"
-                >
-                  <TiktokIcon />
-                </Link>
-              </div>
-              <div className="w-max flex gap-1 pr-1">
-              <Link
-                  href={"https://m.weibo.cn/u/5966770936"}
-                  target="_blank"
-                  aria-label="Weibo"
-                  className="grid content-center border shadow-sm border-gray-400 dark:border-gray-600 rounded-md p-px w-5 h-5 justify-center"
-                >
-                  <SinaIcon />
-                </Link>
-                <Link
-                  href={"https://x.com/TESJKL1118"}
-                  target="_blank"
-                  aria-label="Twitter"
-                  className="grid content-center border shadow-sm border-gray-400 dark:border-gray-600 rounded-md p-px w-5 h-5 justify-center"
-                >
-                  <XIcon />
-                </Link>
-                <Link
-                  href={"https://v.douyin.com/iYdXGgMa/"}
-                  target="_blank"
-                  aria-label="Tiktok"
-                  className="grid content-center border shadow-sm border-gray-400 dark:border-gray-600 rounded-md p-px w-5 h-5 justify-center"
-                >
-                  <TiktokIcon />
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className={"animate-[scy_30s_linear_infinite] w-max -ml-4"}>
-            <div className="w-max flex">
-              <div className="w-max flex gap-1 pl-1">
-                <Link
-                  href={"https://huya.com/111800"}
-                  target="_blank"
-                  aria-label="Huya"
-                  className="grid content-center border shadow-sm border-gray-400 dark:border-gray-600 rounded-md p-px w-5 h-5 justify-center"
-                >
-                  <HuyaIcon />
-                </Link>
-                <Link
-                  href={
-                    "https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"
-                  }
-                  target="_blank"
-                  aria-label="Umami"
-                  className="grid content-center border shadow-sm border-gray-400 dark:border-gray-600 rounded-md p-px w-5 h-5 justify-center"
-                >
-                  <UmamiIcon />
-                </Link>
-                <Link
-                  href={
-                    "https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d"
-                  }
-                  target="_blank"
-                  aria-label="Cloudinary"
-                  className="grid content-center border shadow-sm border-gray-400 dark:border-gray-600 rounded-md p-px w-5 h-5 justify-center"
-                >
-                  <CloudinaryIcon />
-                </Link>
-              </div>
-              <div className="w-max flex gap-1 pl-1">
-                <Link
-                  href={"https://huya.com/111800"}
-                  target="_blank"
-                  aria-label="Huya"
-                  className="grid content-center border shadow-sm border-gray-400 dark:border-gray-600 rounded-md p-px w-5 h-5 justify-center"
-                >
-                  <HuyaIcon />
-                </Link>
-                <Link
-                  href={
-                    "https://us.umami.is/share/BW3QIQmZDEKkrQSd/jackey.love"
-                  }
-                  target="_blank"
-                  aria-label="Umami"
-                  className="grid content-center border shadow-sm border-gray-400 dark:border-gray-600 rounded-md p-px w-5 h-5 justify-center"
-                >
-                  <UmamiIcon />
-                </Link>
-                <Link
-                  href={
-                    "https://collection.cloudinary.com/jackeylove/47d98a861770aac89b9c6102e46a916d"
-                  }
-                  target="_blank"
-                  aria-label="Cloudinary"
-                  className="grid content-center border shadow-sm border-gray-400 dark:border-gray-600 rounded-md p-px w-5 h-5 justify-center"
-                >
-                  <CloudinaryIcon />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </ScrollShadow>
+        
       </div>
     </div>
   );
