@@ -88,7 +88,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   parentOpacity={opacity}
                   className="safe-area-top"
                 />
-                <div className="mt-16 mb-14 md:m-0 !z-[3] flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
+                <div className="mt-14 mb-12 md:m-0 !z-[3] flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
                   <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                     <EmblaCarousel
                       components={[
@@ -142,7 +142,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 </div>
                 <div className="p-2 rounded-[12px] md:px-2 w-full flex justify-between mx-auto max-w-[432px] md:max-w-3xl min-w-[324px] z-10 fixed bottom-0 safe-area-bottom md:relative self-center">
                   <TypedBios className="rounded-[12px] flex" />
-                  <div className="rounded-[12px] absolute md:hidden inset-0 pointer-events-none z-[-1] bg-white/20 dark:bg-black/20 backdrop-blur-sm backdrop-brightness-50 md:backdrop-brightness-200 border border-white/30" />
+                  <div className="rounded-[12px] absolute md:hidden inset-0 pointer-events-none z-[-1] bg-white/20 dark:bg-black/20 backdrop-blur-sm backdrop-brightness-125 md:backdrop-brightness-200 border border-white/30" />
                 </div>
               </div>
             </CSSTransition>
