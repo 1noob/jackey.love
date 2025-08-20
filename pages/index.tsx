@@ -142,7 +142,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 </div>
                 <div className="p-2 rounded-[12px] md:px-2 w-full flex justify-between mx-auto max-w-[432px] md:max-w-3xl min-w-[324px] z-10 fixed bottom-0 safe-area-bottom md:relative self-center">
                   <TypedBios className="rounded-[12px] flex" />
-                  <div className="rounded-[12px] absolute md:hidden inset-0 pointer-events-none z-[-1] bg-white/20 dark:bg-black/20 backdrop-blur-sm backdrop-brightness-125 md:backdrop-brightness-200 border border-white/30" />
+                  <div className="rounded-[12px] absolute md:hidden inset-0 pointer-events-none z-[-1] bg-white/20 dark:bg-black/20 backdrop-blur-sm backdrop-brightness-100 dark:backdrop-brightness-200 md:backdrop-brightness-200 border border-white/30" />
                 </div>
               </div>
             </CSSTransition>
