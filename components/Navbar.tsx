@@ -32,7 +32,7 @@ const Navbar: React.FC<Props> = ({
 
   return (
     <div className={cn("p-2 md:p-0 w-full flex justify-between mx-auto max-w-md md:max-w-3xl min-w-[324px] z-10 fixed top-0 md:relative self-center", className)}>
-      <div className="absolute md:hidden inset-0 pointer-events-none z-[-1] bg-white/20 dark:bg-black/20 backdrop-blur-sm backdrop-brightness-200 border-b border-white/30 rounded-b-md" />
+      <div className="absolute md:hidden inset-0 pointer-events-none z-[-1] bg-white/20 dark:bg-black/20 backdrop-blur-sm backdrop-brightness-50 md:backdrop-brightness-200 border-b border-white/30 rounded-b-md" />
       <button className="pointer-events-none md:pointer-events-auto" onClick={() => changeOpacity(!opacity)}>
         <JackeyLoveIcon
           size={35}
