@@ -35,7 +35,7 @@ const Navbar: React.FC<Props> = ({
     <div className={cn("w-full flex justify-between max-w-md md:max-w-3xl min-w-[324px] z-10 fixed top-0 md:relative self-center", className)}>
       <div className="m-2 md:m-0 relative flex rounded-full md:rounded-md flex-grow px-2">
         <div className="absolute md:hidden inset-0 pointer-events-none z-[-1] bg-white/20 dark:bg-black/20 backdrop-blur-sm backdrop-brightness-100 dark:backdrop-brightness-200 md:backdrop-brightness-200 border border-white/30 rounded-full md:rounded-md" />
-        <TypedBios className="my-auto"/>
+        <TypedBios className="my-auto px-2"/>
       </div>
       <div className="m-2 md:my-0 relative flex rounded-full md:rounded-md gap-1 md:gap-4">
         <div className="absolute md:hidden inset-0 pointer-events-none z-[-1] bg-white/20 dark:bg-black/20 backdrop-blur-sm backdrop-brightness-100 dark:backdrop-brightness-200 md:backdrop-brightness-200 border border-white/30 rounded-full md:rounded-md" />
@@ -45,7 +45,8 @@ const Navbar: React.FC<Props> = ({
             className="brightness-150"
           />
         </button>
-        <div
+        
+        {/* <div
           className="md:border border-white/40 relative rounded-full m-auto md:rounded-md flex flex-col max-w-[45px] md:max-w-[65px] overflow-hidden"
         >
           <div className={"animate-[scy_30s_linear_infinite] w-max"}>
@@ -168,7 +169,7 @@ const Navbar: React.FC<Props> = ({
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div
