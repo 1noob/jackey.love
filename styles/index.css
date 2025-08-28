@@ -112,3 +112,14 @@ h1 {
     background-position: -200% 0;
   }
 }
+
+:root {
+  --shadow-color-start: rgba(0, 0, 0, 0.9);
+  --shadow-color-end: rgba(0, 0, 0, 0);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --shadow-color-start: rgba(255, 255, 255, 0.15);
+    --shadow-color-end: rgba(255, 255, 255, 0);
+  }
+}

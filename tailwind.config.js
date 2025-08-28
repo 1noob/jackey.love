@@ -81,6 +81,14 @@ module.exports = {
             transform: "translate(-50%, 0px)",
           },
         },
+        scy2: {
+          "0%": {
+            transform: "translate(-50%,0px)",
+          },
+          "100%": {
+            transform: "translate(0%, 0px)",
+          },
+        },
       },
     },
   }
