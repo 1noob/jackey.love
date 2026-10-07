@@ -20,7 +20,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
         <h1>"{title}"</h1>
       </div>
       <Divider />
-      {data && (<div className="grid gap-2 w-full text-nowrap">
+      {data?.[0] && (<div className="grid gap-2 w-full text-nowrap">
         <div className="flex justify-between gap-2 text-[10px]/4 sm:text-[12px]/4 md:text-[12px]/5">
           <div className="bg-blue-50/50 dark:bg-gray-900/50 place-content-center p-1.5 rounded-md text-center">
             胜场 [{data[0]["wins"]}]
@@ -44,7 +44,7 @@ const Stat: React.FC<Props> = ({ title, data }) => {
           </div>
           <Divider className="border-dashed m-0"/>
           <div className="grid divide-y divide-gray-400/50 dark:divide-gray-800/50 divide-dotted">
-            {data[1].slice(0, 11).map((item, index) => {
+            {(data[1] || []).slice(0, 11).map((item, index) => {
               return (
                 <div
                   key={index}

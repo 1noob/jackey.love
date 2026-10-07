@@ -51,7 +51,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         data-website-id="61824479-8621-45cf-981c-867d2ac2066d"
       />
       <CSSTransition
-        in={!isLoading && !error}
+        in={!isLoading || !!error}
         timeout={500}
         classNames="loading"
         unmountOnExit
@@ -147,7 +147,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         </main>
       </CSSTransition>
       <CSSTransition
-        in={isLoading || error}
+        in={isLoading && !error}
         timeout={800}
         classNames="loading"
         unmountOnExit
