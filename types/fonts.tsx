@@ -1,4 +1,3 @@
-import { JetBrains_Mono, Ma_Shan_Zheng, Noto_Sans_SC } from "next/font/google";
 import localFont from "next/font/local";
 
 const ChillReunion = localFont({ src: [{ path: '../public/fonts/ChillReunion_Round.woff2' }], variable: '--font-chill' })
@@ -6,21 +5,29 @@ const Smiley = localFont({ src: [{ path: '../public/fonts/SmileySans-Oblique.otf
 const Pixel = localFont({ src: [{ path: '../public/fonts/Uranus_Pixel_11Px.woff2' }], variable: '--font-pixel' })
 
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains",
-  subsets: ["latin"],
-});
+// Formerly `next/font/google` fonts. They are self-hosted now so that
+// `next build` never reaches out to fonts.googleapis.com / fonts.gstatic.com.
+// Each file below is byte-identical to the one next/font used to download.
 
-const handWrite = Ma_Shan_Zheng({
-  weight: "400",
-  variable: "--font-handwrite",
-  subsets: ["latin"],
-});
+// JetBrains Mono - variable, wght 100..800, latin subset
+const jetbrainsMono = localFont({
+  src: [{ path: '../public/fonts/JetBrainsMono-Variable-latin.woff2', weight: '100 800', style: 'normal' }],
+  variable: '--font-jetbrains',
+  display: 'swap',
+})
 
-const notoSansSC = Noto_Sans_SC({
-  subsets: ['cyrillic'],
+// Ma Shan Zheng - 400, latin subset
+const handWrite = localFont({
+  src: [{ path: '../public/fonts/MaShanZheng-Regular-latin.woff2', weight: '400', style: 'normal' }],
+  variable: '--font-handwrite',
+  display: 'swap',
+})
+
+// Noto Sans SC - variable, wght 100..900, cyrillic subset
+const notoSansSC = localFont({
+  src: [{ path: '../public/fonts/NotoSansSC-Variable-cyrillic.woff2', weight: '100 900', style: 'normal' }],
   variable: '--font-zh',
-  display: 'swap'
+  display: 'swap',
 })
 
 
