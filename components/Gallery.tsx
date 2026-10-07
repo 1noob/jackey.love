@@ -23,8 +23,18 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
 
   return (
     <div className="hidden z-0 md:grid justify-center rotate-[75deg] origin-center">
-      <div className="flex gap-5 animate-[scy_100s_linear_infinite] transform-gpu w-max h-max grayscale-[75%] dot-background">
-        <div className="float-left grid grid-rows-16 grid-flow-col gap-5">
+      {/*
+        Seamless marquee: two identical groups shifted by translate(-50%).
+        The inter-group gap MUST live inside each group's own width (pr-5)
+        rather than as a flex `gap` on this container. With a flex gap, the
+        track is 2W + gap wide, so -50% moves W + gap/2 while a seamless wrap
+        needs W + gap: a constant gap/2 (10px) jump at the end of every cycle.
+        Keeping the spacer inside the group makes -50% land exactly on W.
+        will-change promotes the wall to its own compositor layer so the
+        192-image grid is not repainted while it travels.
+      */}
+      <div className="flex animate-[scy_100s_linear_infinite] transform-gpu w-max h-max grayscale-[75%] dot-background will-change-transform">
+        <div className="grid grid-rows-16 grid-flow-col gap-5 pr-5">
           {data.map(({ public_id, format }) => (
             <Image
               key={`a-${public_id}`}
@@ -42,7 +52,7 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
             />
           ))}
         </div>
-        <div className="grid grid-rows-16 grid-flow-col gap-5">
+        <div className="grid grid-rows-16 grid-flow-col gap-5 pr-5">
           {data.map(({ public_id, format }) => (
             <Image
               key={`b-${public_id}`}
