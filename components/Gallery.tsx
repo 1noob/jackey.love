@@ -22,7 +22,21 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
   const [data] = useState(shuffle(images).slice(0, image_len));
 
   return (
-    <div className="hidden z-0 md:grid justify-center rotate-[75deg] origin-center">
+    <div className="hidden z-0 md:grid w-full h-lvh place-content-center rotate-[75deg] origin-center">
+      {/*
+        The wrapper MUST be explicitly sized to the viewport (w-full h-lvh)
+        instead of being sized by its content. The marquee track is deliberately
+        taller than the viewport (16 rows x ~200.5px = ~3208px), and with the
+        default `align-items: normal` (stretch) that oversized track overflows
+        the grid wrapper equally in BOTH directions - (3208 - 800) / 2 = 1204px
+        upward. Combined with the `scy` keyframe offset, this pushes the top edge
+        of the wall to y~110 and leaves ~200px of bare black at the top of the
+        first frame. Pinning the wrapper to exactly the viewport height removes
+        that centring-induced upward shift, and place-content:center keeps the
+        wall visually centred without letting the wrapper box grow with it.
+        `md:grid` must stay because the grid wrapper is what centres the
+        oversized marquee track.
+      */}
       {/*
         Seamless marquee: two identical groups shifted by translate(-50%).
         The inter-group gap MUST live inside each group's own width (pr-5)
@@ -34,6 +48,12 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
         192-image grid is not repainted while it travels.
       */}
       <div className="flex animate-[scy_100s_linear_infinite] transform-gpu w-max h-max grayscale-[75%] dot-background will-change-transform">
+        {/* Each tile is given an explicit width AND height so the grid has its
+            final geometry before a single image decodes. Without a height the
+            tiles are laid out at the intrinsic aspect ratio, the wall's box
+            grows ~3.8x as decoding proceeds, and the centred wrapper drags the
+            top of the wall far above the viewport - which showed up as an empty
+            black upper half on first paint. */}
         <div className="grid grid-rows-16 grid-flow-col gap-5 pr-5">
           {data.map(({ public_id, format }) => (
             <Image
@@ -46,6 +66,7 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
               }}
               src={srcOf(public_id, format)}
               width={180}
+              height={180}
               alt={"JackeyLove, TES, IG, LOL, LPL"}
               decoding="async"
               loading="eager"
@@ -64,6 +85,7 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
               }}
               src={srcOf(public_id, format)}
               width={180}
+              height={180}
               alt={"JackeyLove, TES, IG, LOL , LPL"}
               decoding="async"
               loading="lazy"
