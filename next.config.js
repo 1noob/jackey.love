@@ -1,8 +1,8 @@
 module.exports = {
-  optimizeFonts: true,
+  // `optimizeFonts` was removed in Next 15 (next/font handles it now).
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ["res.cloudinary.com"],
+    // `domains` was removed in Next 15; remotePatterns is the supported form.
     remotePatterns: [
       {
         protocol: 'https',
