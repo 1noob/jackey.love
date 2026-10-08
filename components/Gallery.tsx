@@ -109,7 +109,16 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
   const data = shuffled.slice(0, preset.imageLen);
 
   return (
-    <div className="z-0 grid w-full h-lvh place-content-center rotate-[75deg] origin-center">
+    <div className="fixed inset-0 z-0 grid place-content-center rotate-[75deg] origin-center">
+      {/*
+        `fixed`, not static. As a normal-flow element the wall occupied 100lvh
+        and scrolled together with the page, so scrolling on a phone dragged the
+        backdrop along with the content. A fixed element's containing block is
+        the viewport, so it stays put while the content scrolls - and because it
+        is out of flow it also stops contributing to the document scroll height.
+        `inset-0` already pins it to the viewport on all four sides, so no
+        explicit width/height is needed here.
+      */}
       {/*
         The wrapper MUST be explicitly sized to the viewport (w-full h-lvh)
         instead of being sized by its content. The marquee track is deliberately
