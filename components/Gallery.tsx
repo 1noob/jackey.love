@@ -117,7 +117,7 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
   const data = shuffled.slice(0, preset.imageLen);
 
   return (
-    <div className="fixed left-0 right-0 top-[env(safe-area-inset-top)] bottom-[env(safe-area-inset-bottom)] z-0 grid place-content-center rotate-[75deg] origin-center">
+    <div className="fixed inset-0 z-0 grid place-content-center rotate-[75deg] origin-center">
       {/*
         `fixed`, not static. As a normal-flow element the wall occupied 100lvh
         and scrolled together with the page, so scrolling on a phone dragged the
@@ -125,12 +125,10 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
         the viewport, so it stays put while the content scrolls - and because it
         is out of flow it also stops contributing to the document scroll height.
 
-        It deliberately stops at the safe-area insets rather than using
-        `inset-0`. With `viewport-fit=cover` the viewport includes the notch and
-        home-indicator bands, so `inset-0` painted the (dark) photo wall into
-        them and they read as black bars. Outside the wall the page colour from
-        <body className="bg-page"> shows through instead. On desktop both insets
-        are 0, so this is identical to `inset-0` there.
+        `inset-0` deliberately covers the full viewport INCLUDING the safe-area
+        bands. With `viewport-fit=cover` the viewport extends under the notch and
+        the home indicator, and the wall is meant to reach into them - the
+        earlier attempt to inset it left bare colour bands top and bottom.
       */}
       {/*
         The wrapper MUST be explicitly pinned to the viewport instead of being

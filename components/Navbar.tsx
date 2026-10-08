@@ -172,9 +172,12 @@ const Navbar: React.FC<Props> = ({
         </div> */}
       </div>
 
-      <div
-        className="fixed md:hidden top-0 left-0 h-20 w-full pointer-events-none bg-gradient-to-b from-white to-transparent dark:from-black/70"
-      />
+      {/*
+        The top gradient that used to sit here (`h-20`, page colour -> transparent)
+        was removed: it painted over the top of the photo wall, and the wall is
+        meant to reach all the way into the safe area. The glass pill above
+        keeps the bar itself legible.
+      */}
       
     </div>
   );
