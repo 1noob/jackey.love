@@ -117,29 +117,33 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
   const data = shuffled.slice(0, preset.imageLen);
 
   return (
-    <div className="fixed inset-0 z-0 grid place-content-center rotate-[75deg] origin-center">
+    <div className="fixed left-0 right-0 top-[env(safe-area-inset-top)] bottom-[env(safe-area-inset-bottom)] z-0 grid place-content-center rotate-[75deg] origin-center">
       {/*
         `fixed`, not static. As a normal-flow element the wall occupied 100lvh
         and scrolled together with the page, so scrolling on a phone dragged the
         backdrop along with the content. A fixed element's containing block is
         the viewport, so it stays put while the content scrolls - and because it
         is out of flow it also stops contributing to the document scroll height.
-        `inset-0` already pins it to the viewport on all four sides, so no
-        explicit width/height is needed here.
+
+        It deliberately stops at the safe-area insets rather than using
+        `inset-0`. With `viewport-fit=cover` the viewport includes the notch and
+        home-indicator bands, so `inset-0` painted the (dark) photo wall into
+        them and they read as black bars. Outside the wall the page colour from
+        <body className="bg-page"> shows through instead. On desktop both insets
+        are 0, so this is identical to `inset-0` there.
       */}
       {/*
-        The wrapper MUST be explicitly sized to the viewport (w-full h-lvh)
-        instead of being sized by its content. The marquee track is deliberately
-        taller than the viewport (16 rows x ~200.5px = ~3208px on desktop), and
-        with the default `align-items: normal` (stretch) that oversized track
-        overflows the grid wrapper equally in BOTH directions -
-        (3208 - 800) / 2 = 1204px upward. Combined with the `scy` keyframe
-        offset, this used to push the top edge of the wall to y~110 and leave
-        ~200px of bare black at the top of the first frame. Pinning the wrapper
-        to exactly the viewport removes that centring-induced upward shift, and
-        place-content:center keeps the wall visually centred without letting the
-        wrapper box grow with it. The wrapper has to stay a grid container for
-        place-content to have any effect on the oversized track.
+        The wrapper MUST be explicitly pinned to the viewport instead of being
+        sized by its content. The marquee track is deliberately taller than the
+        viewport (20 rows x ~166px = ~3700px on mobile, 16 rows x ~196px on
+        desktop), and with the default `align-items: normal` (stretch) that
+        oversized track overflows the grid wrapper equally in BOTH directions.
+        Combined with the keyframe offset this used to push the top edge of the
+        wall below the fold and leave a bare band at the top of the first frame.
+        Pinning the wrapper (fixed + top/bottom) removes that centring-induced
+        shift, and place-content:center keeps the wall visually centred without
+        letting the wrapper box grow with it. The wrapper has to stay a grid
+        container for place-content to have any effect on the oversized track.
       */}
       {/*
         Seamless marquee: N identical groups, and the animation travels exactly
