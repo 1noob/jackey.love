@@ -183,12 +183,12 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           can never reach those bands no matter how far it bleeds. These fade the
           backdrop to black there so the edge reads as intentional.
 
-          The same pair is drawn again inside the loading overlay below, because
-          the overlay (z-999) covers these - and at that moment the content
-          container is not mounted, so nothing can be dimmed there.
+          One full-height gradient covers both edges (see .edge-scrim in
+          styles/index.css), so there is no seam between a top and a bottom
+          field to line up. It sits above the loading overlay (z-999) too, so
+          the load state is finished the same way.
         */}
-        <div className="fixed md:hidden top-0 left-0 h-16 w-full pointer-events-none z-[1000] edge-scrim-top" />
-        <div className="fixed md:hidden bottom-0 left-0 h-28 w-full pointer-events-none z-[1000] edge-scrim-bottom" />
+        <div className="fixed inset-0 w-full h-full pointer-events-none z-[1000] edge-scrim" />
 
         {/*
           The wall is a background layer that needs no API data, so it renders
