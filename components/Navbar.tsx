@@ -173,11 +173,16 @@ const Navbar: React.FC<Props> = ({
       </div>
 
       {/*
-        The top gradient that used to sit here (`h-20`, page colour -> transparent)
-        was removed: it painted over the top of the photo wall, and the wall is
-        meant to reach all the way into the safe area. The glass pill above
-        keeps the bar itself legible.
+        Top scrim. iOS Safari reports env(safe-area-inset-top) as 0 and does not
+        let page content paint into the status-bar strip, so the wall cannot
+        reach it - that strip shows the page colour and reads as a hard black
+        band. This gradient fades the wall into black over the top ~56px so the
+        transition looks intentional instead of broken.
+        z-[5]: above the wall (z-0), below the content container (z-10).
       */}
+      <div
+        className="fixed md:hidden top-0 left-0 h-14 w-full pointer-events-none z-[5] bg-gradient-to-b from-black via-black/70 to-transparent"
+      />
       
     </div>
   );

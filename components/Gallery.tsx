@@ -120,14 +120,19 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
     <div
       className="fixed left-0 w-full z-0 grid place-content-center rotate-[75deg] origin-center"
       style={{
-        // Reach up past the viewport edge by one safe-area inset so the wall
-        // covers the status-bar band, and down past the bottom one for the home
-        // indicator. `top: 0` alone starts at the viewport, which on iOS Safari
-        // sits BELOW the status bar even with viewport-fit=cover - that is the
-        // band that was showing the page colour through.
-        top: "calc(-1 * env(safe-area-inset-top))",
-        height:
-          "calc(100lvh + env(safe-area-inset-top) + env(safe-area-inset-bottom))",
+        // Bleed past BOTH viewport edges by a fixed amount so the wall covers
+        // the status-bar band on iOS.
+        //
+        // This deliberately does NOT use env(safe-area-inset-top): Safari
+        // reports that inset as 0 (it treats the status-bar strip as its own
+        // chrome rather than something the page must avoid), so a
+        // `calc(-1 * env(...))` offset evaluates to zero and does nothing -
+        // which is exactly why the previous attempt changed nothing on device.
+        // A fixed bleed is larger than any status bar (44-59px across models)
+        // and is harmless where there is none: the wall is an oversized
+        // repeating texture, so the extra area is simply clipped.
+        top: "-60px",
+        bottom: "-60px",
       }}
     >
       {/*
