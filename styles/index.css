@@ -33,29 +33,44 @@ html {
   background-color: rgb(0, 0, 0);
 }
 
-/* Edge scrims - solid black at the edge, feathering inwards.
+/* Edge scrims - solid black at the edge, then a smooth falloff inwards.
    Radial rather than linear so the boundary curves instead of cutting straight
-   across the full width. The ellipse is anchored well past the edge and the
-   horizontal radius is large, so at phone widths the first ~40% of the strip is
-   effectively opaque black and the falloff only happens further in. */
+   across the full width.
+
+   Ten stops, not five. With five the linear interpolation between each pair
+   leaves a visible kink where the slopes change, which reads as banded layers
+   stacked on top of each other. This many stops approximates a smooth
+   (roughly gaussian) curve closely enough that the steps are below the
+   threshold where the eye picks them out. The values were derived from
+   exp(-(t^2)/0.28) and then rounded. */
 .edge-scrim-top {
   background: radial-gradient(
-    165% 135% at 50% -20%,
-    rgb(0, 0, 0) 0%,
-    rgb(0, 0, 0) 34%,
-    rgba(0, 0, 0, 0.78) 58%,
-    rgba(0, 0, 0, 0.35) 78%,
+    170% 140% at 50% -22%,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.99) 18%,
+    rgba(0, 0, 0, 0.96) 32%,
+    rgba(0, 0, 0, 0.88) 46%,
+    rgba(0, 0, 0, 0.74) 58%,
+    rgba(0, 0, 0, 0.56) 69%,
+    rgba(0, 0, 0, 0.36) 79%,
+    rgba(0, 0, 0, 0.18) 88%,
+    rgba(0, 0, 0, 0.06) 95%,
     rgba(0, 0, 0, 0) 100%
   );
 }
 
 .edge-scrim-bottom {
   background: radial-gradient(
-    165% 135% at 50% 120%,
-    rgb(0, 0, 0) 0%,
-    rgb(0, 0, 0) 38%,
-    rgba(0, 0, 0, 0.8) 60%,
-    rgba(0, 0, 0, 0.36) 80%,
+    170% 140% at 50% 122%,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.99) 18%,
+    rgba(0, 0, 0, 0.96) 32%,
+    rgba(0, 0, 0, 0.88) 46%,
+    rgba(0, 0, 0, 0.74) 58%,
+    rgba(0, 0, 0, 0.56) 69%,
+    rgba(0, 0, 0, 0.36) 79%,
+    rgba(0, 0, 0, 0.18) 88%,
+    rgba(0, 0, 0, 0.06) 95%,
     rgba(0, 0, 0, 0) 100%
   );
 }
