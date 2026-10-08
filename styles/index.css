@@ -33,29 +33,29 @@ html {
   background-color: rgb(0, 0, 0);
 }
 
-/* Edge scrims.
-   Radial rather than linear on purpose: a linear ramp ends on a straight line
-   across the full width, which reads as a hard edge. An ellipse anchored off
-   the edge curves that boundary, so the black feathers out to the sides and
-   corners instead of cutting across - which is also what gives it the rounded
-   look. The horizontal radius is well over 100% so the curve is gentle at
-   phone widths rather than pinching in at the sides. */
+/* Edge scrims - solid black at the edge, feathering inwards.
+   Radial rather than linear so the boundary curves instead of cutting straight
+   across the full width. The ellipse is anchored well past the edge and the
+   horizontal radius is large, so at phone widths the first ~40% of the strip is
+   effectively opaque black and the falloff only happens further in. */
 .edge-scrim-top {
   background: radial-gradient(
-    150% 115% at 50% -25%,
-    rgba(0, 0, 0, 0.97) 0%,
-    rgba(0, 0, 0, 0.86) 30%,
-    rgba(0, 0, 0, 0.55) 58%,
+    165% 135% at 50% -20%,
+    rgb(0, 0, 0) 0%,
+    rgb(0, 0, 0) 34%,
+    rgba(0, 0, 0, 0.78) 58%,
+    rgba(0, 0, 0, 0.35) 78%,
     rgba(0, 0, 0, 0) 100%
   );
 }
 
 .edge-scrim-bottom {
   background: radial-gradient(
-    150% 115% at 50% 125%,
-    rgba(0, 0, 0, 0.97) 0%,
-    rgba(0, 0, 0, 0.8) 32%,
-    rgba(0, 0, 0, 0.5) 60%,
+    165% 135% at 50% 120%,
+    rgb(0, 0, 0) 0%,
+    rgb(0, 0, 0) 38%,
+    rgba(0, 0, 0, 0.8) 60%,
+    rgba(0, 0, 0, 0.36) 80%,
     rgba(0, 0, 0, 0) 100%
   );
 }

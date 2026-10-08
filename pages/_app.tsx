@@ -15,7 +15,18 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <HeroUIProvider>
-        <NextThemesProvider attribute="class" defaultTheme="system">
+        {/*
+          Locked to dark on purpose. The whole design is black-and-white - the
+          wall is grayscale, the chrome is pure black - so following the system
+          meant a light-mode visitor saw white cards and a white browser bar
+          against a dark backdrop, which is not the intended look.
+        */}
+        <NextThemesProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          forcedTheme="dark"
+        >
           <Component {...pageProps} />
         </NextThemesProvider>
       </HeroUIProvider>
