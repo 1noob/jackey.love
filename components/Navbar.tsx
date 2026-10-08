@@ -183,12 +183,11 @@ const Navbar: React.FC<Props> = ({
         (44-59px), so it stops ABOVE the glass pill - at h-14 it overlapped the
         pill by ~1px and tinted the whole thing, since the pill is translucent.
 
-        z-[1000] deliberately sits ABOVE the loading overlay (z-[999]). At z-5
-        the scrims were hidden during load, so the status bar read as a bright
-        band against the blurred overlay until data arrived.
+        z-[5]: above the wall (z-0), BELOW the content container (z-10), so it
+        only shades the backdrop and never dims the cards.
       */}
       <div
-        className="fixed md:hidden top-0 left-0 h-11 w-full pointer-events-none z-[1000] bg-gradient-to-b from-black/90 via-black/55 to-transparent"
+        className="fixed md:hidden top-0 left-0 h-11 w-full pointer-events-none z-[5] bg-gradient-to-b from-black/90 via-black/55 to-transparent"
       />
 
       {/*
@@ -196,10 +195,11 @@ const Navbar: React.FC<Props> = ({
         BOTTOM, and that strip is browser chrome the page cannot paint into - so
         no amount of bleeding the wall downwards reaches it. Taller than the top
         one because it covers the address bar (~50px) plus the home-indicator
-        area (~34px).
+        area (~34px). Same z-[5] as the top scrim - backdrop only, never the
+        cards.
       */}
       <div
-        className="fixed md:hidden bottom-0 left-0 h-20 w-full pointer-events-none z-[1000] bg-gradient-to-t from-black/90 via-black/50 to-transparent"
+        className="fixed md:hidden bottom-0 left-0 h-20 w-full pointer-events-none z-[5] bg-gradient-to-t from-black/90 via-black/50 to-transparent"
       />
       
     </div>
