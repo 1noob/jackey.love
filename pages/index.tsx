@@ -82,7 +82,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             the wall is visible on phones too. The page colour still comes from
             <body className="bg-page"> in _document.tsx.
           */}
-          <div className="bg-transparent absolute left-0 w-full h-lvh z-10 pt-[28px] px-3 md:px-0 md:pt-0 md:place-content-center grid shadow-[inset_0_0_180px_10px_rgba(0,0,0,0.75)] md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
+          <div className="bg-transparent absolute left-0 w-full h-lvh z-10 pt-[28px] px-3 md:px-0 md:pt-0 md:place-content-center grid !shadow-[inset_0_0_180px_10px_rgba(0,0,0,0.75)] md:!shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
             <CSSTransition
               in={opacity}
               timeout={500}
