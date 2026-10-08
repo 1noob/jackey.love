@@ -82,7 +82,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             the wall is visible on phones too. The page colour still comes from
             <body className="bg-page"> in _document.tsx.
           */}
-          <div className="bg-transparent absolute left-0 w-full h-lvh z-10 md:place-content-center grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
+          <div className="bg-transparent absolute left-0 w-full h-lvh z-10 pt-20 pb-24 md:pt-0 md:pb-0 md:place-content-center grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
             <CSSTransition
               in={opacity}
               timeout={500}
@@ -188,7 +188,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           field to line up. It sits above the loading overlay (z-999) too, so
           the load state is finished the same way.
         */}
-        <div className="fixed inset-0 w-full h-full pointer-events-none z-[1000] edge-scrim" />
+        <div className="fixed inset-0 w-full h-full pointer-events-none z-[1000] edge-scrim md:hidden" />
 
         {/*
           The wall is a background layer that needs no API data, so it renders
