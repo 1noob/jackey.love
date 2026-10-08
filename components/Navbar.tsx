@@ -33,10 +33,10 @@ const Navbar: React.FC<Props> = ({
 
   return (
     <div className={cn("w-full flex justify-between max-w-md md:max-w-3xl min-w-[324px] z-10 relative self-center", className)}>
-      <div className="m-2 md:m-0 relative flex rounded-full md:rounded-md flex-grow px-2">
+      <div className="m-2 md:m-0 relative flex flex-grow px-2">
         <TypedBios className="my-auto px-2"/>
       </div>
-      <div className="m-2 md:my-0 relative flex rounded-full md:rounded-md gap-1 md:gap-4">
+      <div className="m-2 md:my-0 relative flex gap-1 md:gap-4">
         <button className="m-2 md:m-0 pointer-events-none md:pointer-events-auto col-span-2" onClick={() => changeOpacity(!opacity)}>
           <JackeyLoveIcon
             size={35}
