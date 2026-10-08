@@ -187,8 +187,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           the overlay (z-999) covers these - and at that moment the content
           container is not mounted, so nothing can be dimmed there.
         */}
-        <div className="fixed md:hidden top-0 left-0 h-11 w-full pointer-events-none z-[1000] bg-gradient-to-b from-black/90 via-black/60 to-transparent" />
-        <div className="fixed md:hidden bottom-0 left-0 h-20 w-full pointer-events-none z-[1000] bg-gradient-to-t from-black via-black/45 to-transparent" />
+        <div className="fixed md:hidden top-0 left-0 h-14 w-full pointer-events-none z-[1000] edge-scrim-top" />
+        <div className="fixed md:hidden bottom-0 left-0 h-24 w-full pointer-events-none z-[1000] edge-scrim-bottom" />
 
         {/*
           The wall is a background layer that needs no API data, so it renders
