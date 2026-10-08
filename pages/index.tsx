@@ -187,7 +187,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           the overlay (z-999) covers these - and at that moment the content
           container is not mounted, so nothing can be dimmed there.
         */}
-        <div className="fixed md:hidden top-0 left-0 h-11 w-full pointer-events-none z-[5] bg-gradient-to-b from-black/70 via-black/35 to-transparent" />
+        <div className="fixed md:hidden top-0 left-0 h-11 w-full pointer-events-none z-[5] bg-gradient-to-b from-black/90 via-black/60 to-transparent" />
         <div className="fixed md:hidden bottom-0 left-0 h-20 w-full pointer-events-none z-[5] bg-gradient-to-t from-black/70 via-black/35 to-transparent" />
 
         {/*
@@ -232,7 +232,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             finishes both states the same way, and nothing can be dimmed here
             because the content container is not mounted yet.
           */}
-          <div className="absolute top-0 left-0 w-full h-11 bg-gradient-to-b from-black/70 via-black/35 to-transparent" />
+          <div className="absolute top-0 left-0 w-full h-11 bg-gradient-to-b from-black/90 via-black/60 to-transparent" />
           <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black/70 via-black/35 to-transparent" />
         </div>
       </CSSTransition>
