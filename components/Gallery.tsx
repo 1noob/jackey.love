@@ -117,7 +117,19 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
   const data = shuffled.slice(0, preset.imageLen);
 
   return (
-    <div className="fixed left-0 top-0 w-full h-lvh z-0 grid place-content-center rotate-[75deg] origin-center">
+    <div
+      className="fixed left-0 w-full z-0 grid place-content-center rotate-[75deg] origin-center"
+      style={{
+        // Reach up past the viewport edge by one safe-area inset so the wall
+        // covers the status-bar band, and down past the bottom one for the home
+        // indicator. `top: 0` alone starts at the viewport, which on iOS Safari
+        // sits BELOW the status bar even with viewport-fit=cover - that is the
+        // band that was showing the page colour through.
+        top: "calc(-1 * env(safe-area-inset-top))",
+        height:
+          "calc(100lvh + env(safe-area-inset-top) + env(safe-area-inset-bottom))",
+      }}
+    >
       {/*
         `fixed`, not static. As a normal-flow element the wall occupied 100lvh
         and scrolled together with the page, so scrolling on a phone dragged the
