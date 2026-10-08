@@ -28,6 +28,7 @@ module.exports = {
         pixel: ["var(--font-pixel)"],
         jetbrains: ["var(--font-jetbrains)"],
         handwrite: ["var(--font-handwrite)"],
+        zh: ["var(--font-zh)"],
       },
       backgroundColor: {
         page: "rgba(var(--page))",

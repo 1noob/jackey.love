@@ -50,14 +50,27 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         src="https://us.umami.is/script.js"
         data-website-id="61824479-8621-45cf-981c-867d2ac2066d"
       />
-      <CSSTransition
-        in={!isLoading || !!error}
-        timeout={500}
-        classNames="loading"
-        unmountOnExit
-      >
-        <main className={`${Pixel.variable} font-pixel`}>
-          <div className="bg-page md:bg-transparent absolute left-0 w-full h-lvh z-10 md:place-content-center grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
+      <main className={`${Pixel.variable} font-pixel`}>
+        {/*
+          The wall is a background layer that needs no API data, so it renders
+          outside the loading transition and therefore ends up in the static
+          HTML. While it sat inside that transition the page had no wall at all
+          for the ~2-3s it took SWR to resolve and the transition to mount.
+        */}
+        <Gallery images={images} />
+        <CSSTransition
+          in={!isLoading || !!error}
+          timeout={500}
+          classNames="loading"
+          unmountOnExit
+        >
+          {/*
+            `bg-page` was an opaque black on mobile (desktop already used
+            md:bg-transparent), which painted straight over the wall now that
+            the wall is visible on phones too. The page colour still comes from
+            <body className="bg-page"> in _document.tsx.
+          */}
+          <div className="bg-transparent absolute left-0 w-full h-lvh z-10 md:place-content-center grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
             <CSSTransition
               in={opacity}
               timeout={500}
@@ -143,9 +156,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               </div>
             </CSSTransition>
           </div>
-          <Gallery images={images} />
-        </main>
-      </CSSTransition>
+        </CSSTransition>
+      </main>
       <CSSTransition
         in={isLoading && !error}
         timeout={800}
