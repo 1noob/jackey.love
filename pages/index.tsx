@@ -51,13 +51,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         data-website-id="61824479-8621-45cf-981c-867d2ac2066d"
       />
       <main className={`${Pixel.variable} font-pixel`}>
-        {/*
-          The wall is a background layer that needs no API data, so it renders
-          outside the loading transition and therefore ends up in the static
-          HTML. While it sat inside that transition the page had no wall at all
-          for the ~2-3s it took SWR to resolve and the transition to mount.
-        */}
-        <Gallery images={images} />
         <CSSTransition
           in={!isLoading || !!error}
           timeout={500}
@@ -157,6 +150,19 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             </CSSTransition>
           </div>
         </CSSTransition>
+        {/*
+          The wall is a background layer that needs no API data, so it renders
+          outside the loading transition and therefore ends up in the static
+          HTML. While it sat inside that transition the page had no wall at all
+          for the ~2-3s it took SWR to resolve and the transition to mount.
+
+          It must also stay AFTER the content container. That container is
+          `absolute` with no `top`, so its vertical position falls back to its
+          static position - where it would sit in normal flow. Rendering the
+          wall first (it occupies 100lvh) pushed the whole UI down by a full
+          viewport height, off screen.
+        */}
+        <Gallery images={images} />
       </main>
       <CSSTransition
         in={isLoading && !error}
