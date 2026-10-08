@@ -82,7 +82,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             the wall is visible on phones too. The page colour still comes from
             <body className="bg-page"> in _document.tsx.
           */}
-          <div className="bg-transparent absolute left-0 w-full h-lvh z-10 pt-2 pb-28 md:pt-0 md:pb-0 md:place-content-center grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
+          <div className="bg-transparent absolute left-0 w-full h-lvh z-10 pt-2 md:pt-0 md:place-content-center grid md:shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
             <CSSTransition
               in={opacity}
               timeout={500}
@@ -113,7 +113,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   parentOpacity={opacity}
                   className="safe-area-top"
                 />
-                <div className="mt-14 md:m-0 !z-[3] flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl">
+                <div className="mt-2 md:m-0 !z-[3] flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl pb-24 md:pb-4">
                   <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                     <EmblaCarousel
                       components={[
