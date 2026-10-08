@@ -175,13 +175,19 @@ const Navbar: React.FC<Props> = ({
       {/*
         Top scrim. iOS Safari reports env(safe-area-inset-top) as 0 and does not
         let page content paint into the status-bar strip, so the wall cannot
-        reach it - that strip shows the page colour and reads as a hard black
-        band. This gradient fades the wall into black over the top ~56px so the
-        transition looks intentional instead of broken.
+        reach it - that strip shows the page colour and reads as a hard band.
+        This gradient fades the wall into black over the status-bar strip only,
+        so the transition looks intentional instead of broken.
+
+        Height is kept to 44px (h-11), just under the status bar on every iPhone
+        (44-59px), so it stops ABOVE the glass pill rather than tinting it -
+        measured pill starts at y=55 and the scrim ends at 56 with h-14, which
+        was close enough to make the pill look dimmed.
+
         z-[5]: above the wall (z-0), below the content container (z-10).
       */}
       <div
-        className="fixed md:hidden top-0 left-0 h-14 w-full pointer-events-none z-[5] bg-gradient-to-b from-black via-black/70 to-transparent"
+        className="fixed md:hidden top-0 left-0 h-11 w-full pointer-events-none z-[5] bg-gradient-to-b from-black via-black/70 to-transparent"
       />
       
     </div>

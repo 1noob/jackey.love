@@ -132,7 +132,7 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
         // and is harmless where there is none: the wall is an oversized
         // repeating texture, so the extra area is simply clipped.
         top: "-60px",
-        bottom: "-60px",
+        bottom: "-80px",
       }}
     >
       {/*
