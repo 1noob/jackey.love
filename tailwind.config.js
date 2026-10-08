@@ -82,6 +82,29 @@ module.exports = {
             transform: "translate(-50%, 0px)",
           },
         },
+        // The wall renders N identical groups and must travel exactly ONE group
+        // width per cycle. With two groups that is -50%, but -50% is also half
+        // the track, which leaves only (track - viewportProjection)/2 of margin
+        // on the travel axis - always short, no matter how big the track is.
+        // More groups at 1/N keep the travel at one group width and leave real
+        // margin. Measured worst-case uncovered cells (12x12 grid) over a full
+        // travel: 2 groups 75-77, 3 groups 9-37, 4 groups 9-11.
+        scy3: {
+          "0%": {
+            transform: "translate(0%, 0px)",
+          },
+          "100%": {
+            transform: "translate(-33.3333%, 0px)",
+          },
+        },
+        scy4: {
+          "0%": {
+            transform: "translate(0%, 0px)",
+          },
+          "100%": {
+            transform: "translate(-25%, 0px)",
+          },
+        },
         scy2: {
           "0%": {
             transform: "translate(-50%,0px)",

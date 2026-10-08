@@ -34,20 +34,25 @@ const seededShuffle = <T,>(input: T[], seed = 0x5eed1e): T[] => {
 // sees literal class names - `grid-rows-8`, `animate-[scy_22s_linear_infinite]`
 // etc. must never be built by concatenation.
 //
-// The cycle length is expressed with a responsive variant rather than being
-// swapped by JS: changing an `animation` property restarts it from 0%, which
-// made the wall visibly snap back to the start when the client upgraded from
-// the mobile preset to the desktop one. `will-change` is desktop-only because
-// it pins the composited layer in GPU memory - worth it for the 12.6M px
-// desktop wall, pure waste for the ~1.3M px mobile one.
+// The animation name encodes the travel distance: `scy4` moves -25% of the
+// track, which is exactly one group when four groups are rendered; `scy3`
+// moves -33.3333% (one group out of three). See tailwind.config.js for why
+// two groups are not enough. The cycle length is a responsive variant rather
+// than a JS swap because changing an `animation` property restarts it, which
+// made the wall snap back to the start when the client upgraded presets.
+// `will-change` is desktop-only because it pins the composited layer in GPU
+// memory - worth it for the desktop wall, pure waste for the mobile one.
 const TRACK_CLASS =
-  "flex animate-[scy_22s_linear_infinite] md:animate-[scy_100s_linear_infinite] " +
+  "flex animate-[scy4_22s_linear_infinite] md:animate-[scy3_100s_linear_infinite] " +
   "transform-gpu w-max h-max dot-background md:will-change-transform";
 
-// Desktop keeps 96 tiles of 180px over 16 rows (6 columns per group).
+// Desktop keeps 96 tiles of 180px over 16 rows (6 columns per group). Three
+// groups - measured worst-case hole over a full travel: 75/144 cells with two
+// groups vs 9/144 with three, and 9/144 is just the tile gaps.
 const DESKTOP = {
   imageLen: 96,
   tile: 180,
+  groups: 3,
   groupClass: "grid grid-rows-16 grid-flow-col gap-5 pr-5",
 };
 
@@ -69,6 +74,9 @@ const DESKTOP = {
 const MOBILE = {
   imageLen: 60,
   tile: 150,
+  // Four groups, not three: with three the worst-case hole was still 37/144
+  // cells; with four it is 11/144, i.e. only the gaps.
+  groups: 4,
   groupClass: "grid grid-rows-20 grid-flow-col gap-5 pr-5",
 };
 
@@ -134,60 +142,63 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
         place-content to have any effect on the oversized track.
       */}
       {/*
-        Seamless marquee: two identical groups shifted by translate(-50%).
+        Seamless marquee: N identical groups, and the animation travels exactly
+        ONE group width per cycle (`scy4` = -25% of a four-group track,
+        `scy3` = -33.3333% of a three-group track), so group k+1 lands where
+        group k started.
+
         The inter-group gap MUST live inside each group's own width (pr-5)
-        rather than as a flex `gap` on this container. With a flex gap, the
-        track is 2W + gap wide, so -50% moves W + gap/2 while a seamless wrap
-        needs W + gap: a constant gap/2 (10px) jump at the end of every cycle.
-        Keeping the spacer inside the group makes -50% land exactly on W, and
-        that stays true for both presets because the two groups are always
-        rendered from the same `data` array with the same `pr-5`.
+        rather than as a flex `gap` on this container. With a flex gap the
+        track is N*W + gap wide, so the wrap lands gap/N short and the seam
+        jumps. Keeping the spacer inside the group makes the travel land
+        exactly on one group width.
+
+        Two groups is not enough: travelling half the track leaves only
+        (track - viewportProjection)/2 of margin, which is always short on the
+        travel axis no matter how large the track is - measured 75-77 uncovered
+        cells out of 144 at the end of a cycle on both desktop and mobile.
       */}
       <div className={TRACK_CLASS}>
-        {/* Each tile is given an explicit width AND height so the grid has its
-            final geometry before a single image decodes. Without a height the
-            tiles are laid out at the intrinsic aspect ratio, the wall's box
-            grows ~3.8x as decoding proceeds, and the centred wrapper drags the
-            top of the wall far above the viewport - which showed up as an empty
-            black upper half on first paint. */}
-        <div className={preset.groupClass}>
-          {data.map(({ public_id, format }) => (
-            <Image
-              key={`a-${public_id}`}
-              className="-rotate-[90deg] rounded-sm"
-              shadow="none"
-              radius="none"
-              classNames={{
-                wrapper: "rounded-sm border-8 border-black",
-              }}
-              src={srcOf(public_id, format)}
-              width={preset.tile}
-              height={preset.tile}
-              alt={"JackeyLove, TES, IG, LOL, LPL"}
-              decoding="async"
-              loading="eager"
-            />
-          ))}
-        </div>
-        <div className={preset.groupClass}>
-          {data.map(({ public_id, format }) => (
-            <Image
-              key={`b-${public_id}`}
-              className="-rotate-[90deg] rounded-sm"
-              shadow="none"
-              radius="none"
-              classNames={{
-                wrapper: "rounded-sm border-8 border-black",
-              }}
-              src={srcOf(public_id, format)}
-              width={preset.tile}
-              height={preset.tile}
-              alt={"JackeyLove, TES, IG, LOL, LPL"}
-              decoding="async"
-              loading="lazy"
-            />
-          ))}
-        </div>
+        {/*
+          Each tile is given an explicit width AND height so the grid has its
+          final geometry before a single image decodes. Without a height the
+          tiles are laid out at the intrinsic aspect ratio, the wall's box grows
+          ~3.8x as decoding proceeds, and the centred wrapper drags the top of
+          the wall far above the viewport - which showed up as an empty black
+          upper half on first paint.
+
+          Every group is eager, none lazy: the marquee brings each group into
+          view within one cycle, and a lazy group arrives half-empty (measured
+          31/60 loaded at wrap time), which reads as a jump to blank tiles.
+
+          `aspect-square !h-auto` keeps the image itself 1:1. The wrapper is
+          border-box with border-8, so the grid cell (150/180px) leaves only
+          cell-16px of content width; Tailwind's `img { max-width: 100% }` then
+          narrows the image while its height attribute stays put, squashing it
+          to a 0.937 ratio. The `!` is needed because HeroUI sets the height
+          inline.
+        */}
+        {Array.from({ length: preset.groups }).map((_, gi) => (
+          <div key={`group-${gi}`} className={preset.groupClass}>
+            {data.map(({ public_id, format }) => (
+              <Image
+                key={`${gi}-${public_id}`}
+                className="-rotate-[90deg] rounded-sm aspect-square !h-auto"
+                shadow="none"
+                radius="none"
+                classNames={{
+                  wrapper: "rounded-sm border-8 border-black",
+                }}
+                src={srcOf(public_id, format)}
+                width={preset.tile}
+                height={preset.tile}
+                alt={"JackeyLove, TES, IG, LOL, LPL"}
+                decoding="async"
+                loading="eager"
+              />
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );
