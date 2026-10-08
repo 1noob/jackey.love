@@ -170,6 +170,27 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           </div>
         </CSSTransition>
         {/*
+          Edge scrims. These are siblings of the content container on purpose.
+
+          They cannot live inside Navbar: Navbar renders within the content
+          container (z-10), so anything written there competes with the cards in
+          the same stacking context and paints over them. Out here z-[5] means
+          what it says - above the wall (z-0), below the content container
+          (z-10) - so they shade the backdrop and never touch the cards.
+
+          Why they exist: iOS Safari does not let page content paint into the
+          status-bar strip (top) or behind its bottom address bar, so the wall
+          can never reach those bands no matter how far it bleeds. These fade the
+          backdrop to black there so the edge reads as intentional.
+
+          The same pair is drawn again inside the loading overlay below, because
+          the overlay (z-999) covers these - and at that moment the content
+          container is not mounted, so nothing can be dimmed there.
+        */}
+        <div className="fixed md:hidden top-0 left-0 h-11 w-full pointer-events-none z-[5] bg-gradient-to-b from-black/90 via-black/55 to-transparent" />
+        <div className="fixed md:hidden bottom-0 left-0 h-20 w-full pointer-events-none z-[5] bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+
+        {/*
           The wall is a background layer that needs no API data, so it renders
           outside the loading transition and therefore ends up in the static
           HTML. While it sat inside that transition the page had no wall at all

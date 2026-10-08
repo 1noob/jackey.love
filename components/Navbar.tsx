@@ -173,35 +173,16 @@ const Navbar: React.FC<Props> = ({
       </div>
 
       {/*
-        Top scrim. iOS Safari reports env(safe-area-inset-top) as 0 and does not
-        let page content paint into the status-bar strip, so the wall cannot
-        reach it - that strip shows the browser's own colour and reads as a hard
-        band. This gradient fades the wall into black over the status-bar strip
-        so the transition looks intentional instead of broken.
+        The two edge scrims used to live here. They had to move out.
 
-        Height is 44px (h-11), just under the status-bar height on every iPhone
-        (44-59px), so it stops ABOVE the glass pill - at h-14 it overlapped the
-        pill by ~1px and tinted the whole thing, since the pill is translucent.
-
-        z-[5]: above the wall (z-0), BELOW the content container (z-10), so it
-        only shades the backdrop and never dims the cards.
+        Navbar renders INSIDE the content container, and that container has its
+        own z-10 - so Navbar's z-10 is only a level within it. A scrim written
+        here (even at z-[5]) competes with the cards in the SAME stacking
+        context and therefore always painted over them. They now live in
+        pages/index.tsx as siblings of the content container, where z-[5] really
+        does mean "below the content container (z-10)".
       */}
-      <div
-        className="fixed md:hidden top-0 left-0 h-11 w-full pointer-events-none z-[5] bg-gradient-to-b from-black/90 via-black/55 to-transparent"
-      />
 
-      {/*
-        Bottom scrim, same cause. Newer iOS Safari puts its address bar at the
-        BOTTOM, and that strip is browser chrome the page cannot paint into - so
-        no amount of bleeding the wall downwards reaches it. Taller than the top
-        one because it covers the address bar (~50px) plus the home-indicator
-        area (~34px). Same z-[5] as the top scrim - backdrop only, never the
-        cards.
-      */}
-      <div
-        className="fixed md:hidden bottom-0 left-0 h-20 w-full pointer-events-none z-[5] bg-gradient-to-t from-black/90 via-black/50 to-transparent"
-      />
-      
     </div>
   );
 };
