@@ -55,7 +55,7 @@ class MyDocument extends Document {
             installed PWA (apple-mobile-web-app-capable, set above) goes full
             bleed into it.
           */}
-          <meta name="theme-color" content="#141414" />
+          <meta name="theme-color" content="#000000" />
         </Head>
         <body className="bg-page">
           <Main />
