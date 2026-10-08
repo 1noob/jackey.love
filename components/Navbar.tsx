@@ -175,30 +175,31 @@ const Navbar: React.FC<Props> = ({
       {/*
         Top scrim. iOS Safari reports env(safe-area-inset-top) as 0 and does not
         let page content paint into the status-bar strip, so the wall cannot
-        reach it - that strip shows the page colour and reads as a hard band.
-        This gradient fades the wall into black over the status-bar strip only,
+        reach it - that strip shows the browser's own colour and reads as a hard
+        band. This gradient fades the wall into black over the status-bar strip
         so the transition looks intentional instead of broken.
 
-        Height is kept to 44px (h-11), just under the status bar on every iPhone
-        (44-59px), so it stops ABOVE the glass pill rather than tinting it -
-        measured pill starts at y=55 and the scrim ends at 56 with h-14, which
-        was close enough to make the pill look dimmed.
+        Height is 44px (h-11), just under the status-bar height on every iPhone
+        (44-59px), so it stops ABOVE the glass pill - at h-14 it overlapped the
+        pill by ~1px and tinted the whole thing, since the pill is translucent.
 
-        z-[5]: above the wall (z-0), below the content container (z-10).
+        z-[1000] deliberately sits ABOVE the loading overlay (z-[999]). At z-5
+        the scrims were hidden during load, so the status bar read as a bright
+        band against the blurred overlay until data arrived.
       */}
       <div
-        className="fixed md:hidden top-0 left-0 h-11 w-full pointer-events-none z-[5] bg-gradient-to-b from-black via-black/70 to-transparent"
+        className="fixed md:hidden top-0 left-0 h-11 w-full pointer-events-none z-[1000] bg-gradient-to-b from-black/90 via-black/55 to-transparent"
       />
 
       {/*
-        Bottom scrim, same reason as the top one. Newer iOS Safari puts its
-        address bar at the BOTTOM, and that strip is browser chrome the page
-        cannot paint into - so no amount of bleeding the wall downwards reaches
-        it. Taller than the top one because it has to cover both the address bar
-        (~50px) and the home-indicator area (~34px).
+        Bottom scrim, same cause. Newer iOS Safari puts its address bar at the
+        BOTTOM, and that strip is browser chrome the page cannot paint into - so
+        no amount of bleeding the wall downwards reaches it. Taller than the top
+        one because it covers the address bar (~50px) plus the home-indicator
+        area (~34px).
       */}
       <div
-        className="fixed md:hidden bottom-0 left-0 h-20 w-full pointer-events-none z-[5] bg-gradient-to-t from-black via-black/60 to-transparent"
+        className="fixed md:hidden bottom-0 left-0 h-20 w-full pointer-events-none z-[1000] bg-gradient-to-t from-black/90 via-black/50 to-transparent"
       />
       
     </div>
