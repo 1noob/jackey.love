@@ -23,6 +23,16 @@ body {
   @apply cursor-dot;
 }
 
+/* The wall's own backing colour (dot-background is rgb(20,20,20)).
+   iOS Safari tints its browser chrome from the ROOT element's background, and
+   in light theme that was white - so the toolbar read as a bright band sitting
+   under the dark photo wall. body still paints the page colour on top of this,
+   so it only shows in the overscroll area and behind the browser chrome, never
+   over the page content. */
+html {
+  background-color: rgb(20, 20, 20);
+}
+
 main {
   @apply antialiased text-[10px] sm:text-xs md:text-sm select-none overflow-hidden h-dvh;
 }
