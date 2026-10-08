@@ -189,6 +189,17 @@ const Navbar: React.FC<Props> = ({
       <div
         className="fixed md:hidden top-0 left-0 h-11 w-full pointer-events-none z-[5] bg-gradient-to-b from-black via-black/70 to-transparent"
       />
+
+      {/*
+        Bottom scrim, same reason as the top one. Newer iOS Safari puts its
+        address bar at the BOTTOM, and that strip is browser chrome the page
+        cannot paint into - so no amount of bleeding the wall downwards reaches
+        it. Taller than the top one because it has to cover both the address bar
+        (~50px) and the home-indicator area (~34px).
+      */}
+      <div
+        className="fixed md:hidden bottom-0 left-0 h-20 w-full pointer-events-none z-[5] bg-gradient-to-t from-black via-black/60 to-transparent"
+      />
       
     </div>
   );
