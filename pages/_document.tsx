@@ -43,6 +43,19 @@ class MyDocument extends Document {
             name="apple-mobile-web-app-status-bar-style"
             content="black-translucent"
           />
+
+          {/*
+            Safari tints its own toolbar / status bar from this. It is set to the
+            wall's backing colour (`dot-background` is rgb(20,20,20)) rather than
+            the page colour, so on a phone the browser chrome visually continues
+            the photo wall instead of banding against it. The same value in both
+            schemes on purpose - the wall is dark either way.
+
+            Note Safari's toolbar area cannot be covered by page content. Only an
+            installed PWA (apple-mobile-web-app-capable, set above) goes full
+            bleed into it.
+          */}
+          <meta name="theme-color" content="#141414" />
         </Head>
         <body className="bg-page">
           <Main />

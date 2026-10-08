@@ -117,7 +117,7 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
   const data = shuffled.slice(0, preset.imageLen);
 
   return (
-    <div className="fixed inset-0 z-0 grid place-content-center rotate-[75deg] origin-center">
+    <div className="fixed left-0 top-0 w-full h-lvh z-0 grid place-content-center rotate-[75deg] origin-center">
       {/*
         `fixed`, not static. As a normal-flow element the wall occupied 100lvh
         and scrolled together with the page, so scrolling on a phone dragged the
@@ -125,10 +125,12 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
         the viewport, so it stays put while the content scrolls - and because it
         is out of flow it also stops contributing to the document scroll height.
 
-        `inset-0` deliberately covers the full viewport INCLUDING the safe-area
-        bands. With `viewport-fit=cover` the viewport extends under the notch and
-        the home indicator, and the wall is meant to reach into them - the
-        earlier attempt to inset it left bare colour bands top and bottom.
+        Sized with `lvh` rather than `inset-0`. `inset-0` tracks the CURRENT
+        viewport, which on iOS Safari shrinks while the toolbar is showing - so
+        the wall stopped below the status-bar band and the page colour showed
+        through there. `100lvh` is the largest the viewport ever gets (toolbar
+        collapsed), so the wall always reaches behind the status bar; when the
+        toolbar is out the extra height is simply clipped.
       */}
       {/*
         The wrapper MUST be explicitly pinned to the viewport instead of being
