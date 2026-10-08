@@ -132,7 +132,15 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
         // and is harmless where there is none: the wall is an oversized
         // repeating texture, so the extra area is simply clipped.
         top: "-60px",
-        bottom: "-80px",
+        // Fixed height from `vh`, NOT `bottom` and not `lvh`/`dvh`.
+        //
+        // `vh` on iOS Safari resolves to the LARGE viewport and stays constant
+        // while the toolbar expands/collapses, so the element's box never
+        // changes size. Using `bottom: -80px` (or dvh/lvh) made the height
+        // track the changing viewport, so the wall was re-laid-out on every
+        // frame of a scroll gesture - which showed up as jitter.
+        // 100vh + 60 (top bleed) + 80 (bottom bleed).
+        height: "calc(100vh + 140px)",
       }}
     >
       {/*
