@@ -113,7 +113,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   parentOpacity={opacity}
                   className="safe-area-top"
                 />
-                <div className="mt-2 md:m-0 !z-[3] flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl !pb-[84px] md:!pb-4">
+                <div className="mt-2 md:m-0 !z-[3] flex flex-col gap-2 mobile:p-2 h-full overflow-y-auto no-scrollbar md:max-h-[55.5rem] rounded-xl !pb-[28px] md:!pb-4">
                   <section className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
                     <EmblaCarousel
                       components={[
