@@ -203,6 +203,16 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             size={300}
             className="h-svh absolute brightness-125 dark:brightness-150 top-0 left-[30%] md:left-[35%] lg:left-[42%] xl:left-[46%] w-[40%] md:w-[30%] lg:w-[16%] xl:w-[8%] m-auto"
           />
+          {/*
+            Load-state copies of the Navbar scrims. The permanent ones sit at
+            z-[5] so they can never dim the cards - but that also means this
+            overlay (z-999) hid them, so during load the status-bar strip read
+            as a bright band again. Drawing them again inside the overlay
+            finishes both states the same way, and nothing can be dimmed here
+            because the content container is not mounted yet.
+          */}
+          <div className="absolute top-0 left-0 w-full h-11 bg-gradient-to-b from-black/90 via-black/55 to-transparent" />
+          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
         </div>
       </CSSTransition>
     </>
