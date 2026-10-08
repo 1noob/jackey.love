@@ -4,6 +4,7 @@ import type { ImageProps } from "@/types";
 import { Image } from "@heroui/react";
 import Divider from "@/components/divider";
 import React, {
+  useEffect,
   useRef,
   useState,
 } from "react";
@@ -27,7 +28,11 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import TypedBios from "@/components/typed-bios";
 
-const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
+// The timeout is what turns a hung socket into a real error. Without it a
+// request can stay pending indefinitely, and since the splash is gated on
+// `isLoading` the visitor would wait on the logo forever.
+const fetcher = (arg: string) =>
+  fetch(arg, { signal: AbortSignal.timeout(10000) }).then((res) => res.json());
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const nodeRef = useRef(null);
@@ -43,6 +48,20 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
     fetcher
   );
 
+  // The splash must never be able to trap the visitor. It is driven by
+  // `isLoading`, which only turns false on success or failure - so a request
+  // that hangs without ever erroring (a flaky mobile link, a captive portal,
+  // a TCP connection that never sends RST) leaves isLoading true forever and
+  // the page sits on the logo. Tapping the screen "fixed" it only because SWR
+  // revalidates on focus. Cap the splash so content always arrives on its own.
+  const [splashExpired, setSplashExpired] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setSplashExpired(true), 3000);
+    return () => clearTimeout(t);
+  }, []);
+
+  const ready = !isLoading || !!error || splashExpired;
+
   return (
     <>
       <Script
@@ -52,7 +71,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
       />
       <main className={`${Pixel.variable} font-pixel`}>
         <CSSTransition
-          in={!isLoading || !!error}
+          in={ready}
           timeout={500}
           classNames="loading"
           unmountOnExit
@@ -165,7 +184,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         <Gallery images={images} />
       </main>
       <CSSTransition
-        in={isLoading && !error}
+        in={!ready}
         timeout={800}
         classNames="loading"
         unmountOnExit
