@@ -83,14 +83,16 @@ const MOBILE = {
 // Add f_auto and lower w_1000 -> w_320: ~46.4KB -> ~8.8KB per image (about 81%
 // less) because Cloudinary then serves WebP/AVIF to the browser.
 //
-// Grayscale is baked in server-side with `e_grayscale` instead of a CSS
-// `filter: grayscale()`. A CSS filter makes the browser re-run a colour matrix
+// Desaturation is baked in server-side with `e_saturation:-50` instead of a CSS
+// `filter: grayscale(50%)`. Note `e_grayscale` takes no amount - it is always
+// full grey; `e_saturation:-50` is what gives a partial amount.
+// A CSS filter makes the browser re-run a colour matrix
 // across the entire composited layer on every frame; on this wall that layer is
 // ~12.6M px, the single most expensive thing we can ask a phone GPU to do.
 // Measured on the same 320x320 sample: 10,515B as colour vs 8,990B as a
 // 1-component JPEG - so it is both 14.5% smaller and free at runtime.
 const srcOf = (public_id: string, format: string) =>
-  `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/e_grayscale:50,f_auto,ar_1:1,c_fill,g_auto,q_30,w_320/${public_id}.${format}`;
+  `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/e_saturation:-50,f_auto,ar_1:1,c_fill,g_auto,q_30,w_320/${public_id}.${format}`;
 
 const Gallery: React.FC<ListProps> = ({ images }) => {
   // Shuffle exactly once per mount. `useState` freezes the first result, so the
