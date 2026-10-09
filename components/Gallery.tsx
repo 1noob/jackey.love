@@ -90,7 +90,7 @@ const MOBILE = {
 // Measured on the same 320x320 sample: 10,515B as colour vs 8,990B as a
 // 1-component JPEG - so it is both 14.5% smaller and free at runtime.
 const srcOf = (public_id: string, format: string) =>
-  `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/e_grayscale,f_auto,ar_1:1,c_fill,g_auto,q_30,w_320/${public_id}.${format}`;
+  `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/e_grayscale:70,f_auto,ar_1:1,c_fill,g_auto,q_30,w_320/${public_id}.${format}`;
 
 const Gallery: React.FC<ListProps> = ({ images }) => {
   // Shuffle exactly once per mount. `useState` freezes the first result, so the
