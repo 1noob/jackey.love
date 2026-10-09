@@ -107,17 +107,21 @@ main {
 /* Desktop gets almost none of it.
    At md+ the wall is the dominant surface rather than a border around the
    cards, so the same amount of halation reads as heavy haze over the whole
-   screen instead of a soft edge. Desktop keeps the same halation but with a
-   grey cast layered on top to damp it down - the glow is deliberately held
-   back, not removed. The phone runs the glow clean, verified smooth on
-   device. */
+   screen instead of a soft edge - on desktop the glow IS the haze, confirmed
+   over three attempts at damping it. Desktop therefore gets tonal treatment
+   only; the phone keeps the halation, verified smooth on device. */
 @media (min-width: 768px) {
   .hdf-soft {
-    /* Same halation, but a grey cast on top to hold it back. On desktop the
-       glow covers a full screen, so it needs suppressing rather than removing -
-       the treatment should still be recognisably the same as the phone's, just
-       damper. The cast goes AFTER url(#hdf) so it flattens the glow itself. */
-    filter: url(#hdf) saturate(0.8) contrast(0.92) brightness(0.92);
+    /* No halation here - not a weaker amount of it, none.
+       Three rounds of tuning established that on a full screen the glow itself
+       is the problem: it reads as haze, and a grey cast layered on top cannot
+       remove something that is blur rather than colour or level. The phone
+       keeps it because there the wall is only a border around the cards.
+
+       What stays is the tonality: colour pulled back, highlights settled, level
+       down a notch. sepia(0.06) is there to keep the grey from drifting cold -
+       plain desaturation reads as "cool" next to the warm-toned photos. */
+    filter: saturate(0.85) contrast(0.95) brightness(0.95) sepia(0.06);
   }
 }
 
