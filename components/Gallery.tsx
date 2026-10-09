@@ -119,8 +119,29 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
   const data = shuffled.slice(0, preset.imageLen);
 
   return (
+    <>
+      {/*
+        HDF / halation filter. A blurred copy of the wall is merged back over the
+        original at reduced alpha, so bright areas bleed outwards instead of
+        merely going soft - that outward bleed is what reads as "glow".
+        `x/y/width/height` are widened past the default -10%..120% because the
+        blur needs room to spill beyond the source box, otherwise the glow gets
+        clipped at the wall's edges.
+      */}
+      <svg aria-hidden="true" className="absolute w-0 h-0">
+        <filter id="hdf" x="-8%" y="-8%" width="116%" height="116%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+          <feComponentTransfer in="blur" result="glow">
+            <feFuncA type="linear" slope="0.55" />
+          </feComponentTransfer>
+          <feMerge>
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="glow" />
+          </feMerge>
+        </filter>
+      </svg>
     <div
-      className="fixed left-0 w-full z-0 grid place-content-center rotate-[75deg] origin-center"
+      className="fixed left-0 w-full z-0 grid place-content-center rotate-[75deg] origin-center hdf-soft"
       style={{
         // Bleed past BOTH viewport edges by a fixed amount so the wall covers
         // the status-bar band on iOS.
@@ -232,6 +253,7 @@ const Gallery: React.FC<ListProps> = ({ images }) => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

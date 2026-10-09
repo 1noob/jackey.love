@@ -93,6 +93,17 @@ main {
   @apply opacity-0 transition-opacity duration-500 ease-in-out;
 }
 
+/* HDF-style soft glow for the photo wall.
+   A gaussian copy of the wall is merged back at ~55% alpha, which is what makes
+   highlights bleed outwards (halation) rather than just blurring. `contrast`
+   and `brightness` fine-tune the tonality on top.
+   Cheap to revert: drop `hdf-soft` from the wall element and the filter stops
+   applying; the SVG def is inert on its own.
+   Pair with the SVG filter def in Gallery.tsx (id="hdf"). */
+.hdf-soft {
+  filter: url(#hdf) contrast(0.96) brightness(1.03);
+}
+
 .scroll-none {
   overscroll-behavior: none;
 }
