@@ -107,12 +107,12 @@ main {
 /* Desktop gets almost none of it.
    At md+ the wall is the dominant surface rather than a border around the
    cards, so the same amount of halation reads as heavy haze over the whole
-   screen instead of a soft edge - measured complaint: "too soft, too bright,
-   eyes hurt". Keeping just a touch of contrast reduction leaves the tonality
-   consistent across breakpoints without the bloom. */
+   screen instead of a soft edge - reported twice: "too soft, too bright",
+   then still off after a token contrast(0.98). Desktop now gets no filter at
+   all; the phone keeps the full treatment, verified smooth on device. */
 @media (min-width: 768px) {
   .hdf-soft {
-    filter: contrast(0.98);
+    filter: none;
   }
 }
 
