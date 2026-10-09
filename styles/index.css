@@ -107,16 +107,17 @@ main {
 /* Desktop gets almost none of it.
    At md+ the wall is the dominant surface rather than a border around the
    cards, so the same amount of halation reads as heavy haze over the whole
-   screen instead of a soft edge. Desktop does NOT get the same treatment: the
-   bloom reads as haze over a full screen, so it gets a flat grey cast instead
-   (desaturate + settle + slight darkening, no blur, no lift). The phone keeps
-   the full HDF, verified smooth on device. */
+   screen instead of a soft edge. Desktop keeps the same halation but with a
+   grey cast layered on top to damp it down - the glow is deliberately held
+   back, not removed. The phone runs the glow clean, verified smooth on
+   device. */
 @media (min-width: 768px) {
   .hdf-soft {
-    /* A grey cast rather than a glow: pull the colour back, settle the blacks
-       and drop the overall level a touch. No blur and no brightness lift, so it
-       reads as a flatter, cooler-toned print instead of haze. */
-    filter: saturate(0.82) contrast(0.94) brightness(0.93);
+    /* Same halation, but a grey cast on top to hold it back. On desktop the
+       glow covers a full screen, so it needs suppressing rather than removing -
+       the treatment should still be recognisably the same as the phone's, just
+       damper. The cast goes AFTER url(#hdf) so it flattens the glow itself. */
+    filter: url(#hdf) saturate(0.8) contrast(0.92) brightness(0.92);
   }
 }
 
