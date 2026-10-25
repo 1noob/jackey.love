@@ -82,20 +82,16 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             the wall is visible on phones too. The page colour still comes from
             <body className="bg-page"> in _document.tsx.
 
-            No inset vignette on mobile any more. This container is `absolute`
-            and exactly one `lvh` tall, so its shadow only ever covered the
-            FIRST screenful and then slid away as you scrolled - the edge went
-            from heavily dimmed to bare halfway down the page. That read as a
-            black layer lying on the photos, and it was a real inconsistency:
-            the permanent edge treatment on phones is `.edge-scrim` below
-            (fixed, so it never moves), and these two were doing the same job
-            with opposite behaviour. One of them had to go, and the one that
-            stays put is the one that matches the intent.
-
-            Desktop keeps its 360px vignette: `.edge-scrim` is `md:hidden`, so
-            out here the inset shadow is the only edge treatment there is.
+            The edge vignette used to be an inset shadow on THIS element. It
+            does not belong here: the container is `absolute` and exactly one
+            `lvh` tall, so the vignette only covered the first screenful and
+            then scrolled away - heavily dimmed at the top of the page, bare
+            halfway down. That step is what read as a black layer lying on the
+            photos. It now lives as `.edge-vignette`, a fixed layer further
+            down, so it looks the same at every scroll position. See the
+            comment there.
           */}
-          <div className="bg-transparent absolute left-0 w-full h-lvh z-10 pt-[36px] px-3 md:px-0 md:pt-0 md:place-content-center grid md:!shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
+          <div className="bg-transparent absolute left-0 w-full h-lvh z-10 pt-[36px] px-3 md:px-0 md:pt-0 md:place-content-center grid">
             <CSSTransition
               in={opacity}
               timeout={500}
@@ -183,13 +179,28 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           </div>
         </CSSTransition>
         {/*
+          Edge vignette. Fixed, and at z-[5]: above the wall (z-0), below the
+          content container (z-10). That is what makes it shade the backdrop
+          only - it can never dim the cards, and because it is fixed it never
+          scrolls away. Sibling of the content rather than a child for the same
+          reason the scrims below are.
+
+          Replaces the inset shadow the content container used to carry. The
+          look is unchanged (same blur/alpha, see .edge-vignette in
+          styles/index.css); what changed is that the falloff no longer depends
+          on where the container happens to have scrolled to.
+        */}
+        <div
+          aria-hidden="true"
+          className="fixed inset-0 w-full h-full pointer-events-none z-[5] edge-vignette"
+        />
+
+        {/*
           Edge scrims. These are siblings of the content container on purpose.
 
           They cannot live inside Navbar: Navbar renders within the content
           container (z-10), so anything written there competes with the cards in
-          the same stacking context and paints over them. Out here z-[5] means
-          what it says - above the wall (z-0), below the content container
-          (z-10) - so they shade the backdrop and never touch the cards.
+          the same stacking context and paints over them.
 
           Why they exist: iOS Safari does not let page content paint into the
           status-bar strip (top) or behind its bottom address bar, so the wall
@@ -198,8 +209,14 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
 
           One full-height gradient covers both edges (see .edge-scrim in
           styles/index.css), so there is no seam between a top and a bottom
-          field to line up. It sits above the loading overlay (z-999) too, so
-          the load state is finished the same way.
+          field to line up.
+
+          Note the z-index is 1000, not the 5 this comment used to claim: this
+          layer deliberately sits above EVERYTHING, including the cards and the
+          loading overlay (z-999), so the load state is closed off the same way
+          the loaded state is. The vignette above is the one that must stay
+          below the cards. Phones only - desktop has no such bands, so it is
+          md:hidden and .edge-vignette covers the edges there.
         */}
         <div className="fixed inset-0 w-full h-full pointer-events-none z-[1000] edge-scrim md:hidden" />
 
@@ -238,12 +255,11 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             className="h-svh absolute brightness-125 dark:brightness-150 top-0 left-[30%] md:left-[35%] lg:left-[42%] xl:left-[46%] w-[40%] md:w-[30%] lg:w-[16%] xl:w-[8%] m-auto"
           />
           {/*
-            Load-state copies of the Navbar scrims. The permanent ones sit at
-            z-[5] so they can never dim the cards - but that also means this
-            overlay (z-999) hid them, so during load the status-bar strip read
-            as a bright band again. Drawing them again inside the overlay
-            finishes both states the same way, and nothing can be dimmed here
-            because the content container is not mounted yet.
+            Nothing extra is drawn here. This overlay is z-999 and the scrim is
+            z-1000, so the scrim already closes off the load state exactly the
+            way it closes off the loaded state - which is why the load-state
+            copies this comment used to describe are not needed and do not
+            exist in the markup.
           */}
         </div>
       </CSSTransition>
