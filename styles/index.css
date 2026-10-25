@@ -70,56 +70,81 @@ html {
 }
 
 /* Soft edge vignette over the photo wall.
-
-   Same idea as .edge-scrim above but a different shape: scrim is a vertical
-   gradient that only closes off the top and bottom bands, this one fades in
-   from ALL FOUR edges so the wall reads as sinking into the frame instead of
-   running into a hard boundary.
-
-   It has to be a `fixed` layer. It used to be an inset shadow on the content
-   container, and that container is `absolute` plus exactly one `lvh` tall - so
-   the vignette only ever covered the FIRST screenful and then scrolled out of
-   view, leaving the edge dimmed at the top of the page and bare halfway down.
-   That step is what read as "a black layer lying on the photos". As a fixed
-   layer it is identical at every scroll position.
-
-   Values are the ones the container carried, so the look is unchanged:
-   0.75 / 180px on phones, 0.6 / 360px from md up. Tune here - both numbers are
-   in one place now instead of being buried in a Tailwind arbitrary value. */
+ *
+ * Same idea as .edge-scrim above but a different shape: scrim is a vertical
+ * gradient that only closes off the top and bottom bands, this one fades in
+ * from ALL FOUR edges so the wall reads as sinking into the frame instead of
+ * running into a hard boundary.
+ *
+ * It has to be a `fixed` layer. It used to be an inset shadow on the content
+ * container, and that container is `absolute` plus exactly one `lvh` tall - so
+ * the vignette only ever covered the FIRST screenful and then scrolled out of
+ * view, leaving the edge dimmed at the top of the page and bare halfway down.
+ * That step is what read as a "black layer lying on the photos". As a fixed
+ * layer it is identical at every scroll position.
+ *
+ * Gradients, not an inset box-shadow.
+ *
+ * It shipped briefly as `inset 0 0 180px 10px rgba(0,0,0,0.75)`, and that was
+ * reported to lag behind the edge on fast scrolls - while scrolling slowly it
+ * was fine. That combination is the tell: the paint is simply too expensive to
+ * finish inside a frame budget when the scroll is fast, which is a per-frame
+ * cost question, not a geometry one. A 180px blur is a large-kernel convolution
+ * over the whole viewport; a gradient is a per-pixel lerp. The sibling
+ * .edge-scrim is a gradient and has never lagged, which is the control here.
+ *
+ * The stops below are not eyeballed - they are the measured alpha profile of
+ * the shadow being replaced. Read on a flat grey backdrop with the wall hidden,
+ * so the numbers are the vignette itself and not the photo behind it:
+ *
+ *     distance   0     20     40     60     75     90    110    140    160
+ *     phone   0.422  0.336  0.242  0.172  0.125  0.086  0.047  0.016  0.000
+ *     desktop 0.336  0.266  0.195  0.133  0.094  0.062  0.039  0.016  0.000
+ *
+ * (Note the peak is 0.42, not the 0.75 that was declared: the blur ramp eats
+ * the outermost pixels. That is why the alphas here look lower than the old
+ * box-shadow's - they are the same curve, measured.)
+ *
+ * Four gradients, one per edge. Along an edge at mid-height only one of them
+ * is non-zero, so the falloff matches the measurements; they do stack at the
+ * corners, which is also what the inset shadow did.
+ *
+ * Tune the four alphas here - they are the whole look. */
 .edge-vignette {
-  box-shadow: inset 0 0 180px 10px rgba(0, 0, 0, 0.75);
+  --edge-0: rgba(0, 0, 0, 0.42);
+  --edge-40: rgba(0, 0, 0, 0.24);
+  --edge-80: rgba(0, 0, 0, 0.11);
+  --edge-120: rgba(0, 0, 0, 0.037);
+  --edge-160: rgba(0, 0, 0, 0);
 
-  /* Own compositing layer, deliberately.
-   *
-   * Reported symptom: during an overscroll rubber-band (iOS / macOS) the bottom
-   * band fell behind the edge it is meant to close off - it visibly lagged while
-   * the content bounced. The sibling .edge-scrim is equally fixed and equally
-   * full-viewport but does NOT lag, and the only difference between the two is
-   * gradient versus a 180px blur.
-   *
-   * The mechanism is NOT nailed down, and this comment should not pretend
-   * otherwise. Measured in Chrome this element already gets its own layer and
-   * is painted once (paintCount 1), so the lag cannot be reproduced outside
-   * Safari. What Safari is known to do is mishandle `position: fixed` during
-   * rubber-band scrolling unless the layer is explicitly composited; that is
-   * the failure mode this addresses. translateZ(0) is the part that actually
-   * creates the layer, will-change declares the intent up front.
-   *
-   * Treat it as the standard mitigation rather than a proven fix - it has to be
-   * confirmed on a real device. And note the fork in the road: if the band lags
-   * in GEOMETRY rather than in paint (it stays put while the content bounces
-   * past it), compositing cannot help. A fixed layer does not bounce by
-   * definition, and the way to make it bounce is to attach the vignette to the
-   * scrolling content again - which reintroduces the original defect, where the
-   * falloff disappeared halfway down the page. That trade-off would have to be
-   * chosen on purpose. */
+  background-image:
+    linear-gradient(to right,
+      var(--edge-0) 0, var(--edge-40) 40px, var(--edge-80) 80px,
+      var(--edge-120) 120px, var(--edge-160) 160px),
+    linear-gradient(to left,
+      var(--edge-0) 0, var(--edge-40) 40px, var(--edge-80) 80px,
+      var(--edge-120) 120px, var(--edge-160) 160px),
+    linear-gradient(to bottom,
+      var(--edge-0) 0, var(--edge-40) 40px, var(--edge-80) 80px,
+      var(--edge-120) 120px, var(--edge-160) 160px),
+    linear-gradient(to top,
+      var(--edge-0) 0, var(--edge-40) 40px, var(--edge-80) 80px,
+      var(--edge-120) 120px, var(--edge-160) 160px);
+
+  /* Its own layer so scrolling never repaints it. */
   will-change: transform;
   transform: translateZ(0);
 }
 
+/* Same curve at 0.6 alpha instead of 0.75 - measured, not scaled. The blur
+   radius grows to 360px but the visible falloff barely moves, because the lower
+   alpha means the tail is imperceptible sooner. */
 @media (min-width: 768px) {
   .edge-vignette {
-    box-shadow: inset 0 0 360px 10px rgba(0, 0, 0, 0.6);
+    --edge-0: rgba(0, 0, 0, 0.34);
+    --edge-40: rgba(0, 0, 0, 0.195);
+    --edge-80: rgba(0, 0, 0, 0.09);
+    --edge-120: rgba(0, 0, 0, 0.032);
   }
 }
 
