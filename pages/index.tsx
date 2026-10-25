@@ -81,8 +81,21 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             md:bg-transparent), which painted straight over the wall now that
             the wall is visible on phones too. The page colour still comes from
             <body className="bg-page"> in _document.tsx.
+
+            No inset vignette on mobile any more. This container is `absolute`
+            and exactly one `lvh` tall, so its shadow only ever covered the
+            FIRST screenful and then slid away as you scrolled - the edge went
+            from heavily dimmed to bare halfway down the page. That read as a
+            black layer lying on the photos, and it was a real inconsistency:
+            the permanent edge treatment on phones is `.edge-scrim` below
+            (fixed, so it never moves), and these two were doing the same job
+            with opposite behaviour. One of them had to go, and the one that
+            stays put is the one that matches the intent.
+
+            Desktop keeps its 360px vignette: `.edge-scrim` is `md:hidden`, so
+            out here the inset shadow is the only edge treatment there is.
           */}
-          <div className="bg-transparent absolute left-0 w-full h-lvh z-10 pt-[36px] px-3 md:px-0 md:pt-0 md:place-content-center grid !shadow-[inset_0_0_180px_10px_rgba(0,0,0,0.75)] md:!shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
+          <div className="bg-transparent absolute left-0 w-full h-lvh z-10 pt-[36px] px-3 md:px-0 md:pt-0 md:place-content-center grid md:!shadow-[inset_0_0_360px_10px_rgba(0,0,0,0.6)]">
             <CSSTransition
               in={opacity}
               timeout={500}
