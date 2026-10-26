@@ -3,29 +3,8 @@ import "@/styles/index.css";
 import Head from "next/head";
 import { HeroUIProvider } from "@heroui/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import { useEffect } from "react";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  /*
-   * TEMPORARY. Diagnostic switches for the Safari fast-scroll lag.
-   *
-   * The lag only reproduces on Safari, which cannot be driven from here, so the
-   * candidate layers have to be switchable on the real device instead of by
-   * pasting rules into Web Inspector. Add `?diag=<name>` to the URL - several
-   * can be comma-separated - and the matching `html.diag-no-<name>` class turns
-   * off one candidate. The rules live at the bottom of styles/index.css.
-   *
-   * Delete this effect and those rules once the culprit is identified.
-   */
-  useEffect(() => {
-    const diag = new URLSearchParams(window.location.search).get("diag");
-    if (!diag) return;
-    diag
-      .split(",")
-      .filter(Boolean)
-      .forEach((key) => document.documentElement.classList.add("diag-no-" + key));
-  }, []);
-
   return (
     <>
       <Head>
