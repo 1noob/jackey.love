@@ -78,11 +78,16 @@ html {
    * reason removing it made the symptom disappear while removing anything else
    * changed nothing.
    *
-   * translate3d, not translateZ. Safari flattens translateZ(0) into a plain 2D
-   * matrix and then declines to promote the element; that is measurable here -
-   * with translateZ(0) the computed transform comes back as
-   * matrix(1, 0, 0, 1, 0, 0). translate3d(0,0,0) serialises as matrix3d and
-   * keeps the third dimension, which is what actually asks for a layer. */
+   * The three declarations below are the usual WebKit prompt for a layer.
+   * `will-change: transform` is the one that actually matters; translate3d and
+   * backface-visibility are kept because they are harmless and have been the
+   * conventional belt-and-braces for years.
+   *
+   * Do not read the computed transform as proof either way: with
+   * translate3d(0,0,0) both Blink and WebKit still report
+   * matrix(1, 0, 0, 1, 0, 0), because a zero Z translation is reducible to 2D.
+   * An earlier version of this comment claimed translate3d would serialise as
+   * matrix3d; measured on the live page, it does not. */
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   will-change: transform;
