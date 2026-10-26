@@ -21,6 +21,24 @@ const withEntityDefaults = (tweet: any) => ({
   entities: { ...EMPTY_ENTITIES, ...tweet.entities },
 });
 
+// Photos are vendored next to the JSON as /tweet/<key>.jpg and therefore
+// relative, but react-tweet's getMediaUrl runs new URL(media.media_url_https),
+// which rejects a relative path outright. Resolve against the origin actually
+// serving the page so the same JSON works in development and in production.
+const resolveMediaUrls = (tweet: any) => {
+  const origin =
+    typeof window === "undefined" ? "" : window.location.origin;
+  const absolutise = (url: string) =>
+    url.startsWith("/") && origin ? origin + url : url;
+  return {
+    ...tweet,
+    mediaDetails: (tweet.mediaDetails || []).map((m: any) => ({
+      ...m,
+      media_url_https: absolutise(m.media_url_https),
+    })),
+  };
+};
+
 export const Tweet = ({
   id,
   apiUrl,
@@ -39,5 +57,10 @@ export const Tweet = ({
   //   return <NotFound error={onError ? onError(error) : error} />;
   // }
 
-  return <MyTweet tweet={withEntityDefaults(data)} components={components} />;
+  return (
+    <MyTweet
+      tweet={resolveMediaUrls(withEntityDefaults(data))}
+      components={components}
+    />
+  );
 };

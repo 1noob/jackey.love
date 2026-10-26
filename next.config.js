@@ -12,5 +12,19 @@ module.exports = {
       }
     ]
   },
-  transpilePackages: ['react-tweet']
+  transpilePackages: ['react-tweet'],
+
+  // react-tweet builds photo URLs by moving the extension into the query string
+  // - a tweet photo is requested as /tweet/<key>?format=jpg&name=small, never
+  // /tweet/<key>.jpg - while the vendored file on disk is /tweet/<key>.jpg.
+  // This maps one to the other. Plain `rewrites` run after the filesystem, so
+  // /tweet/<id>.json and the avatar still resolve to their own files.
+  async rewrites() {
+    return [
+      {
+        source: '/tweet/:name',
+        destination: '/tweet/:name.jpg'
+      }
+    ]
+  }
 }
