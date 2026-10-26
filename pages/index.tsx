@@ -196,40 +196,29 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         />
 
         {/*
-          Edge scrim. Sibling of the content container, and at z-[5] rather than
-          z-[1000].
+          Edge scrims. These are siblings of the content container on purpose.
 
-          Why it exists: iOS Safari does not let page content paint into the
+          They cannot live inside Navbar: Navbar renders within the content
+          container (z-10), so anything written there competes with the cards in
+          the same stacking context and paints over them.
+
+          Why they exist: iOS Safari does not let page content paint into the
           status-bar strip (top) or behind its bottom address bar, so the wall
-          can never reach those bands no matter how far it bleeds. This fades the
+          can never reach those bands no matter how far it bleeds. These fade the
           backdrop to black there so the edge reads as intentional.
 
           One full-height gradient covers both edges (see .edge-scrim in
           styles/index.css), so there is no seam between a top and a bottom
           field to line up.
 
-          Why it moved down. z-1000 put it above EVERYTHING, which kept the
-          loading overlay (z-999) from hiding it - but it also put a
-          full-viewport layer on top of the CARDS, so Safari had to blend it
-          over content that moves while scrolling, every frame. On a fast scroll
-          it trailed the edge it closes off, and promoting the layer did not
-          help: being above moving content is the cost.
-
-          At z-[5] it sits above the wall (z-0) and under the content (z-10), so
-          it blends against the wall - which is itself fixed - and a static
-          stack can be cached. This is also what the old version of this comment
-          always claimed z-[5] was doing, and what its stated intent was:
-          "never touch the cards".
-
-          Two visible consequences, both accepted deliberately: cards are no
-          longer dimmed at the very top and bottom edges, and the load state
-          loses the extra edge darkening because this now sits under the loading
-          overlay (the overlay's own backdrop closes it off).
-
-          Phones only - desktop has no such bands, so it stays md:hidden and
-          .edge-vignette covers the edges there.
+          Note the z-index is 1000, not the 5 this comment used to claim: this
+          layer deliberately sits above EVERYTHING, including the cards and the
+          loading overlay (z-999), so the load state is closed off the same way
+          the loaded state is. The vignette above is the one that must stay
+          below the cards. Phones only - desktop has no such bands, so it is
+          md:hidden and .edge-vignette covers the edges there.
         */}
-        <div className="fixed inset-0 w-full h-full pointer-events-none z-[5] edge-scrim md:hidden" />
+        <div className="fixed inset-0 w-full h-full pointer-events-none z-[1000] edge-scrim md:hidden" />
 
         {/*
           The wall is a background layer that needs no API data, so it renders
