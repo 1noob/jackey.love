@@ -31,26 +31,6 @@ body {
    over the page content. */
 html {
   background-color: rgb(0, 0, 0);
-
-  /* No overscroll rubber-band.
-   *
-   * The document is the scroller on this page - the inner list reports
-   * scrollHeight === clientHeight, so nothing scrolls inside it - which means
-   * html is the element to pin, not body.
-   *
-   * During a rubber-band the content is dragged past the viewport edges while
-   * the fixed layers stay put, so the bottom band visibly detaches from the
-   * edge it is meant to close off, for as long as the bounce lasts. Several
-   * rounds of compositing work on those layers did not change that, because the
-   * problem is the bounce itself, not how the layers are painted.
-   *
-   * On a full-screen wall there is nothing above or below to overscroll into
-   * anyway, so removing the bounce costs nothing visually.
-   *
-   * iOS Safari honours this from 16.0 onward. Older versions need a JS touch
-   * handler to suppress it, which is its own cost and probably not worth it for
-   * the remaining share - this is the whole fix, not half of one. */
-  overscroll-behavior: none;
 }
 
 /* Single full-height scrim: black at both edges, a transparent band across the
