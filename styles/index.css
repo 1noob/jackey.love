@@ -280,3 +280,28 @@ h1 {
     --shadow-color-end: rgba(255, 255, 255, 0);
   }
 }
+
+/* TEMPORARY: diagnostic switches for the Safari fast-scroll lag.
+ *
+ * Driven by the ?diag= effect in pages/_app.tsx - delete both together once the
+ * culprit is identified. Each one disables a single candidate layer so the lag
+ * can be bisected on a real device, where it is the only place it reproduces.
+ *
+ *   ?diag=overlay             the two fixed full-viewport layers
+ *   ?diag=hdf                 the SVG halation filter on the photo wall
+ *   ?diag=glass               backdrop-filter on every element (cards: 40px)
+ *   ?diag=overlay,hdf,glass   everything at once
+ */
+html.diag-no-overlay .edge-scrim,
+html.diag-no-overlay .edge-vignette {
+  display: none !important;
+}
+
+html.diag-no-hdf .hdf-soft {
+  filter: none !important;
+}
+
+html.diag-no-glass * {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
