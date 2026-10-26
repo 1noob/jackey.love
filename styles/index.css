@@ -67,6 +67,27 @@ html {
     rgba(0, 0, 0, 0.90) 95%,
     rgba(0, 0, 0, 0.94) 100%
   );
+
+  /* Own compositing layer - the same treatment as .edge-vignette below, and
+     this one had been missing it.
+   *
+   * It sits at z-1000, ABOVE the content, so it is the layer Safari has to
+   * blend over the scrolling cards on every frame. If it is not composited it
+   * has to be repainted as the content under it moves, and on a fast scroll it
+   * trails the edge it is closing off - exactly the reported symptom, and the
+   * reason removing it made the symptom disappear while removing anything else
+   * changed nothing.
+   *
+   * translate3d, not translateZ. Safari flattens translateZ(0) into a plain 2D
+   * matrix and then declines to promote the element; that is measurable here -
+   * with translateZ(0) the computed transform comes back as
+   * matrix(1, 0, 0, 1, 0, 0). translate3d(0,0,0) serialises as matrix3d and
+   * keeps the third dimension, which is what actually asks for a layer. */
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* Soft edge vignette over the photo wall.
@@ -131,9 +152,13 @@ html {
       var(--edge-0) 0, var(--edge-40) 40px, var(--edge-80) 80px,
       var(--edge-120) 120px, var(--edge-160) 160px);
 
-  /* Its own layer so scrolling never repaints it. */
+  /* Its own layer so scrolling never repaints it. translate3d rather than
+     translateZ - see the note on .edge-scrim above for why. */
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   will-change: transform;
-  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* Same curve at 0.6 alpha instead of 0.75 - measured, not scaled. The blur
